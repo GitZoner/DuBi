@@ -280,6 +280,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */,
 				B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */,
+				F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,6 +368,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */ = {
