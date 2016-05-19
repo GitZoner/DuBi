@@ -16,6 +16,7 @@
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
 		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
+		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
 		C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */; };
 		C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */; };
@@ -42,6 +43,9 @@
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
 		B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
+		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
 		C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfomationHandle.h; sourceTree = "<group>"; };
 		C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfomationHandle.m; sourceTree = "<group>"; };
 		C2533CB81CEDEBDC00C134C6 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		96FD78931CED93F2000FCB3C /* Marco */ = {
 			isa = PBXGroup;
 			children = (
+				C22BC6C91CEDFC0900E7AF10 /* Singleton.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -245,6 +250,8 @@
 		C2533CC11CEDEC0A00C134C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C22BC6CA1CEE01DA00E7AF10 /* Topic.h */,
+				C22BC6CB1CEE01DA00E7AF10 /* Topic.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +417,7 @@
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
+				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,

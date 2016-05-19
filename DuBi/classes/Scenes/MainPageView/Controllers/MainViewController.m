@@ -7,8 +7,9 @@
 //
 
 #import "MainViewController.h"
-
-@interface MainViewController ()
+#import "InfomationHandle.h"
+#import "MainViewCell.h"
+@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,13 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // 加载菊花样式
+    // 数据请求
+    // 注册cell
+    [_tableView registerNib:[UINib nibWithNibName:@"MainViewCell" bundle:nil] forCellReuseIdentifier:@"mainViewCellID"];
+    // 设置代理
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCellID" forIndexPath:indexPath];
+
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation

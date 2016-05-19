@@ -7,7 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Topic.h"
+#import "NetWorkRequest.h"
+#import <UIKit/UIKit.h>
+typedef void(^Completion) (NSArray *array,NSError *error);
+// 请求数据工具类
 @interface InfomationHandle : NSObject
+// 请求数据并且将数据存储到数组当中
+-(void)getModelDataWithUrl:(NSString *)urlString comption:(Completion)completion;
+// 返回分区的个数
+-(NSInteger)numberOfSections;
+
+
+// 返回行的个数
+-(NSInteger)numberOfRows;
+
+
+
+// 返回model对象
+-(Topic *)topicForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
+
+
 
 @end
