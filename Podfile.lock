@@ -1,4 +1,6 @@
 PODS:
+  - AVOSCloud (3.2.12)
+  - HyphenateFullSDK (3.1.2)
   - Masonry (1.0.0)
   - MBProgressHUD (0.9.2)
   - SDWebImage (3.7.6):
@@ -6,11 +8,24 @@ PODS:
   - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
+  - AVOSCloud
+  - HyphenateFullSDK (from `https://github.com/easemob/hyphenate-full-cocoapods.git`)
   - Masonry (~> 1.0.0)
   - MBProgressHUD (~> 0.9.2)
   - SDWebImage (~> 3.7.5)
 
+EXTERNAL SOURCES:
+  HyphenateFullSDK:
+    :git: https://github.com/easemob/hyphenate-full-cocoapods.git
+
+CHECKOUT OPTIONS:
+  HyphenateFullSDK:
+    :commit: 97403d44258b04a874dee09b24d384327570752e
+    :git: https://github.com/easemob/hyphenate-full-cocoapods.git
+
 SPEC CHECKSUMS:
+  AVOSCloud: fcbb5c2bcccaddbdea8c2b4f6c1ad7f13e6639fe
+  HyphenateFullSDK: f6ed4f5fed2b41f344eab73b451a27f1e8aa8ba2
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
