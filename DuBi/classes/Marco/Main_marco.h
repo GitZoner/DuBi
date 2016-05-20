@@ -6,8 +6,8 @@
 //  Copyright © 2016年 JasonTian. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef Main_marco_h
+#define Main_marco_h
 
-@interface Main_marco : NSObject
 
-@end
+#endif /* Main_marco_h */

@@ -12,8 +12,8 @@
 		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		961F9EC81CEEA6D10043F86C /* Main_marco.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC71CEEA6D10043F86C /* Main_marco.m */; settings = {ASSET_TAGS = (); }; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; settings = {ASSET_TAGS = (); }; };
+		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; settings = {ASSET_TAGS = (); }; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
@@ -40,10 +40,12 @@
 		961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignUpViewController.h; sourceTree = "<group>"; };
 		961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignUpViewController.m; sourceTree = "<group>"; };
 		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
-		961F9EC61CEEA6D10043F86C /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
-		961F9EC71CEEA6D10043F86C /* Main_marco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main_marco.m; sourceTree = "<group>"; };
 		961F9EC91CEEAC990043F86C /* JTBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBuddyManager.h; sourceTree = "<group>"; };
 		961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBuddyManager.m; sourceTree = "<group>"; };
+		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
+		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
+		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
+		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,9 +201,9 @@
 		96FD78931CED93F2000FCB3C /* Marco */ = {
 			isa = PBXGroup;
 			children = (
+				968AC5B51CEF113600A14471 /* Color_marco.h */,
 				C22BC6C91CEDFC0900E7AF10 /* Singleton.h */,
-				961F9EC61CEEA6D10043F86C /* Main_marco.h */,
-				961F9EC71CEEA6D10043F86C /* Main_marco.m */,
+				968AC5B61CEF117B00A14471 /* Main_marco.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -257,6 +259,8 @@
 		96FD78C71CEDD8D9000FCB3C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */,
+				968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */,
 				96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */,
 				96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */,
 			);
@@ -476,7 +480,6 @@
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
 				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
-				961F9EC81CEEA6D10043F86C /* Main_marco.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
@@ -488,6 +491,7 @@
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
+				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

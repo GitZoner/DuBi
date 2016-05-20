@@ -8,6 +8,13 @@
 
 #import "JTBuddyManager.h"
 #import <HyphenateFullSDK/EMSDKFull.h>
+
+@interface JTBuddyManager  ()
+
+
+@end
+
+
 @implementation JTBuddyManager
 /**
  *  类单例方法的实现
@@ -25,10 +32,8 @@ singleton_implementation(JTBuddyManager);
     self = [super init];
     if (self) {
         // 初始化环信
-        //AppKey:注册的AppKey，详细见下面注释。
-        //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
-        EMOptions *options = [EMOptions optionsWithAppkey:@"douser#istore"];
-        options.apnsCertName = @"istore_dev";
+        EMOptions *options = [EMOptions optionsWithAppkey:@"colorfulyogurt#dubi"];// 环信AppKey
+        options.apnsCertName = @"istore_dev";// 苹果推送证书
         [[EMClient sharedClient] initializeSDKWithOptions:options];
     }
     return self;
