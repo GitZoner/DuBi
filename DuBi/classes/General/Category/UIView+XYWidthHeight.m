@@ -58,7 +58,7 @@
 // 中心店x,y的setter getter 方法
 -(void)setCenterX:(CGPoint)centerX
 {
-    
+    CGPoint point
 }
 
 

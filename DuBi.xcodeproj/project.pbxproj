@@ -7,18 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11B38DD9E63767F13499368D /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */; };
+		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
+		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
-		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; settings = {ASSET_TAGS = (); }; };
-		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; settings = {ASSET_TAGS = (); }; };
-		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; settings = {ASSET_TAGS = (); }; };
-		E7F5469F475D0034DA81A485 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF14CECE0ADED8F5451DA6C /* libPods.a */; };
+		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
+		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
+		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
+		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
+		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
+		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
+		C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */; };
+		C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */; };
+		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
+		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
+		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
+		961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignInViewController.h; sourceTree = "<group>"; };
+		961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignInViewController.m; sourceTree = "<group>"; };
+		961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignInViewController.xib; sourceTree = "<group>"; };
+		961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignUpViewController.h; sourceTree = "<group>"; };
+		961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignUpViewController.m; sourceTree = "<group>"; };
+		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,9 +52,20 @@
 		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
-		AEA5E42A7667FB840FE4AD25 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B245A911AC24AB77445C9AD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EDF14CECE0ADED8F5451DA6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
+		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfomationHandle.h; sourceTree = "<group>"; };
+		C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfomationHandle.m; sourceTree = "<group>"; };
+		C2533CB81CEDEBDC00C134C6 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
+		C2533CBE1CEDEC0A00C134C6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
+		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
+		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,28 +73,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F5469F475D0034DA81A485 /* libPods.a in Frameworks */,
+				11B38DD9E63767F13499368D /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44F535B7813CF2B20C3AD103 /* Frameworks */ = {
+		961F9EB81CEE96240043F86C /* SignUpAndSignIn */ = {
 			isa = PBXGroup;
 			children = (
-				EDF14CECE0ADED8F5451DA6C /* libPods.a */,
+				961F9EB91CEE96240043F86C /* Controllers */,
+				961F9EBA1CEE96240043F86C /* Models */,
+				961F9EBB1CEE96240043F86C /* Views */,
 			);
-			name = Frameworks;
+			path = SignUpAndSignIn;
 			sourceTree = "<group>";
 		};
-		5FB0E4A53CDF8704A92B573C /* Pods */ = {
+		961F9EB91CEE96240043F86C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AEA5E42A7667FB840FE4AD25 /* Pods.debug.xcconfig */,
-				B245A911AC24AB77445C9AD8 /* Pods.release.xcconfig */,
+				961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */,
+				961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */,
+				961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */,
+				961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */,
+				961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */,
+				961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */,
 			);
-			name = Pods;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		961F9EBA1CEE96240043F86C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		961F9EBB1CEE96240043F86C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		96FD786A1CED92FD000FCB3C = {
@@ -72,8 +122,8 @@
 			children = (
 				96FD78751CED92FE000FCB3C /* DuBi */,
 				96FD78741CED92FE000FCB3C /* Products */,
-				5FB0E4A53CDF8704A92B573C /* Pods */,
-				44F535B7813CF2B20C3AD103 /* Frameworks */,
+				B29BD795CC2D2B7F22B436A6 /* Pods */,
+				F39E1A224281F2F0D4C026ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,9 +159,9 @@
 		96FD788D1CED93F2000FCB3C /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				C2533CB51CEDEBDC00C134C6 /* Helper */,
 				96FD788E1CED93F2000FCB3C /* Appdelegate */,
 				96FD78911CED93F2000FCB3C /* General */,
-				96FD78921CED93F2000FCB3C /* Helpers */,
 				96FD78931CED93F2000FCB3C /* Marco */,
 				96FD78941CED93F2000FCB3C /* Models */,
 				96FD78951CED93F2000FCB3C /* Resources */,
@@ -140,16 +190,10 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		96FD78921CED93F2000FCB3C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		96FD78931CED93F2000FCB3C /* Marco */ = {
 			isa = PBXGroup;
 			children = (
+				C22BC6C91CEDFC0900E7AF10 /* Singleton.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -171,6 +215,8 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
+				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -209,6 +255,73 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		B29BD795CC2D2B7F22B436A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */,
+				0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */,
+				C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */,
+				C2533CB81CEDEBDC00C134C6 /* NetWorkRequest.h */,
+				C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C2533CBC1CEDEC0A00C134C6 /* MainPageView */ = {
+			isa = PBXGroup;
+			children = (
+				C2533CBD1CEDEC0A00C134C6 /* Controllers */,
+				C2533CC11CEDEC0A00C134C6 /* Models */,
+				C2533CC21CEDEC0A00C134C6 /* Views */,
+			);
+			path = MainPageView;
+			sourceTree = "<group>";
+		};
+		C2533CBD1CEDEC0A00C134C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2533CBE1CEDEC0A00C134C6 /* MainViewController.h */,
+				C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */,
+				C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C2533CC11CEDEC0A00C134C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C22BC6CA1CEE01DA00E7AF10 /* Topic.h */,
+				C22BC6CB1CEE01DA00E7AF10 /* Topic.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2533CC21CEDEC0A00C134C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */,
+				C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */,
+				C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F39E1A224281F2F0D4C026ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,12 +329,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96FD788A1CED92FE000FCB3C /* Build configuration list for PBXNativeTarget "DuBi" */;
 			buildPhases = (
-				321E6E6853C5EEC6B2ED9C7F /* Check Pods Manifest.lock */,
+				A99E16187923361FA6465EDF /* 📦 Check Pods Manifest.lock */,
 				96FD786F1CED92FE000FCB3C /* Sources */,
 				96FD78701CED92FE000FCB3C /* Frameworks */,
 				96FD78711CED92FE000FCB3C /* Resources */,
-				39FF10A07C225A13C13A2631 /* Embed Pods Frameworks */,
-				18AECBA054960CC5BA18B9ED /* Copy Pods Resources */,
+				F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */,
+				B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */,
+				F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,35 +387,24 @@
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
+				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
+				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
+				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
+				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18AECBA054960CC5BA18B9ED /* Copy Pods Resources */ = {
+		A99E16187923361FA6465EDF /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		321E6E6853C5EEC6B2ED9C7F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +412,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		39FF10A07C225A13C13A2631 /* Embed Pods Frameworks */ = {
+		B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,7 +439,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -332,9 +465,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
+				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
+				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
+				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
+				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
+				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
+				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
+				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +585,7 @@
 		};
 		96FD788B1CED92FE000FCB3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEA5E42A7667FB840FE4AD25 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -458,7 +598,7 @@
 		};
 		96FD788C1CED92FE000FCB3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B245A911AC24AB77445C9AD8 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
