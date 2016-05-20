@@ -34,7 +34,6 @@
     
     self.publishButton.bounds = CGRectMake(0, 0, self.publishButton.currentBackgroundImage.size.width, self.publishButton.currentBackgroundImage.size.height);
     self.publishButton.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
-    
     // 设置其他 UITabBarButton 的 frame
     CGFloat buttonX = 0;
     CGFloat buttonY = 0;
@@ -52,7 +51,6 @@
         button.frame = CGRectMake(buttonX, buttonY, buttomW, buttomH);
         // 增加索引
         index ++;
-        
     }
     
 }
