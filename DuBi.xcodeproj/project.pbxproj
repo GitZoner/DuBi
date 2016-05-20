@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11B38DD9E63767F13499368D /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */; };
-		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; settings = {ASSET_TAGS = (); }; };
-		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; settings = {ASSET_TAGS = (); }; };
-		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; settings = {ASSET_TAGS = (); }; };
+		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; };
+		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; };
+		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; };
+		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
+		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
+		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
@@ -23,17 +22,20 @@
 		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
+		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
 		C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */; };
 		C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */; };
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
-		0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
+		11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		1EA63ACCE108F063FF901999 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
 		961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignInViewController.h; sourceTree = "<group>"; };
 		961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignInViewController.m; sourceTree = "<group>"; };
 		961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignInViewController.xib; sourceTree = "<group>"; };
@@ -60,10 +62,12 @@
 		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
-		B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		C23CA6751CEF23FD008C52C2 /* MBProgressHUD+gifHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+gifHUD.h"; sourceTree = "<group>"; };
+		C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+gifHUD.m"; sourceTree = "<group>"; };
+		C23CA6781CEF27B0008C52C2 /* LWNMainPageUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWNMainPageUrl.h; sourceTree = "<group>"; };
 		C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfomationHandle.h; sourceTree = "<group>"; };
 		C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfomationHandle.m; sourceTree = "<group>"; };
 		C2533CB81CEDEBDC00C134C6 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
@@ -81,13 +85,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B38DD9E63767F13499368D /* libPods-DuBi.a in Frameworks */,
+				CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C94F929D7E0E54C048AEC15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */,
+				5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		79939B0E58BB4BC289F17EB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA63ACCE108F063FF901999 /* libPods-DuBi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		961F9EB81CEE96240043F86C /* SignUpAndSignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +151,8 @@
 			children = (
 				96FD78751CED92FE000FCB3C /* DuBi */,
 				96FD78741CED92FE000FCB3C /* Products */,
-				B29BD795CC2D2B7F22B436A6 /* Pods */,
-				F39E1A224281F2F0D4C026ED /* Frameworks */,
+				3C94F929D7E0E54C048AEC15 /* Pods */,
+				79939B0E58BB4BC289F17EB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +225,7 @@
 				968AC5B51CEF113600A14471 /* Color_marco.h */,
 				C22BC6C91CEDFC0900E7AF10 /* Singleton.h */,
 				968AC5B61CEF117B00A14471 /* Main_marco.h */,
+				C23CA6781CEF27B0008C52C2 /* LWNMainPageUrl.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -263,17 +285,10 @@
 				968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */,
 				96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */,
 				96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */,
+				C23CA6751CEF23FD008C52C2 /* MBProgressHUD+gifHUD.h */,
+				C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		B29BD795CC2D2B7F22B436A6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */,
-				0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
@@ -328,14 +343,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F39E1A224281F2F0D4C026ED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,13 +350,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96FD788A1CED92FE000FCB3C /* Build configuration list for PBXNativeTarget "DuBi" */;
 			buildPhases = (
-				A99E16187923361FA6465EDF /* 📦 Check Pods Manifest.lock */,
+				CB25C5DD1C78F9B43F2FFB9A /* 📦 Check Pods Manifest.lock */,
 				96FD786F1CED92FE000FCB3C /* Sources */,
 				96FD78701CED92FE000FCB3C /* Frameworks */,
 				96FD78711CED92FE000FCB3C /* Resources */,
-				F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */,
-				B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */,
-				F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */,
+				01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */,
+				EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,52 +417,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A99E16187923361FA6465EDF /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3C78449208BBDCCFCB03C9A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */ = {
+		01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,6 +432,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CB25C5DD1C78F9B43F2FFB9A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -480,6 +471,7 @@
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
 				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
+				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
@@ -601,7 +593,7 @@
 		};
 		96FD788B1CED92FE000FCB3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */;
+			baseConfigurationReference = 11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -614,7 +606,7 @@
 		};
 		96FD788C1CED92FE000FCB3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */;
+			baseConfigurationReference = 5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;

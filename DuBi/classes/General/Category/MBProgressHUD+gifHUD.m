@@ -15,7 +15,7 @@
     UIImageView *gifImgView = [[UIImageView alloc]initWithFrame:frame];
     gifImgView.image = image;
    MBProgressHUD *hud = [self showHUDAddedTo:view animated:YES];
-    hud.color = kColor(190, 123, 255, 0.5);
+    hud.color = [UIColor yellowColor];
     hud.mode = MBProgressHUDModeCustomView;
     hud.labelText = @"皮卡丘玩命儿加载中";
     hud.customView = gifImgView;

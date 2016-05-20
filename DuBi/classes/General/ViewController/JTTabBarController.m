@@ -10,6 +10,7 @@
 #import "JTTabBar.h"
 #import "UIImage+ImageContentWithColor.h"
 #import "Color_marco.h"
+#import "MainViewController.h"
 @interface JTTabBarController ()
 
 @end
@@ -34,7 +35,7 @@
     [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect]];
     
     // 精华
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     // 新帖
     [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     // 关注

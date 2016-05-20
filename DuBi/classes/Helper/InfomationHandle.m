@@ -27,10 +27,12 @@
        //
        NSArray *array = dict[@"list"];
        for (NSDictionary *modelDict in array) {
-           Topic *topic = [Topic new];
-           [topic setValuesForKeysWithDictionary:modelDict];
-           [_topicArray addObject:modelDict];
-       }
+           if (modelDict[@"top_cmt"]) {
+               Topic *topic = [Topic new];
+               [topic setValuesForKeysWithDictionary:modelDict];
+               [self.topicArray addObject:topic];
+           }
+        }
        if (completion) {
            dispatch_async(dispatch_get_main_queue(), ^{
                completion(_topicArray,error);
@@ -50,7 +52,7 @@
 
 
 // 返回行的个数
--(NSInteger)numberOfRows{
+-(NSInteger)numberOfRowsInsection:(NSInteger)inSection{
     return _topicArray.count;
 
 }
@@ -65,5 +67,6 @@
     return _topicArray[indexPath.row];
 
 }
-
+// 单例类的实现
+singleton_implementation(InfomationHandle);
 @end
