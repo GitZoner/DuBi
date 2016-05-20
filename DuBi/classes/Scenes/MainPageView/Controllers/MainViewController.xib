@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="tableView" destination="WHy-63-sEA" id="juZ-Vu-usk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -89,13 +90,21 @@
                                 <constraint firstItem="hlb-m0-HPO" firstAttribute="top" secondItem="t2R-bL-1hk" secondAttribute="top" id="g84-o4-AyZ"/>
                             </constraints>
                         </scrollView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHy-63-sEA">
+                            <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="t2R-bL-1hk" firstAttribute="top" secondItem="RYS-4n-MuJ" secondAttribute="top" id="42z-NC-MjZ"/>
+                        <constraint firstItem="WHy-63-sEA" firstAttribute="leading" secondItem="RYS-4n-MuJ" secondAttribute="leading" id="LvG-fk-xRJ"/>
+                        <constraint firstAttribute="bottom" secondItem="WHy-63-sEA" secondAttribute="bottom" id="Yvx-YT-ott"/>
                         <constraint firstItem="t2R-bL-1hk" firstAttribute="leading" secondItem="RYS-4n-MuJ" secondAttribute="leading" id="j8I-en-IGW"/>
                         <constraint firstItem="t2R-bL-1hk" firstAttribute="height" secondItem="RYS-4n-MuJ" secondAttribute="height" multiplier="0.1" id="jUy-1E-xaJ"/>
                         <constraint firstAttribute="trailing" secondItem="t2R-bL-1hk" secondAttribute="trailing" id="k6o-Mh-tG9"/>
+                        <constraint firstItem="WHy-63-sEA" firstAttribute="top" secondItem="t2R-bL-1hk" secondAttribute="bottom" id="n7a-8K-PTu"/>
+                        <constraint firstAttribute="trailing" secondItem="WHy-63-sEA" secondAttribute="trailing" id="uwT-Vu-uR9"/>
                     </constraints>
                 </view>
             </subviews>
