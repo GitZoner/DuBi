@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		11B38DD9E63767F13499368D /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34CE2EF73750F3388BA49D9 /* libPods-DuBi.a */; };
+		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
+		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
@@ -28,6 +32,12 @@
 /* Begin PBXFileReference section */
 		02F486E7C900F86C75861C50 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
 		0E9E12D3BDE783678BC52D00 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
+		961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignInViewController.h; sourceTree = "<group>"; };
+		961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignInViewController.m; sourceTree = "<group>"; };
+		961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignInViewController.xib; sourceTree = "<group>"; };
+		961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignUpViewController.h; sourceTree = "<group>"; };
+		961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignUpViewController.m; sourceTree = "<group>"; };
+		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +80,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		961F9EB81CEE96240043F86C /* SignUpAndSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				961F9EB91CEE96240043F86C /* Controllers */,
+				961F9EBA1CEE96240043F86C /* Models */,
+				961F9EBB1CEE96240043F86C /* Views */,
+			);
+			path = SignUpAndSignIn;
+			sourceTree = "<group>";
+		};
+		961F9EB91CEE96240043F86C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */,
+				961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */,
+				961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */,
+				961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */,
+				961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */,
+				961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		961F9EBA1CEE96240043F86C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		961F9EBB1CEE96240043F86C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		96FD786A1CED92FD000FCB3C = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +215,7 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
 			);
 			path = Scenes;
@@ -341,6 +389,8 @@
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
+				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
+				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
+				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
+				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
