@@ -280,6 +280,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				F94CF3A19FF1D81DB7115CFB /* 📦 Embed Pods Frameworks */,
 				B2C6023DFA5B6EA0DD20F95A /* 📦 Copy Pods Resources */,
+				568ADE271863247982DC922B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +340,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		568ADE271863247982DC922B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A99E16187923361FA6465EDF /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
