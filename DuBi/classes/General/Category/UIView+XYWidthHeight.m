@@ -55,14 +55,32 @@
 }
 
 
-// 中心店x,y的setter getter 方法
--(void)setCenterX:(CGPoint)centerX
+
+// 中心点 x,y的setter getter 方法
+
+-(void)setCenterX:(CGFloat)centerX
 {
-    CGPoint point
+    CGPoint center = self.center;
+    center.x = centerX;
+    self.center = center;
+}
+-(CGFloat)centerX
+{
+    return self.center.x;
 }
 
 
-
+//
+-(void)setCenterY:(CGFloat)centerY
+{
+    CGPoint center = self.center;
+    center.y = centerY;
+    self.center = center;
+}
+-(CGFloat)centerY
+{
+    return self.center.y;
+}
 
 
 
