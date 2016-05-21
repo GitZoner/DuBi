@@ -17,7 +17,7 @@
                     <color key="highlightedColor" red="0.50839342948717947" green="0.50839342948717947" blue="0.50839342948717947" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.6070043103448276" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90967133620689655" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="553.5" y="414.5"/>
         </view>

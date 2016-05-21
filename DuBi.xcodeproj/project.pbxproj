@@ -13,15 +13,15 @@
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
-		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
-		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; settings = {ASSET_TAGS = (); }; };
-		96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E171CF04A7200DFA851 /* SessionCell.m */; settings = {ASSET_TAGS = (); }; };
-		96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E181CF04A7200DFA851 /* SessionCell.xib */; settings = {ASSET_TAGS = (); }; };
-		96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E211CF04F3300DFA851 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
+		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; };
+		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; };
+		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; };
+		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; };
+		96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */; };
+		96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E171CF04A7200DFA851 /* SessionCell.m */; };
+		96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E181CF04A7200DFA851 /* SessionCell.xib */; };
+		96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E211CF04F3300DFA851 /* Assets.xcassets */; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
@@ -37,6 +37,9 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
+		C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */; };
+		C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */; };
 		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +101,11 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
+		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
+		C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishView.h; sourceTree = "<group>"; };
+		C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishView.m; sourceTree = "<group>"; };
+		C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +335,11 @@
 		96FD78BF1CEDD501000FCB3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */,
+				C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */,
+				C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */,
+				C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */,
+				C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */,
 				96FD78C01CEDD501000FCB3C /* JTTabBar.h */,
 				96FD78C11CEDD501000FCB3C /* JTTabBar.m */,
 			);
@@ -471,6 +484,7 @@
 			files = (
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
+				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
@@ -562,6 +576,7 @@
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
+				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
@@ -569,6 +584,7 @@
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
+				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,

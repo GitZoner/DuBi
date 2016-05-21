@@ -8,6 +8,7 @@
 
 #import "ZDPublishView.h"
 #import "ZDCustomButton.h"
+#import "UIView+XYWidthHeight.h"
 @interface ZDPublishView ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @end
