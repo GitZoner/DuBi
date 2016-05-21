@@ -29,6 +29,9 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C2E0C4731CF00AA4006CCD96 /* ZDPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C4721CF00AA4006CCD96 /* ZDPublishView.m */; };
+		C2E0C4771CF00AD3006CCD96 /* ZDPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E0C4761CF00AD3006CCD96 /* ZDPublishView.xib */; };
+		C2E0C47A1CF03586006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C4791CF03586006CCD96 /* ZDCustomButton.m */; };
 		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,12 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C2E0C4711CF00AA4006CCD96 /* ZDPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishView.h; sourceTree = "<group>"; };
+		C2E0C4721CF00AA4006CCD96 /* ZDPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishView.m; sourceTree = "<group>"; };
+		C2E0C4761CF00AD3006CCD96 /* ZDPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishView.xib; sourceTree = "<group>"; };
+		C2E0C4781CF03586006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
+		C2E0C4791CF03586006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
+		C2E0C47B1CF03BB7006CCD96 /* public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = public.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +274,11 @@
 			children = (
 				96FD78C01CEDD501000FCB3C /* JTTabBar.h */,
 				96FD78C11CEDD501000FCB3C /* JTTabBar.m */,
+				C2E0C4711CF00AA4006CCD96 /* ZDPublishView.h */,
+				C2E0C4721CF00AA4006CCD96 /* ZDPublishView.m */,
+				C2E0C4761CF00AD3006CCD96 /* ZDPublishView.xib */,
+				C2E0C4781CF03586006CCD96 /* ZDCustomButton.h */,
+				C2E0C4791CF03586006CCD96 /* ZDCustomButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +314,7 @@
 				C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */,
 				961F9EC91CEEAC990043F86C /* JTBuddyManager.h */,
 				961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */,
+				C2E0C47B1CF03BB7006CCD96 /* public.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -356,6 +371,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */,
 				EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */,
+				771F101666C7DA232C80D675 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +422,7 @@
 			files = (
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */,
+				C2E0C4771CF00AD3006CCD96 /* ZDPublishView.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
@@ -425,6 +442,21 @@
 			inputPaths = (
 			);
 			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771F101666C7DA232C80D675 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +511,9 @@
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
+				C2E0C4731CF00AA4006CCD96 /* ZDPublishView.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
+				C2E0C47A1CF03586006CCD96 /* ZDCustomButton.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
@@ -597,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DuBi/classes/Helper/public.h";
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
@@ -610,6 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DuBi/classes/Helper/public.h";
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
