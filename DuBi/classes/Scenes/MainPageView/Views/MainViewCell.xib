@@ -27,7 +27,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-iP-LcJ">
                                 <rect key="frame" x="8" y="41" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ac2-1C-aXJ">
@@ -45,6 +45,9 @@
                                     <constraint firstAttribute="height" constant="30" id="I3w-m3-jqh"/>
                                 </constraints>
                                 <state key="normal" title="分享,收藏"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gwv-N3-yk3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJb-TA-ljA">
                                 <rect key="frame" x="285" y="74" width="75" height="30"/>
@@ -67,9 +70,15 @@
                             <constraint firstItem="Ac2-1C-aXJ" firstAttribute="leading" secondItem="SXj-ln-u9Z" secondAttribute="leading" constant="5" id="aps-de-qSj"/>
                             <constraint firstItem="W8C-iP-LcJ" firstAttribute="top" secondItem="1GY-4W-0dM" secondAttribute="bottom" id="daL-C1-IqF"/>
                             <constraint firstItem="W8C-iP-LcJ" firstAttribute="width" secondItem="1GY-4W-0dM" secondAttribute="width" id="dm5-3k-Nr7"/>
+                            <constraint firstAttribute="bottom" secondItem="Ac2-1C-aXJ" secondAttribute="bottom" constant="5" id="p8K-0i-2Fl"/>
                             <constraint firstItem="1GY-4W-0dM" firstAttribute="top" secondItem="SXj-ln-u9Z" secondAttribute="top" constant="20" id="pME-fh-vLj"/>
                             <constraint firstItem="1GY-4W-0dM" firstAttribute="leading" secondItem="SXj-ln-u9Z" secondAttribute="leading" constant="8" id="xgK-QY-hk9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="p8K-0i-2Fl"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
@@ -86,7 +95,7 @@
                 <outlet property="shareButton" destination="mSW-4P-kgU" id="mOM-ZM-J26"/>
                 <outlet property="topicLabel" destination="1GY-4W-0dM" id="cur-S3-pd5"/>
             </connections>
-            <point key="canvasLocation" x="297.5" y="376"/>
+            <point key="canvasLocation" x="509.5" y="366"/>
         </tableViewCell>
     </objects>
 </document>
