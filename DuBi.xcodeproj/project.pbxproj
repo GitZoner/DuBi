@@ -14,6 +14,15 @@
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; settings = {ASSET_TAGS = (); }; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; settings = {ASSET_TAGS = (); }; };
+		96E97DDB1CF000D000DFA851 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E97DDA1CF000D000DFA851 /* icon.png */; settings = {ASSET_TAGS = (); }; };
+		96E97DE81CF0074800DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97DE41CF0074800DFA851 /* JTSessionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97DE91CF0074800DFA851 /* JTSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97DE51CF0074800DFA851 /* JTSessionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97DED1CF0077200DFA851 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97DEB1CF0077200DFA851 /* SessionCell.m */; settings = {ASSET_TAGS = (); }; };
+		96E97DEE1CF0077200DFA851 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97DEC1CF0077200DFA851 /* SessionCell.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97DF21CF03BC700DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97DF01CF03BC700DFA851 /* JTContactListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97DF31CF03BC700DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97DF11CF03BC700DFA851 /* JTContactListViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97DF71CF03C5D00DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97DF51CF03C5D00DFA851 /* JTAddFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97DF81CF03C5D00DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97DF61CF03C5D00DFA851 /* JTAddFriendViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
@@ -46,6 +55,19 @@
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
+		96E97DDA1CF000D000DFA851 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		96E97DE31CF0074800DFA851 /* JTSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSessionViewController.h; sourceTree = "<group>"; };
+		96E97DE41CF0074800DFA851 /* JTSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSessionViewController.m; sourceTree = "<group>"; };
+		96E97DE51CF0074800DFA851 /* JTSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSessionViewController.xib; sourceTree = "<group>"; };
+		96E97DEA1CF0077200DFA851 /* SessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionCell.h; sourceTree = "<group>"; };
+		96E97DEB1CF0077200DFA851 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
+		96E97DEC1CF0077200DFA851 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		96E97DEF1CF03BC700DFA851 /* JTContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContactListViewController.h; sourceTree = "<group>"; };
+		96E97DF01CF03BC700DFA851 /* JTContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTContactListViewController.m; sourceTree = "<group>"; };
+		96E97DF11CF03BC700DFA851 /* JTContactListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTContactListViewController.xib; sourceTree = "<group>"; };
+		96E97DF41CF03C5D00DFA851 /* JTAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAddFriendViewController.h; sourceTree = "<group>"; };
+		96E97DF51CF03C5D00DFA851 /* JTAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTAddFriendViewController.m; sourceTree = "<group>"; };
+		96E97DF61CF03C5D00DFA851 /* JTAddFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTAddFriendViewController.xib; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +145,49 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		96E97DDC1CF0065200DFA851 /* BuddyAndMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				96E97DE21CF0074800DFA851 /* Controller */,
+				96E97DE61CF0074800DFA851 /* Model */,
+				96E97DE71CF0074800DFA851 /* View */,
+			);
+			path = BuddyAndMessageView;
+			sourceTree = "<group>";
+		};
+		96E97DE21CF0074800DFA851 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96E97DE31CF0074800DFA851 /* JTSessionViewController.h */,
+				96E97DE41CF0074800DFA851 /* JTSessionViewController.m */,
+				96E97DE51CF0074800DFA851 /* JTSessionViewController.xib */,
+				96E97DEF1CF03BC700DFA851 /* JTContactListViewController.h */,
+				96E97DF01CF03BC700DFA851 /* JTContactListViewController.m */,
+				96E97DF11CF03BC700DFA851 /* JTContactListViewController.xib */,
+				96E97DF41CF03C5D00DFA851 /* JTAddFriendViewController.h */,
+				96E97DF51CF03C5D00DFA851 /* JTAddFriendViewController.m */,
+				96E97DF61CF03C5D00DFA851 /* JTAddFriendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96E97DE61CF0074800DFA851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96E97DE71CF0074800DFA851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96E97DEA1CF0077200DFA851 /* SessionCell.h */,
+				96E97DEB1CF0077200DFA851 /* SessionCell.m */,
+				96E97DEC1CF0077200DFA851 /* SessionCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		96FD786A1CED92FD000FCB3C = {
@@ -218,6 +283,7 @@
 		96FD78951CED93F2000FCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				96E97DDA1CF000D000DFA851 /* icon.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,6 +291,7 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				96E97DDC1CF0065200DFA851 /* BuddyAndMessageView */,
 				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
 			);
@@ -400,11 +467,16 @@
 			files = (
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */,
+				96E97DEE1CF0077200DFA851 /* SessionCell.xib in Resources */,
+				96E97DDB1CF000D000DFA851 /* icon.png in Resources */,
+				96E97DF81CF03C5D00DFA851 /* JTAddFriendViewController.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
+				96E97DE91CF0074800DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
+				96E97DF31CF03BC700DFA851 /* JTContactListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +562,10 @@
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
+				96E97DF21CF03BC700DFA851 /* JTContactListViewController.m in Sources */,
+				96E97DED1CF0077200DFA851 /* SessionCell.m in Sources */,
+				96E97DF71CF03C5D00DFA851 /* JTAddFriendViewController.m in Sources */,
+				96E97DE81CF0074800DFA851 /* JTSessionViewController.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 			);

@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+ImageContentWithColor.h"
-#import "RootViewController.h"
+
 @implementation UIImage (ImageContentWithColor)
 /**
  *  给定一个颜色，和一个尺寸生成相应颜色的纯色图片
