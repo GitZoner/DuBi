@@ -10,6 +10,7 @@
 #import "Topic.h"
 #import "NetWorkRequest.h"
 #import <UIKit/UIKit.h>
+#import "Singleton.h"
 typedef void(^Completion) (NSArray *array,NSError *error);
 // 请求数据工具类
 @interface InfomationHandle : NSObject
@@ -20,15 +21,15 @@ typedef void(^Completion) (NSArray *array,NSError *error);
 
 
 // 返回行的个数
--(NSInteger)numberOfRows;
+-(NSInteger)numberOfRowsInsection:(NSInteger)inSection;
 
 
 
 // 返回model对象
 -(Topic *)topicForRowAtIndexPath:(NSIndexPath *)indexPath;
 
+// 单例类的声明
 
-
-
+singleton_interface(InfomationHandle);
 
 @end

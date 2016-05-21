@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "JTTabBarController.h"
+#import "JTBuddyManager.h"
 @interface AppDelegate ()
 
 @end
@@ -16,11 +17,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 设置window,并将自定义的TabBarController设置为Window的根视图
+    [self setWindowAndRootVC];
+    // 初始化好友管理器
+    [JTBuddyManager sharedJTBuddyManager];
+    
+    return YES;
+}
+
+#pragma  mark - 私有方法
+
+// 设置Window和TabBarController
+-(void)setWindowAndRootVC {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [JTTabBarController new];
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
