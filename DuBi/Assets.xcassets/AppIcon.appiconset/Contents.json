@@ -109,14 +109,6 @@
       "scale" : "2x"
     },
     {
-<<<<<<< HEAD
-=======
-      "idiom" : "ipad",
-      "size" : "83.5x83.5",
-      "scale" : "2x"
-    },
-    {
->>>>>>> 779dd85cfe78673d79c925460be3aa6a8eea8cd6
       "size" : "24x24",
       "idiom" : "watch",
       "scale" : "2x",
@@ -152,7 +144,6 @@
       "subtype" : "38mm"
     },
     {
-<<<<<<< HEAD
       "size" : "44x44",
       "idiom" : "watch",
       "scale" : "2x",
@@ -160,8 +151,6 @@
       "subtype" : "42mm"
     },
     {
-=======
->>>>>>> 779dd85cfe78673d79c925460be3aa6a8eea8cd6
       "size" : "86x86",
       "idiom" : "watch",
       "scale" : "2x",
@@ -174,6 +163,11 @@
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "83.5x83.5",
+      "scale" : "2x"
     },
     {
       "size" : "29x29",

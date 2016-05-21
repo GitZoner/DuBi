@@ -8,6 +8,7 @@
 
 #import "JTSessionViewController.h"
 #import "SessionCell.h"
+#import "JTAddFriendViewController.h"
 @interface JTSessionViewController ()
 
 @end
@@ -19,16 +20,16 @@ static NSString *const sessionCellReuseIdentifier = @"sessionCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"消息";
+    self.navigationItem.title = @"消息";
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"SessionCell" bundle:nil] forCellReuseIdentifier:sessionCellReuseIdentifier];
-    self.navigationController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加好友" style:(UIBarButtonItemStyleDone) target:self action:@selector(addFriendAction)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFriendAction)];
     
 }
 
 
 -(void)addFriendAction {
-    [self presentViewController:[UIViewController n animated:<#(BOOL)#> completion:<#^(void)completion#> ]
+    [self presentViewController:[JTAddFriendViewController new] animated:YES completion:nil ];
 }
 
 
