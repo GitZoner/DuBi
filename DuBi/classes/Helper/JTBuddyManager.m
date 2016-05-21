@@ -7,7 +7,7 @@
 //
 
 #import "JTBuddyManager.h"
-#import <HyphenateFullSDK/EMSDKFull.h>
+    #import <HyphenateFullSDK/EMSDKFull.h>
 
 @interface JTBuddyManager  ()
 

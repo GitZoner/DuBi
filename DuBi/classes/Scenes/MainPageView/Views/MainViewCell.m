@@ -9,7 +9,9 @@
 #import "MainViewCell.h"
 #define kTopicLabelWidth ([UIScreen mainScreen].bounds.size.width * 0.8)
 #define kCommenLabelWidth ([UIScreen mainScreen].bounds.size.width * 0.8)
+@interface MainViewCell()
 
+@end
 @implementation MainViewCell
 -(void)setTopic:(Topic *)topic{
     if (_topic != topic) {
@@ -27,7 +29,7 @@
         frame.size.height = [[self class]heightWithString:topic.text];
         _topicLabel.frame = frame;
         CGRect frame1 = _commentLabel.frame;
-        frame1.size.height = frame.size.height;
+        frame1.size.height = [[self class]heightWithString:(NSString *)[topic.top_cmt firstObject][@"content"]];
         _commentLabel.frame = frame1;
     }
 
@@ -60,7 +62,12 @@
 -(void)setFrame:(CGRect)frame{
     frame.origin.x = 5;
     frame.size.width -= 5;
-    frame.size.height -= 2;
+    frame.size.height -= 5;
     [super setFrame:frame];
 }
+- (IBAction)shareAction:(id)sender {
+    // 点击按钮,代理执行方法
+    [_delegate shareActionWithTopic:_topic];
+   }
+
 @end
