@@ -13,16 +13,22 @@
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
+		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E171CF04A7200DFA851 /* SessionCell.m */; settings = {ASSET_TAGS = (); }; };
+		96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E181CF04A7200DFA851 /* SessionCell.xib */; settings = {ASSET_TAGS = (); }; };
+		96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E211CF04F3300DFA851 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
-		96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78821CED92FE000FCB3C /* Assets.xcassets */; };
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
 		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
-		C21F7C9F1CF012E400EF2AA5 /* LWNDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F7C9E1CF012E400EF2AA5 /* LWNDataBase.m */; };
-		C21F7CA11CF014F600EF2AA5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C21F7CA01CF014F600EF2AA5 /* libsqlite3.tbd */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
@@ -50,10 +56,22 @@
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
+		96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAddFriendViewController.h; sourceTree = "<group>"; };
+		96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTAddFriendViewController.m; sourceTree = "<group>"; };
+		96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTAddFriendViewController.xib; sourceTree = "<group>"; };
+		96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContactListViewController.h; sourceTree = "<group>"; };
+		96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTContactListViewController.m; sourceTree = "<group>"; };
+		96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTContactListViewController.xib; sourceTree = "<group>"; };
+		96E97E111CF04A7200DFA851 /* JTSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSessionViewController.h; sourceTree = "<group>"; };
+		96E97E121CF04A7200DFA851 /* JTSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSessionViewController.m; sourceTree = "<group>"; };
+		96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSessionViewController.xib; sourceTree = "<group>"; };
+		96E97E161CF04A7200DFA851 /* SessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionCell.h; sourceTree = "<group>"; };
+		96E97E171CF04A7200DFA851 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
+		96E97E181CF04A7200DFA851 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		96E97E211CF04F3300DFA851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96FD78821CED92FE000FCB3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96FD78851CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96FD78871CED92FE000FCB3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96FD788F1CED93F2000FCB3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,9 +82,6 @@
 		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
-		C21F7C9D1CF012E400EF2AA5 /* LWNDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNDataBase.h; sourceTree = "<group>"; };
-		C21F7C9E1CF012E400EF2AA5 /* LWNDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNDataBase.m; sourceTree = "<group>"; };
-		C21F7CA01CF014F600EF2AA5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
@@ -90,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21F7CA11CF014F600EF2AA5 /* libsqlite3.tbd in Frameworks */,
 				CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,7 +124,6 @@
 		79939B0E58BB4BC289F17EB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C21F7CA01CF014F600EF2AA5 /* libsqlite3.tbd */,
 				1EA63ACCE108F063FF901999 /* libPods-DuBi.a */,
 			);
 			name = Frameworks;
@@ -153,6 +166,49 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		96E97E091CF04A7200DFA851 /* BuddyAndMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				96E97E0A1CF04A7200DFA851 /* Controller */,
+				96E97E141CF04A7200DFA851 /* Model */,
+				96E97E151CF04A7200DFA851 /* View */,
+			);
+			path = BuddyAndMessageView;
+			sourceTree = "<group>";
+		};
+		96E97E0A1CF04A7200DFA851 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */,
+				96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */,
+				96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */,
+				96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */,
+				96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */,
+				96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */,
+				96E97E111CF04A7200DFA851 /* JTSessionViewController.h */,
+				96E97E121CF04A7200DFA851 /* JTSessionViewController.m */,
+				96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96E97E141CF04A7200DFA851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96E97E151CF04A7200DFA851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96E97E161CF04A7200DFA851 /* SessionCell.h */,
+				96E97E171CF04A7200DFA851 /* SessionCell.m */,
+				96E97E181CF04A7200DFA851 /* SessionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		96FD786A1CED92FD000FCB3C = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +239,8 @@
 		96FD78761CED92FE000FCB3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96E97E211CF04F3300DFA851 /* Assets.xcassets */,
 				96FD787F1CED92FE000FCB3C /* Main.storyboard */,
-				96FD78821CED92FE000FCB3C /* Assets.xcassets */,
 				96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */,
 				96FD78871CED92FE000FCB3C /* Info.plist */,
 				96FD78771CED92FE000FCB3C /* main.m */,
@@ -254,6 +310,7 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				96E97E091CF04A7200DFA851 /* BuddyAndMessageView */,
 				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
 			);
@@ -307,8 +364,6 @@
 				C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */,
 				961F9EC91CEEAC990043F86C /* JTBuddyManager.h */,
 				961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */,
-				C21F7C9D1CF012E400EF2AA5 /* LWNDataBase.h */,
-				C21F7C9E1CF012E400EF2AA5 /* LWNDataBase.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -365,6 +420,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */,
 				EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */,
+				2DA232C223DEE1F88F3DBCA3 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,9 +470,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
-				96FD78831CED92FE000FCB3C /* Assets.xcassets in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
+				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
+				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
+				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
+				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
+				96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
@@ -434,6 +494,21 @@
 			inputPaths = (
 			);
 			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DA232C223DEE1F88F3DBCA3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,17 +557,20 @@
 				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
+				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
+				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
+				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
-				C21F7C9F1CF012E400EF2AA5 /* LWNDataBase.m in Sources */,
+				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
