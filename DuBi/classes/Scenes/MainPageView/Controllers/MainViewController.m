@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor greenColor];
+    self.tableView.backgroundColor = [UIColor yellowColor];
     // 数据请求
     [self requestData];
     // 注册cell

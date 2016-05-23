@@ -61,7 +61,8 @@
 }
 -(void)setFrame:(CGRect)frame{
     frame.origin.x = 5;
-    frame.size.width -= 5;
+    //frame.origin.y = 5;
+    frame.size.width -= 10;
     frame.size.height -= 5;
     [super setFrame:frame];
 }
