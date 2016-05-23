@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Topic.h"
+#import "LWNCustomView.h"
 @protocol MainViewCellDelegate
 -(void)shareActionWithTopic:(Topic *)topic;
 @end
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *commmentButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property(strong,nonatomic)LWNCustomView *customView;
 @property(weak,nonatomic)id<MainViewCellDelegate>delegate;
 // 类方法计算文本的高度
 +(CGFloat)heightForTopicLabel:(Topic *)topic;

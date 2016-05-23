@@ -12,7 +12,7 @@
 #import "Color_marco.h"
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
-@interface JTTabBarController ()
+@interface JTTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -20,10 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
+    
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
     //    VC01.view .backgroundColor = [UIColor redColor];
+    [self setTabBarVC];
     
+    
+    
+}
+-(void)setTabBarVC
+{
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
     NSDictionary *normalTextAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
                                      NSForegroundColorAttributeName:[UIColor blackColor]};
@@ -48,9 +56,7 @@
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
     [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
-    
 }
-
 
 /**
  *  @author Jason, 16-05-15 20:05:04
@@ -72,6 +78,36 @@
     childVC.tabBarItem.image =[UIImage imageNamed:image ];
     childVC.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     [self  addChildViewController:childVC];
+}
+
+
+#pragma  mark --- tabBarVC代理方法
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    // 给每个tabbar没个item设置tag值
+//    for (UIView * subView in tabBar.subviews) {
+//        for (int i = 0 ; i < tabBar.subviews.count; i++) {
+//            subView.tag = i;
+//        }
+//    }
+//    if (item.tag == 1) {
+//        CATransition * animation = [CATransition animation]; // 创建CATransition对象
+//        animation.duration = 0.55f; // 设置动画时间
+//        animation.type = kCATransitionMoveIn; // 动画类型
+//        animation.subtype = kCATransitionFromTop; // 设置子类
+//        animation.timingFunction = UIViewAnimationOptionCurveEaseInOut; // 设置运动速度
+//        
+//        [self.view.layer addAnimation:animation forKey:@"animation"];
+//
+//    }else{
+    
+    CATransition * animation = [CATransition animation]; // 创建CATransition对象
+    animation.duration = 0.55f; // 设置动画时间
+    animation.type = kCATransitionPush; // 动画类型
+    animation.subtype = kCATransitionFromLeft; // 设置子类
+    animation.timingFunction = UIViewAnimationOptionCurveEaseInOut; // 设置运动速度
+    [self.view.layer addAnimation:animation forKey:@"animation"];
+    
 }
 
 /*
