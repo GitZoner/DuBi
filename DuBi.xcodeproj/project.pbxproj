@@ -37,10 +37,8 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
-		C2A7DC601CF2DE1A00492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC5F1CF2DE1A00492355 /* ZYVideoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC641CF2E4D600492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC621CF2E4D600492355 /* ZYVideoCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC651CF2E4D600492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC631CF2E4D600492355 /* ZYVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC6B1CF2FE6100492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6A1CF2FE6100492355 /* ZYAVPlayer.m */; settings = {ASSET_TAGS = (); }; };
+		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
+		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
 		C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */; };
 		C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */; };
@@ -105,13 +103,10 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
-		C2A7DC5E1CF2DE1A00492355 /* ZYVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYVideoViewController.h; sourceTree = "<group>"; };
-		C2A7DC5F1CF2DE1A00492355 /* ZYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYVideoViewController.m; sourceTree = "<group>"; };
-		C2A7DC611CF2E4D600492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
-		C2A7DC621CF2E4D600492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
-		C2A7DC631CF2E4D600492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
-		C2A7DC691CF2FE6100492355 /* ZYAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAVPlayer.h; sourceTree = "<group>"; };
-		C2A7DC6A1CF2FE6100492355 /* ZYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAVPlayer.m; sourceTree = "<group>"; };
+		C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomButton.h; sourceTree = "<group>"; };
+		C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomButton.m; sourceTree = "<group>"; };
+		C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomView.h; sourceTree = "<group>"; };
+		C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomView.m; sourceTree = "<group>"; };
 		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
 		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
 		C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishView.h; sourceTree = "<group>"; };
@@ -329,7 +324,6 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C2A7DC551CF2DB9200492355 /* ZYVideo */,
 				96E97E091CF04A7200DFA851 /* BuddyAndMessageView */,
 				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
@@ -347,6 +341,10 @@
 		96FD78BF1CEDD501000FCB3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */,
+				C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */,
+				C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */,
+				C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */,
 				C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */,
 				C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */,
 				C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */,
@@ -432,44 +430,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C2A7DC551CF2DB9200492355 /* ZYVideo */ = {
-			isa = PBXGroup;
-			children = (
-				C2A7DC561CF2DB9200492355 /* Controllers */,
-				C2A7DC571CF2DB9200492355 /* Models */,
-				C2A7DC581CF2DB9200492355 /* Views */,
-			);
-			path = ZYVideo;
-			sourceTree = "<group>";
-		};
-		C2A7DC561CF2DB9200492355 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C2A7DC5E1CF2DE1A00492355 /* ZYVideoViewController.h */,
-				C2A7DC5F1CF2DE1A00492355 /* ZYVideoViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		C2A7DC571CF2DB9200492355 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C2A7DC581CF2DB9200492355 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C2A7DC611CF2E4D600492355 /* ZYVideoCell.h */,
-				C2A7DC621CF2E4D600492355 /* ZYVideoCell.m */,
-				C2A7DC631CF2E4D600492355 /* ZYVideoCell.xib */,
-				C2A7DC691CF2FE6100492355 /* ZYAVPlayer.h */,
-				C2A7DC6A1CF2FE6100492355 /* ZYAVPlayer.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +466,7 @@
 				TargetAttributes = {
 					96FD78721CED92FE000FCB3C = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = V69LN73Q95;
 					};
 				};
 			};
@@ -539,7 +500,6 @@
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
-				C2A7DC651CF2E4D600492355 /* ZYVideoCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
 				96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
@@ -620,13 +580,14 @@
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
 				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
+				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
-				C2A7DC6B1CF2FE6100492355 /* ZYAVPlayer.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
+				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
@@ -634,11 +595,9 @@
 				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
-				C2A7DC601CF2DE1A00492355 /* ZYVideoViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
-				C2A7DC641CF2E4D600492355 /* ZYVideoCell.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
@@ -755,10 +714,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubi3g.DuBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -768,10 +730,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubi3g.DuBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

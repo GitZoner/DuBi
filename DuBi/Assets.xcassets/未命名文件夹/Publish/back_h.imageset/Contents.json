@@ -1,8 +1,11 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "filename" : "消息.png",
+      "filename" : "X(1).png",
       "scale" : "1x"
     },
     {

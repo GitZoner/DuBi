@@ -8,13 +8,16 @@
 
 #import "JTTabBar.h"
 #import "ZDPublishView.h"
-
+#import <POP.h>
+#import "UIView+XYWidthHeight.h"
 #define kWindow [UIApplication sharedApplication].keyWindow
+#define kpingMuBounds [UIScreen mainScreen].bounds
 
 @interface JTTabBar ()
 
 // 发布按钮
 @property (strong,nonatomic)UIButton *publishButton;
+@property (strong,nonatomic)UIView * publishView;
 @end
 @implementation JTTabBar
 
@@ -36,14 +39,44 @@ UIWindow * window;
 
 -(void)publishClick
 {
-    
     ZDPublishView * publishView = [ZDPublishView publishView];
-    UIWindow * window = [UIApplication sharedApplication].keyWindow;
-    publishView.frame = window.frame;
-    [window addSubview:publishView];
     
-}
+    
+        
+    
+    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        publishView.transform = CGAffineTransformRotate(publishView.transform, 0.2);
+//    }];
+    // [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
 
+
+    UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    window.backgroundColor = [UIColor redColor];
+    publishView.frame = window.frame;
+    
+    self.publishView = publishView;
+    
+    POPSpringAnimation * anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+    anim.fromValue = [NSValue valueWithCGRect:CGRectMake(- kpingMuBounds.size.width, self.height * 2, publishView.width / 2, publishView.height / 2)];
+    anim.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, publishView.width, publishView.height)];
+     
+//    anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(- kpingMuBounds.size.width, self.height)];
+//    anim.toValue = [NSValue valueWithCGPoint:CGPointMake(kpingMuBounds.size.width / 2   , kpingMuBounds.size.height / 2)];
+    anim.springSpeed = 10;
+    anim.springBounciness = 10;
+    // anim.beginTime = CACurrentMediaTime() + 0.5; // 在某些动画执行完毕多久才执行
+    [publishView pop_addAnimation:anim forKey:nil];
+
+    [window addSubview:publishView];
+}
+-(void)timeAction
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.publishView.transform = CGAffineTransformRotate(self.publishView.transform, M_2_PI);
+    }];
+
+}
 
 
 
