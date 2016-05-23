@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="MainPage" destination="4tK-5P-x2r" id="7ln-0b-Me3"/>
+                <outlet property="MovieButton" destination="UQF-2r-xC1" id="fWb-Kk-Ndj"/>
+                <outlet property="PictureButton" destination="MAC-LC-mad" id="MG7-pH-MAB"/>
+                <outlet property="TopicButton" destination="g7r-QE-osm" id="bdd-Ol-aMX"/>
                 <outlet property="tableView" destination="WHy-63-sEA" id="juZ-Vu-usk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,19 +53,19 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-QE-osm">
-                                            <rect key="frame" x="158" y="15" width="46" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="28s-0u-MZX"/>
-                                                <constraint firstAttribute="width" constant="46" id="9hq-99-GYL"/>
-                                            </constraints>
-                                            <state key="normal" title="Button"/>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tK-5P-x2r">
                                             <rect key="frame" x="436" y="15" width="46" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="GEc-IO-XTZ"/>
                                                 <constraint firstAttribute="width" constant="46" id="TZb-sq-cgz"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-QE-osm">
+                                            <rect key="frame" x="158" y="15" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="28s-0u-MZX"/>
+                                                <constraint firstAttribute="width" constant="46" id="9hq-99-GYL"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                         </button>
@@ -115,6 +119,7 @@
                 <constraint firstAttribute="bottom" secondItem="RYS-4n-MuJ" secondAttribute="bottom" id="gII-pa-dwU"/>
                 <constraint firstItem="RYS-4n-MuJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jyx-bG-nqG"/>
             </constraints>
+            <point key="canvasLocation" x="326" y="332"/>
         </view>
     </objects>
 </document>

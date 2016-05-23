@@ -6,8 +6,13 @@
 //  Copyright © 2016年 JasonTian. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef Main_marco_h
+#define Main_marco_h
 
-@interface Main_marco : NSObject
+#pragma mark - 通知中心的通知名称
+// 有人申请添加好友的通知
+#define JT_NewFriendInvitationNotification  @"NewFriendInvitation"
+// 申请添加好友，对方的处理结果的通知名
+#define JT_FriendApplyResult @"FriendApplyResult"
 
-@end
+#endif /* Main_marco_h */

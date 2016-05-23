@@ -7,6 +7,9 @@
 //
 
 #import "JTTabBar.h"
+#import "ZDPublishView.h"
+
+#define kWindow [UIApplication sharedApplication].keyWindow
 
 @interface JTTabBar ()
 
@@ -20,13 +23,33 @@
     self = [super initWithFrame:frame];
     if (self) {
         UIButton *publishButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:(UIControlStateNormal)];
+        [publishButton setBackgroundImage:[UIImage  imageNamed:@"tabBar_publish_icon"] forState:(UIControlStateNormal)];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:(UIControlStateHighlighted)];
+        [publishButton addTarget:self action:@selector(publishClick) forControlEvents:(UIControlEventTouchUpInside)];
         [self addSubview:publishButton];
         self.publishButton = publishButton;
+        
     }
     return self;
 }
+UIWindow * window;
+
+-(void)publishClick
+{
+    
+    ZDPublishView * publishView = [ZDPublishView publishView];
+    UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    publishView.frame = window.frame;
+    [window addSubview:publishView];
+    
+}
+
+
+
+
+
+
+
 
 -(void)layoutSubviews {
     [super layoutSubviews];
@@ -34,7 +57,6 @@
     
     self.publishButton.bounds = CGRectMake(0, 0, self.publishButton.currentBackgroundImage.size.width, self.publishButton.currentBackgroundImage.size.height);
     self.publishButton.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
-    
     // 设置其他 UITabBarButton 的 frame
     CGFloat buttonX = 0;
     CGFloat buttonY = 0;
@@ -52,7 +74,6 @@
         button.frame = CGRectMake(buttonX, buttonY, buttomW, buttomH);
         // 增加索引
         index ++;
-        
     }
     
 }

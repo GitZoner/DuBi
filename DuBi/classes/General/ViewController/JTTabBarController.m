@@ -8,6 +8,10 @@
 
 #import "JTTabBarController.h"
 #import "JTTabBar.h"
+#import "UIImage+ImageContentWithColor.h"
+#import "Color_marco.h"
+#import "MainViewController.h"
+#import "JTSessionViewController.h"
 @interface JTTabBarController ()
 
 @end
@@ -28,17 +32,22 @@
                                        NSForegroundColorAttributeName:[UIColor darkGrayColor]};
     [tabBarItem setTitleTextAttributes:selectedTextAttr forState:(UIControlStateHighlighted)];
     
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect] forBarMetrics:(UIBarMetricsDefault)];
+    
     // 精华
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     // 新帖
     [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     // 关注
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
     [self setUpChildVCWithChildVC:[UIViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
+    [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
     
 }
 
