@@ -7,16 +7,33 @@
 //
 
 #import "JTAddFriendViewController.h"
-
+#import "JTSearchResultControllerTableViewController.h"
+#import "UIView+XYWidthHeight.h"
 @interface JTAddFriendViewController ()
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong,nonatomic)UISearchController *searchController;
+@property (strong,nonatomic)NSMutableArray *dataListArr;
+@property (strong,nonatomic)NSMutableArray *resultArr;
 @end
 
 @implementation JTAddFriendViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.dataListArr = [NSMutableArray arrayWithCapacity:10];
+    self.resultArr = [NSMutableArray array];
+    for (int i = 0; i < 20; i++) {
+        NSString *string = [NSString stringWithFormat:@"%@-result",]
+    }
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:[JTSearchResultControllerTableViewController new]];
+    self.searchController.searchBar.frame = CGRectMake(0, 0, self.view.width, 44);
+    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    [self.view addSubview:self.searchController.searchBar];
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

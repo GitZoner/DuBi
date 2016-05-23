@@ -13,8 +13,8 @@
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
+		96E975341CF2ED53000F5118 /* JTSearchResultControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E975331CF2ED53000F5118 /* JTSearchResultControllerTableViewController.m */; };
 		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
-		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; };
 		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; };
 		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; };
 		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; };
@@ -59,9 +59,11 @@
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
+		96B19C1B1CF1719F00F3306B /* DuBi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DuBi-Bridging-Header.h"; sourceTree = "<group>"; };
+		96E975321CF2ED53000F5118 /* JTSearchResultControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSearchResultControllerTableViewController.h; sourceTree = "<group>"; };
+		96E975331CF2ED53000F5118 /* JTSearchResultControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSearchResultControllerTableViewController.m; sourceTree = "<group>"; };
 		96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAddFriendViewController.h; sourceTree = "<group>"; };
 		96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTAddFriendViewController.m; sourceTree = "<group>"; };
-		96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTAddFriendViewController.xib; sourceTree = "<group>"; };
 		96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContactListViewController.h; sourceTree = "<group>"; };
 		96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTContactListViewController.m; sourceTree = "<group>"; };
 		96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTContactListViewController.xib; sourceTree = "<group>"; };
@@ -187,15 +189,17 @@
 		96E97E0A1CF04A7200DFA851 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */,
-				96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */,
-				96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */,
-				96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */,
-				96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */,
-				96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */,
 				96E97E111CF04A7200DFA851 /* JTSessionViewController.h */,
 				96E97E121CF04A7200DFA851 /* JTSessionViewController.m */,
 				96E97E131CF04A7200DFA851 /* JTSessionViewController.xib */,
+				96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */,
+				96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */,
+				96E975321CF2ED53000F5118 /* JTSearchResultControllerTableViewController.h */,
+				96E975331CF2ED53000F5118 /* JTSearchResultControllerTableViewController.m */,
+				96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */,
+				96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */,
+				96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */,
+				96B19C1B1CF1719F00F3306B /* DuBi-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -451,6 +455,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DB;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = JasonTian;
 				TargetAttributes = {
@@ -490,7 +495,6 @@
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
-				96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
@@ -587,6 +591,7 @@
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
+				96E975341CF2ED53000F5118 /* JTSearchResultControllerTableViewController.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,10 +706,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DuBi/classes/Scenes/BuddyAndMessageView/Controller/DuBi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -714,10 +723,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.DuBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DuBi/classes/Scenes/BuddyAndMessageView/Controller/DuBi-Bridging-Header.h";
 			};
 			name = Release;
 		};
