@@ -12,6 +12,7 @@
 #import "Color_marco.h"
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
+#import "ZYVideoViewController.h"
 @interface JTTabBarController ()
 
 @end
@@ -38,8 +39,8 @@
     
     // 精华
     [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
-    // 新帖
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    // 视频
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     // 关注
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
