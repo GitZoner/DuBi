@@ -29,6 +29,7 @@
 
 -(void)setup{
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
 }
 
 -(void)layoutSubviews
