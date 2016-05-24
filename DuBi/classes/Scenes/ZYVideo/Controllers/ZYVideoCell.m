@@ -12,8 +12,7 @@
 @implementation ZYVideoCell
 
 - (void)awakeFromNib {
-    ZYButton * button = [[ZYButton alloc]initWithFrame:CGRectMake(0, self.height - 30, 100, 30)];
-    [self.contentView addSubview:button];
+
     
 }
 
