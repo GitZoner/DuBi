@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *weiboSignInButton;
 @property (weak, nonatomic) IBOutlet UIButton *phoneSignInButton;
 
+
 @end
 
 @implementation JTSignInChoiceViewController
@@ -36,6 +37,9 @@
 
     
     
+}
+- (IBAction)back {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

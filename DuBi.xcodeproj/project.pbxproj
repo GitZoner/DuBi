@@ -17,11 +17,7 @@
 		965C51F21CF3EC8400B0F22F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F11CF3EC8400B0F22F /* MessageUI.framework */; };
 		965C51F41CF3ED2200B0F22F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */; };
 		965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F51CF3ED3700B0F22F /* libstdc++.tbd */; };
-		965C51FE1CF3EE0700B0F22F /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */; };
-		965C51FF1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */; };
 		965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52011CF4085B00B0F22F /* JTTabBarViewController.m */; };
-		965C52061CF42A4000B0F22F /* JTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52041CF42A4000B0F22F /* JTRegisterViewController.m */; };
-		965C52071CF42A4000B0F22F /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */; };
 		968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
@@ -38,6 +34,15 @@
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
+		C220B3531CF433A0009A6560 /* JTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */; };
+		C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */; };
+		C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */; };
+		C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */; };
+		C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B35E1CF43499009A6560 /* ZDUserViewController.m */; };
+		C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */; };
+		C220B36E1CF44111009A6560 /* tableViewHeader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C220B36D1CF44111009A6560 /* tableViewHeader.jpg */; };
+		C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */; };
+		C220B3791CF47834009A6560 /* back1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C220B3781CF47834009A6560 /* back1.jpg */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
@@ -76,14 +81,8 @@
 		965C51F11CF3EC8400B0F22F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		965C51F51CF3ED3700B0F22F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		965C51FB1CF3EE0700B0F22F /* JTSignInChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSignInChoiceViewController.h; sourceTree = "<group>"; };
-		965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSignInChoiceViewController.m; sourceTree = "<group>"; };
-		965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSignInChoiceViewController.xib; sourceTree = "<group>"; };
 		965C52001CF4085B00B0F22F /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
 		965C52011CF4085B00B0F22F /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
-		965C52031CF42A4000B0F22F /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
-		965C52041CF42A4000B0F22F /* JTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRegisterViewController.m; sourceTree = "<group>"; };
-		965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTRegisterViewController.xib; sourceTree = "<group>"; };
 		968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSearchResultControllerTableViewController.h; sourceTree = "<group>"; };
 		968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSearchResultControllerTableViewController.m; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
@@ -113,6 +112,22 @@
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
+		C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
+		C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRegisterViewController.m; sourceTree = "<group>"; };
+		C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTRegisterViewController.xib; sourceTree = "<group>"; };
+		C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSignInChoiceViewController.h; sourceTree = "<group>"; };
+		C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSignInChoiceViewController.m; sourceTree = "<group>"; };
+		C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSignInChoiceViewController.xib; sourceTree = "<group>"; };
+		C220B35D1CF43499009A6560 /* ZDUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserViewController.h; sourceTree = "<group>"; };
+		C220B35E1CF43499009A6560 /* ZDUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserViewController.m; sourceTree = "<group>"; };
+		C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomUserTableViewCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDCustomUserTableViewCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C220B36B1CF43F4B009A6560 /* maoboliCell */ = {isa = PBXFileReference; lastKnownFileType = file; path = maoboliCell; sourceTree = "<group>"; };
+		C220B36C1CF43F4B009A6560 /* maoCell2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = maoCell2; sourceTree = "<group>"; };
+		C220B36D1CF44111009A6560 /* tableViewHeader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tableViewHeader.jpg; sourceTree = "<group>"; };
+		C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomHeaderView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomHeaderView.h; sourceTree = SOURCE_ROOT; };
+		C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDCustomHeaderView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomHeaderView.m; sourceTree = SOURCE_ROOT; };
+		C220B3781CF47834009A6560 /* back1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back1.jpg; sourceTree = "<group>"; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
@@ -221,29 +236,17 @@
 		965C51F71CF3EDDC00B0F22F /* signInAndRegister */ = {
 			isa = PBXGroup;
 			children = (
-				965C51F81CF3EDDC00B0F22F /* Controller */,
+				C220B3571CF433B0009A6560 /* Controller */,
 				965C51F91CF3EDDC00B0F22F /* Model */,
 				965C51FA1CF3EDDC00B0F22F /* Views */,
 			);
 			path = signInAndRegister;
 			sourceTree = "<group>";
 		};
-		965C51F81CF3EDDC00B0F22F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				965C51FB1CF3EE0700B0F22F /* JTSignInChoiceViewController.h */,
-				965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */,
-				965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */,
-				965C52031CF42A4000B0F22F /* JTRegisterViewController.h */,
-				965C52041CF42A4000B0F22F /* JTRegisterViewController.m */,
-				965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		965C51F91CF3EDDC00B0F22F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96FD78951CED93F2000FCB3C /* Resources */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,10 @@
 		965C51FA1CF3EDDC00B0F22F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */,
+				C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */,
+				C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */,
+				C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,7 +354,6 @@
 				96FD78911CED93F2000FCB3C /* General */,
 				96FD78931CED93F2000FCB3C /* Marco */,
 				96FD78941CED93F2000FCB3C /* Models */,
-				96FD78951CED93F2000FCB3C /* Resources */,
 				96FD78961CED93F2000FCB3C /* Scenes */,
 				96FD78971CED93F2000FCB3C /* Vendors */,
 			);
@@ -395,7 +401,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Resources;
+			name = Resources;
+			path = ../../../Resources;
 			sourceTree = "<group>";
 		};
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
@@ -454,6 +461,25 @@
 				C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		C220B3571CF433B0009A6560 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C220B35D1CF43499009A6560 /* ZDUserViewController.h */,
+				C220B36B1CF43F4B009A6560 /* maoboliCell */,
+				C220B3781CF47834009A6560 /* back1.jpg */,
+				C220B36D1CF44111009A6560 /* tableViewHeader.jpg */,
+				C220B36C1CF43F4B009A6560 /* maoCell2 */,
+				C220B35E1CF43499009A6560 /* ZDUserViewController.m */,
+				C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */,
+				C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */,
+				C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */,
+				C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */,
+				C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */,
+				C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
@@ -617,13 +643,15 @@
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
+				C220B3791CF47834009A6560 /* back1.jpg in Resources */,
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
-				965C52071CF42A4000B0F22F /* JTRegisterViewController.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
+				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
-				965C51FF1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib in Resources */,
+				C220B36E1CF44111009A6560 /* tableViewHeader.jpg in Resources */,
+				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,9 +737,10 @@
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
-				965C51FE1CF3EE0700B0F22F /* JTSignInChoiceViewController.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
+				C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */,
+				C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
@@ -719,9 +748,11 @@
 				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
 				C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
+				C220B3531CF433A0009A6560 /* JTRegisterViewController.m in Sources */,
 				C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */,
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
-				965C52061CF42A4000B0F22F /* JTRegisterViewController.m in Sources */,
+				C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */,
+				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				9605E9CF1CF485A6000D1834 /* XHToast.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,

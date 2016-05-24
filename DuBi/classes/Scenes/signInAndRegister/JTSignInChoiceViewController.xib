@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JTSignInChoiceViewController">
@@ -101,11 +101,26 @@
                         <action selector="registerNewUserButtonAction:" destination="-1" eventType="touchUpInside" id="8fb-oj-iXg"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-i9-Xk3">
+                    <rect key="frame" x="20" y="20" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="sBT-8d-N0Y"/>
+                        <constraint firstAttribute="width" constant="30" id="uQH-fq-J0F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="x">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="1P0-fO-3sU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="EMz-o1-tw6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="10d-Yn-1nC"/>
                 <constraint firstItem="390-Nh-Cfm" firstAttribute="centerY" secondItem="qms-RC-vBq" secondAttribute="centerY" id="2K2-jF-o5r"/>
+                <constraint firstItem="ny2-i9-Xk3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="2MH-KU-8jB"/>
                 <constraint firstItem="WYO-Ix-y5J" firstAttribute="leading" secondItem="ih0-If-FsN" secondAttribute="trailing" constant="8" id="2io-xs-TFK"/>
                 <constraint firstItem="ih0-If-FsN" firstAttribute="leading" secondItem="390-Nh-Cfm" secondAttribute="trailing" constant="119" id="6PB-wq-OAo"/>
                 <constraint firstItem="390-Nh-Cfm" firstAttribute="height" secondItem="qms-RC-vBq" secondAttribute="height" id="83z-Tc-9wY"/>
@@ -131,6 +146,7 @@
                 <constraint firstItem="0zd-Te-7Sn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="haC-dA-kDL"/>
                 <constraint firstItem="i5q-HJ-tnh" firstAttribute="width" secondItem="WYO-Ix-y5J" secondAttribute="width" id="ncO-KL-2cq"/>
                 <constraint firstAttribute="trailing" secondItem="EMz-o1-tw6" secondAttribute="trailing" constant="50" id="oMz-rY-xdY"/>
+                <constraint firstItem="ny2-i9-Xk3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="rda-yN-1MY"/>
                 <constraint firstItem="0zd-Te-7Sn" firstAttribute="height" secondItem="EMz-o1-tw6" secondAttribute="height" id="usP-BI-mrr"/>
                 <constraint firstItem="qms-RC-vBq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wai-8D-18U"/>
                 <constraint firstItem="EMz-o1-tw6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-35" id="xJ2-3v-Raq"/>

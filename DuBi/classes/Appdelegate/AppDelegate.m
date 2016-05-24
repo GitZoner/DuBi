@@ -24,7 +24,7 @@
     [self setWindowAndRootVC];
     // 初始化好友管理器
     [JTBuddyManager sharedJTBuddyManager];
-    // 初始化LeanCloud
+    // 初始化LeanCloud 
     [AVOSCloud setApplicationId:@"8tm8naURIXLSgN6PA1s0WX5k-gzGzoHsz"
                       clientKey:@"D0bIdvMxENczaL99oW4COiTh"];
     // 初始化SMS短信验证

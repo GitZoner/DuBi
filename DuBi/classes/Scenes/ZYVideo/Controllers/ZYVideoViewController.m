@@ -21,6 +21,8 @@
     
     self.navigationItem.title = @"爱视频";
     
+
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"ZYVideoCell" bundle:nil] forCellReuseIdentifier:@"ZYCellID"];
     
     
