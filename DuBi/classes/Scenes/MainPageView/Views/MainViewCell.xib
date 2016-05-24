@@ -119,7 +119,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="share" width="16" height="16"/>
+        <image name="share" width="200" height="200"/>
         <image name="推荐" width="16" height="16"/>
         <image name="点踩" width="16" height="16"/>
         <image name="评论" width="16" height="16"/>

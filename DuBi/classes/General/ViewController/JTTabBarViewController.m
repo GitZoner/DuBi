@@ -13,6 +13,9 @@
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
 #import <DCPathButton.h>
+
+#import "ZDUserViewController.h"
+
 @interface JTTabBarViewController ()<UITabBarControllerDelegate,DCPathButtonDelegate>
 
 @end
@@ -129,12 +132,12 @@
     // 关注
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChildVCWithChildVC:[ZDUserViewController new]   title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
     [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
-    [self addCenterButton];
+    // [self addCenterButton];
 }
 
 
