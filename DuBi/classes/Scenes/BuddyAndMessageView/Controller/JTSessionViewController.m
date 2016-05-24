@@ -9,6 +9,7 @@
 #import "JTSessionViewController.h"
 #import "SessionCell.h"
 #import "JTAddFriendViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 @interface JTSessionViewController ()
 
 @end
@@ -26,6 +27,7 @@ static NSString *const sessionCellReuseIdentifier = @"sessionCellID";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFriendAction)];
     
     
+  
     
     
 }

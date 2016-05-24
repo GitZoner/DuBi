@@ -23,7 +23,8 @@
     self.dataListArr = [NSMutableArray arrayWithCapacity:10];
     self.resultArr = [NSMutableArray array];
     for (int i = 0; i < 20; i++) {
-        NSString *string = [NSString stringWithFormat:@"%@-result",]
+        NSString *string = [NSString stringWithFormat:@"%d-result",i];
+        [self.dataListArr addObject:string];
     }
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:[JTSearchResultControllerTableViewController new]];

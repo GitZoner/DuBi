@@ -12,9 +12,9 @@
 		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; };
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
+		968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
-		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; };
 		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; };
 		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; };
 		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; };
@@ -57,13 +57,14 @@
 		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
 		961F9EC91CEEAC990043F86C /* JTBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBuddyManager.h; sourceTree = "<group>"; };
 		961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBuddyManager.m; sourceTree = "<group>"; };
+		968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSearchResultControllerTableViewController.h; sourceTree = "<group>"; };
+		968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSearchResultControllerTableViewController.m; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
 		96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAddFriendViewController.h; sourceTree = "<group>"; };
 		96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTAddFriendViewController.m; sourceTree = "<group>"; };
-		96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTAddFriendViewController.xib; sourceTree = "<group>"; };
 		96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContactListViewController.h; sourceTree = "<group>"; };
 		96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTContactListViewController.m; sourceTree = "<group>"; };
 		96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTContactListViewController.xib; sourceTree = "<group>"; };
@@ -195,7 +196,8 @@
 			children = (
 				96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */,
 				96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */,
-				96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */,
+				968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */,
+				968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */,
 				96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */,
 				96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */,
 				96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */,
@@ -501,7 +503,6 @@
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
-				96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
@@ -584,6 +585,7 @@
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
+				968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
