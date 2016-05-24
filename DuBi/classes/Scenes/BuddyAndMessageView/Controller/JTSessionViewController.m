@@ -9,6 +9,8 @@
 #import "JTSessionViewController.h"
 #import "SessionCell.h"
 #import "JTAddFriendViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "JTSignInChoiceViewController.h"
 @interface JTSessionViewController ()
 
 @end
@@ -25,11 +27,19 @@ static NSString *const sessionCellReuseIdentifier = @"sessionCellID";
     [self.tableView registerNib:[UINib nibWithNibName:@"SessionCell" bundle:nil] forCellReuseIdentifier:sessionCellReuseIdentifier];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFriendAction)];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:(UIBarButtonItemStyleDone) target:self action:@selector(signInAction)];
+    
+    
+  
+    
+    
+}
+-(void)signInAction {
+    [self presentViewController:[JTSignInChoiceViewController new] animated:YES completion:nil];
 }
 
-
 -(void)addFriendAction {
-    [self presentViewController:[JTAddFriendViewController new] animated:YES completion:nil ];
+    [self.navigationController pushViewController:[JTAddFriendViewController new] animated:YES];
 }
 
 
