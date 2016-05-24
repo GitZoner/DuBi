@@ -27,8 +27,8 @@
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
-		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
+		C220B3231CF3DFAD009A6560 /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3221CF3DFAD009A6560 /* JTTabBarViewController.m */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
@@ -83,10 +83,10 @@
 		96FD78901CED93F2000FCB3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96FD78C01CEDD501000FCB3C /* JTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBar.h; sourceTree = "<group>"; };
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
-		96FD78C31CEDD501000FCB3C /* JTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarController.h; sourceTree = "<group>"; };
-		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
+		C220B3211CF3DFAD009A6560 /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
+		C220B3221CF3DFAD009A6560 /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
@@ -359,8 +359,8 @@
 		96FD78C21CEDD501000FCB3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				96FD78C31CEDD501000FCB3C /* JTTabBarController.h */,
-				96FD78C41CEDD501000FCB3C /* JTTabBarController.m */,
+				C220B3211CF3DFAD009A6560 /* JTTabBarViewController.h */,
+				C220B3221CF3DFAD009A6560 /* JTTabBarViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -587,12 +587,12 @@
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
+				C220B3231CF3DFAD009A6560 /* JTTabBarViewController.m in Sources */,
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
-				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
