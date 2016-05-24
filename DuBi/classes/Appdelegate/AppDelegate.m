@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "JTTabBarController.h"
+#import "JTTabBarViewController.h"
 #import "JTBuddyManager.h"
 #import <HyphenateFullSDK/EMSDKFull.h>
 @interface AppDelegate ()
@@ -56,6 +56,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [JTTabBarController new];
+    self.window.rootViewController = [JTTabBarViewController new];
 }
 @end

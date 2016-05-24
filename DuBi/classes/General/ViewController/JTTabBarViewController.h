@@ -1,5 +1,5 @@
 //
-//  JTTabBarController.h
+//  JTTabBarViewController.h
 //  Bester
 //
 //  Created by lanou3g on 16/5/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JTTabBarController : UITabBarController
+@interface JTTabBarViewController : UITabBarController
 
 @end
