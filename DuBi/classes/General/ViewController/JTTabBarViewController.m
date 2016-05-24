@@ -13,7 +13,7 @@
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
 #import <DCPathButton.h>
-@interface JTTabBarViewController ()<UITabBarControllerDelegate>
+@interface JTTabBarViewController ()<UITabBarControllerDelegate,DCPathButtonDelegate>
 
 @end
 
@@ -26,11 +26,85 @@
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
     //    VC01.view .backgroundColor = [UIColor redColor];
+    
     [self setTabBarVC];
     
-    // [self addCenterAction];
     
 }
+
+
+-(void)addCenterButton
+{
+    
+    DCPathButton *dcPathButton = [[DCPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"chooser-button-tab"]
+                                                         highlightedImage:[UIImage imageNamed:@"chooser-button-tab-highlighted"]];
+    
+    // dcPathButton.delegate = self;
+    
+    // Configure item buttons
+    
+    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-music-highlighted"]
+                                                            backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
+                                                 backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
+    
+    
+    DCPathItemButton *itemButton_2 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-place"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-place-highlighted"]
+                                                            backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
+                                                 backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
+    
+    DCPathItemButton *itemButton_3 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-camera"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-camera-highlighted"]
+                                                            backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
+                                                 backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
+    
+    DCPathItemButton *itemButton_4 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-thought"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-thought-highlighted"]
+                                                            backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
+                                                 backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
+    
+    DCPathItemButton *itemButton_5 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-sleep"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-sleep-highlighted"]
+                                                            backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
+                                                 backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
+    
+    // Add the item button into the center button
+    //
+    [dcPathButton addPathItems:@[itemButton_1,
+                                 itemButton_2,
+                                 itemButton_3,
+                                 itemButton_4,
+                                 itemButton_5
+                                 ]];
+    
+    // Change the bloom radius, default is 105.0f
+    //
+    dcPathButton.bloomRadius = 120.0f;
+    
+    // Change the DCButton's center
+    //
+    dcPathButton.dcButtonCenter = CGPointMake(self.view.bounds.size.width + 210, self.view.bounds.size.height + 20);
+    
+    // Setting the DCButton appearance
+    //
+    dcPathButton.allowSounds = YES;
+    dcPathButton.allowCenterButtonRotation = YES;
+    
+    dcPathButton.bottomViewColor = [UIColor redColor];
+    
+    dcPathButton.bloomDirection =  kDCPathButtonBloomDirectionTop;
+    
+    [self.view addSubview:dcPathButton];
+    
+    
+}
+
+
+
+
+
+
 
 
 
@@ -60,6 +134,7 @@
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
     [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
+    [self addCenterButton];
 }
 
 
@@ -97,23 +172,7 @@
 // tabBar之间切换动画
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    // 给每个tabbar没个item设置tag值
-//    for (UIView * subView in tabBar.subviews) {
-//        for (int i = 0 ; i < tabBar.subviews.count; i++) {
-//            subView.tag = i;
-//        }
-//    }
-//    if (item.tag == 1) {
-//        CATransition * animation = [CATransition animation]; // 创建CATransition对象
-//        animation.duration = 0.55f; // 设置动画时间
-//        animation.type = kCATransitionMoveIn; // 动画类型
-//        animation.subtype = kCATransitionFromTop; // 设置子类
-//        animation.timingFunction = UIViewAnimationOptionCurveEaseInOut; // 设置运动速度
-//        
-//        [self.view.layer addAnimation:animation forKey:@"animation"];
-//
-//    }else{
-    
+
     CATransition * animation = [CATransition animation]; // 创建CATransition对象
     animation.duration = 0.55f; // 设置动画时间
     animation.type = kCATransitionPush; // 动画类型

@@ -7,11 +7,14 @@
 //
 
 #import "ZYVideoCell.h"
-
+#import "ZYButton.h"
+#import "UIView+XYWidthHeight.h"
 @implementation ZYVideoCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    ZYButton * button = [[ZYButton alloc]initWithFrame:CGRectMake(0, self.height - 30, 100, 30)];
+    [self.contentView addSubview:button];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

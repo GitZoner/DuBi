@@ -7,8 +7,43 @@
 //
 
 #import "ZYButton.h"
-
+#import "UIView+XYWidthHeight.h"
 @implementation ZYButton
+
+//-(instancetype)initWithFrame:(CGRect)frame
+//{
+//    if (self = [super initWithFrame:frame]) {
+//        
+//        [self setUp];
+//    }
+//    return self;
+//}
+
++(instancetype)creatWithButton
+{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+    
+}
+
+-(void)awakeFromNib
+{
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+
+-(void)layoutSubviews
+{
+    self.imageView.x = 0;
+    self.imageView.y = 0;
+    self.imageView.width = self.width / 5 * 3;
+    self.imageView.height = self.height;
+    
+    self.titleLabel.x = self.imageView.width;
+    self.titleLabel.y = 0;
+    self.titleLabel.width = self.width - self.imageView.width;
+    self.titleLabel.height = self.height;
+}
+
 
 //// 初始化button的大小
 //- (instancetype)initWithFrame:(CGRect)frame {
