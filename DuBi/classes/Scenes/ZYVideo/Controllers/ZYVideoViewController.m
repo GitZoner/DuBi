@@ -1,73 +1,56 @@
 //
-//  JTSessionViewController.m
+//  ZYVideoViewController.m
 //  DuBi
 //
-//  Created by Jason on 16/5/21.
+//  Created by lanou3g on 16/5/23.
 //  Copyright © 2016年 JasonTian. All rights reserved.
 //
 
-#import "JTSessionViewController.h"
-#import "SessionCell.h"
-#import "JTAddFriendViewController.h"
-#import <AVOSCloud/AVOSCloud.h>
-@interface JTSessionViewController ()
+#import "ZYVideoViewController.h"
+#import "ZYVideoCell.h"
+@interface ZYVideoViewController ()
 
 @end
 
-// cell重用标识符
-static NSString *const sessionCellReuseIdentifier = @"sessionCellID";
-@implementation JTSessionViewController
+@implementation ZYVideoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"消息";
-    // 注册cell
-    [self.tableView registerNib:[UINib nibWithNibName:@"SessionCell" bundle:nil] forCellReuseIdentifier:sessionCellReuseIdentifier];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFriendAction)];
+    self.navigationItem.title = @"爱视频";
     
-    
-  
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZYVideoCell" bundle:nil] forCellReuseIdentifier:@"ZYCellID"];
     
     
 }
-
-
--(void)addFriendAction {
-    [self.navigationController pushViewController:[JTAddFriendViewController new] animated:YES];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 10;
+    return 50;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SessionCell *cell = [tableView dequeueReusableCellWithIdentifier:sessionCellReuseIdentifier forIndexPath:indexPath];
+    ZYVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZYCellID" forIndexPath:indexPath];
     
     
     
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 400;
 }
 
 /*
@@ -101,22 +84,6 @@ static NSString *const sessionCellReuseIdentifier = @"sessionCellID";
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 

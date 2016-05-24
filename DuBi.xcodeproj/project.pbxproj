@@ -12,9 +12,9 @@
 		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; };
 		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
+		968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
-		96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */; };
 		96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */; };
 		96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */; };
 		96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E121CF04A7200DFA851 /* JTSessionViewController.m */; };
@@ -37,6 +37,11 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; settings = {ASSET_TAGS = (); }; };
+		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; settings = {ASSET_TAGS = (); }; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
@@ -57,13 +62,14 @@
 		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
 		961F9EC91CEEAC990043F86C /* JTBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBuddyManager.h; sourceTree = "<group>"; };
 		961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBuddyManager.m; sourceTree = "<group>"; };
+		968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSearchResultControllerTableViewController.h; sourceTree = "<group>"; };
+		968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSearchResultControllerTableViewController.m; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
 		96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAddFriendViewController.h; sourceTree = "<group>"; };
 		96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTAddFriendViewController.m; sourceTree = "<group>"; };
-		96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTAddFriendViewController.xib; sourceTree = "<group>"; };
 		96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContactListViewController.h; sourceTree = "<group>"; };
 		96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTContactListViewController.m; sourceTree = "<group>"; };
 		96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTContactListViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
+		C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
+		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
+		C2A7DC711CF311D900492355 /* ZYVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYVideoViewController.h; sourceTree = "<group>"; };
+		C2A7DC721CF311D900492355 /* ZYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYVideoViewController.m; sourceTree = "<group>"; };
+		C2A7DC751CF311D900492355 /* ZYAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAVPlayer.h; sourceTree = "<group>"; };
+		C2A7DC761CF311D900492355 /* ZYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAVPlayer.m; sourceTree = "<group>"; };
+		C2A7DC7B1CF33B9B00492355 /* ZYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYButton.h; sourceTree = "<group>"; };
+		C2A7DC7C1CF33B9B00492355 /* ZYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYButton.m; sourceTree = "<group>"; };
 		C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomButton.h; sourceTree = "<group>"; };
 		C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomButton.m; sourceTree = "<group>"; };
 		C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomView.h; sourceTree = "<group>"; };
@@ -195,7 +210,8 @@
 			children = (
 				96E97E0B1CF04A7200DFA851 /* JTAddFriendViewController.h */,
 				96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */,
-				96E97E0D1CF04A7200DFA851 /* JTAddFriendViewController.xib */,
+				968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */,
+				968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */,
 				96E97E0E1CF04A7200DFA851 /* JTContactListViewController.h */,
 				96E97E0F1CF04A7200DFA851 /* JTContactListViewController.m */,
 				96E97E101CF04A7200DFA851 /* JTContactListViewController.xib */,
@@ -324,6 +340,7 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C2A7DC6C1CF311D900492355 /* ZYVideo */,
 				96E97E091CF04A7200DFA851 /* BuddyAndMessageView */,
 				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
@@ -430,6 +447,46 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C2A7DC6C1CF311D900492355 /* ZYVideo */ = {
+			isa = PBXGroup;
+			children = (
+				C2A7DC6D1CF311D900492355 /* Controllers */,
+				C2A7DC731CF311D900492355 /* Models */,
+				C2A7DC741CF311D900492355 /* Views */,
+			);
+			path = ZYVideo;
+			sourceTree = "<group>";
+		};
+		C2A7DC6D1CF311D900492355 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2A7DC711CF311D900492355 /* ZYVideoViewController.h */,
+				C2A7DC721CF311D900492355 /* ZYVideoViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C2A7DC731CF311D900492355 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2A7DC741CF311D900492355 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2A7DC751CF311D900492355 /* ZYAVPlayer.h */,
+				C2A7DC761CF311D900492355 /* ZYAVPlayer.m */,
+				C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */,
+				C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */,
+				C2A7DC701CF311D900492355 /* ZYVideoCell.xib */,
+				C2A7DC7B1CF33B9B00492355 /* ZYButton.h */,
+				C2A7DC7C1CF33B9B00492355 /* ZYButton.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -500,8 +557,8 @@
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
+				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
-				96E97E1A1CF04A7200DFA851 /* JTAddFriendViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
@@ -584,6 +641,7 @@
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
+				968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */,
 				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
@@ -596,8 +654,12 @@
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
+				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
+				C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
+				C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */,
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
+				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,

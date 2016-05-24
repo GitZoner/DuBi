@@ -10,6 +10,7 @@
 #import "JTTabBarViewController.h"
 #import "JTBuddyManager.h"
 #import <HyphenateFullSDK/EMSDKFull.h>
+#import <AVOSCloud/AVOSCloud.h>
 @interface AppDelegate ()
 
 @end
@@ -22,6 +23,21 @@
     [self setWindowAndRootVC];
     // 初始化好友管理器
     [JTBuddyManager sharedJTBuddyManager];
+    // 初始化LeanCloud
+    [AVOSCloud setApplicationId:@"8tm8naURIXLSgN6PA1s0WX5k-gzGzoHsz"
+                      clientKey:@"D0bIdvMxENczaL99oW4COiTh"];
+    AVObject *post = [AVObject objectWithClassName:@"TestObject"];
+    [post setObject:@"Hello World!" forKey:@"words"];
+    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // 是大法官保存成功了！
+            NSLog(@"sdfgsdfgsd");
+        }else {
+            NSLog(@"+++++++++%@",error);
+            
+        }
+    }];
+    
     
     return YES;
 }
