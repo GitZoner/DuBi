@@ -13,6 +13,7 @@
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
 #import <DCPathButton.h>
+#import "ZYVideoViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -50,8 +51,8 @@
     
     // 精华
     [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
-    // 新帖
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    // 视频
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     // 关注
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
@@ -95,6 +96,7 @@
 
 #pragma  mark --- tabBarVC代理方法
 // tabBar之间切换动画
+/*
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
     // 给每个tabbar没个item设置tag值
@@ -122,7 +124,7 @@
     [self.view.layer addAnimation:animation forKey:@"animation"];
     
 }
-
+*/
 /*
 #pragma mark - Navigation
 

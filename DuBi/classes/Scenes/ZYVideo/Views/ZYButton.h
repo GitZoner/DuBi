@@ -10,5 +10,6 @@
 
 @interface ZYButton : UIButton
 
-+ (instancetype)creatWith
++ (instancetype)creatWithButton:(UIButton *)button Title:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage target:(id)target action:(SEL)action frame:(CGRect)frame;
+
 @end
