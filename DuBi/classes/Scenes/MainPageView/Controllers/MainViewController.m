@@ -30,7 +30,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
    // 取消线条
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   
 }
 -(void)requestData{
@@ -72,6 +72,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     Topic *topic = [kInfomationHandle topicForRowAtIndexPath:indexPath];
+  //  NSLog(@"%f",[MainViewCell heightForTopicLabel:topic]);
     return [MainViewCell heightForTopicLabel:topic];
 }
 #pragma mark ----收藏,分享功能-----

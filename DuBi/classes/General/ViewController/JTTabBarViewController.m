@@ -1,30 +1,41 @@
 //
-//  JTTabBarController.m
+//  JTTabBarViewController.m
 //  Bester
 //
 //  Created by lanou3g on 16/5/16.
 //  Copyright © 2016年 Jason. All rights reserved.
 //
 
-#import "JTTabBarController.h"
+#import "JTTabBarViewController.h"
 #import "JTTabBar.h"
 #import "UIImage+ImageContentWithColor.h"
 #import "Color_marco.h"
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
-#import "ZYVideoViewController.h"
-@interface JTTabBarController ()
+#import <DCPathButton.h>
+@interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
 @end
 
-@implementation JTTabBarController
+@implementation JTTabBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
+    
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
     //    VC01.view .backgroundColor = [UIColor redColor];
+    [self setTabBarVC];
     
+    // [self addCenterAction];
+    
+}
+
+
+
+-(void)setTabBarVC
+{
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
     NSDictionary *normalTextAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
                                      NSForegroundColorAttributeName:[UIColor blackColor]};
@@ -39,8 +50,8 @@
     
     // 精华
     [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
-    // 视频
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    // 新帖
+    [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     // 关注
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
@@ -49,8 +60,11 @@
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
     [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
-    
 }
+
+
+
+
 
 
 /**
@@ -73,6 +87,40 @@
     childVC.tabBarItem.image =[UIImage imageNamed:image ];
     childVC.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     [self  addChildViewController:childVC];
+}
+
+
+
+
+
+#pragma  mark --- tabBarVC代理方法
+// tabBar之间切换动画
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    // 给每个tabbar没个item设置tag值
+//    for (UIView * subView in tabBar.subviews) {
+//        for (int i = 0 ; i < tabBar.subviews.count; i++) {
+//            subView.tag = i;
+//        }
+//    }
+//    if (item.tag == 1) {
+//        CATransition * animation = [CATransition animation]; // 创建CATransition对象
+//        animation.duration = 0.55f; // 设置动画时间
+//        animation.type = kCATransitionMoveIn; // 动画类型
+//        animation.subtype = kCATransitionFromTop; // 设置子类
+//        animation.timingFunction = UIViewAnimationOptionCurveEaseInOut; // 设置运动速度
+//        
+//        [self.view.layer addAnimation:animation forKey:@"animation"];
+//
+//    }else{
+    
+    CATransition * animation = [CATransition animation]; // 创建CATransition对象
+    animation.duration = 0.55f; // 设置动画时间
+    animation.type = kCATransitionPush; // 动画类型
+    animation.subtype = kCATransitionFromLeft; // 设置子类
+    animation.timingFunction = UIViewAnimationOptionCurveEaseInOut; // 设置运动速度
+    [self.view.layer addAnimation:animation forKey:@"animation"];
+    
 }
 
 /*
