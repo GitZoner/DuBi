@@ -11,6 +11,7 @@
 #import "JTBuddyManager.h"
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import <AVOSCloud/AVOSCloud.h>
+#import "SMS_SDK/SMSSDK.h"
 @interface AppDelegate ()
 
 @end
@@ -26,17 +27,8 @@
     // 初始化LeanCloud
     [AVOSCloud setApplicationId:@"8tm8naURIXLSgN6PA1s0WX5k-gzGzoHsz"
                       clientKey:@"D0bIdvMxENczaL99oW4COiTh"];
-    AVObject *post = [AVObject objectWithClassName:@"TestObject"];
-    [post setObject:@"Hello World!" forKey:@"words"];
-    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // 是大法官保存成功了！
-            NSLog(@"sdfgsdfgsd");
-        }else {
-            NSLog(@"+++++++++%@",error);
-            
-        }
-    }];
+    // 初始化SMS短信验证
+    [SMSSDK registerApp:@"131e887afbb88"  withSecret:@"853b0f044d7694f72c7a9a7de182671b"];
     
     
     return YES;
