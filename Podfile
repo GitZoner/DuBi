@@ -8,4 +8,5 @@ pod 'HyphenateFullSDK'
 pod 'AVOSCloud'
 pod 'pop'
 pod 'DCPathButton'
+pod 'Masonry', '~> 1.0.0'
 end

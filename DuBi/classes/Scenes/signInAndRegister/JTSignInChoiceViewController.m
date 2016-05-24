@@ -8,6 +8,7 @@
 
 #import "JTSignInChoiceViewController.h"
 #import "UIView+XYWidthHeight.h"
+#import "JTRegisterViewController.h"
 
 @interface JTSignInChoiceViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
@@ -46,7 +47,7 @@
 -(void)setButtons {
     self.signInButton.layer.cornerRadius = 5;
     self.signInButton.layer.masksToBounds= YES;
-    self.signInButton.layer.borderWidth = 2;
+    self.signInButton.layer.borderWidth = 1;
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
     
     CGColorRef color = CGColorCreate(colorSpaceRef, (CGFloat[]){114/ 255.0,124/ 255.0,127/ 255.0,1});
@@ -55,7 +56,7 @@
     
     self.registerButton.layer.cornerRadius = 5;
     self.registerButton.layer.masksToBounds= YES;
-    self.registerButton.layer.borderWidth = 2;
+    self.registerButton.layer.borderWidth = 1;
     [self.registerButton.layer setBorderColor:color];
     
     self.qqSignInButton.layer.cornerRadius = self.qqSignInButton.width / 2;
@@ -73,6 +74,8 @@
 
 // 新用户注册 按钮的事件
 - (IBAction)registerNewUserButtonAction:(UIButton *)sender {
+    
+    [self presentViewController:[JTRegisterViewController new] animated:YES completion:nil];
     
 }
 
