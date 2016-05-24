@@ -139,10 +139,10 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="cWq-UD-vxK"/>
                     <exclude reference="6PB-wq-OAo"/>
                     <exclude reference="dJ8-Ic-SFT"/>
                     <exclude reference="PnO-p6-ox9"/>
+                    <exclude reference="cWq-UD-vxK"/>
                 </mask>
             </variation>
         </view>
