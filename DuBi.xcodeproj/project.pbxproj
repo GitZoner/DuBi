@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; };
-		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; };
-		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; };
-		961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
+		965C51EB1CF3EBA000B0F22F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51E91CF3EBA000B0F22F /* MOBFoundation.framework */; };
+		965C51EC1CF3EBA000B0F22F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51EA1CF3EBA000B0F22F /* SMS_SDK.framework */; };
+		965C51EE1CF3EC1F00B0F22F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51ED1CF3EC1F00B0F22F /* libz.tbd */; };
+		965C51F01CF3EC5100B0F22F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51EF1CF3EC5100B0F22F /* libicucore.tbd */; };
+		965C51F21CF3EC8400B0F22F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F11CF3EC8400B0F22F /* MessageUI.framework */; };
+		965C51F41CF3ED2200B0F22F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */; };
+		965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F51CF3ED3700B0F22F /* libstdc++.tbd */; };
+		965C51FE1CF3EE0700B0F22F /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */; };
+		965C51FF1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */; };
+		965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52011CF4085B00B0F22F /* JTTabBarViewController.m */; };
+		965C52061CF42A4000B0F22F /* JTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52041CF42A4000B0F22F /* JTRegisterViewController.m */; };
+		965C52071CF42A4000B0F22F /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */; };
 		968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E0C1CF04A7200DFA851 /* JTAddFriendViewController.m */; };
@@ -27,7 +35,6 @@
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
-		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
@@ -37,11 +44,11 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
-		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; settings = {ASSET_TAGS = (); }; };
+		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
+		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
+		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
+		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; };
+		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
@@ -54,14 +61,23 @@
 		11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
 		1EA63ACCE108F063FF901999 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
-		961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignInViewController.h; sourceTree = "<group>"; };
-		961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignInViewController.m; sourceTree = "<group>"; };
-		961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignInViewController.xib; sourceTree = "<group>"; };
-		961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignUpViewController.h; sourceTree = "<group>"; };
-		961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignUpViewController.m; sourceTree = "<group>"; };
-		961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignUpViewController.xib; sourceTree = "<group>"; };
 		961F9EC91CEEAC990043F86C /* JTBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBuddyManager.h; sourceTree = "<group>"; };
 		961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBuddyManager.m; sourceTree = "<group>"; };
+		965C51E91CF3EBA000B0F22F /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		965C51EA1CF3EBA000B0F22F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		965C51ED1CF3EC1F00B0F22F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		965C51EF1CF3EC5100B0F22F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		965C51F11CF3EC8400B0F22F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		965C51F51CF3ED3700B0F22F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		965C51FB1CF3EE0700B0F22F /* JTSignInChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSignInChoiceViewController.h; sourceTree = "<group>"; };
+		965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSignInChoiceViewController.m; sourceTree = "<group>"; };
+		965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSignInChoiceViewController.xib; sourceTree = "<group>"; };
+		965C52001CF4085B00B0F22F /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
+		965C52011CF4085B00B0F22F /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
+		965C52031CF42A4000B0F22F /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
+		965C52041CF42A4000B0F22F /* JTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRegisterViewController.m; sourceTree = "<group>"; };
+		965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTRegisterViewController.xib; sourceTree = "<group>"; };
 		968808531CF308D0006DE07D /* JTSearchResultControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSearchResultControllerTableViewController.h; sourceTree = "<group>"; };
 		968808541CF308D0006DE07D /* JTSearchResultControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSearchResultControllerTableViewController.m; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
@@ -89,8 +105,6 @@
 		96FD78901CED93F2000FCB3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96FD78C01CEDD501000FCB3C /* JTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBar.h; sourceTree = "<group>"; };
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
-		96FD78C31CEDD501000FCB3C /* JTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarController.h; sourceTree = "<group>"; };
-		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
@@ -134,6 +148,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */,
+				965C51F41CF3ED2200B0F22F /* JavaScriptCore.framework in Frameworks */,
+				965C51F21CF3EC8400B0F22F /* MessageUI.framework in Frameworks */,
+				965C51F01CF3EC5100B0F22F /* libicucore.tbd in Frameworks */,
+				965C51EE1CF3EC1F00B0F22F /* libz.tbd in Frameworks */,
+				965C51EC1CF3EBA000B0F22F /* SMS_SDK.framework in Frameworks */,
+				965C51EB1CF3EBA000B0F22F /* MOBFoundation.framework in Frameworks */,
 				CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,42 +174,57 @@
 		79939B0E58BB4BC289F17EB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				965C51F51CF3ED3700B0F22F /* libstdc++.tbd */,
+				965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */,
+				965C51F11CF3EC8400B0F22F /* MessageUI.framework */,
+				965C51EF1CF3EC5100B0F22F /* libicucore.tbd */,
+				965C51ED1CF3EC1F00B0F22F /* libz.tbd */,
 				1EA63ACCE108F063FF901999 /* libPods-DuBi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		961F9EB81CEE96240043F86C /* SignUpAndSignIn */ = {
+		965C51E81CF3EBA000B0F22F /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				961F9EB91CEE96240043F86C /* Controllers */,
-				961F9EBA1CEE96240043F86C /* Models */,
-				961F9EBB1CEE96240043F86C /* Views */,
+				965C51E91CF3EBA000B0F22F /* MOBFoundation.framework */,
+				965C51EA1CF3EBA000B0F22F /* SMS_SDK.framework */,
 			);
-			path = SignUpAndSignIn;
+			name = SMS_SDK;
+			path = DuBi/SMS_SDK;
 			sourceTree = "<group>";
 		};
-		961F9EB91CEE96240043F86C /* Controllers */ = {
+		965C51F71CF3EDDC00B0F22F /* signInAndRegister */ = {
 			isa = PBXGroup;
 			children = (
-				961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */,
-				961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */,
-				961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */,
-				961F9EC11CEE967E0043F86C /* ZYSignUpViewController.h */,
-				961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */,
-				961F9EC31CEE967E0043F86C /* ZYSignUpViewController.xib */,
+				965C51F81CF3EDDC00B0F22F /* Controller */,
+				965C51F91CF3EDDC00B0F22F /* Model */,
+				965C51FA1CF3EDDC00B0F22F /* Views */,
 			);
-			path = Controllers;
+			path = signInAndRegister;
 			sourceTree = "<group>";
 		};
-		961F9EBA1CEE96240043F86C /* Models */ = {
+		965C51F81CF3EDDC00B0F22F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				965C51FB1CF3EE0700B0F22F /* JTSignInChoiceViewController.h */,
+				965C51FC1CF3EE0700B0F22F /* JTSignInChoiceViewController.m */,
+				965C51FD1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib */,
+				965C52031CF42A4000B0F22F /* JTRegisterViewController.h */,
+				965C52041CF42A4000B0F22F /* JTRegisterViewController.m */,
+				965C52051CF42A4000B0F22F /* JTRegisterViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		965C51F91CF3EDDC00B0F22F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		961F9EBB1CEE96240043F86C /* Views */ = {
+		965C51FA1CF3EDDC00B0F22F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -243,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				96FD78751CED92FE000FCB3C /* DuBi */,
+				965C51E81CF3EBA000B0F22F /* SMS_SDK */,
 				96FD78741CED92FE000FCB3C /* Products */,
 				3C94F929D7E0E54C048AEC15 /* Pods */,
 				79939B0E58BB4BC289F17EB9 /* Frameworks */,
@@ -340,9 +377,9 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				965C51F71CF3EDDC00B0F22F /* signInAndRegister */,
 				C2A7DC6C1CF311D900492355 /* ZYVideo */,
 				96E97E091CF04A7200DFA851 /* BuddyAndMessageView */,
-				961F9EB81CEE96240043F86C /* SignUpAndSignIn */,
 				C2533CBC1CEDEC0A00C134C6 /* MainPageView */,
 			);
 			path = Scenes;
@@ -376,8 +413,8 @@
 		96FD78C21CEDD501000FCB3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				96FD78C31CEDD501000FCB3C /* JTTabBarController.h */,
-				96FD78C41CEDD501000FCB3C /* JTTabBarController.m */,
+				965C52001CF4085B00B0F22F /* JTTabBarViewController.h */,
+				965C52011CF4085B00B0F22F /* JTTabBarViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -557,11 +594,11 @@
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
+				965C52071CF42A4000B0F22F /* JTRegisterViewController.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
+				965C51FF1CF3EE0700B0F22F /* JTSignInChoiceViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
-				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
-				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,22 +673,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
-				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
 				968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */,
-				961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
+				965C51FE1CF3EE0700B0F22F /* JTSignInChoiceViewController.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
-				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
+				965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
@@ -659,6 +695,7 @@
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */,
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
+				965C52061CF42A4000B0F22F /* JTRegisterViewController.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
@@ -778,6 +815,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuBi/SMS_SDK",
+				);
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dubi3g.DuBi;
@@ -794,6 +835,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuBi/SMS_SDK",
+				);
 				INFOPLIST_FILE = DuBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dubi3g.DuBi;

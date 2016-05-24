@@ -10,5 +10,5 @@
 
 @interface ZYButton : UIButton
 
-+ (instancetype)creatWith
++ (instancetype)creatWith;
 @end
