@@ -15,4 +15,6 @@
 // 背景图片
 @property(strong,nonatomic)UIImageView * bgImgView;
 
+// 图标
+@property(strong,nonatomic)UIImageView * tuBImg;
 @end

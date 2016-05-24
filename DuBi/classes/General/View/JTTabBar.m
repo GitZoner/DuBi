@@ -120,7 +120,7 @@
     NSLog(@"123");
 }
 
-
+/*
 #pragma mark --- 子button的事件。
 // 子button的点击事件
 -(void)itemButton_1Action:(DCPathItemButton * )button
@@ -167,7 +167,7 @@
     
     NSLog(@"ItemButton did present");
 }
-
+*/
 
 
 

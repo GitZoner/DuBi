@@ -14,7 +14,8 @@
 @interface ZDUserViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic)UITableView * tableView;
 
-
+// 图标imgages
+@property(strong,nonatomic)NSArray * images;
 
 @property(strong,nonatomic)NSArray * typeArray;
 
@@ -37,8 +38,8 @@ static NSString * const cellID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.typeArray = _typeArray = @[@"个人资料",@"都圈",@"更换主题",@"清除缓存",@"安全设置"];
-
+   // 数组初始化
+    [self arraySet];
     
     // 添加上边视图
     [self addTopView];
@@ -47,6 +48,14 @@ static NSString * const cellID = @"cellID";
     [self setTableView];
    
 }
+
+// 数组
+-(void)arraySet
+{
+    self.typeArray = @[@"个人资料",@"都圈",@"更换主题",@"清除缓存",@"安全设置"];
+    self.images = @[@"ziliao.png",@"quanzi.png",@"zhuti.png",@"huancun.png",@"anquan.png"];
+}
+
 // 上边视图
 -(void)addTopView
 {
@@ -104,6 +113,8 @@ static NSString * const cellID = @"cellID";
     ZDCustomUserTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     // cell.bgImgView.image = [UIImage imageNamed:@"tableViewHeader.jpg"];
     cell.contentlabel.text = self.typeArray[indexPath.row];
+    NSString * tupianStr = _images[indexPath.row];
+    cell.tuBImg.image = [UIImage imageNamed:tupianStr];
     return cell;
 }
 

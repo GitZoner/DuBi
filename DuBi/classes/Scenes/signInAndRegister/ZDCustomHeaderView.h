@@ -18,4 +18,6 @@
 // 登录注册按钮
 @property(strong,nonatomic)UIButton * registerOrLoginButton;
 
+//+(instancetype)initWithImage:(UIImage *)image userName:(NSString * )name;
+
 @end
