@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DuBi/classes/General/View/JTTabBar.m"
-            timestampString = "485749114.045772"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Controllers/ZYVideoCell.m"
+            timestampString = "485770607.175543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-itemButtonTapped:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-layoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DuBi/classes/General/View/JTTabBar.m"
-            timestampString = "485749114.045772"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Views/ZYButton.m"
+            timestampString = "485768198.434595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-itemButton_1Action:"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "+creatWithButton:Title:image:selectImage:target:action:frame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DuBi/classes/General/View/JTTabBar.m"
-            timestampString = "485749114.045772"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Views/ZYButton.m"
+            timestampString = "485768200.122457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "-itemButton_2Action:"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "+creatWithButton:Title:image:selectImage:target:action:frame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DuBi/classes/General/View/JTTabBar.m"
-            timestampString = "485749114.045772"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Views/ZYButton.m"
+            timestampString = "485768201.378397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-itemButton_3Action:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "+creatWithButton:Title:image:selectImage:target:action:frame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DuBi/classes/General/View/JTTabBar.m"
-            timestampString = "485749114.045772"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Controllers/ZYVideoViewController.m"
+            timestampString = "485768406.324536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "-pathButton:clickItemButtonAtIndex:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -99,29 +99,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/DCPathButton/DCPathButton/Classes/DCPathItemButton.m"
-            timestampString = "485749903.230096"
+            filePath = "DuBi/classes/Scenes/ZYVideo/Controllers/ZYVideoViewController.m"
+            timestampString = "485768415.602342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-setDelegate:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/DCPathButton/DCPathButton/Classes/DCPathButton.m"
-            timestampString = "485749780.631719"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "617"
-            endingLineNumber = "617"
-            landmarkName = "-itemButtonTapped:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

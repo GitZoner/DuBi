@@ -14,6 +14,8 @@
 
 @implementation ZYVideoViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,8 +49,12 @@
     
     
     
+    
+
+    
     return cell;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
