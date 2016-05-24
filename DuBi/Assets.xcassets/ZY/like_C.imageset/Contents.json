@@ -1,8 +1,11 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "filename" : "点踩.png",
+      "filename" : "like_C.png",
       "scale" : "1x"
     },
     {

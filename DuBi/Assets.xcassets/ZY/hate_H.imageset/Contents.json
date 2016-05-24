@@ -1,8 +1,11 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "filename" : "推荐.png",
+      "filename" : "hate_H.png",
       "scale" : "1x"
     },
     {

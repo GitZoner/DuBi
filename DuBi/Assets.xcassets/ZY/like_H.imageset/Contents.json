@@ -1,8 +1,11 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "filename" : "share.png",
+      "filename" : "like_H.png",
       "scale" : "1x"
     },
     {
