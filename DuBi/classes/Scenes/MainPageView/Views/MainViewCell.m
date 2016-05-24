@@ -32,8 +32,8 @@
         CGRect frame1 = _commentLabel.frame;
         frame1.size.height = [[self class]heightWithString:(NSString *)[topic.top_cmt firstObject][@"content"]];
         _commentLabel.frame = frame1;
-        _customView = [LWNCustomView new];
-        _customView.frame = CGRectMake(5, CGRectGetMaxY(_commentLabel.frame), self.bounds.size.width, self.bounds.size.height);
+     //   _customView = [LWNCustomView new];
+     //   _customView.frame = CGRectMake(5, CGRectGetMaxY(_commentLabel.frame), self.bounds.size.width, self.bounds.size.height);
         
     }
 
@@ -41,7 +41,7 @@
 // 类方法计算文本的高度
 +(CGFloat)heightWithString:(NSString *)string{
     CGSize size = CGSizeMake(kTopicLabelWidth, 10000);
-   NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
+   NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
     CGRect  rect = [string boundingRectWithSize:size options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
     return rect.size.height;
 }
@@ -64,8 +64,8 @@
 }
 +(CGFloat)heightForTopicLabel:(Topic *)topic{
     CGFloat height = [[self class]heightWithString:topic.text];
-    
-    return height * 2 + 100;
+    CGFloat height1 = [[self class]heightWithString:(NSString *)[topic.top_cmt firstObject][@"content"]];
+    return height + height1 + 105;
 }
 - (void)awakeFromNib {
     // Initialization code
@@ -76,12 +76,14 @@
 
     // Configure the view for the selected state
 }
+
 -(void)setFrame:(CGRect)frame{
-    frame.origin.x = 5;
-    //frame.origin.y = 5;
-    frame.size.width -= 10;
+   frame.origin.x = 5;
+   //frame.origin.y = 5;
+   frame.size.width -= 10;
     frame.size.height -= 5;
-    [super setFrame:frame];
+  //  NSLog(@"%f",frame.size.height);
+  [super setFrame:frame];
 }
 
 
