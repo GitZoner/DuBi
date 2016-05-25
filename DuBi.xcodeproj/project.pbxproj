@@ -40,14 +40,7 @@
 		C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */; };
 		C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B35E1CF43499009A6560 /* ZDUserViewController.m */; };
 		C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */; };
-		C220B36E1CF44111009A6560 /* tableViewHeader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C220B36D1CF44111009A6560 /* tableViewHeader.jpg */; };
 		C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */; };
-		C220B3801CF485F2009A6560 /* anquan.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B37B1CF485F2009A6560 /* anquan.png */; };
-		C220B3811CF485F2009A6560 /* huancun.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B37C1CF485F2009A6560 /* huancun.png */; };
-		C220B3821CF485F2009A6560 /* quanzi.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B37D1CF485F2009A6560 /* quanzi.png */; };
-		C220B3831CF485F2009A6560 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B37E1CF485F2009A6560 /* shezhi.png */; };
-		C220B3841CF485F2009A6560 /* ziliao.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B37F1CF485F2009A6560 /* ziliao.png */; };
-		C220B3861CF486CD009A6560 /* zhuti.png in Resources */ = {isa = PBXBuildFile; fileRef = C220B3851CF486CD009A6560 /* zhuti.png */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
@@ -127,15 +120,8 @@
 		C220B35E1CF43499009A6560 /* ZDUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserViewController.m; sourceTree = "<group>"; };
 		C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomUserTableViewCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDCustomUserTableViewCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		C220B36D1CF44111009A6560 /* tableViewHeader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tableViewHeader.jpg; path = ../tableViewHeader.jpg; sourceTree = "<group>"; };
 		C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomHeaderView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomHeaderView.h; sourceTree = SOURCE_ROOT; };
 		C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDCustomHeaderView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomHeaderView.m; sourceTree = SOURCE_ROOT; };
-		C220B37B1CF485F2009A6560 /* anquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anquan.png; sourceTree = "<group>"; };
-		C220B37C1CF485F2009A6560 /* huancun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huancun.png; sourceTree = "<group>"; };
-		C220B37D1CF485F2009A6560 /* quanzi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quanzi.png; sourceTree = "<group>"; };
-		C220B37E1CF485F2009A6560 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
-		C220B37F1CF485F2009A6560 /* ziliao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ziliao.png; sourceTree = "<group>"; };
-		C220B3851CF486CD009A6560 /* zhuti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhuti.png; sourceTree = "<group>"; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
@@ -475,7 +461,6 @@
 			isa = PBXGroup;
 			children = (
 				C220B35D1CF43499009A6560 /* ZDUserViewController.h */,
-				C220B37A1CF485F2009A6560 /* user */,
 				C220B35E1CF43499009A6560 /* ZDUserViewController.m */,
 				C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */,
 				C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */,
@@ -485,20 +470,6 @@
 				C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		C220B37A1CF485F2009A6560 /* user */ = {
-			isa = PBXGroup;
-			children = (
-				C220B36D1CF44111009A6560 /* tableViewHeader.jpg */,
-				C220B3851CF486CD009A6560 /* zhuti.png */,
-				C220B37B1CF485F2009A6560 /* anquan.png */,
-				C220B37C1CF485F2009A6560 /* huancun.png */,
-				C220B37D1CF485F2009A6560 /* quanzi.png */,
-				C220B37E1CF485F2009A6560 /* shezhi.png */,
-				C220B37F1CF485F2009A6560 /* ziliao.png */,
-			);
-			path = user;
 			sourceTree = "<group>";
 		};
 		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
@@ -658,23 +629,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C220B3811CF485F2009A6560 /* huancun.png in Resources */,
-				C220B3841CF485F2009A6560 /* ziliao.png in Resources */,
-				C220B3861CF486CD009A6560 /* zhuti.png in Resources */,
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
-				C220B3821CF485F2009A6560 /* quanzi.png in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
-				C220B3831CF485F2009A6560 /* shezhi.png in Resources */,
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
-				C220B3801CF485F2009A6560 /* anquan.png in Resources */,
-				C220B36E1CF44111009A6560 /* tableViewHeader.jpg in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 			);

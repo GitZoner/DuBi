@@ -26,18 +26,12 @@ static NSString * const cellID = @"cellID";
 
 @implementation ZDUserViewController
 
-//-(NSArray *)typeArray
-//{
-//    if (!_typeArray) {
-//        _typeArray = @[@"个人资料",@"都圈",@"更换主题",@"清除缓存",@"安全设置"];
-//    }
-//    return _typeArray;
-//}
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // self.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.799703663793103];
    // 数组初始化
     [self arraySet];
     
@@ -59,12 +53,12 @@ static NSString * const cellID = @"cellID";
 // 上边视图
 -(void)addTopView
 {
-    ZDCustomHeaderView * headView = [[ZDCustomHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height / 3)];
-    headView.bgImgView.userInteractionEnabled = YES;
-    [self.view addSubview:headView];
+    self.headerView = [[ZDCustomHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height / 3)];
+    self.headerView.bgImgView.userInteractionEnabled = YES;
+    [self.view addSubview:self.headerView];
     
     UITapGestureRecognizer * headerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(headerTapAction)];
-        [headView.registerOrLoginButton addGestureRecognizer:headerTap];
+        [self.headerView.registerOrLoginButton addGestureRecognizer:headerTap];
 }
 // 点击button执行的方法
 -(void)headerTapAction
@@ -81,6 +75,9 @@ static NSString * const cellID = @"cellID";
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.view.height / 3 , self.view.width, self.view.height) style:(UITableViewStyleGrouped)];
     self.tableView.contentInset =UIEdgeInsetsMake(-30,0, 0, 0);
+//    self.tableView.tableHeaderView.backgroundColor = [UIColor clearColor];
+   //  self.tableView.tableHeaderView = self.headerView;
+   //  self.tableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.tableView];
     
 //    UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tableViewHeader"]];
@@ -121,7 +118,7 @@ static NSString * const cellID = @"cellID";
 // 透视图高度
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 //{
-//    return self.tableView.height / 3;
+//   //  return self.tableView.height / 3;
 //}
 
 
