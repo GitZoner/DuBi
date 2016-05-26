@@ -39,16 +39,11 @@
         [self addSubview:publishButton];
         self.publishButton = publishButton;
         
-        // 添加中间的button
-        // [self addCenterButton];
-        
-        // [self addCenterButton];
-        
-        
     }
     return self;
 }
 
+/*
 -(void)addCenterButton
 {
     
@@ -117,6 +112,7 @@
     [self addSubview:_dcPathButton];
     
 }
+*/
 /*
 #pragma mark --- 子button的事件。
 // 子button的点击事件
@@ -239,12 +235,6 @@ UIWindow const * window;
     }];
 
 }
-
-
-
-
-
-
 
 -(void)layoutSubviews {
     [super layoutSubviews];

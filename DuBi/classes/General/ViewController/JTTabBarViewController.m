@@ -27,10 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 设置JTTabBar的代理
-    [self jttabBarDelegate];
-    
-     self.delegate = self;
+ 
+        self.delegate = self;
     
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
@@ -40,19 +38,15 @@
     // [self addCenterAction];
     
 }
--(void)jttabBarDelegate
-{
-    JTTabBar * jtt = [JTTabBar new];
-   // jtt.wodeDelegate = self;
-}
-//
+
+/*
 -(void)presentView
 {
     ZDPublishController * ZDpVc = [ZDPublishController new];
     ZDpVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:ZDpVc animated:YES completion:nil];
 }
-
+*/
 -(void)setTabBarVC
 {
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
