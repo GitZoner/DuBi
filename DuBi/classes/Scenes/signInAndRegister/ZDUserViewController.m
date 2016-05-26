@@ -11,16 +11,21 @@
 #import "ZDCustomUserTableViewCell.h"
 #import "ZDCustomHeaderView.h"
 #import "JTSignInChoiceViewController.h"
+#import "ZDSetUpController.h"
+#import "ZDSetUpViewController.h"
 @interface ZDUserViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic)UITableView * tableView;
 
 // 图标imgages
 @property(strong,nonatomic)NSArray * images;
 
+// 分类名字
 @property(strong,nonatomic)NSArray * typeArray;
-
+// 头视图
 @property(strong,nonatomic)ZDCustomHeaderView * headerView;
 
+// 右上角设置按钮
+@property(strong,nonatomic)UIButton * rightButton;
 @end
 static NSString * const cellID = @"cellID";
 
@@ -41,7 +46,29 @@ static NSString * const cellID = @"cellID";
    // 设置tableView
     [self setTableView];
    
+    // 右上角设置按钮
+    [self topRightButton];
+    
 }
+
+// 右上角设置按钮
+-(void)topRightButton
+{
+    self.rightButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.width - 45, 30, 24, 24)];
+    [self.rightButton setBackgroundImage:[UIImage imageNamed:@"shezhi"] forState:(UIControlStateNormal)];
+    [self.rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:self.rightButton];
+}
+
+// 右button时间
+-(void)rightButtonAction
+{
+   //  NSLog(@"我的天呐。");
+   //  ZDSetUpViewController * setUp = [ZDSetUpViewController new];
+     ZDSetUpController * setUp = [ZDSetUpController new];
+    [self presentViewController:setUp animated:YES completion:nil];
+}
+
 
 // 数组
 -(void)arraySet

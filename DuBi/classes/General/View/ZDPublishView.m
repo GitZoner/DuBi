@@ -14,7 +14,7 @@
 #define kpingMuBounds [UIScreen mainScreen].bounds
 @interface ZDPublishView ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
+//@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 
 @end
 
@@ -69,6 +69,7 @@
 
     UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shareBottomBackground"]];
     imageView.frame = [UIScreen mainScreen].bounds;
+    imageView.userInteractionEnabled = YES;
     [self insertSubview:imageView atIndex:0];
 //    [self addSubview:imageView];
     

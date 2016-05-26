@@ -11,6 +11,8 @@
 #import <POP.h>
 #import "UIView+XYWidthHeight.h"
 #import <DCPathButton.h>
+#import "ZDPublishController.h"
+
 #define kWindow [UIApplication sharedApplication].keyWindow
 #define kpingMuBounds [UIScreen mainScreen].bounds
 
@@ -113,13 +115,6 @@
     [self addSubview:_dcPathButton];
     
 }
-
-
--(void)itemButtonTapped:(DCPathItemButton *)itemButton
-{
-    NSLog(@"123");
-}
-
 /*
 #pragma mark --- 子button的事件。
 // 子button的点击事件
@@ -169,19 +164,18 @@
 }
 */
 
-
-
-
-UIWindow * window;
-
+// BUTTON按钮的点击事件
 -(void)publishClick
 {
+
+    if(_wodeDelegate && [_wodeDelegate respondsToSelector:@selector(presentView)]) {
+        [_wodeDelegate presentView];
+    }
+
+
+    /*
     ZDPublishView * publishView = [ZDPublishView publishView];
-    
-    
-        
-    
-    
+
 //    [UIView animateWithDuration:0.5 animations:^{
 //        publishView.transform = CGAffineTransformRotate(publishView.transform, 0.2);
 //    }];
@@ -206,6 +200,7 @@ UIWindow * window;
     [publishView pop_addAnimation:anim forKey:nil];
 
     [window addSubview:publishView];
+     */
 }
 
 -(void)timeAction

@@ -15,8 +15,10 @@
 #import <DCPathButton.h>
 #import "ZYVideoViewController.h"
 #import "ZDUserViewController.h"
+#import "JTTabBar.h"
+#import "ZDPublishController.h"
 
-@interface JTTabBarViewController ()<UITabBarControllerDelegate>
+@interface JTTabBarViewController ()<UITabBarControllerDelegate,JTTaBarDelegate>
 
 @end
 
@@ -24,7 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.delegate = self;
+    
+    // 设置JTTabBar的代理
+    [self jttabBarDelegate];
+    
+     self.delegate = self;
     
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
@@ -34,8 +40,18 @@
     // [self addCenterAction];
     
 }
+-(void)jttabBarDelegate
+{
+    JTTabBar * jtt = [JTTabBar new];
+    jtt.wodeDelegate = self;
+}
 
-
+-(void)presentView
+{
+    ZDPublishController * ZDpVc = [ZDPublishController new];
+    ZDpVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:ZDpVc animated:YES completion:nil];
+}
 
 -(void)setTabBarVC
 {
@@ -93,6 +109,12 @@
 }
 
 
+
+
+
+/**
+ *  JTTabBar的代理方法，帮它模态出一个控制器
+ */
 
 
 

@@ -49,11 +49,21 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C284A84C1CF5322F0093E851 /* ZDSetUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A84B1CF5322F0093E851 /* ZDSetUpController.m */; };
+		C284A84F1CF536540093E851 /* ZDSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A84E1CF536540093E851 /* ZDSetUpViewController.m */; };
+		C284A8531CF53F9E0093E851 /* ZDCustomVedioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */; };
+		C284A8541CF53F9E0093E851 /* ZDCustomVedioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */; };
+		C284A8711CF583770093E851 /* ZDBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86A1CF583770093E851 /* ZDBaseClass.m */; };
+		C284A8721CF583770093E851 /* ZDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86C1CF583770093E851 /* ZDInfo.m */; };
+		C284A8731CF583770093E851 /* ZDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86E1CF583770093E851 /* ZDList.m */; };
+		C284A8741CF583770093E851 /* ZDThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8701CF583770093E851 /* ZDThemes.m */; };
 		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
 		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
 		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
 		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; };
 		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
+		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
+		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
@@ -138,6 +148,22 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C284A84A1CF5322F0093E851 /* ZDSetUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSetUpController.h; sourceTree = "<group>"; };
+		C284A84B1CF5322F0093E851 /* ZDSetUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSetUpController.m; sourceTree = "<group>"; };
+		C284A84D1CF536540093E851 /* ZDSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSetUpViewController.h; sourceTree = "<group>"; };
+		C284A84E1CF536540093E851 /* ZDSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSetUpViewController.m; sourceTree = "<group>"; };
+		C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomVedioCell.h; sourceTree = "<group>"; };
+		C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomVedioCell.m; sourceTree = "<group>"; };
+		C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDCustomVedioCell.xib; sourceTree = "<group>"; };
+		C284A8681CF583770093E851 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		C284A8691CF583770093E851 /* ZDBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBaseClass.h; sourceTree = "<group>"; };
+		C284A86A1CF583770093E851 /* ZDBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBaseClass.m; sourceTree = "<group>"; };
+		C284A86B1CF583770093E851 /* ZDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDInfo.h; sourceTree = "<group>"; };
+		C284A86C1CF583770093E851 /* ZDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDInfo.m; sourceTree = "<group>"; };
+		C284A86D1CF583770093E851 /* ZDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDList.h; sourceTree = "<group>"; };
+		C284A86E1CF583770093E851 /* ZDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDList.m; sourceTree = "<group>"; };
+		C284A86F1CF583770093E851 /* ZDThemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemes.h; sourceTree = "<group>"; };
+		C284A8701CF583770093E851 /* ZDThemes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemes.m; sourceTree = "<group>"; };
 		C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
 		C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
 		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
@@ -147,6 +173,9 @@
 		C2A7DC761CF311D900492355 /* ZYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAVPlayer.m; sourceTree = "<group>"; };
 		C2A7DC7B1CF33B9B00492355 /* ZYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYButton.h; sourceTree = "<group>"; };
 		C2A7DC7C1CF33B9B00492355 /* ZYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYButton.m; sourceTree = "<group>"; };
+		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
+		C2C33E131CF5E37B00D3564D /* ZDPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishController.m; sourceTree = "<group>"; };
+		C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishController.xib; sourceTree = "<group>"; };
 		C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomButton.h; sourceTree = "<group>"; };
 		C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomButton.m; sourceTree = "<group>"; };
 		C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomView.h; sourceTree = "<group>"; };
@@ -230,6 +259,7 @@
 		965C51F71CF3EDDC00B0F22F /* signInAndRegister */ = {
 			isa = PBXGroup;
 			children = (
+				C284A8491CF532090093E851 /* otherController */,
 				C220B3571CF433B0009A6560 /* Controller */,
 				965C51F91CF3EDDC00B0F22F /* Model */,
 				965C51FA1CF3EDDC00B0F22F /* Views */,
@@ -366,6 +396,7 @@
 		96FD78911CED93F2000FCB3C /* General */ = {
 			isa = PBXGroup;
 			children = (
+				C2C33E111CF5E2AF00D3564D /* otherViewController */,
 				96FD78C71CEDD8D9000FCB3C /* Category */,
 				96FD78C21CEDD501000FCB3C /* ViewController */,
 				96FD78BF1CEDD501000FCB3C /* View */,
@@ -526,6 +557,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C284A8491CF532090093E851 /* otherController */ = {
+			isa = PBXGroup;
+			children = (
+				C284A84A1CF5322F0093E851 /* ZDSetUpController.h */,
+				C284A84B1CF5322F0093E851 /* ZDSetUpController.m */,
+				C284A84D1CF536540093E851 /* ZDSetUpViewController.h */,
+				C284A84E1CF536540093E851 /* ZDSetUpViewController.m */,
+			);
+			name = otherController;
+			sourceTree = "<group>";
+		};
 		C2A7DC6C1CF311D900492355 /* ZYVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +590,15 @@
 		C2A7DC731CF311D900492355 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C284A8681CF583770093E851 /* DataModels.h */,
+				C284A8691CF583770093E851 /* ZDBaseClass.h */,
+				C284A86A1CF583770093E851 /* ZDBaseClass.m */,
+				C284A86B1CF583770093E851 /* ZDInfo.h */,
+				C284A86C1CF583770093E851 /* ZDInfo.m */,
+				C284A86D1CF583770093E851 /* ZDList.h */,
+				C284A86E1CF583770093E851 /* ZDList.m */,
+				C284A86F1CF583770093E851 /* ZDThemes.h */,
+				C284A8701CF583770093E851 /* ZDThemes.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -555,6 +606,9 @@
 		C2A7DC741CF311D900492355 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */,
+				C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */,
+				C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */,
 				C2A7DC751CF311D900492355 /* ZYAVPlayer.h */,
 				C2A7DC761CF311D900492355 /* ZYAVPlayer.m */,
 				C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */,
@@ -564,6 +618,16 @@
 				C2A7DC7C1CF33B9B00492355 /* ZYButton.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C2C33E111CF5E2AF00D3564D /* otherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2C33E121CF5E37B00D3564D /* ZDPublishController.h */,
+				C2C33E131CF5E37B00D3564D /* ZDPublishController.m */,
+				C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */,
+			);
+			name = otherViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
+				C284A8541CF53F9E0093E851 /* ZDCustomVedioCell.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
@@ -639,6 +704,7 @@
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
+				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 			);
@@ -715,23 +781,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
+				C284A8731CF583770093E851 /* ZDList.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
+				C284A84C1CF5322F0093E851 /* ZDSetUpController.m in Sources */,
 				968808551CF308D0006DE07D /* JTSearchResultControllerTableViewController.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */,
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
+				C284A8531CF53F9E0093E851 /* ZDCustomVedioCell.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */,
+				C284A8741CF583770093E851 /* ZDThemes.m in Sources */,
+				C284A8711CF583770093E851 /* ZDBaseClass.m in Sources */,
+				C284A8721CF583770093E851 /* ZDInfo.m in Sources */,
 				C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
+				C284A84F1CF536540093E851 /* ZDSetUpViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
 				C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */,
@@ -743,6 +816,7 @@
 				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				9605E9CF1CF485A6000D1834 /* XHToast.m in Sources */,
+				C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				9605E9CB1CF47E47000D1834 /* RegularUtils.m in Sources */,
@@ -862,6 +936,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DuBi/SMS_SDK",
@@ -882,6 +957,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DuBi/SMS_SDK",
