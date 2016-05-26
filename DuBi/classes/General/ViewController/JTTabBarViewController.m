@@ -17,7 +17,7 @@
 #import "ZDUserViewController.h"
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
-
+#import "JTCircleViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate,JTTaBarDelegate>
 
 @end
@@ -71,8 +71,8 @@
     [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     // 视频
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
-    // 关注
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    // 圈子
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTCircleViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
     [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
 
