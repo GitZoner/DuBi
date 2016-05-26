@@ -17,13 +17,13 @@
 #import "ZDUserViewController.h"
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
-<<<<<<< .merge_file_iU59hk
-#import "JTCircleViewController.h"
-@interface JTTabBarViewController ()<UITabBarControllerDelegate,JTTaBarDelegate>
-=======
 
+#import "JTCircleViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
->>>>>>> .merge_file_lb0XYv
+
+
+
+
 
 @end
 
