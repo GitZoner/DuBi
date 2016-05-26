@@ -156,8 +156,8 @@ static NSString * const registerId = @"ZDCustomVedioCell";
    //  ZYVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZYCellID" forIndexPath:indexPath];
     ZDCustomVedioCell * cell = [tableView dequeueReusableCellWithIdentifier:registerId forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellAccessoryNone;
-    cell.listModel = self.listArry[indexPath.row];
-    cell.infoModel = self.infoArray[indexPath.row];
+     cell.listModel = self.listArry[indexPath.row];
+   //  cell.infoModel = self.infoArray[indexPath.row];
     cell.themesModel = self.themesArray[indexPath.row];
     
     return cell;
@@ -166,7 +166,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return self.view.height/ 5 * 3 ;
+    return self.view.height/ 9 * 4 ;
 }
 
 /*
