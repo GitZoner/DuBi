@@ -18,7 +18,7 @@
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
 
-@interface JTTabBarViewController ()<UITabBarControllerDelegate,JTTaBarDelegate>
+@interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -43,9 +43,9 @@
 -(void)jttabBarDelegate
 {
     JTTabBar * jtt = [JTTabBar new];
-    jtt.wodeDelegate = self;
+   // jtt.wodeDelegate = self;
 }
-
+//
 -(void)presentView
 {
     ZDPublishController * ZDpVc = [ZDPublishController new];

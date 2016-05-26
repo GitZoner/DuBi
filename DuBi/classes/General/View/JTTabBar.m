@@ -12,17 +12,19 @@
 #import "UIView+XYWidthHeight.h"
 #import <DCPathButton.h>
 #import "ZDPublishController.h"
+#import "ZDPublishHaflView.h"
 
 #define kWindow [UIApplication sharedApplication].keyWindow
 #define kpingMuBounds [UIScreen mainScreen].bounds
 
-@interface JTTabBar ()<DCPathButtonDelegate,DCPathItemButtonDelegate>
+@interface JTTabBar ()
 
 // 发布按钮
 @property (strong,nonatomic)UIButton *publishButton;
 @property (strong,nonatomic)UIView * publishView;
 @property (strong ,nonatomic) DCPathButton *dcPathButton;
 @end
+
 @implementation JTTabBar
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -165,12 +167,33 @@
 */
 
 // BUTTON按钮的点击事件
+
+UIWindow const * window;
 -(void)publishClick
 {
 
-    if(_wodeDelegate && [_wodeDelegate respondsToSelector:@selector(presentView)]) {
-        [_wodeDelegate presentView];
-    }
+   // [UIView animateWithDuration:1 animations:^{
+       
+        window = [[UIWindow alloc]init];
+        window.frame = [UIScreen mainScreen].bounds;
+        window.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.8];
+        window.hidden = NO;
+        ZDPublishHaflView  * publishView = [[ZDPublishHaflView alloc]initWithFrame:CGRectMake(0, self.window.height / 3 * 2, self.window.width, self.window.height / 3)];
+        // publishView.backgroundColor = [UIColor blueColor];
+        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(publishView.width /2 - 15, publishView.height - 30, 30, 30)];
+        [button setTitle:@"x" forState:(UIControlStateNormal)];
+        button.titleLabel.font = [UIFont systemFontOfSize:30];
+        [button setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+        [button addTarget:self action:@selector(buttonAction) forControlEvents:(UIControlEventTouchUpInside)];
+        [window addSubview:publishView];
+        // self.block(window);
+        [publishView addSubview:button];
+
+   // }];
+    
+//    if(_wodeDelegate && [_wodeDelegate respondsToSelector:@selector(presentView)]) {
+//        [_wodeDelegate presentView];
+//    }
 
 
     /*
@@ -202,6 +225,12 @@
     [window addSubview:publishView];
      */
 }
+
+-(void)buttonAction
+{
+    window.hidden = YES;
+}
+
 
 -(void)timeAction
 {

@@ -57,6 +57,8 @@
 		C284A8721CF583770093E851 /* ZDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86C1CF583770093E851 /* ZDInfo.m */; };
 		C284A8731CF583770093E851 /* ZDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86E1CF583770093E851 /* ZDList.m */; };
 		C284A8741CF583770093E851 /* ZDThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8701CF583770093E851 /* ZDThemes.m */; };
+		C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */ = {isa = PBXBuildFile; fileRef = C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */; };
+		C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */; };
 		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
 		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
 		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
@@ -164,6 +166,9 @@
 		C284A86E1CF583770093E851 /* ZDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDList.m; sourceTree = "<group>"; };
 		C284A86F1CF583770093E851 /* ZDThemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemes.h; sourceTree = "<group>"; };
 		C284A8701CF583770093E851 /* ZDThemes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemes.m; sourceTree = "<group>"; };
+		C296858C1CF6D1FC00CA5362 /* ZDPublishHaflView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflView.h; sourceTree = "<group>"; };
+		C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflView.m; sourceTree = "<group>"; };
+		C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishHaflView.xib; sourceTree = "<group>"; };
 		C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
 		C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
 		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
@@ -451,15 +456,11 @@
 		96FD78BF1CEDD501000FCB3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C296858B1CF6D18900CA5362 /* publishView */,
+				C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */,
 				C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */,
 				C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */,
-				C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */,
 				C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */,
-				C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */,
-				C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */,
-				C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */,
-				C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */,
-				C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */,
 				96FD78C01CEDD501000FCB3C /* JTTabBar.h */,
 				96FD78C11CEDD501000FCB3C /* JTTabBar.m */,
 			);
@@ -566,6 +567,21 @@
 				C284A84E1CF536540093E851 /* ZDSetUpViewController.m */,
 			);
 			name = otherController;
+			sourceTree = "<group>";
+		};
+		C296858B1CF6D18900CA5362 /* publishView */ = {
+			isa = PBXGroup;
+			children = (
+				C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */,
+				C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */,
+				C2E0C47E1CF05636006CCD96 /* ZDPublishView.h */,
+				C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */,
+				C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */,
+				C296858C1CF6D1FC00CA5362 /* ZDPublishHaflView.h */,
+				C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */,
+				C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */,
+			);
+			name = publishView;
 			sourceTree = "<group>";
 		};
 		C2A7DC6C1CF311D900492355 /* ZYVideo */ = {
@@ -693,6 +709,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */,
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				C284A8541CF53F9E0093E851 /* ZDCustomVedioCell.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
@@ -821,6 +838,7 @@
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
 				9605E9CB1CF47E47000D1834 /* RegularUtils.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
+				C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,16 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol JTTaBarDelegate <NSObject>
+//typedef void(^JTTaBarBlock)(UIWindow * window);
 
-/**
- *  模态出一个控制器
- */
--(void)presentView;
-
-@end
+//@protocol JTTaBarDelegate <NSObject>
+//
+///**
+// *  模态出一个控制器
+// */
+//-(void)presentView;
+//
+//@end
 
 @interface JTTabBar : UITabBar
 
-@property(weak,nonatomic)id<JTTaBarDelegate>wodeDelegate;
+//@property(copy,nonatomic)JTTaBarBlock block;
+
+//@property(weak,nonatomic)id<JTTaBarDelegate>wodeDelegate;
+
+//@property(strong,nonatomic)UIWindow * window;
 @end
