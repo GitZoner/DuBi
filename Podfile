@@ -10,5 +10,4 @@ pod 'pop'
 pod 'DCPathButton'
 pod 'Masonry', '~> 1.0.0'
 pod 'AFNetworking'
-pod 'SDWebImage'
 end
