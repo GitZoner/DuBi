@@ -9,23 +9,46 @@
 #import "ZDCustomVedioCell.h"
 #import "DataModels.h"
 #import <UIImageView+WebCache.h>
-
+#import "JRPlayerViewController.h"
+#import "ZDAVPlayer.h"
 
 @interface ZDCustomVedioCell ()
+// 背景图片
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
+
+// 顶
 @property (weak, nonatomic) IBOutlet UIButton *dingButton;
+
+// 分享按钮
 @property (weak, nonatomic) IBOutlet UIButton *fengxiangButton;
+// 菜按钮
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 
+// 评论
 @property (weak, nonatomic) IBOutlet UIButton *pinglunButton;
+// 未播放显示的内容
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+// 未播放显示的字
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
-@property (weak, nonatomic) IBOutlet UIButton *playerButton;
+
+//
+@property (weak, nonatomic) IBOutlet UIButton *centerButton;
 
 
+@property(assign,nonatomic)BOOL flag;
+
+// 视频播放
+@property(strong,nonatomic) JRPlayerViewController * playVC;
 @end
 
 @implementation ZDCustomVedioCell
+
+
+
+
+
+
+
 
 - (void)setListModel:(ZDList *)listModel
 {
@@ -35,6 +58,9 @@
     }
     self.caiButton.titleLabel.text = listModel.hate;
     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
+    
+    
+    // [self playerTools];
     // self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",];
 }
 
@@ -60,16 +86,52 @@
 }
 
 
-
-
-
-
-
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(void)flage
+{
+    if (_flag == NO) {
+        _flag = YES;
+        _bgImgView.hidden = YES;
+        _typeLabel.hidden = YES;
+        _contentLabel.hidden = YES;
+        _centerButton.hidden = YES;
+    }else{
+        _flag = NO;
+        _bgImgView.hidden = NO;
+        _typeLabel.hidden = NO;
+        _contentLabel.hidden = NO;
+        _centerButton.hidden = NO;
+    }
 }
+
+
+
+
+// 点击中间播放按钮的事件
+- (IBAction)playerButton:(UIButton *)sender {
+   
+    // [self flage];
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    
+    dispatch_async(concurrentQueue, ^{
+        // 添加播放器
+        [self playerTools];
+    });
+
+    
+}
+// 播放视频
+-(void)playerTools
+{
+    ZDAVPlayer * players = [[ZDAVPlayer alloc]initWithFrame:_bgImgView.frame WithVideoStr:_listModel.videouri];
+    
+    [self addSubview:players];
+}
+
+
+
+
+
 
 -(void)setFrame:(CGRect)frame
 {
@@ -79,6 +141,15 @@
     frame.size.height -= 5;
     //  NSLog(@"%f",frame.size.height);
     [super setFrame:frame];
+}
+
+
+
+
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
