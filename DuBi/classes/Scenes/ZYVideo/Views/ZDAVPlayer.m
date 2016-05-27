@@ -48,6 +48,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
  */
 @property (strong, nonatomic) UILabel *timeLabel;
 
+@property(strong,nonatomic)UIButton *centerPlayBty;
+
 @end
 
 
@@ -84,6 +86,15 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         [self.layer addSublayer:playerLayer];
         // [self.player play];
         
+        
+        // 中间按钮
+        self.centerPlayBty = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+        self.centerPlayBty.center = self.center;
+        [self.centerPlayBty setBackgroundImage:[UIImage imageNamed:@"playcount"] forState:(UIControlStateNormal)];
+        [self.centerPlayBty addTarget:self action:@selector(centerPlayBtyAction) forControlEvents:(UIControlEventTouchUpInside)];
+       // [self addSubview:self.centerPlayBty];
+        
+        
         // 下边的工具条
         self.bottom = [[UIView alloc]initWithFrame:CGRectMake(0,self.height - 40, self.width, 40)];
         self.bottom.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.7];
@@ -95,6 +106,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 //        [playBtn setBackgroundImage:[UIImage imageNamed:@"pause_disable"] forState:(UIControlStateHighlighted)];
         [self addSubview:self.bottom];
         [self.bottom addSubview:self.playBtn];
+        
+        
         
         // silder
         self.slider = [[UISlider alloc]initWithFrame:CGRectMake(45, 5, self.width - 90, 30)];
@@ -117,6 +130,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     return self;
 }
 
+
+
 //
 -(double)duration
 {
@@ -127,6 +142,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         return 0.f;
     }
 }
+
+
 
 -(double)currentTime
 {
@@ -177,10 +194,35 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     }];
 }
 
+// 中间播放按钮
+-(void)centerPlayBtyAction
+{
+    if ([[self player] rate] != 1.f) {
+        if ([self currentTime] == [self duration]) {
+            [self setcurrentTime:0.f];
+        }
+        [[self player] play];
+        [self.playBtn setBackgroundImage:[UIImage imageNamed:@"playButtonPause"] forState:(UIControlStateNormal)];
+    }else{
+        [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_disable"] forState:(UIControlStateNormal)];
+        [[self player] pause];
+        
+    }
+    
+    CMTime time = [self.player currentTime];
+    NSLog(@"%lld",self.playerItem.duration.value / self.playerItem.duration.timescale);
+    NSLog(@"%lld",time.value / time.timescale);
+
+}
+
 // silder 的方法
 -(void)updattValue:(UISlider *)slider
 {
     [self.player seekToTime:CMTimeMakeWithSeconds(slider.value, 1)];
+    if (slider.value == 1) {
+    
+        [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_disable"] forState:(UIControlStateNormal)];
+    }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

@@ -9,8 +9,8 @@
 #import "ZDCustomVedioCell.h"
 #import "DataModels.h"
 #import <UIImageView+WebCache.h>
-#import "JRPlayerViewController.h"
 #import "ZDAVPlayer.h"
+#import "ZDPlayer.h"
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -37,30 +37,36 @@
 
 @property(assign,nonatomic)BOOL flag;
 
-// 视频播放
-@property(strong,nonatomic) JRPlayerViewController * playVC;
+@property (weak, nonatomic) IBOutlet UILabel *videoTime;
+@property (weak, nonatomic) IBOutlet UIView *playerView;
+
+
+
 @end
 
 @implementation ZDCustomVedioCell
 
-
-
-
-
-
-
-
+#pragma mark  --- Model
 - (void)setListModel:(ZDList *)listModel
 {
     if (_listModel != listModel) {
         _listModel = nil;
         _listModel = listModel;
     }
-    self.caiButton.titleLabel.text = listModel.hate;
-    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
-    
-    
     // [self playerTools];
+    
+    ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
+    
+    [self addSubview:players];
+    
+    
+    //self.caiButton.titleLabel.text = listModel.hate;
+    
+    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
+//    self.videoTime.text = _listModel.videotime;
+    
+
+    
     // self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",];
 }
 
@@ -70,10 +76,7 @@
         _infoModel = nil;
         _infoModel = infoModel;
     }
-    
-    
 }
-
 -(void)setThemesModel:(ZDThemes *)themesModel
 {
     if (_themesModel != themesModel) {
@@ -84,8 +87,7 @@
     self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",_themesModel.themeName];
     
 }
-
-
+/*
 -(void)flage
 {
     if (_flag == NO) {
@@ -103,29 +105,27 @@
     }
 }
 
-
-
-
 // 点击中间播放按钮的事件
 - (IBAction)playerButton:(UIButton *)sender {
-   
     // [self flage];
-    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    
-    dispatch_async(concurrentQueue, ^{
-        // 添加播放器
-        [self playerTools];
-    });
-
-    
+   _player = [[ZDAVPlayer alloc]initWithFrame:CGRectMake(8, 0, _bgImgView.frame.size.width, _bgImgView.frame.size.height) WithVideoStr:_listModel.videouri];
+    [self.contentView addSubview:_player];
 }
+*/
+
+
 // 播放视频
 -(void)playerTools
 {
-    ZDAVPlayer * players = [[ZDAVPlayer alloc]initWithFrame:_bgImgView.frame WithVideoStr:_listModel.videouri];
     
-    [self addSubview:players];
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+// 
+//    dispatch_async(concurrentQueue, ^{
+    
+        ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
+        
+        [self addSubview:players];
+//    });
 }
 
 

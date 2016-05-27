@@ -17,7 +17,7 @@
 #import "ZDUserViewController.h"
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
-
+#import "RootTableViewController.h"
 #import "JTCircleViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
