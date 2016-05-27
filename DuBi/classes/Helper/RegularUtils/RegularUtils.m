@@ -29,7 +29,7 @@
 }
 
 
-#pragma 正则匹配用户密码6-18位数字和字母组合
+#pragma 正则匹配用户密码6-24位数字和字母组合
 + (BOOL)checkPassword:(NSString *) password
 {
     NSString *passWordRegex = @"^[a-zA-Z0-9]{6,24}+$";

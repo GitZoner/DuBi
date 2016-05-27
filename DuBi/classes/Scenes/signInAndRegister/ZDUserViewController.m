@@ -13,6 +13,7 @@
 #import "JTSignInChoiceViewController.h"
 #import "ZDSetUpController.h"
 #import "ZDSetUpViewController.h"
+
 @interface ZDUserViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic)UITableView * tableView;
 
@@ -26,12 +27,17 @@
 
 // 右上角设置按钮
 @property(strong,nonatomic)UIButton * rightButton;
+@property (strong,nonatomic)NSString *hasSign; // YES or NO
 @end
 static NSString * const cellID = @"cellID";
 
 @implementation ZDUserViewController
 
-
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+}
 
 
 - (void)viewDidLoad {
@@ -49,6 +55,7 @@ static NSString * const cellID = @"cellID";
     // 右上角设置按钮
     [self topRightButton];
     
+    
 }
 
 // 右上角设置按钮
@@ -63,10 +70,10 @@ static NSString * const cellID = @"cellID";
 // 右button时间
 -(void)rightButtonAction
 {
+    
    //  NSLog(@"我的天呐。");
    //  ZDSetUpViewController * setUp = [ZDSetUpViewController new];
-     ZDSetUpController * setUp = [ZDSetUpController new];
-    [self presentViewController:setUp animated:YES completion:nil];
+    
 }
 
 
@@ -85,13 +92,21 @@ static NSString * const cellID = @"cellID";
     [self.view addSubview:self.headerView];
     
     UITapGestureRecognizer * headerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(headerTapAction)];
-        [self.headerView.registerOrLoginButton addGestureRecognizer:headerTap];
+        [self.headerView.touXimageView addGestureRecognizer:headerTap];
 }
-// 点击button执行的方法
+// 点击头像按钮的事件
 -(void)headerTapAction
 {
-    JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
-    [self presentViewController:jtscVC animated:YES completion:nil];
+    self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
+    if ([self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil) {
+        JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
+        [self presentViewController:jtscVC animated:YES completion:nil];
+    }else {
+        // 如果是已登录的状态，那么点击头像按钮，能够修改头像，或者浏览个人基本信息
+        // 可以先简单实现上传个人头像的图片
+        
+    }
+   
 }
 
 /**

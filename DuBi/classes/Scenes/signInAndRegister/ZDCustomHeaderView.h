@@ -11,13 +11,8 @@
 @interface ZDCustomHeaderView : UIView
 // 背景图片
 @property(strong,nonatomic)UIImageView * bgImgView;
-
-
+// 用户头像
 @property(strong,nonatomic)UIImageView * touXimageView;
-
-// 登录注册按钮
-@property(strong,nonatomic)UIButton * registerOrLoginButton;
-
-//+(instancetype)initWithImage:(UIImage *)image userName:(NSString * )name;
-
+// 用户名
+@property (strong,nonatomic)UILabel *userNameLabel;
 @end
