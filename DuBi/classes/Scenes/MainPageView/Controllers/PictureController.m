@@ -7,7 +7,10 @@
 //
 
 #import "PictureController.h"
-
+#import "PictureHandle.h"
+#define kPictureHandle [PictureHandle sharedPictureHandle]
+#import "LWNMainPageUrl.h"
+#import "PictureViewCell.h"
 @interface PictureController ()
 
 @end
@@ -16,40 +19,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+    // 注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"pictureCellID"];
 
+    // 数据请求
+    [self reuqestData];
+       // 取消样式
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+}
+-(void)reuqestData{
+  // 加载菊花样式
+    [kPictureHandle getDataWithString:[NSString stringWithFormat:kPictureUrl,@""] comptionBlock:^(NSMutableArray *array) {
+        // 刷新数据
+        [self reloadData];
+    }];
+  }
+-(void)reloadData{
+    [self.tableView reloadData];
+    // 隐藏菊花样式
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return [kPictureHandle numberOfSections];
+
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+  //  NSLog(@"%ld",[kPictureHandle numofRowsAtSection:section]);
+    return [kPictureHandle numofRowsAtSection:section];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    PictureViewCell *cell = (PictureViewCell *)[tableView dequeueReusableCellWithIdentifier:@"pictureCellID"forIndexPath:indexPath];
+    cell.picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-*/
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Picture *picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
+    return [PictureViewCell heightFor:picture];
+}
 
 /*
 // Override to support conditional editing of the table view.

@@ -12,32 +12,41 @@
 #import "MBProgressHUD+gifHUD.h"
 #import "InfomationHandle.h"
 #import "LWNMainPageUrl.h"
+#import "PictureController.h"
+#import "PictureHandle.h"
 #define kInfomationHandle [InfomationHandle sharedInfomationHandle]
+#define kPictureHandle [PictureHandle sharedPictureHandle]
+#import "PictureViewCell.h"
+#import "LWNViewController.h"
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@property(strong,nonatomic)NSArray *dataArray;
 @end
 
 @implementation MainViewController
-
+// 懒加载数组
+-(NSArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor yellowColor];
     // 数据请求
     [self requestData];
     // 注册cell
-    [_tableView registerNib:[UINib nibWithNibName:@"MainViewCell" bundle:nil] forCellReuseIdentifier:@"mainViewCellID"];
+    [_tableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"mainViewCellID"];
     // 设置代理
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
    // 取消线条
    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-  
 }
 -(void)requestData{
  // 加载菊花样式
-    [MBProgressHUD setUpHUDWithFrame:CGRectMake(0, 0, 50, 50) gifName:@""andShowToView:self.view];
-    [kInfomationHandle getModelDataWithUrl:[NSString stringWithFormat:kTopicUrl,@""] comption:^(NSArray *array, NSError *error) {
-        // 数据请求完毕,刷新数据
+    [MBProgressHUD setUpHUDWithFrame:CGRectMake(0, 0, 50, 50) gifName:@"pika"andShowToView:self.view];
+    [kPictureHandle getDataWithString:[NSString stringWithFormat:kTopicUrl,@""] comptionBlock:^(NSMutableArray *array) {
         [self updateData];
     }];
 }
@@ -51,16 +60,16 @@
     // Dispose of any resources that can be recreated.
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [kInfomationHandle numberOfSections];
+    return [kPictureHandle numberOfSections];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [kInfomationHandle numberOfRowsInsection:section];
+    return [kPictureHandle numofRowsAtSection:section];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCellID" forIndexPath:indexPath];
-    cell.topic = [kInfomationHandle topicForRowAtIndexPath:indexPath];
+    PictureViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCellID" forIndexPath:indexPath];
+    cell.picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
     //[cell.shareButton addTarget:self action:@selector(shareAction) forControlEvents:(UIControlEventTouchUpInside)];
-    cell.delegate = self;
+   // cell.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -68,12 +77,11 @@
 
 
 
-
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Topic *topic = [kInfomationHandle topicForRowAtIndexPath:indexPath];
+    Picture *picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
   //  NSLog(@"%f",[MainViewCell heightForTopicLabel:topic]);
-    return [MainViewCell heightForTopicLabel:topic];
+    return [PictureViewCell heightFor:picture];
 }
 #pragma mark ----收藏,分享功能-----
 // 点击cell会模态出AlertController,在这这里进行分享,收藏的操作
@@ -100,6 +108,29 @@
     [alertController addAction:action];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+#pragma mark ----点击button进行不同的页面跳转--------
+
+
+- (IBAction)pictureAction:(id)sender {
+  // 点击button,进行不同的数据请求
+    [self requestPictureData];
+}
+-(void)requestPictureData{
+    // 加载菊花样式
+    [MBProgressHUD setUpHUDWithFrame:CGRectMake(0, 0, 50, 50) gifName:@"pika"andShowToView:self.view];
+    [kPictureHandle getDataWithString:[NSString stringWithFormat:kPictureUrl,@""] comptionBlock:^(NSMutableArray *array) {
+        [self updateData];
+    }];
+}
+
+- (IBAction)pushAction:(id)sender {
+    LWNViewController *lwn = [LWNViewController new];
+    [self.navigationController pushViewController:lwn animated:YES];
+}
+
+
+
+
 /*
 #pragma mark - Navigation
 

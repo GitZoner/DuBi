@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Picture.h"
 @interface PictureDetailController : UIViewController
-
+@property(strong,nonatomic)Picture *picture;
 @end

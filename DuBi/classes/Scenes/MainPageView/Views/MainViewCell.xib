@@ -36,15 +36,15 @@
                                     <constraint firstAttribute="width" constant="16" id="0ID-ik-usf"/>
                                     <constraint firstAttribute="height" constant="16" id="SRR-th-3D9"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="推荐"/>
+                                <state key="normal" backgroundImage="like_C"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-4P-kgU">
-                                <rect key="frame" x="295" y="5" width="65" height="30"/>
+                                <rect key="frame" x="344" y="5" width="16" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="10l-Fd-dnE"/>
-                                    <constraint firstAttribute="height" constant="30" id="I3w-m3-jqh"/>
+                                    <constraint firstAttribute="width" constant="16" id="10l-Fd-dnE"/>
+                                    <constraint firstAttribute="height" constant="16" id="I3w-m3-jqh"/>
                                 </constraints>
-                                <state key="normal" title="分享,收藏"/>
+                                <state key="normal" backgroundImage="collect_C"/>
                                 <connections>
                                     <action selector="shareAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gwv-N3-yk3"/>
                                 </connections>
@@ -55,7 +55,15 @@
                                     <constraint firstAttribute="height" constant="16" id="dtf-XU-5gy"/>
                                     <constraint firstAttribute="width" constant="16" id="ngA-JV-li6"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="点踩"/>
+                                <state key="normal" backgroundImage="hate_C"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJb-TA-ljA">
+                                <rect key="frame" x="206" y="67" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="D8E-Uw-ZlQ"/>
+                                    <constraint firstAttribute="width" constant="16" id="r0d-3e-76a"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="comment"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FX-P5-i3l">
                                 <rect key="frame" x="140" y="67" width="16" height="16"/>
@@ -64,14 +72,6 @@
                                     <constraint firstAttribute="width" constant="16" id="tox-bK-9E6"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="share"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJb-TA-ljA">
-                                <rect key="frame" x="206" y="67" width="16" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="D8E-Uw-ZlQ"/>
-                                    <constraint firstAttribute="width" constant="16" id="r0d-3e-76a"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="评论"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,13 +115,14 @@
                 <outlet property="shareButton" destination="mSW-4P-kgU" id="mOM-ZM-J26"/>
                 <outlet property="topicLabel" destination="1GY-4W-0dM" id="cur-S3-pd5"/>
             </connections>
-            <point key="canvasLocation" x="485.5" y="337"/>
+            <point key="canvasLocation" x="396.5" y="583"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="collect_C" width="200" height="200"/>
+        <image name="comment" width="200" height="200"/>
+        <image name="hate_C" width="200" height="200"/>
+        <image name="like_C" width="200" height="200"/>
         <image name="share" width="200" height="200"/>
-        <image name="推荐" width="16" height="16"/>
-        <image name="点踩" width="16" height="16"/>
-        <image name="评论" width="16" height="16"/>
     </resources>
 </document>

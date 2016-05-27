@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureDetailController">
             <connections>
+                <outlet property="scrollView" destination="Txo-FY-dMr" id="P8L-gd-h5M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAK-ar-siM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-32-IUf">
+                            <rect key="frame" x="534" y="550" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="OIw-OC-fV8"/>
+                                <constraint firstAttribute="width" constant="46" id="k7Z-CB-Hif"/>
+                            </constraints>
+                            <state key="normal" title="存储"/>
+                            <connections>
+                                <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="Sr4-4v-gS2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-CM-RwP">
+                            <rect key="frame" x="15" y="15" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="coD-eP-KOq"/>
+                                <constraint firstAttribute="height" constant="30" id="giE-gO-85G"/>
+                            </constraints>
+                            <state key="normal" title="返回"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="f6T-nq-ejY"/>
+                            </connections>
+                        </button>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txo-FY-dMr">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Txo-FY-dMr" firstAttribute="leading" secondItem="pAK-ar-siM" secondAttribute="leading" id="3xf-9L-dbA"/>
+                        <constraint firstItem="Txo-FY-dMr" firstAttribute="top" secondItem="pAK-ar-siM" secondAttribute="top" id="Liu-la-lnm"/>
+                        <constraint firstAttribute="bottom" secondItem="Txo-FY-dMr" secondAttribute="bottom" id="cY7-Tz-ohl"/>
+                        <constraint firstAttribute="bottom" secondItem="2eA-32-IUf" secondAttribute="bottom" constant="20" id="flD-qA-guq"/>
+                        <constraint firstItem="RJQ-CM-RwP" firstAttribute="top" secondItem="pAK-ar-siM" secondAttribute="top" constant="15" id="krs-d7-YuB"/>
+                        <constraint firstAttribute="trailing" secondItem="Txo-FY-dMr" secondAttribute="trailing" id="uuk-qB-94X"/>
+                        <constraint firstAttribute="trailing" secondItem="2eA-32-IUf" secondAttribute="trailing" constant="20" id="y2c-md-yJL"/>
+                        <constraint firstItem="RJQ-CM-RwP" firstAttribute="leading" secondItem="pAK-ar-siM" secondAttribute="leading" constant="15" id="ynW-Su-qtv"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pAK-ar-siM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M0g-V8-l0N"/>
+                <constraint firstAttribute="bottom" secondItem="pAK-ar-siM" secondAttribute="bottom" id="cvh-F0-b7F"/>
+                <constraint firstItem="pAK-ar-siM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pqh-iz-31a"/>
+                <constraint firstAttribute="trailing" secondItem="pAK-ar-siM" secondAttribute="trailing" id="vnu-Ia-pnT"/>
+            </constraints>
         </view>
     </objects>
 </document>

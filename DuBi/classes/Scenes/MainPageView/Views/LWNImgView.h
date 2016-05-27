@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Picture.h"
 @interface LWNImgView : UIView
-
+@property(strong,nonatomic)Picture *picture;
++ (instancetype)imgView;
 @end

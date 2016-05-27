@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22416077FA4B29D0AFDCE00A /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D4A362C7B46285CAAF7402 /* libPods-DuBi.a */; };
 		961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */; };
 		961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */; };
 		961F9EC41CEE967E0043F86C /* ZYSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9EC21CEE967E0043F86C /* ZYSignUpViewController.m */; };
@@ -27,8 +28,9 @@
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
-		96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C41CEDD501000FCB3C /* JTTabBarController.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
+		C22B22661CF6DC7C00018715 /* LWNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B22641CF6DC7C00018715 /* LWNViewController.m */; };
+		C22B22671CF6DC7C00018715 /* LWNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22B22651CF6DC7C00018715 /* LWNViewController.xib */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
@@ -37,23 +39,33 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
-		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; settings = {ASSET_TAGS = (); }; };
-		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; settings = {ASSET_TAGS = (); }; };
+		C25AA6391CF566D900517653 /* LWNImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C25AA6381CF566D900517653 /* LWNImgView.m */; };
+		C25AA63B1CF5930400517653 /* LWNImgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25AA63A1CF5930400517653 /* LWNImgView.xib */; };
+		C25AA63F1CF5C99E00517653 /* PictureDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25AA63D1CF5C99E00517653 /* PictureDetailController.m */; };
+		C25AA6401CF5C99E00517653 /* PictureDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25AA63E1CF5C99E00517653 /* PictureDetailController.xib */; };
+		C26FBB8D1CF4016700C56308 /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FBB8C1CF4016700C56308 /* JTTabBarViewController.m */; };
+		C26FBB961CF4075E00C56308 /* PictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FBB941CF4075E00C56308 /* PictureController.m */; };
+		C26FBB971CF4075E00C56308 /* PictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26FBB951CF4075E00C56308 /* PictureController.xib */; };
+		C26FBB9B1CF407D300C56308 /* PictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FBB991CF407D300C56308 /* PictureViewCell.m */; };
+		C26FBB9C1CF407D300C56308 /* PictureViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26FBB9A1CF407D300C56308 /* PictureViewCell.xib */; };
+		C26FBBA01CF42CC200C56308 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FBB9F1CF42CC200C56308 /* Picture.m */; };
+		C26FBBA31CF42E9200C56308 /* PictureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FBBA21CF42E9200C56308 /* PictureHandle.m */; };
+		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
+		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
+		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
+		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; };
+		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
 		C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47F1CF05636006CCD96 /* ZDPublishView.m */; };
 		C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E0C4801CF05636006CCD96 /* ZDPublishView.xib */; };
-		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
-		1EA63ACCE108F063FF901999 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
+		42A7218E7D7A49FB5563CD2A /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		53D4A362C7B46285CAAF7402 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B26A19B926CFECBE0E9A466 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
 		961F9EBC1CEE96530043F86C /* ZYSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSignInViewController.h; sourceTree = "<group>"; };
 		961F9EBD1CEE96530043F86C /* ZYSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSignInViewController.m; sourceTree = "<group>"; };
 		961F9EBE1CEE96530043F86C /* ZYSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYSignInViewController.xib; sourceTree = "<group>"; };
@@ -89,10 +101,11 @@
 		96FD78901CED93F2000FCB3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96FD78C01CEDD501000FCB3C /* JTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBar.h; sourceTree = "<group>"; };
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
-		96FD78C31CEDD501000FCB3C /* JTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarController.h; sourceTree = "<group>"; };
-		96FD78C41CEDD501000FCB3C /* JTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarController.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
+		C22B22631CF6DC7C00018715 /* LWNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNViewController.h; sourceTree = "<group>"; };
+		C22B22641CF6DC7C00018715 /* LWNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNViewController.m; sourceTree = "<group>"; };
+		C22B22651CF6DC7C00018715 /* LWNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWNViewController.xib; sourceTree = "<group>"; };
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
@@ -109,6 +122,25 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C25AA6371CF566D900517653 /* LWNImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNImgView.h; sourceTree = "<group>"; };
+		C25AA6381CF566D900517653 /* LWNImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNImgView.m; sourceTree = "<group>"; };
+		C25AA63A1CF5930400517653 /* LWNImgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWNImgView.xib; sourceTree = "<group>"; };
+		C25AA63C1CF5C99E00517653 /* PictureDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDetailController.h; sourceTree = "<group>"; };
+		C25AA63D1CF5C99E00517653 /* PictureDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDetailController.m; sourceTree = "<group>"; };
+		C25AA63E1CF5C99E00517653 /* PictureDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureDetailController.xib; sourceTree = "<group>"; };
+		C26FBB8B1CF4016700C56308 /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
+		C26FBB8C1CF4016700C56308 /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
+		C26FBB931CF4075E00C56308 /* PictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureController.h; sourceTree = "<group>"; };
+		C26FBB941CF4075E00C56308 /* PictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureController.m; sourceTree = "<group>"; };
+		C26FBB951CF4075E00C56308 /* PictureController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureController.xib; sourceTree = "<group>"; };
+		C26FBB981CF407D300C56308 /* PictureViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewCell.h; sourceTree = "<group>"; };
+		C26FBB991CF407D300C56308 /* PictureViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewCell.m; sourceTree = "<group>"; };
+		C26FBB9A1CF407D300C56308 /* PictureViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureViewCell.xib; sourceTree = "<group>"; };
+		C26FBB9D1CF4095F00C56308 /* LWNSpacing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWNSpacing.h; sourceTree = "<group>"; };
+		C26FBB9E1CF42CC200C56308 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		C26FBB9F1CF42CC200C56308 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		C26FBBA11CF42E9200C56308 /* PictureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureHandle.h; sourceTree = "<group>"; };
+		C26FBBA21CF42E9200C56308 /* PictureHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureHandle.m; sourceTree = "<group>"; };
 		C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
 		C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
 		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
@@ -134,30 +166,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */,
+				22416077FA4B29D0AFDCE00A /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C94F929D7E0E54C048AEC15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */,
-				5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		79939B0E58BB4BC289F17EB9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1EA63ACCE108F063FF901999 /* libPods-DuBi.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		961F9EB81CEE96240043F86C /* SignUpAndSignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +259,8 @@
 			children = (
 				96FD78751CED92FE000FCB3C /* DuBi */,
 				96FD78741CED92FE000FCB3C /* Products */,
-				3C94F929D7E0E54C048AEC15 /* Pods */,
-				79939B0E58BB4BC289F17EB9 /* Frameworks */,
+				ACB0DC8A68570AAA21C8C80A /* Pods */,
+				BA6F71557E543C0988576951 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -319,6 +334,7 @@
 				C22BC6C91CEDFC0900E7AF10 /* Singleton.h */,
 				968AC5B61CEF117B00A14471 /* Main_marco.h */,
 				C23CA6781CEF27B0008C52C2 /* LWNMainPageUrl.h */,
+				C26FBB9D1CF4095F00C56308 /* LWNSpacing.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -376,8 +392,8 @@
 		96FD78C21CEDD501000FCB3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				96FD78C31CEDD501000FCB3C /* JTTabBarController.h */,
-				96FD78C41CEDD501000FCB3C /* JTTabBarController.m */,
+				C26FBB8B1CF4016700C56308 /* JTTabBarViewController.h */,
+				C26FBB8C1CF4016700C56308 /* JTTabBarViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -395,6 +411,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		ACB0DC8A68570AAA21C8C80A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42A7218E7D7A49FB5563CD2A /* Pods-DuBi.debug.xcconfig */,
+				5B26A19B926CFECBE0E9A466 /* Pods-DuBi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA6F71557E543C0988576951 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53D4A362C7B46285CAAF7402 /* libPods-DuBi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +437,8 @@
 				C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */,
 				961F9EC91CEEAC990043F86C /* JTBuddyManager.h */,
 				961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */,
+				C26FBBA11CF42E9200C56308 /* PictureHandle.h */,
+				C26FBBA21CF42E9200C56308 /* PictureHandle.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -424,6 +459,15 @@
 				C2533CBE1CEDEC0A00C134C6 /* MainViewController.h */,
 				C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */,
 				C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */,
+				C26FBB931CF4075E00C56308 /* PictureController.h */,
+				C26FBB941CF4075E00C56308 /* PictureController.m */,
+				C26FBB951CF4075E00C56308 /* PictureController.xib */,
+				C25AA63C1CF5C99E00517653 /* PictureDetailController.h */,
+				C25AA63D1CF5C99E00517653 /* PictureDetailController.m */,
+				C25AA63E1CF5C99E00517653 /* PictureDetailController.xib */,
+				C22B22631CF6DC7C00018715 /* LWNViewController.h */,
+				C22B22641CF6DC7C00018715 /* LWNViewController.m */,
+				C22B22651CF6DC7C00018715 /* LWNViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -433,6 +477,8 @@
 			children = (
 				C22BC6CA1CEE01DA00E7AF10 /* Topic.h */,
 				C22BC6CB1CEE01DA00E7AF10 /* Topic.m */,
+				C26FBB9E1CF42CC200C56308 /* Picture.h */,
+				C26FBB9F1CF42CC200C56308 /* Picture.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +489,12 @@
 				C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */,
 				C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */,
 				C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */,
+				C26FBB981CF407D300C56308 /* PictureViewCell.h */,
+				C26FBB991CF407D300C56308 /* PictureViewCell.m */,
+				C26FBB9A1CF407D300C56308 /* PictureViewCell.xib */,
+				C25AA6371CF566D900517653 /* LWNImgView.h */,
+				C25AA6381CF566D900517653 /* LWNImgView.m */,
+				C25AA63A1CF5930400517653 /* LWNImgView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,13 +546,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96FD788A1CED92FE000FCB3C /* Build configuration list for PBXNativeTarget "DuBi" */;
 			buildPhases = (
-				CB25C5DD1C78F9B43F2FFB9A /* 📦 Check Pods Manifest.lock */,
+				9DD3485E7097CB58093B3733 /* 📦 Check Pods Manifest.lock */,
 				96FD786F1CED92FE000FCB3C /* Sources */,
 				96FD78701CED92FE000FCB3C /* Frameworks */,
 				96FD78711CED92FE000FCB3C /* Resources */,
-				01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */,
-				EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */,
-				2DA232C223DEE1F88F3DBCA3 /* Embed Pods Frameworks */,
+				DDB6E149CF928D6B469164E7 /* 📦 Embed Pods Frameworks */,
+				969886CF621F8443633DB988 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -555,65 +606,25 @@
 				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
+				C26FBB9C1CF407D300C56308 /* PictureViewCell.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
+				C25AA63B1CF5930400517653 /* LWNImgView.xib in Resources */,
+				C22B22671CF6DC7C00018715 /* LWNViewController.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
+				C26FBB971CF4075E00C56308 /* PictureController.xib in Resources */,
 				961F9EC01CEE96530043F86C /* ZYSignInViewController.xib in Resources */,
 				961F9EC51CEE967E0043F86C /* ZYSignUpViewController.xib in Resources */,
+				C25AA6401CF5C99E00517653 /* PictureDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01BD681868FC2121C70326FB /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DA232C223DEE1F88F3DBCA3 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB25C5DD1C78F9B43F2FFB9A /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EB80ABB721B59B1F8BCA302C /* 📦 Copy Pods Resources */ = {
+		969886CF621F8443633DB988 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -628,6 +639,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9DD3485E7097CB58093B3733 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDB6E149CF928D6B469164E7 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -636,8 +677,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
+				C26FBBA01CF42CC200C56308 /* Picture.m in Sources */,
 				961F9EBF1CEE96530043F86C /* ZYSignInViewController.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
+				C26FBB9B1CF407D300C56308 /* PictureViewCell.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
@@ -648,17 +691,22 @@
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
+				C22B22661CF6DC7C00018715 /* LWNViewController.m in Sources */,
+				C25AA63F1CF5C99E00517653 /* PictureDetailController.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
-				96FD78C61CEDD501000FCB3C /* JTTabBarController.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
+				C26FBBA31CF42E9200C56308 /* PictureHandle.m in Sources */,
+				C26FBB961CF4075E00C56308 /* PictureController.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
 				C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */,
+				C26FBB8D1CF4016700C56308 /* JTTabBarViewController.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */,
 				C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */,
+				C25AA6391CF566D900517653 /* LWNImgView.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */,
@@ -772,7 +820,7 @@
 		};
 		96FD788B1CED92FE000FCB3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11370B36862CFBFC213D5E69 /* Pods-DuBi.debug.xcconfig */;
+			baseConfigurationReference = 42A7218E7D7A49FB5563CD2A /* Pods-DuBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -788,7 +836,7 @@
 		};
 		96FD788C1CED92FE000FCB3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E5F93F56FFD50A149AAD8FA /* Pods-DuBi.release.xcconfig */;
+			baseConfigurationReference = 5B26A19B926CFECBE0E9A466 /* Pods-DuBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;

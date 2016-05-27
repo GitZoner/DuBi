@@ -9,5 +9,4 @@
 #ifndef LWNSpacing_h
 #define LWNSpacing_h
 
-
 #endif /* LWNSpacing_h */
