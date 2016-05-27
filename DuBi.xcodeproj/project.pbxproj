@@ -28,6 +28,9 @@
 		96E97E1F1CF04A7200DFA851 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E97E171CF04A7200DFA851 /* SessionCell.m */; };
 		96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E181CF04A7200DFA851 /* SessionCell.xib */; };
 		96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E211CF04F3300DFA851 /* Assets.xcassets */; };
+		96FB59BD1CF6D0C3009A8BCF /* JTCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB59B91CF6D0C3009A8BCF /* JTCircleCell.m */; };
+		96FB59BE1CF6D0C3009A8BCF /* JTCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB59BC1CF6D0C3009A8BCF /* JTCircleViewController.m */; };
+		96FB59C11CF6D1E8009A8BCF /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB59C01CF6D1E8009A8BCF /* DWBubbleMenuButton.m */; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
@@ -133,6 +136,12 @@
 		96E97E171CF04A7200DFA851 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
 		96E97E181CF04A7200DFA851 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		96E97E211CF04F3300DFA851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96FB59B81CF6D0C3009A8BCF /* JTCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCircleCell.h; sourceTree = "<group>"; };
+		96FB59B91CF6D0C3009A8BCF /* JTCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCircleCell.m; sourceTree = "<group>"; };
+		96FB59BB1CF6D0C3009A8BCF /* JTCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCircleViewController.h; sourceTree = "<group>"; };
+		96FB59BC1CF6D0C3009A8BCF /* JTCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCircleViewController.m; sourceTree = "<group>"; };
+		96FB59BF1CF6D1E8009A8BCF /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
+		96FB59C01CF6D1E8009A8BCF /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -382,6 +391,43 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		96FB59B51CF6D0C3009A8BCF /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				96FB59B61CF6D0C3009A8BCF /* Model */,
+				96FB59B71CF6D0C3009A8BCF /* View */,
+				96FB59BA1CF6D0C3009A8BCF /* ViewController */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		96FB59B61CF6D0C3009A8BCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96FB59B71CF6D0C3009A8BCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96FB59BF1CF6D1E8009A8BCF /* DWBubbleMenuButton.h */,
+				96FB59C01CF6D1E8009A8BCF /* DWBubbleMenuButton.m */,
+				96FB59B81CF6D0C3009A8BCF /* JTCircleCell.h */,
+				96FB59B91CF6D0C3009A8BCF /* JTCircleCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96FB59BA1CF6D0C3009A8BCF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96FB59BB1CF6D0C3009A8BCF /* JTCircleViewController.h */,
+				96FB59BC1CF6D0C3009A8BCF /* JTCircleViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		96FD786A1CED92FD000FCB3C = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +531,7 @@
 		96FD78961CED93F2000FCB3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				96FB59B51CF6D0C3009A8BCF /* Circle */,
 				965C51F71CF3EDDC00B0F22F /* signInAndRegister */,
 				C2A7DC6C1CF311D900492355 /* ZYVideo */,
 				96E97E091CF04A7200DFA851 /* BuddyAndMessageView */,
@@ -916,6 +963,7 @@
 				C28C659E1CF6F2C600F7FFC5 /* JRPlayerViewController.m in Sources */,
 				C284A8731CF583770093E851 /* ZDList.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
+				96FB59C11CF6D1E8009A8BCF /* DWBubbleMenuButton.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
@@ -926,9 +974,11 @@
 				C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */,
 				C284A8531CF53F9E0093E851 /* ZDCustomVedioCell.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
+				96FB59BD1CF6D0C3009A8BCF /* JTCircleCell.m in Sources */,
 				C2E0C4821CF05636006CCD96 /* ZDPublishView.m in Sources */,
 				96E97E1D1CF04A7200DFA851 /* JTSessionViewController.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
+				96FB59BE1CF6D0C3009A8BCF /* JTCircleViewController.m in Sources */,
 				C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */,
 				C284A8741CF583770093E851 /* ZDThemes.m in Sources */,
 				C29685931CF6E45C00CA5362 /* ZDAVPlayer.m in Sources */,
