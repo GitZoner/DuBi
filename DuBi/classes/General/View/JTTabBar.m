@@ -11,55 +11,58 @@
 #import <POP.h>
 #import "UIView+XYWidthHeight.h"
 #import <DCPathButton.h>
+#import "ZDPublishController.h"
+#import "ZDPublishHaflView.h"
+
 #define kWindow [UIApplication sharedApplication].keyWindow
 #define kpingMuBounds [UIScreen mainScreen].bounds
 
-@interface JTTabBar ()<DCPathButtonDelegate>
+@interface JTTabBar ()
 
 // 发布按钮
 @property (strong,nonatomic)UIButton *publishButton;
 @property (strong,nonatomic)UIView * publishView;
+@property (strong ,nonatomic) DCPathButton *dcPathButton;
 @end
+
 @implementation JTTabBar
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        /*
+        
         UIButton *publishButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
         [publishButton setBackgroundImage:[UIImage  imageNamed:@"tabBar_publish_icon"] forState:(UIControlStateNormal)];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:(UIControlStateHighlighted)];
         [publishButton addTarget:self action:@selector(publishClick) forControlEvents:(UIControlEventTouchUpInside)];
         [self addSubview:publishButton];
         self.publishButton = publishButton;
-        */
-        // 添加中间的button
-        // [self addCenterButton];
-        
-        [self addCenterButton];
-        
         
     }
     return self;
 }
 
+/*
 -(void)addCenterButton
 {
     
-    DCPathButton *dcPathButton = [[DCPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"chooser-button-tab"]
+    self.dcPathButton = [[DCPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"chooser-button-tab"]
                                                          highlightedImage:[UIImage imageNamed:@"chooser-button-tab-highlighted"]];
-    dcPathButton.delegate = self;
+    
+     _dcPathButton.delegate = self;
     
     // Configure item buttons
     //
-    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
+    
+    DCPathItemButton *itemButton_1  = nil;
+    
+    itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
                                                            highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-music-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
-    [itemButton_1 addTarget:self action:@selector(itemButton_1Action:) forControlEvents:(UIControlEventTouchUpInside)];
-    
+//    itemButton_1.delegate = self;
     DCPathItemButton *itemButton_2 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-place"]
                                                            highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-place-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
@@ -82,7 +85,7 @@
     
     // Add the item button into the center button
     //
-    [dcPathButton addPathItems:@[itemButton_1,
+    [_dcPathButton addPathItems:@[itemButton_1,
                                  itemButton_2,
                                  itemButton_3,
                                  itemButton_4,
@@ -91,28 +94,26 @@
     
     // Change the bloom radius, default is 105.0f
     //
-    dcPathButton.bloomRadius = 120.0f;
+    _dcPathButton.bloomRadius = 100.0f;
     
     // Change the DCButton's center
     //
-    dcPathButton.dcButtonCenter = CGPointMake(self.bounds.size.width + 210, self.bounds.size.height + 20);
+    _dcPathButton.dcButtonCenter = CGPointMake(self.bounds.size.width + 210, self.bounds.size.height + 20);
     
     // Setting the DCButton appearance
     //
-    dcPathButton.allowSounds = YES;
-    dcPathButton.allowCenterButtonRotation = YES;
+    _dcPathButton.allowSounds = YES;
+    _dcPathButton.allowCenterButtonRotation = YES;
     
-    dcPathButton.bottomViewColor = [UIColor redColor];
+    _dcPathButton.bottomViewColor = [UIColor redColor];
     
-    dcPathButton.bloomDirection =  kDCPathButtonBloomDirectionTop;
+    _dcPathButton.bloomDirection =  kDCPathButtonBloomDirectionTop;
     
-    [self addSubview:dcPathButton];
+    [self addSubview:_dcPathButton];
     
-
 }
-
-
-
+*/
+/*
 #pragma mark --- 子button的事件。
 // 子button的点击事件
 -(void)itemButton_1Action:(DCPathItemButton * )button
@@ -159,21 +160,41 @@
     
     NSLog(@"ItemButton did present");
 }
+*/
 
+// BUTTON按钮的点击事件
 
-
-
-
-UIWindow * window;
-
+UIWindow const * window;
 -(void)publishClick
 {
+
+   // [UIView animateWithDuration:1 animations:^{
+       
+        window = [[UIWindow alloc]init];
+        window.frame = [UIScreen mainScreen].bounds;
+        window.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.8];
+        window.hidden = NO;
+        ZDPublishHaflView  * publishView = [[ZDPublishHaflView alloc]initWithFrame:CGRectMake(0, self.window.height / 3 * 2, self.window.width, self.window.height / 3)];
+        // publishView.backgroundColor = [UIColor blueColor];
+        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(publishView.width /2 - 15, publishView.height - 30, 30, 30)];
+        [button setTitle:@"x" forState:(UIControlStateNormal)];
+        button.titleLabel.font = [UIFont systemFontOfSize:30];
+        [button setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+        [button addTarget:self action:@selector(buttonAction) forControlEvents:(UIControlEventTouchUpInside)];
+        [window addSubview:publishView];
+        // self.block(window);
+        [publishView addSubview:button];
+
+   // }];
+    
+//    if(_wodeDelegate && [_wodeDelegate respondsToSelector:@selector(presentView)]) {
+//        [_wodeDelegate presentView];
+//    }
+
+
+    /*
     ZDPublishView * publishView = [ZDPublishView publishView];
-    
-    
-        
-    
-    
+
 //    [UIView animateWithDuration:0.5 animations:^{
 //        publishView.transform = CGAffineTransformRotate(publishView.transform, 0.2);
 //    }];
@@ -198,7 +219,15 @@ UIWindow * window;
     [publishView pop_addAnimation:anim forKey:nil];
 
     [window addSubview:publishView];
+     */
 }
+
+-(void)buttonAction
+{
+    window.hidden = YES;
+}
+
+
 -(void)timeAction
 {
     [UIView animateWithDuration:0.5 animations:^{
@@ -206,12 +235,6 @@ UIWindow * window;
     }];
 
 }
-
-
-
-
-
-
 
 -(void)layoutSubviews {
     [super layoutSubviews];

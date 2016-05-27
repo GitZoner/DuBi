@@ -7,57 +7,36 @@
 //
 
 #import "ZYButton.h"
-
+#import "UIView+XYWidthHeight.h"
 @implementation ZYButton
 
-//// 初始化button的大小
-//- (instancetype)initWithFrame:(CGRect)frame {
-//    
-//    if (self = [super initWithFrame:frame]) {
-//        
-//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//        self.frame = CGRectMake(0, 0, 93.5, 30);
-//    }
-//    
-//    return self;
-//}
-//// 重新布局button上的内容
-//- (void)layoutSubviews {
-//    
-//    [super layoutSubviews];
-//    // 设置图片的大小
-//    CGFloat imageViewWidth = self.bounds.size.width * 1 / 3;
-//    CGFloat imageViewHeight = self.bounds.size.height;
-//    // 设置titleLabel的高度
-//    CGFloat labelWidth = self.bounds.size.width * 2 / 3;
-//    CGFloat labelHeight = self.bounds.size.height;
-//    // 间距大小
-//    CGFloat veticalMargin = 0;
-//    // 设置imageView
-//    
 
-//    
-//}
-//UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 300, 300)];
-////设置文字
-//[button setTitle:@"测试" forState:UIControlStateNormal];
-//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//button.titleLabel.font = [UIFont systemFontOfSize:25];
-////为了有所区分，设置按钮背景颜色为黑色
-//button.backgroundColor = [UIColor blackColor];
-////设置图片
-//[button setImage:[UIImage imageNamed:@"联系人"] forState:UIControlStateNormal];
-//[self.view addSubview:button];
-
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)creatWithButton:(UIButton *)button Title:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage target:(id)target action:(SEL)action frame:(CGRect)frame{
+    
+    button = [ZYButton buttonWithType:(UIButtonTypeCustom)];
+    
+    button.frame = frame;
+    
+    
+    [button setImage:[UIImage imageNamed:image] forState:(UIControlStateNormal)];
+    [button setImage:[UIImage imageNamed:selectImage] forState:(UIControlStateHighlighted)];
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, -button.titleLabel.bounds.size.width, 0, 0);
+    
+    
+    
+    [button setTitle:title forState:(UIControlStateNormal)];
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [button setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
+    [button setTitleColor:[UIColor redColor] forState:(UIControlStateHighlighted)];
+    button.titleEdgeInsets = UIEdgeInsetsMake(0,button.titleLabel.frame.size.width, 0, 0);
+    
+    [button addTarget:button action:action forControlEvents:(UIControlEventTouchUpInside)];
+    
+    
+    return button;
+    
 }
-*/
+
 
 @end

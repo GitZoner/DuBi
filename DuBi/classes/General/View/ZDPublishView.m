@@ -14,7 +14,7 @@
 #define kpingMuBounds [UIScreen mainScreen].bounds
 @interface ZDPublishView ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
+//@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 
 @end
 
@@ -69,6 +69,7 @@
 
     UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shareBottomBackground"]];
     imageView.frame = [UIScreen mainScreen].bounds;
+    imageView.userInteractionEnabled = YES;
     [self insertSubview:imageView atIndex:0];
 //    [self addSubview:imageView];
     
@@ -83,12 +84,20 @@
     for (int i = 0 ; i < texts.count; i++) {
         ZDCustomButton * button = [[ZDCustomButton alloc]init];
         [imageView addSubview:button];
+       
         [button setTitle:texts[i] forState:(UIControlStateNormal)];
-        [button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+       
+        [button setTitleColor:[UIColor blackColor] forState:
+         (UIControlStateNormal)];
+     
         button.titleLabel.font = [UIFont systemFontOfSize:15];
+      
         button.titleLabel.textColor = [UIColor blackColor];
+      
         [button setTintColor:[UIColor colorWithRed:0.496 green:0.496 blue:0.496 alpha:1.0]];
+      
         button.imageView.image =[UIImage imageNamed:images[i]];
+      
         button.frame = CGRectMake(buttonX + (i * buttonW) + i * buttonX,buttonY,buttonW, buttonH);
     }
 }

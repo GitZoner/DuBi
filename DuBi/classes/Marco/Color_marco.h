@@ -15,6 +15,6 @@
 #define kRANDOM_COLOR JT_COLOR(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255),1.0)
 
 // 主题颜色
-#define THEME_COLOR [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0]
+#define THEME_COLOR [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.773060344827586]
 
 #endif /* Color_marco_h */

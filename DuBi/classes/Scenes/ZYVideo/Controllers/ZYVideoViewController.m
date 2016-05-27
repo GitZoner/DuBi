@@ -8,20 +8,133 @@
 
 #import "ZYVideoViewController.h"
 #import "ZYVideoCell.h"
+#import "ZDCustomVedioCell.h"
+#import "UIView+XYWidthHeight.h"
+#import "DataModels.h" // model
+#import <AFNetworking.h>
+
+#define kUrl @"http://api.budejie.com/api/api_open.php"
+
 @interface ZYVideoViewController ()
 
+/**
+ *  // 装在所有 ZDList model 的数组
+ */
+@property(strong,nonatomic)NSMutableArray * listArry;
+
+/**
+ *  // 装所有  ZDThemes model
+ */
+@property(strong,nonatomic)NSMutableArray * themesArray;
+
+/**
+ *  // 装所有  ZDInfo model
+ */
+@property(strong,nonatomic)NSMutableArray * infoArray;
 @end
 
+static NSString * const registerId = @"ZDCustomVedioCell";
 @implementation ZYVideoViewController
 
+#pragma mark --- setter getter 方法
+-(NSMutableArray *)listArry
+{
+    if (!_listArry) {
+    
+        _listArry = [NSMutableArray array];
+    }
+    return _listArry;
+}
+
+-(NSMutableArray *)themesArray
+{
+    if (!_themesArray) {
+     
+        _themesArray = [NSMutableArray array];
+    }
+    return _themesArray;
+}
+
+-(NSMutableArray *)infoArray
+{
+    if (!_infoArray) {
+        
+        _infoArray = [NSMutableArray array];
+    }
+    return _infoArray;
+}
+
+#pragma mark --- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // 注册tableView和title一些其他设置
+    [self setTableViewAndTitle];
     
-    self.navigationItem.title = @"爱视频";
+    // 数据请求
+    [self requestAction];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZYVideoCell" bundle:nil] forCellReuseIdentifier:@"ZYCellID"];
     
+   
+ 
+}
+/**
+ *  数据请求 -- 解析
+ */
+#pragma mark --- 数据请求
+-(void)requestAction
+{
+    __weak typeof(ZYVideoViewController *) temp = self;
+    NSMutableDictionary * paramet = [NSMutableDictionary dictionary];
+    paramet[@"a"] = @"list";
+    paramet[@"c"] = @"data";
+    paramet[@"type"] = @(41);
+    [[AFHTTPSessionManager manager] GET:kUrl parameters:paramet progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // NSLog(@"%@",responseObject);
+        NSArray * array = responseObject[@"list"];
+//        NSLog(@"%@",array);
+        
+        ZDInfo *  infoModel = [[ZDInfo alloc]initWithDictionary:responseObject[@"info"]];
+        [temp.infoArray addObject:infoModel];
+        NSLog(@"infoArray --------------  %ld",temp.infoArray.count);
+        
+        for (NSDictionary * dict in array) {
+            
+            ZDList * model = [[ZDList alloc]initWithDictionary:dict];
+            [temp.listArry addObject:model];
+            NSLog(@"listArray ---------------  %ld",self.listArry.count);
+            
+            for (NSDictionary * dic in temp.listArry) {
+                
+                ZDThemes * themesModel = [[ZDThemes alloc]initWithDictionary:dic];
+                [temp.themesArray addObject:themesModel];
+                NSLog(@"themesArray --------------- %ld",temp.themesArray.count);
+            }
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [temp.tableView reloadData];
+            });
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+            NSLog(@"-------------------- error = %@",error);
+    }];
+}
+
+
+/**
+ *  tableView的设置
+ */
+#pragma mark --- 注册tableView和title一些其他设置
+
+-(void)setTableViewAndTitle
+{
+    self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.773060344827586];
+    self.navigationItem.title = @"爱AV";
     
+    //  [self.tableView registerNib:[UINib nibWithNibName:[NSStringFromClass([ZDCustomVedioCell class])] bundle:nil] forCellReuseIdentifier:registerId];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZDCustomVedioCell class]) bundle:nil] forCellReuseIdentifier:registerId];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,28 +142,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 50;
+   //  NSLog(@"%@",self.listArry);
+    
+    return self.listArry.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZYVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZYCellID" forIndexPath:indexPath];
-    
-    
+   //  ZYVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZYCellID" forIndexPath:indexPath];
+    ZDCustomVedioCell * cell = [tableView dequeueReusableCellWithIdentifier:registerId forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellAccessoryNone;
+     cell.listModel = self.listArry[indexPath.row];
+   //  cell.infoModel = self.infoArray[indexPath.row];
+    cell.themesModel = self.themesArray[indexPath.row];
     
     return cell;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 400;
+    return self.view.height/ 9 * 4 ;
 }
 
 /*

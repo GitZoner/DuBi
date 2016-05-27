@@ -13,7 +13,17 @@
 #import "MainViewController.h"
 #import "JTSessionViewController.h"
 #import <DCPathButton.h>
+#import "ZYVideoViewController.h"
+#import "ZDUserViewController.h"
+#import "JTTabBar.h"
+#import "ZDPublishController.h"
+
+#import "JTCircleViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
+
+
+
+
 
 @end
 
@@ -21,7 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.delegate = self;
+    
+ 
+        self.delegate = self;
     
     // 统一设定 tabbar 上各控件的显示属性
     //    UIViewController *VC01 = [UIViewController new];
@@ -32,8 +44,14 @@
     
 }
 
-
-
+/*
+-(void)presentView
+{
+    ZDPublishController * ZDpVc = [ZDPublishController new];
+    ZDpVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:ZDpVc animated:YES completion:nil];
+}
+*/
 -(void)setTabBarVC
 {
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
@@ -49,17 +67,17 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect] forBarMetrics:(UIBarMetricsDefault)];
     
     // 精华
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[MainViewController new]] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
-    // 新帖
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
-    // 关注
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTSessionViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self setUpChildVCWithChildVC:[MainViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    // 视频
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    // 圈子
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTCircleViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
-    [self setUpChildVCWithChildVC:[UIViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
-    
+    [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
-    [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0];
+    [UIColor colorWithRed:0.702 green:0.702 blue:0.702 alpha:1.0];
 }
 
 
@@ -93,8 +111,15 @@
 
 
 
+/**
+ *  JTTabBar的代理方法，帮它模态出一个控制器
+ */
+
+
+
 #pragma  mark --- tabBarVC代理方法
 // tabBar之间切换动画
+/*
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
     // 给每个tabbar没个item设置tag值
@@ -122,7 +147,7 @@
     [self.view.layer addAnimation:animation forKey:@"animation"];
     
 }
-
+*/
 /*
 #pragma mark - Navigation
 
