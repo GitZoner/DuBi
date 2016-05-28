@@ -22,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 设置window,并将自定义的TabBarController设置为Window的根视图
     [self setWindowAndRootVC];
+    
+    
     // 初始化好友管理器
     [JTBuddyManager sharedJTBuddyManager];
     // 初始化LeanCloud 

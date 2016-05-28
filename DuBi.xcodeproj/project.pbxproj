@@ -175,6 +175,20 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422251CF975E300E8F9A6 /* LWNDataBase.m */; };
+		C284222C1CF975E300E8F9A6 /* LWNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422271CF975E300E8F9A6 /* LWNTableView.m */; };
+		C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422291CF975E300E8F9A6 /* PictureHandle.m */; };
+		C28422341CF9772100E8F9A6 /* LWNImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C284222F1CF9772100E8F9A6 /* LWNImgView.m */; };
+		C28422351CF9772100E8F9A6 /* LWNImgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28422301CF9772100E8F9A6 /* LWNImgView.xib */; };
+		C28422361CF9772100E8F9A6 /* PictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422321CF9772100E8F9A6 /* PictureViewCell.m */; };
+		C28422371CF9772100E8F9A6 /* PictureViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28422331CF9772100E8F9A6 /* PictureViewCell.xib */; };
+		C284223A1CF9777C00E8F9A6 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422391CF9777C00E8F9A6 /* Picture.m */; };
+		C28422441CF9778A00E8F9A6 /* LWNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284223C1CF9778A00E8F9A6 /* LWNViewController.m */; };
+		C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C284223D1CF9778A00E8F9A6 /* LWNViewController.xib */; };
+		C28422461CF9778A00E8F9A6 /* PictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284223F1CF9778A00E8F9A6 /* PictureController.m */; };
+		C28422471CF9778A00E8F9A6 /* PictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28422401CF9778A00E8F9A6 /* PictureController.xib */; };
+		C28422481CF9778A00E8F9A6 /* PictureDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422421CF9778A00E8F9A6 /* PictureDetailController.m */; };
+		C28422491CF9778A00E8F9A6 /* PictureDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28422431CF9778A00E8F9A6 /* PictureDetailController.xib */; };
 		C284A84C1CF5322F0093E851 /* ZDSetUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A84B1CF5322F0093E851 /* ZDSetUpController.m */; };
 		C284A84F1CF536540093E851 /* ZDSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A84E1CF536540093E851 /* ZDSetUpViewController.m */; };
 		C284A8531CF53F9E0093E851 /* ZDCustomVedioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */; };
@@ -542,6 +556,30 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C28422241CF975E300E8F9A6 /* LWNDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNDataBase.h; sourceTree = "<group>"; };
+		C28422251CF975E300E8F9A6 /* LWNDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNDataBase.m; sourceTree = "<group>"; };
+		C28422261CF975E300E8F9A6 /* LWNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNTableView.h; sourceTree = "<group>"; };
+		C28422271CF975E300E8F9A6 /* LWNTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNTableView.m; sourceTree = "<group>"; };
+		C28422281CF975E300E8F9A6 /* PictureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureHandle.h; sourceTree = "<group>"; };
+		C28422291CF975E300E8F9A6 /* PictureHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureHandle.m; sourceTree = "<group>"; };
+		C284222A1CF975E300E8F9A6 /* public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = public.h; sourceTree = "<group>"; };
+		C284222E1CF9772100E8F9A6 /* LWNImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNImgView.h; sourceTree = "<group>"; };
+		C284222F1CF9772100E8F9A6 /* LWNImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNImgView.m; sourceTree = "<group>"; };
+		C28422301CF9772100E8F9A6 /* LWNImgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWNImgView.xib; sourceTree = "<group>"; };
+		C28422311CF9772100E8F9A6 /* PictureViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewCell.h; sourceTree = "<group>"; };
+		C28422321CF9772100E8F9A6 /* PictureViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewCell.m; sourceTree = "<group>"; };
+		C28422331CF9772100E8F9A6 /* PictureViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureViewCell.xib; sourceTree = "<group>"; };
+		C28422381CF9777C00E8F9A6 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		C28422391CF9777C00E8F9A6 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		C284223B1CF9778A00E8F9A6 /* LWNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNViewController.h; sourceTree = "<group>"; };
+		C284223C1CF9778A00E8F9A6 /* LWNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNViewController.m; sourceTree = "<group>"; };
+		C284223D1CF9778A00E8F9A6 /* LWNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWNViewController.xib; sourceTree = "<group>"; };
+		C284223E1CF9778A00E8F9A6 /* PictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureController.h; sourceTree = "<group>"; };
+		C284223F1CF9778A00E8F9A6 /* PictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureController.m; sourceTree = "<group>"; };
+		C28422401CF9778A00E8F9A6 /* PictureController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureController.xib; sourceTree = "<group>"; };
+		C28422411CF9778A00E8F9A6 /* PictureDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDetailController.h; sourceTree = "<group>"; };
+		C28422421CF9778A00E8F9A6 /* PictureDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDetailController.m; sourceTree = "<group>"; };
+		C28422431CF9778A00E8F9A6 /* PictureDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureDetailController.xib; sourceTree = "<group>"; };
 		C284A84A1CF5322F0093E851 /* ZDSetUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSetUpController.h; sourceTree = "<group>"; };
 		C284A84B1CF5322F0093E851 /* ZDSetUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSetUpController.m; sourceTree = "<group>"; };
 		C284A84D1CF536540093E851 /* ZDSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSetUpViewController.h; sourceTree = "<group>"; };
@@ -1516,6 +1554,13 @@
 		C2533CB51CEDEBDC00C134C6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C28422241CF975E300E8F9A6 /* LWNDataBase.h */,
+				C28422251CF975E300E8F9A6 /* LWNDataBase.m */,
+				C28422261CF975E300E8F9A6 /* LWNTableView.h */,
+				C28422271CF975E300E8F9A6 /* LWNTableView.m */,
+				C28422281CF975E300E8F9A6 /* PictureHandle.h */,
+				C28422291CF975E300E8F9A6 /* PictureHandle.m */,
+				C284222A1CF975E300E8F9A6 /* public.h */,
 				9605E9CC1CF485A6000D1834 /* XHToast */,
 				9605E9C81CF47E47000D1834 /* RegularUtils */,
 				C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */,
@@ -1543,6 +1588,15 @@
 		C2533CBD1CEDEC0A00C134C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C284223B1CF9778A00E8F9A6 /* LWNViewController.h */,
+				C284223C1CF9778A00E8F9A6 /* LWNViewController.m */,
+				C284223D1CF9778A00E8F9A6 /* LWNViewController.xib */,
+				C284223E1CF9778A00E8F9A6 /* PictureController.h */,
+				C284223F1CF9778A00E8F9A6 /* PictureController.m */,
+				C28422401CF9778A00E8F9A6 /* PictureController.xib */,
+				C28422411CF9778A00E8F9A6 /* PictureDetailController.h */,
+				C28422421CF9778A00E8F9A6 /* PictureDetailController.m */,
+				C28422431CF9778A00E8F9A6 /* PictureDetailController.xib */,
 				C2533CBE1CEDEC0A00C134C6 /* MainViewController.h */,
 				C2533CBF1CEDEC0A00C134C6 /* MainViewController.m */,
 				C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */,
@@ -1553,6 +1607,8 @@
 		C2533CC11CEDEC0A00C134C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C28422381CF9777C00E8F9A6 /* Picture.h */,
+				C28422391CF9777C00E8F9A6 /* Picture.m */,
 				C22BC6CA1CEE01DA00E7AF10 /* Topic.h */,
 				C22BC6CB1CEE01DA00E7AF10 /* Topic.m */,
 			);
@@ -1562,6 +1618,12 @@
 		C2533CC21CEDEC0A00C134C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C284222E1CF9772100E8F9A6 /* LWNImgView.h */,
+				C284222F1CF9772100E8F9A6 /* LWNImgView.m */,
+				C28422301CF9772100E8F9A6 /* LWNImgView.xib */,
+				C28422311CF9772100E8F9A6 /* PictureViewCell.h */,
+				C28422321CF9772100E8F9A6 /* PictureViewCell.m */,
+				C28422331CF9772100E8F9A6 /* PictureViewCell.xib */,
 				C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */,
 				C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */,
 				C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */,
@@ -1725,13 +1787,18 @@
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				C2E0C4831CF05636006CCD96 /* ZDPublishView.xib in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
+				C28422491CF9778A00E8F9A6 /* PictureDetailController.xib in Resources */,
 				96FB5CCA1CF6FF1D009A8BCF /* MWPhotoBrowser.bundle in Resources */,
+				C28422351CF9772100E8F9A6 /* LWNImgView.xib in Resources */,
 				96E97E1E1CF04A7200DFA851 /* JTSessionViewController.xib in Resources */,
+				C28422471CF9778A00E8F9A6 /* PictureController.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
+				C28422371CF9772100E8F9A6 /* PictureViewCell.xib in Resources */,
 				96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
+				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
@@ -1835,6 +1902,7 @@
 				96FB5CB91CF6FF1D009A8BCF /* UIImage+EMWebP.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
+				C28422361CF9772100E8F9A6 /* PictureViewCell.m in Sources */,
 				96FB5CBF1CF6FF1D009A8BCF /* PSTCollectionViewCell.m in Sources */,
 				96FB5CC81CF6FF1D009A8BCF /* PSTGridLayoutRow.m in Sources */,
 				96FB5CCD1CF6FF1D009A8BCF /* EaseMessageModel.m in Sources */,
@@ -1858,6 +1926,7 @@
 				96FB5C9B1CF6FF1D009A8BCF /* MJRefreshBackStateFooter.m in Sources */,
 				96FB5CF51CF6FF1D009A8BCF /* EaseChatBarMoreView.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
+				C28422481CF9778A00E8F9A6 /* PictureDetailController.m in Sources */,
 				96D5B0331CF84976009E689C /* NSString+MD5.m in Sources */,
 				96FB5CB81CF6FF1D009A8BCF /* UIImage+EMMultiFormat.m in Sources */,
 				96FB5CCF1CF6FF1D009A8BCF /* NSDate+Category.m in Sources */,
@@ -1867,6 +1936,7 @@
 				96FB5CDE1CF6FF1D009A8BCF /* EaseMessageViewController.m in Sources */,
 				96FB5C921CF6FF1D009A8BCF /* MJRefreshBackFooter.m in Sources */,
 				C284A8531CF53F9E0093E851 /* ZDCustomVedioCell.m in Sources */,
+				C284223A1CF9777C00E8F9A6 /* Picture.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
 				96FB5CB71CF6FF1D009A8BCF /* UIImage+EMGIF.m in Sources */,
 				96FB59BD1CF6D0C3009A8BCF /* JTCircleCell.m in Sources */,
@@ -1886,6 +1956,7 @@
 				C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */,
 				C284A8741CF583770093E851 /* ZDThemes.m in Sources */,
 				C284A8711CF583770093E851 /* ZDBaseClass.m in Sources */,
+				C28422441CF9778A00E8F9A6 /* LWNViewController.m in Sources */,
 				96FB5CE11CF6FF1D009A8BCF /* EaseViewController.m in Sources */,
 				96FB5CD61CF6FF1D009A8BCF /* EaseMessageReadManager.m in Sources */,
 				96FB5CA61CF6FF1D009A8BCF /* MWGridViewController.m in Sources */,
@@ -1904,12 +1975,14 @@
 				96FB5CA11CF6FF1D009A8BCF /* UIScrollView+MJExtension.m in Sources */,
 				96FB5CBC1CF6FF1D009A8BCF /* UIView+EMWebCacheOperation.m in Sources */,
 				96FB5CC21CF6FF1D009A8BCF /* PSTCollectionViewFlowLayout.m in Sources */,
+				C28422341CF9772100E8F9A6 /* LWNImgView.m in Sources */,
 				96FB5C9C1CF6FF1D009A8BCF /* MJRefreshGifHeader.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,
 				96FB5CE71CF6FF1D009A8BCF /* EaseBubbleView+File.m in Sources */,
 				96FB5CB51CF6FF1D009A8BCF /* NSData+EMImageContentType.m in Sources */,
 				96FB5CC41CF6FF1D009A8BCF /* PSTCollectionViewLayout.m in Sources */,
 				96FB5CBD1CF6FF1D009A8BCF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				C28422461CF9778A00E8F9A6 /* PictureController.m in Sources */,
 				96FB5CC01CF6FF1D009A8BCF /* PSTCollectionViewController.m in Sources */,
 				96FB5CE91CF6FF1D009A8BCF /* EaseBubbleView+Image.m in Sources */,
 				96FB5CA81CF6FF1D009A8BCF /* MWPhotoBrowser.m in Sources */,
@@ -1924,14 +1997,17 @@
 				C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */,
 				C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */,
 				C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */,
+				C284222C1CF975E300E8F9A6 /* LWNTableView.m in Sources */,
 				96FB5CE81CF6FF1D009A8BCF /* EaseBubbleView+Gif.m in Sources */,
 				96FB5C9D1CF6FF1D009A8BCF /* MJRefreshNormalHeader.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
+				C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */,
 				96FB5CE31CF6FF1D009A8BCF /* EaseBaseMessageCell.m in Sources */,
 				96FB5CAB1CF6FF1D009A8BCF /* MWZoomingScrollView.m in Sources */,
 				96FB5C9E1CF6FF1D009A8BCF /* MJRefreshStateHeader.m in Sources */,
 				C220B3531CF433A0009A6560 /* JTRegisterViewController.m in Sources */,
 				96FB5CB11CF6FF1D009A8BCF /* EMSDWebImageDownloaderOperation.m in Sources */,
+				C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */,
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
