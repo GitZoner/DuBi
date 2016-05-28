@@ -36,6 +36,7 @@ singleton_implementation(JTBuddyManager);
         // 初始化环信
         EMOptions *options = [EMOptions optionsWithAppkey:@"colorfulyogurt#dubi"];// 环信AppKey
         options.apnsCertName = @"istore_dev";// 苹果推送证书
+       
         _emClient = [EMClient sharedClient];
       [_emClient initializeSDKWithOptions:options];
         // 好友管理的代理

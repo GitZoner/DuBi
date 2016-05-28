@@ -55,13 +55,13 @@
     }
     // [self playerTools];
     
-    ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
+//    ZDAVPlayer * players = [[ZDAVPlayer alloc]initWithFrame:self.bounds WithVideoStr:_listModel.videouri];
+//    [_playerView addSubview:players];
     
-    [self addSubview:players];
     
     
     //self.caiButton.titleLabel.text = listModel.hate;
-    
+    [self playerTools];
     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
 //    self.videoTime.text = _listModel.videotime;
     
@@ -117,15 +117,13 @@
 // 播放视频
 -(void)playerTools
 {
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+ 
+    dispatch_async(concurrentQueue, ^{
     
-//    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-// 
-//    dispatch_async(concurrentQueue, ^{
-    
-        ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
-        
-        [self addSubview:players];
-//    });
+    _player = [[ZDAVPlayer alloc]initWithFrame:self.bgImgView.bounds WithVideoStr:_listModel.videouri];
+    [self.contentView addSubview:_player];
+    });
 }
 
 
