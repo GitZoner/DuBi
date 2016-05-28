@@ -54,7 +54,7 @@
     
     [self _prepareForButtonExpansion];
     
-    self.userInteractionEnabled = NO;
+    self.userInteractionEnabled = YES;
     
     [CATransaction begin];
     [CATransaction setAnimationDuration:_animationDuration];

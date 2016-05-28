@@ -10,7 +10,7 @@
 #import "Singleton.h"
 
 typedef void(^Successed)(void);
-typedef void(^Failed)(void);
+typedef void(^Failed)(NSError *);
 @interface JTBuddyManager : NSObject
 /**
  *  该类单例方法的声明

@@ -9,6 +9,7 @@
 #import "JTSignInChoiceViewController.h"
 #import "UIView+XYWidthHeight.h"
 #import "JTRegisterViewController.h"
+#import "JTAliasViewController.h"
 
 @interface JTSignInChoiceViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
@@ -34,7 +35,7 @@
    // 设置视图上button的相关属性
     [self setButtons];
   
-
+   
     
     
 }
@@ -74,8 +75,12 @@
 
 // 新用户注册 按钮的事件
 - (IBAction)registerNewUserButtonAction:(UIButton *)sender {
+    JTRegisterViewController *registerVC = [JTRegisterViewController new];
+   [self presentViewController:registerVC animated:YES completion:^{
+          }];
     
-    [self presentViewController:[JTRegisterViewController new] animated:YES completion:nil];
+
+    
     
 }
 
@@ -97,6 +102,9 @@
 - (IBAction)phoneSignInButtonAction:(UIButton *)sender {
     
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

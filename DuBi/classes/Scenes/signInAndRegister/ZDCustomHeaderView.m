@@ -29,26 +29,12 @@
 
 -(void)drawView{
     
-    
-
-
     [self addSubview:self.bgImgView];
      [self.bgImgView addSubview:self.touXimageView];
-    [self.bgImgView addSubview:self.registerOrLoginButton];
+    [self.bgImgView addSubview:self.userNameLabel];
 }
 
--(UIButton *)registerOrLoginButton
-{
-    if (!_registerOrLoginButton) {
-        
-        self.registerOrLoginButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.width / 5 , 30)];
-        [self.registerOrLoginButton addTarget:self action:@selector(registerOrLoginAction) forControlEvents:(UIControlEventTouchUpOutside)];
-        [_registerOrLoginButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
-        
-        _registerOrLoginButton.center = CGPointMake(self.touXimageView.center.x, self.touXimageView.center.y + 70);
-    }
-    return _registerOrLoginButton;
-}
+
 -(void)registerOrLoginAction
 {
     NSLog(@"------------------------------");
@@ -78,7 +64,17 @@
     return _touXimageView;
 }
 
-
+-(UILabel *)userNameLabel {
+    if (!_userNameLabel) {
+        _userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 17)];
+        _userNameLabel.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, self.height / 2 + self.width / 10 + 10);
+        _userNameLabel.text = @"未登录";
+        _userNameLabel.textAlignment = NSTextAlignmentCenter;
+        _userNameLabel.textColor = [UIColor whiteColor];
+        
+    }
+    return _userNameLabel;
+}
 
 
 
