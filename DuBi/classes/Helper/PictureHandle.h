@@ -13,6 +13,8 @@
 typedef void(^PictureHandleBlock)(NSMutableArray *array);
 @interface PictureHandle : NSObject
 @property(strong,nonatomic)PictureHandleBlock comptionBlock;
+@property(strong,nonatomic)NSMutableArray *pictureArray;
+
 // 数据请求解析
 -(void)getDataWithString:(NSString *)urlString comptionBlock:(PictureHandleBlock )comptionBlock;
 // 返回分区个数

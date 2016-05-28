@@ -47,12 +47,8 @@
             if (ImgHeight >= kMaxHeight) {
                 ImgHeight = kBreakHeight;
             }
-
-            self.lwnView.frame = CGRectMake(CGRectGetMinX(_pictureTextLabel.frame), CGRectGetMaxY(_pictureTextLabel.frame) + 10, ImgWidth, ImgHeight);
             
-            
-            
-            
+            self.lwnView.frame = CGRectMake(CGRectGetMinX(self.pictureTextLabel.frame), CGRectGetMaxY(self.pictureTextLabel.frame) + 10, ImgWidth, ImgHeight);
         }else if (picture.type == 29){ // 段子类型
             // 布局
             CGRect frame = _pictureTextLabel.frame;
@@ -66,22 +62,22 @@
         _nameLabel.text = picture.name;
         // 头像
         [_headerImgView sd_setImageWithURL:[NSURL URLWithString:_picture.profile_image]];
-//        CGRect nameRect = _nameLabel.frame;
-//        nameRect.size.height = [[self class]heightWithString:_picture.text];
-//        self.nameLabel.frame = nameRect;
+       CGRect nameRect = _nameLabel.frame;
+       nameRect.size.height = [[self class]heightWithString:_picture.text];
+       self.nameLabel.frame = nameRect;
         // 内容
         _pictureTextLabel.text = _picture.text;
         _pictureTextLabel.numberOfLines = 0;
         CGRect textRect = _pictureTextLabel.frame;
         textRect.size.height = [[self class]heightWithString:_picture.text];
         self.pictureTextLabel.frame = textRect;
-        
+       // NSLog(@"得到值后的的高度%f",textRect.size.height + 70 + 10);
         
     }
 
 }
 +(CGFloat)heightWithString:(NSString *)string{
-    CGSize size = CGSizeMake(kWidth - 10 , 10000);
+    CGSize size = CGSizeMake(kWidth - 20 , 0);
     NSDictionary *dict = @{kCIAttributeName:[UIFont systemFontOfSize:14]};
     CGRect rect = [string boundingRectWithSize:size options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
     return rect.size.height;
@@ -90,9 +86,9 @@
 +(CGFloat)heightFor:(Picture *)picture{
     // 计算label的高度
     if (picture.type == 29) {// 段子的类型
-        CGFloat titleLabelHeight = [[self class]heightWithString:picture.text];
-        
-        return titleLabelHeight + 62 + 36 ;
+        CGFloat titleLabelHeight = [self heightWithString:picture.text];
+       // NSLog(@"cell的高度%f",titleLabelHeight + 70 + 10);
+        return titleLabelHeight + 70 + 10 + 40;
     }
     // 根据picture的属性给定cell的高度
     // 图片视图的frame
@@ -103,11 +99,21 @@
     if (ImgHeight >= kMaxHeight) {
         ImgHeight = kBreakHeight;
     }
-    return 62 + 36 + ImgHeight ;
+   // CGFloat titleLabelHeight = [self heightWithString:picture.text];
+        
+    return  70 + 10 + 40 + ImgHeight ;
     }
 
 }
+-(void)setFrame:(CGRect)frame{
+    frame.origin.x = 5;
+    //frame.origin.y = 5;
+    frame.size.width -= 10;
+  // frame.size.height -= 5;
+    //  NSLog(@"%f",frame.size.height);
+    [super setFrame:frame];
 
+}
 - (void)awakeFromNib {
     self.autoresizingMask = UIViewAutoresizingNone;
 }

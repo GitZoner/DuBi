@@ -18,30 +18,56 @@
 #define kPictureHandle [PictureHandle sharedPictureHandle]
 #import "PictureViewCell.h"
 #import "LWNViewController.h"
-@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property(strong,nonatomic)NSArray *dataArray;
+#import "LWNTableView.h"
+#define kWidth [UIScreen mainScreen].bounds.size.width
+#define kHeight [UIScreen mainScreen].bounds.size.height
+@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@property(strong,nonatomic)UIScrollView *scrollView;
+@property(strong,nonatomic)LWNTableView *tableView1;
+@property(strong,nonatomic)LWNTableView *tableView2;
+@property(strong,nonatomic)LWNTableView *tableView3;
+
 @end
 
 @implementation MainViewController
 // 懒加载数组
--(NSArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = [NSArray array];
-    }
-    return _dataArray;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor yellowColor];
-    // 数据请求
-    [self requestData];
-    // 注册cell
-    [_tableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"mainViewCellID"];
-    // 设置代理
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-   // 取消线条
-   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView1 = [[LWNTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kTopicUrl,@""]];
+    self.tableView1.delegate = self;
+    self.tableView1.backgroundColor = [UIColor yellowColor];
+    self.tableView2 = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kPictureUrl,@""]];
+    self.tableView2.delegate = self;
+
+    self.tableView2.backgroundColor = [UIColor blackColor];
+    self.tableView3 = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth * 2, 0, kWidth, kHeight) withUrl:@""];
+    self.tableView3.backgroundColor = [UIColor redColor];
+    self.tableView3.delegate = self;
+
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth * 3, kHeight)];
+    [self.scrollView addSubview:self.tableView1];
+    [self.scrollView addSubview:self.tableView2];
+    [self.scrollView addSubview:self.tableView3];
+    self.scrollView.contentSize = CGSizeMake(kWidth, 0);
+    self.scrollView.pagingEnabled = YES;
+    [self.view addSubview:self.scrollView];
+    
+    
+    
+    
+}
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSInteger number = scrollView.contentOffset.x / kWidth;
+    if (number == 0) {
+        
+    }else if (number == 1){
+    
+    }else if (number == 3){
+    
+    }
+    
+    
 }
 -(void)requestData{
  // 加载菊花样式
@@ -51,7 +77,7 @@
     }];
 }
 -(void)updateData{
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
   // 数据加载完毕,就可以隐藏菊花样式
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
@@ -60,16 +86,30 @@
     // Dispose of any resources that can be recreated.
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [kPictureHandle numberOfSections];
+    return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [kPictureHandle numofRowsAtSection:section];
+    if ([tableView isEqual:_tableView1]) {
+        return self.tableView1.array.count ;
+
+    } else if ([tableView isEqual:_tableView2]) {
+    
+        return self.tableView2.array.count ;
+        
+    }else{
+        return self.tableView3.array.count ;
+
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PictureViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCellID" forIndexPath:indexPath];
-    cell.picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
-    //[cell.shareButton addTarget:self action:@selector(shareAction) forControlEvents:(UIControlEventTouchUpInside)];
-   // cell.delegate = self;
+    if ([tableView isEqual:_tableView1]) {
+      cell.picture =  self.tableView1.array[indexPath.row] ;
+    } else if ([tableView isEqual:_tableView2]) {
+      cell.picture =  self.tableView1.array[indexPath.row] ;
+    }else{
+      cell.picture =  self.tableView1.array[indexPath.row] ;
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -79,9 +119,19 @@
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Picture *picture = [kPictureHandle pictureForCellAtIndexPath:indexPath];
-  //  NSLog(@"%f",[MainViewCell heightForTopicLabel:topic]);
-    return [PictureViewCell heightFor:picture];
+    if ([tableView isEqual:_tableView1]) {
+      Picture * picture =  self.tableView1.array[indexPath.row] ;
+        return [PictureViewCell heightFor:picture];
+    } else if ([tableView isEqual:_tableView2]) {
+      Picture * picture =  self.tableView1.array[indexPath.row] ;
+        return [PictureViewCell heightFor:picture];
+
+    }else{
+      Picture * picture =  self.tableView1.array[indexPath.row] ;
+        return [PictureViewCell heightFor:picture];
+
+    }
+
 }
 #pragma mark ----收藏,分享功能-----
 // 点击cell会模态出AlertController,在这这里进行分享,收藏的操作

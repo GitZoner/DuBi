@@ -38,6 +38,7 @@
     [self.view addSubview:self.middleView];
      */
     // 数据请求
+    kHandle.pictureArray = nil;
     [self requestData];
     [self showHUD];
     // 设置代理
@@ -53,12 +54,15 @@
 }
 -(void)requestData{
     [kHandle getDataWithString:[NSString stringWithFormat:kTopicUrl,@""] comptionBlock:^(NSMutableArray *array) {
-        [self updateData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [self updateData];
+        });
+       
     }];
 }
 
 -(void)updateData{
-
+  
     [self.topicTableView reloadData];
     [self hideHUD];
 }
@@ -67,30 +71,41 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)showHUD{
-    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.pictureTableView animated:YES];
     HUD.labelText = @"玩命加载中";
 }
 -(void)hideHUD{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.pictureTableView animated:YES];
 }
 #pragma mark ---scrollView的代理方法----
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger number = scrollView.contentOffset.x / kWidth;
     if (number == 0) {
+        kHandle.pictureArray = nil;
+        [self.topicTableView reloadData];
         [self requestData];
         [self showHUD];
        
     }
     if (number == 1) {
+        kHandle.pictureArray = nil;
+        [self.pictureTableView reloadData];
+
         [self requestPictureData];
         [self showHUD];
+
     }
 
 }
 -(void)requestPictureData{
     
     [kHandle getDataWithString:[NSString stringWithFormat:kPictureUrl,@""] comptionBlock:^(NSMutableArray *array) {
-        [self updatePictureData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updatePictureData];
+        });
+        
+
     }];
 
 
@@ -110,17 +125,21 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ([tableView isEqual:_pictureTableView]) {
+    if (tableView.tag == 100) {
+        //[self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        // [_pictureTableView reloadData];
         PictureViewCell *cell = [_pictureTableView  dequeueReusableCellWithIdentifier:@"pictureID" forIndexPath:indexPath];
         cell.picture = [kHandle pictureForCellAtIndexPath:indexPath];
         return cell;
     }
     
   // 获取cell
-  
+    else{
     PictureViewCell *cell = [_topicTableView dequeueReusableCellWithIdentifier:@"topicID" forIndexPath:indexPath];
     cell.picture = [kHandle pictureForCellAtIndexPath:indexPath];
     return cell;
+    }
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     Picture *picture = [kHandle pictureForCellAtIndexPath:indexPath];
@@ -139,7 +158,10 @@
 - (IBAction)movieAction:(id)sender {
     self.scrollView.contentOffset = CGPointMake(kWidth * 2, 0);
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    self.scrollView.contentSize = CGSizeMake(kWidth * 3, 0);
+    
+}
 /*
 #pragma mark - Navigation
 

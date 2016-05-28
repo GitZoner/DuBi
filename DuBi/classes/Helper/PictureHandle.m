@@ -8,7 +8,6 @@
 
 #import "PictureHandle.h"
 @interface PictureHandle()
-@property(strong,nonatomic)NSMutableArray *pictureArray;
 @end
 @implementation PictureHandle
 // 懒加载数组
@@ -24,7 +23,7 @@
   [NetWorkRequest requesType:GET UrlString:urlString Param:nil succedBlock:^(id data) {
       NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
       NSArray *array = dict[@"list"];
-   _pictureArray = nil;
+      _pictureArray = nil;
       for (NSDictionary *modelDict in array) {
           Picture *picture = [Picture new];
           [picture setValuesForKeysWithDictionary:modelDict];
