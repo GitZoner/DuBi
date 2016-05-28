@@ -10,7 +10,8 @@
 #import "UIView+XYWidthHeight.h"
 #import "JTRegisterViewController.h"
 #import "JTAliasViewController.h"
-
+#import "RegularUtils.h"
+#import "JTSignInViewController.h"
 @interface JTSignInChoiceViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
@@ -69,7 +70,7 @@
 
 // 登录已有账户 按钮的事件
 - (IBAction)signInButtonAction:(UIButton *)sender {
-    
+    [self presentViewController:[JTSignInViewController new] animated:YES completion:nil];
     
 }
 
@@ -86,6 +87,8 @@
 
 // 暂不注册 按钮的事件
 - (IBAction)notRegisterButtonAction:(UIButton *)sender {
+    
+    
     
 }
 

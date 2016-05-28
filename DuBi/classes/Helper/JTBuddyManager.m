@@ -10,9 +10,8 @@
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import "Main_marco.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "Main_marco.h"
 
-#define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
-#define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
 
 @interface JTBuddyManager  () <EMContactManagerDelegate>
 // 环信管理对象（单例）
@@ -54,10 +53,26 @@ singleton_implementation(JTBuddyManager);
 
 #pragma mark -登录方法
 -(void)loginWithUsername:(NSString *)userName password:(NSString *)passWord successed:(Successed)successed failed:(Failed)failed {
-    
+    __weak typeof (JTBuddyManager *) manager = self;
     // 环信登录
-    EMError *error = [self.emClient loginWithUsername:userName  password:passWord];
+    EMError *error = [self.emClient loginWithUsername:userName  password:@"123456"];
     if (!error) {
+        AVQuery *telNumQuery = [AVQuery queryWithClassName:@"userInfo"];
+        [telNumQuery whereKey:@"telNum" equalTo:userName];
+        
+        AVQuery *passWordQuery = [AVQuery queryWithClassName:@"userInfo"];
+        [telNumQuery whereKey:@"passWord" equalTo:[NSNumber numberWithInt:0]];
+        
+        AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:telNumQuery,passWordQuery,nil]];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (results.count == 1) {
+                AVObject *userInfo = [results firstObject];
+                [manager saveUserInfoToLocal:userInfo];
+                
+            }
+        }];
+        
         successed();
         
     }else {
@@ -142,5 +157,17 @@ singleton_implementation(JTBuddyManager);
 // 对方拒绝添加为好友
 - (void)didReceiveDeclinedFromUsername:(NSString *)aUsername {
     [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"NO"}];
+}
+
+
+
+
+#pragma mark - private method
+-(void)saveUserInfoToLocal:(AVObject *)avObject {
+    kUserDefaultSetValue(avObject.objectId, kUserInfoKey_userID);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_telNum], kUserInfoKey_telNum);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_userAlias], kUserInfoKey_userAlias);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_gender], kUserInfoKey_gender);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_passWord], kUserInfoKey_passWord);
 }
 @end

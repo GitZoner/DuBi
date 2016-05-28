@@ -15,4 +15,15 @@
 // 申请添加好友，对方的处理结果的通知名
 #define JT_FriendApplyResult @"FriendApplyResult"
 
+// NSUsrDeflauts中的key
+#define kUserInfoKey_telNum @"telNum"
+#define kUserInfoKey_passWord @"passWord"
+#define kUserInfoKey_protrait @"protrait"
+#define kUserInfoKey_userAlias @"userAlias"
+#define kUserInfoKey_gender @"gender"
+#define kUserInfoKey_userID @"userID"
+
+#define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
+#define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
+
 #endif /* Main_marco_h */

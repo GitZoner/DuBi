@@ -9,5 +9,5 @@
 #ifndef LWNMainPageUrl_h
 #define LWNMainPageUrl_h
 #define kTopicUrl @"http://api.budejie.com/api/api_open.php?a=list&c=data&type=29maxtime=%@"
-
+#define kPictureUrl @"http://api.budejie.com/api/api_open.php?a=list&c=data&type=10maxtime=%@"
 #endif /* LWNMainPageUrl_h */

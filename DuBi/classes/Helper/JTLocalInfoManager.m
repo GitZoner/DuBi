@@ -7,6 +7,7 @@
 //
 
 #import "JTLocalInfoManager.h"
+#import <AVOSCloud/AVOSCloud.h>
 #define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
 #define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
 @implementation JTLocalInfoManager
@@ -19,5 +20,7 @@
     kUserDefaultSetValue(userInfo.userAlias,@"userAlias");
     kUserDefaultSetValue(userInfo.protrait,@"protrait");
 }
+
+
 
 @end
