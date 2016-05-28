@@ -25,21 +25,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+
+// 重设密码按钮
 - (IBAction)resetPasswordAction:(UIButton *)sender {
     
     
 }
+
+// 注册按钮
 - (IBAction)registerAction:(UIButton *)sender {
     [self presentViewController:[JTRegisterViewController new] animated:YES completion:nil];
 }
 
-// 注册按钮
+// 登录按钮
 - (IBAction)signInButtonAction:(UIButton *)sender {
 
     if ([RegularUtils checkTelNumber:self.userNameTextField.text ]&& [RegularUtils checkPassword:self.passWordTextField.text]) {
         [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:self.userNameTextField.text password:self.passWordTextField.text successed:^{
             [XHToast showBottomWithText:@"登录成功" bottomOffset:100 duration:3];
-            
+        
         } failed:^(NSError * error) {
             [XHToast showBottomWithText:error.domain bottomOffset:100 duration:0];
         }];
