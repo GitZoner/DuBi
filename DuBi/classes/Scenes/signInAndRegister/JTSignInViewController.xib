@@ -27,6 +27,9 @@
                     <state key="normal" title="立即登录">
                         <color key="titleColor" red="0.4927632213" green="0.46977156399999997" blue="0.2162092924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="signInButtonAction:" destination="-1" eventType="touchUpInside" id="ki7-tF-Fgf"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码请输入6-24位字母或数字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fia-j1-oyz">
                     <rect key="frame" x="30" y="148" width="540" height="60"/>
