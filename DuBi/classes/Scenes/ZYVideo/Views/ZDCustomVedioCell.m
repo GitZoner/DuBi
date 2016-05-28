@@ -121,14 +121,10 @@
  
     dispatch_async(concurrentQueue, ^{
     
-    _player = [[ZDAVPlayer alloc]initWithFrame:self.bgImgView.bounds WithVideoStr:_listModel.videouri];
-    [self.contentView addSubview:_player];
+//    _player = [[ZDAVPlayer alloc]initWithFrame:self.bgImgView.bounds WithVideoStr:_listModel.videouri];
+//    [self.contentView addSubview:_player];
     });
 }
-
-
-
-
 
 
 -(void)setFrame:(CGRect)frame

@@ -12,7 +12,7 @@
 #import "UIView+XYWidthHeight.h"
 #import "DataModels.h" // model
 #import <AFNetworking.h>
-#import "ZDVedioCell.h"
+
 
 #define kUrl @"http://api.budejie.com/api/api_open.php"
 

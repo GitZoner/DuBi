@@ -10,4 +10,5 @@ pod 'DCPathButton'
 pod 'Masonry', '~> 1.0.0'
 pod 'AFNetworking'
 pod 'SVProgressHUD'
+pod 'MJRefresh'
 end

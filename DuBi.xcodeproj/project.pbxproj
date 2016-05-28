@@ -188,7 +188,6 @@
 		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
 		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
 		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
-		C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC761CF311D900492355 /* ZYAVPlayer.m */; };
 		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
@@ -567,8 +566,6 @@
 		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
 		C2A7DC711CF311D900492355 /* ZYVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYVideoViewController.h; sourceTree = "<group>"; };
 		C2A7DC721CF311D900492355 /* ZYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYVideoViewController.m; sourceTree = "<group>"; };
-		C2A7DC751CF311D900492355 /* ZYAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAVPlayer.h; sourceTree = "<group>"; };
-		C2A7DC761CF311D900492355 /* ZYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAVPlayer.m; sourceTree = "<group>"; };
 		C2A7DC7B1CF33B9B00492355 /* ZYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYButton.h; sourceTree = "<group>"; };
 		C2A7DC7C1CF33B9B00492355 /* ZYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYButton.m; sourceTree = "<group>"; };
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
@@ -1639,8 +1636,6 @@
 				C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */,
 				C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */,
 				C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */,
-				C2A7DC751CF311D900492355 /* ZYAVPlayer.h */,
-				C2A7DC761CF311D900492355 /* ZYAVPlayer.m */,
 				C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */,
 				C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */,
 				C2A7DC701CF311D900492355 /* ZYVideoCell.xib */,
@@ -1942,7 +1937,6 @@
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
 				96FB5C991CF6FF1D009A8BCF /* MJRefreshBackGifFooter.m in Sources */,
-				C2A7DC7A1CF311D900492355 /* ZYAVPlayer.m in Sources */,
 				96FB5C851CF6FF1D009A8BCF /* EMCDDeviceManager+Media.m in Sources */,
 				96FB5CEF1CF6FF1D009A8BCF /* EaseChatToolbar.m in Sources */,
 				96FB5CA01CF6FF1D009A8BCF /* MJRefreshConst.m in Sources */,
