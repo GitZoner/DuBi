@@ -10,7 +10,7 @@
 #import "DataModels.h"
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
-#import "ZDPlayer.h"
+
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -55,9 +55,7 @@
     }
     // [self playerTools];
     
-    ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
     
-    [self addSubview:players];
     
     
     //self.caiButton.titleLabel.text = listModel.hate;
@@ -118,14 +116,7 @@
 -(void)playerTools
 {
     
-//    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-// 
-//    dispatch_async(concurrentQueue, ^{
-    
-        ZDPlayer * players = [[ZDPlayer alloc]initWithFrame:_bgImgView.bounds vedioUrl:_listModel.videouri];
-        
-        [self addSubview:players];
-//    });
+
 }
 
 

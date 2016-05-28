@@ -10,4 +10,5 @@ pod 'DCPathButton'
 pod 'Masonry', '~> 1.0.0'
 pod 'AFNetworking'
 pod 'SVProgressHUD'
+pod 'HyphenateFullSDK', :git => 'https://github.com/easemob/hyphenate-full-cocoapods.git' 
 end
