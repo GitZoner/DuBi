@@ -23,6 +23,7 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.2)
   - pop
   - SDWebImage (~> 3.7.5)
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -43,6 +45,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
 PODFILE CHECKSUM: 611692d3a522b0f29208fc57a66770c2fba8b47c
 

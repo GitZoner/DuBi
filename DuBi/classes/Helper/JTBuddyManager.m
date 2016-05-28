@@ -9,6 +9,10 @@
 #import "JTBuddyManager.h"
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import "Main_marco.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "Main_marco.h"
+
+
 @interface JTBuddyManager  () <EMContactManagerDelegate>
 // 环信管理对象（单例）
 @property (strong,nonatomic)EMClient *emClient;
@@ -48,27 +52,83 @@ singleton_implementation(JTBuddyManager);
 
 #pragma mark -登录方法
 -(void)loginWithUsername:(NSString *)userName password:(NSString *)passWord successed:(Successed)successed failed:(Failed)failed {
-    
+    __weak typeof (JTBuddyManager *) manager = self;
     // 环信登录
-    EMError *error = [self.emClient loginWithUsername:userName  password:passWord];
+    EMError *error = [self.emClient loginWithUsername:userName  password:@"123456"];
     if (!error) {
+        AVQuery *telNumQuery = [AVQuery queryWithClassName:@"userInfo"];
+        [telNumQuery whereKey:@"telNum" equalTo:userName];
+        
+        AVQuery *passWordQuery = [AVQuery queryWithClassName:@"userInfo"];
+        [telNumQuery whereKey:@"passWord" equalTo:[NSNumber numberWithInt:0]];
+        
+        AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:telNumQuery,passWordQuery,nil]];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (results.count == 1) {
+                AVObject *userInfo = [results firstObject];
+                [manager saveUserInfoToLocal:userInfo];
+                
+            }
+        }];
+        
         successed();
         
     }else {
-        NSLog(@"%@",error);
-        failed();
+        NSLog(@"环信登录错误：%@",error);
+        NSError *aError = [NSError errorWithDomain:@"登录失败，稍后重试" code:001 userInfo:nil];
+        failed(aError);
     }
 }
 #pragma mark -注册方法
 -(void)registerWithUsername:(NSString *)userName password:(NSString *)passWord successed:(Successed)successed failed:(Failed)failed {
     // 环信注册
-    EMError *error = [self.emClient registerWithUsername:userName password:passWord];
-    if (!error) {
-        successed();
+    EMError *error = [self.emClient registerWithUsername:userName password:@"123456"];
+    if (error == nil || error.code == EMErrorUserAlreadyExist) {
+        
+        AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
+        [query whereKey:@"telNum" equalTo:userName];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count == 0) {
+                AVObject *newUser = [[AVObject alloc] initWithClassName:@"userInfo"];// 构建对象
+                [newUser setObject:userName forKey:@"telNum"];// 设置名称
+                [newUser setObject:passWord forKey:@"passWord"];
+                [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        // 存储成功
+                        NSLog(@"%@",newUser.objectId);// 保存成功之后，objectId 会自动从服务端加载到本地
+                        kUserDefaultSetValue(newUser.objectId, @"userID");
+                        kUserDefaultSetValue(userName, @"telNum");
+                        kUserDefaultSetValue(passWord, @"passWord");
+                        // 设置登录状态
+                        kUserDefaultSetValue(@"YES", @"hasSign");
+                        [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:userName password:@"123456" successed:^{
+                            NSLog(@"环信注册成功并实现登录");
+                        } failed:^(NSError * error) {
+                            NSLog(@"环信注册成功，但登录失败");
+                        }];
+                        successed();
+                        
+                    } else {
+                        NSLog(@"LeanCloud用户注册写入失败");
+                        NSError *aError = [NSError errorWithDomain:@"注册失败，请稍后重试" code:002 userInfo:nil];
+                        failed(aError);
+                    }
+                }];
+            }else {
+                
+            }
+        }];
+        
+        
+        
     }else {
-        NSLog(@"%@",error);
-        failed();
+            NSLog(@"环信注册错误：%@",error);
+            NSError *aError = [NSError errorWithDomain:@"注册失败，稍后重试" code:002 userInfo:nil];
+            failed(aError);
+       
     }
+    
 }
 #pragma mark -添加好友方法
 -(void)addContact:(NSString *)userName message:(NSString *)leaveMessage successed:(Successed)successed failed:(Failed)failed {
@@ -77,7 +137,9 @@ singleton_implementation(JTBuddyManager);
     if (!error) {
         successed();
     }else {
-        failed();
+        NSLog(@"环信发送好友请求出错：%@",error);
+        NSError *aError = [NSError errorWithDomain:@"发送好友请求失败，稍后重试" code:003 userInfo:nil];
+        failed(aError);
     }
 }
 
@@ -94,5 +156,17 @@ singleton_implementation(JTBuddyManager);
 // 对方拒绝添加为好友
 - (void)didReceiveDeclinedFromUsername:(NSString *)aUsername {
     [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"NO"}];
+}
+
+
+
+
+#pragma mark - private method
+-(void)saveUserInfoToLocal:(AVObject *)avObject {
+    kUserDefaultSetValue(avObject.objectId, kUserInfoKey_userID);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_telNum], kUserInfoKey_telNum);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_userAlias], kUserInfoKey_userAlias);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_gender], kUserInfoKey_gender);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_passWord], kUserInfoKey_passWord);
 }
 @end

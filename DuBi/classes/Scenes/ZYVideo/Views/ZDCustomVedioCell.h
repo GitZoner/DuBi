@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModels.h"
+#import "ZDAVPlayer.h"
 
 @interface ZDCustomVedioCell : UITableViewCell
 
@@ -26,5 +27,9 @@
  */
 @property(strong,nonatomic)ZDInfo * infoModel;
 
+/**
+ * 视频播放器
+ */
+@property(strong,nonatomic)ZDAVPlayer * player;
 
 @end

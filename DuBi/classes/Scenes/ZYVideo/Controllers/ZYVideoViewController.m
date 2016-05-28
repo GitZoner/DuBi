@@ -13,6 +13,7 @@
 #import "DataModels.h" // model
 #import <AFNetworking.h>
 
+
 #define kUrl @"http://api.budejie.com/api/api_open.php"
 
 @interface ZYVideoViewController ()
@@ -74,9 +75,6 @@ static NSString * const registerId = @"ZDCustomVedioCell";
     // 数据请求
     [self requestAction];
     
-    
-   
- 
 }
 /**
  *  数据请求 -- 解析

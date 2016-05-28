@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JTAliasViewController">
+            <connections>
+                <outlet property="userAlias" destination="3Dc-ON-E90" id="3be-zm-di2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="给自己取个昵称吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3d-Sv-AIl">
+                    <rect key="frame" x="181" y="220" width="239" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ozP-3T-ime"/>
+                        <constraint firstAttribute="width" constant="239" id="sng-hv-Tva"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.5490196078431373" green="0.62745098039215685" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="来自嘟比的懒星人" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Dc-ON-E90">
+                    <rect key="frame" x="30" y="270" width="540" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="XY8-mf-e1Y"/>
+                    </constraints>
+                    <color key="textColor" red="0.44538861513137817" green="0.49045222997665405" blue="0.49821692705154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcF-AX-nI8">
+                    <rect key="frame" x="30" y="434" width="540" height="65"/>
+                    <color key="backgroundColor" red="0.97584444280000004" green="0.85273325440000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="Z55-d4-jbU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.4927632213" green="0.46977156399999997" blue="0.2162092924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="completedRegisterAction:" destination="-1" eventType="touchUpInside" id="4hq-HX-2bQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3Dc-ON-E90" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="44J-aA-izf"/>
+                <constraint firstItem="3Dc-ON-E90" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8zg-yU-ff1"/>
+                <constraint firstAttribute="trailing" secondItem="3Dc-ON-E90" secondAttribute="trailing" constant="30" id="Ez9-rb-QCR"/>
+                <constraint firstAttribute="trailing" secondItem="DcF-AX-nI8" secondAttribute="trailing" constant="30" id="KJo-SV-yaJ"/>
+                <constraint firstItem="DcF-AX-nI8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="LmL-Hp-8c9"/>
+                <constraint firstItem="w3d-Sv-AIl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M5K-kC-W77"/>
+                <constraint firstItem="DcF-AX-nI8" firstAttribute="top" secondItem="3Dc-ON-E90" secondAttribute="bottom" constant="104" id="TjG-hg-tfT"/>
+                <constraint firstItem="3Dc-ON-E90" firstAttribute="top" secondItem="w3d-Sv-AIl" secondAttribute="bottom" constant="29" id="bUn-xz-naB"/>
+                <constraint firstItem="3Dc-ON-E90" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="bh1-m8-8gt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
