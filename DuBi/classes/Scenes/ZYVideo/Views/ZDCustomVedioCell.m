@@ -10,7 +10,8 @@
 #import "DataModels.h"
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
-
+#import "UIView+XYWidthHeight.h"
+#import "ZDAVplayer.h"
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -26,24 +27,19 @@
 
 // 评论
 @property (weak, nonatomic) IBOutlet UIButton *pinglunButton;
-// 未播放显示的内容
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-// 未播放显示的字
-@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
-//
-@property (weak, nonatomic) IBOutlet UIButton *centerButton;
+
 
 
 @property(assign,nonatomic)BOOL flag;
 
-@property (weak, nonatomic) IBOutlet UILabel *videoTime;
-@property (weak, nonatomic) IBOutlet UIView *playerView;
+@property (weak, nonatomic) IBOutlet UIView *toolsView;
 
-
+@property(strong,nonatomic)ZDAVplayer * player;
 
 @end
 
+// 点赞    踩    转发量    评论
 @implementation ZDCustomVedioCell
 
 #pragma mark  --- Model
@@ -55,12 +51,15 @@
     }
     // [self playerTools];
     
+     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
+   
+    [self.dingButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
+    [self.caiButton setTitle:_listModel.cai forState:(UIControlStateNormal)];
+    [self.fengxiangButton setTitle:_listModel.repost forState:(UIControlStateNormal)];
+    [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
     
     
-    
-    //self.caiButton.titleLabel.text = listModel.hate;
-    
-    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
+   [self playerTools];
 //    self.videoTime.text = _listModel.videotime;
     
 
@@ -68,6 +67,12 @@
     // self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",];
 }
 
+
+
+-(void)layoutSubviews
+{
+    self.player.frame = self.bgImgView.frame;
+}
 -(void)setInfoModel:(ZDInfo *)infoModel
 {
     if (_infoModel != infoModel) {
@@ -82,9 +87,14 @@
         _themesModel = themesModel;
     }
     
-    self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",_themesModel.themeName];
+// self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",_themesModel.themeName];
     
 }
+
+
+
+
+
 /*
 -(void)flage
 {
@@ -111,12 +121,24 @@
 }
 */
 
-
 // 播放视频
 -(void)playerTools
 {
+     dispatch_queue_t mainQueue =dispatch_get_main_queue();
     
+    // 给队列添加任务
+     dispatch_async(mainQueue, ^{
+        
+    self.bgImgView.userInteractionEnabled = YES;
+         
+         self.player = [[ZDAVplayer alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height - 35) WithVideoStr:_listModel.videouri];
+         [self.contentView addSubview:self.player];
 
+         NSLog(@"第一个任务%d",[NSThread isMainThread]);
+     });
+
+
+    
 }
 
 
@@ -137,10 +159,42 @@
 
 
 
+/**
+ *
+ *  属性button的一些事件
+ *
+ */
+- (IBAction)pinglunButton:(UIButton *)sender {
+    
+    [sender setImage:[UIImage imageNamed:@"mainCellCommentClick"] forState:(UIControlStateNormal)];
+    
+}
+
+
+- (IBAction)fenxiangButton:(UIButton *)sender {
+    
+   
+
+}
+
+
+- (IBAction)caiButton:(UIButton *)sender {
+    
+   
+}
+
+
+- (IBAction)dingButton:(UIButton *)sender {
+}
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+   //   ZDAvPlayer * player = [[ZDAvPlayer alloc]initWithFrame:CGRectMake(0, 0, self.width,self.height - 35) vedioStr:_listModel.videouri];
+ //   [self.contentView addSubview:player];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

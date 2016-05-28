@@ -94,19 +94,19 @@ static NSString * const registerId = @"ZDCustomVedioCell";
         
         ZDInfo *  infoModel = [[ZDInfo alloc]initWithDictionary:responseObject[@"info"]];
         [temp.infoArray addObject:infoModel];
-        NSLog(@"infoArray --------------  %ld",temp.infoArray.count);
+       // NSLog(@"infoArray --------------  %ld",temp.infoArray.count);
         
         for (NSDictionary * dict in array) {
             
             ZDList * model = [[ZDList alloc]initWithDictionary:dict];
             [temp.listArry addObject:model];
-            NSLog(@"listArray ---------------  %ld",self.listArry.count);
+          //  NSLog(@"listArray ---------------  %ld",self.listArry.count);
             
             for (NSDictionary * dic in temp.listArry) {
                 
                 ZDThemes * themesModel = [[ZDThemes alloc]initWithDictionary:dic];
                 [temp.themesArray addObject:themesModel];
-                NSLog(@"themesArray --------------- %ld",temp.themesArray.count);
+            //    NSLog(@"themesArray --------------- %ld",temp.themesArray.count);
             }
             
             
@@ -116,7 +116,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-            NSLog(@"-------------------- error = %@",error);
+         //   NSLog(@"-------------------- error = %@",error);
     }];
 }
 
