@@ -19,6 +19,8 @@
 #import "ZDPublishController.h"
 #import "EaseUI.h"
 #import "JTCircleViewController.h"
+#import "JTMainTestViewController.h"
+#import "ZYTimeLineTableViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
 
@@ -55,8 +57,8 @@
 -(void)setTabBarVC
 {
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
-    NSDictionary *normalTextAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
-                                     NSForegroundColorAttributeName:[UIColor blackColor]};
+    NSDictionary *normalTextAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:10],
+                                     NSForegroundColorAttributeName:[UIColor grayColor]};
     [tabBarItem setTitleTextAttributes:normalTextAttr forState:(UIControlStateNormal)];
     NSDictionary *selectedTextAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
                                        NSForegroundColorAttributeName:[UIColor darkGrayColor]};
@@ -67,13 +69,13 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect] forBarMetrics:(UIBarMetricsDefault)];
     
     // 精华
-    [self setUpChildVCWithChildVC:[EaseRefreshTableViewController new] title:@"段图" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[JTMainTestViewController new]] title:@"精选" image:@"tabbar_jingxuan_nor" selectedImage:@"tabbar_jingxuan_h"];
     // 视频
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabbar_video_nor" selectedImage:@"tabbar_video_h"];
     // 圈子
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[EaseConversationListViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYTimeLineTableViewController new]] title:@"圈子" image:@"tabbar_circle_nor" selectedImage:@"tabbar_circle_h"];
     // 我
-    [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabbar_me_nor" selectedImage:@"tabbar_me_h"];
 
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
