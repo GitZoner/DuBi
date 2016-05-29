@@ -37,6 +37,9 @@
 
 @property(strong,nonatomic)ZDAVplayer * player;
 
+
+
+
 @end
 
 // 点赞    踩    转发量    评论
@@ -59,7 +62,7 @@
     [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
     
     
-   [self playerTools];
+  // [self playerTools];
 //    self.videoTime.text = _listModel.videotime;
     
 
