@@ -9,7 +9,7 @@
 #import "ZDCustomVedioCell.h"
 #import "DataModels.h"
 #import <UIImageView+WebCache.h>
-
+#import "ZDAVPlayer.h"
 #import "UIView+XYWidthHeight.h"
 
 
@@ -37,6 +37,9 @@
 
 
 
+
+
+
 @end
 
 // 点赞    踩    转发量    评论
@@ -59,7 +62,7 @@
     [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
     
     
-   [self playerTools];
+  // [self playerTools];
 //    self.videoTime.text = _listModel.videotime;
     
 
@@ -71,7 +74,7 @@
 
 -(void)layoutSubviews
 {
-
+//    self.player.frame = self.bgImgView.frame;
 }
 -(void)setInfoModel:(ZDInfo *)infoModel
 {
@@ -131,9 +134,9 @@
         
     self.bgImgView.userInteractionEnabled = YES;
          
-        
-
-
+//         self.player = [[ZDAVplayer alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height - 35) WithVideoStr:_listModel.videouri];
+//         [self.contentView addSubview:self.player];
+//
          NSLog(@"第一个任务%d",[NSThread isMainThread]);
      });
 

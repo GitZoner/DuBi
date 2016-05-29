@@ -23,6 +23,8 @@
 @property (strong,nonatomic)UIButton *publishButton;
 @property (strong,nonatomic)UIView * publishView;
 @property (strong ,nonatomic) DCPathButton *dcPathButton;
+
+
 @end
 
 @implementation JTTabBar
@@ -184,6 +186,13 @@ UIWindow const * window;
         [window addSubview:publishView];
         // self.block(window);
         [publishView addSubview:button];
+  
+#warning message  未写完 待续 -- ZD
+    POPSpringAnimation * animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+    animation.springSpeed = 10;
+    animation.springBounciness = 10;
+   //  CGPoint framePoint  = CGPointMake(self.width * 2, self.height / 6);
+    // animation.fromValue = [NSValue valueWithPointer:framePoint];
 
    // }];
     
@@ -222,6 +231,9 @@ UIWindow const * window;
      */
 }
 
+
+
+// 点击返回x号 的事件
 -(void)buttonAction
 {
     window.hidden = YES;

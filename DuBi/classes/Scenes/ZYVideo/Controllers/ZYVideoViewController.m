@@ -12,7 +12,7 @@
 #import "UIView+XYWidthHeight.h"
 #import "DataModels.h" // model
 #import <AFNetworking.h>
-
+#import "MJRefresh.h"
 
 #define kUrl @"http://api.budejie.com/api/api_open.php"
 
@@ -32,7 +32,13 @@
  *  // 装所有  ZDInfo model
  */
 @property(strong,nonatomic)NSMutableArray * infoArray;
+
+@property(strong,nonatomic)NSString * maxtime;
+
+@property(assign,nonatomic)NSInteger  page;
 @end
+
+
 
 static NSString * const registerId = @"ZDCustomVedioCell";
 @implementation ZYVideoViewController
@@ -72,10 +78,22 @@ static NSString * const registerId = @"ZDCustomVedioCell";
     // 注册tableView和title一些其他设置
     [self setTableViewAndTitle];
     
-    // 数据请求
-    [self requestAction];
+    // 下拉加载上啦刷新
+    [self  setupRefresh];
     
 }
+-(void)setupRefresh
+{
+    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestAction)];
+    self.tableView.separatorStyle = UITableViewScrollPositionNone;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    // 根据拖拽比例切换透明度
+    [self.tableView.mj_header beginRefreshing];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+}
+
+
+
 /**
  *  数据请求 -- 解析
  */
@@ -91,7 +109,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
         // NSLog(@"%@",responseObject);
         NSArray * array = responseObject[@"list"];
 //        NSLog(@"%@",array);
-        
+        self.maxtime = responseObject[@"info"][@"maxtime"];
         ZDInfo *  infoModel = [[ZDInfo alloc]initWithDictionary:responseObject[@"info"]];
         [temp.infoArray addObject:infoModel];
        // NSLog(@"infoArray --------------  %ld",temp.infoArray.count);
@@ -112,6 +130,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [temp.tableView reloadData];
+                [self.tableView.mj_header endRefreshing];
             });
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -119,7 +138,35 @@ static NSString * const registerId = @"ZDCustomVedioCell";
          //   NSLog(@"-------------------- error = %@",error);
     }];
 }
+-(void)loadMoreTopics
+{
+    self.page++;
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @(41);
+    params[@"page"] = @(self.page);
+    params[@"maxtime"] = self.maxtime;
+    
+    [[AFHTTPSessionManager manager] GET:kUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
+        // 存储maxttime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        
+        for (NSDictionary * dict in responseObject[@"list"])
+        {
+            ZDList * model = [[ZDList alloc]initWithDictionary:dict];
+            [self.listArry addObject:model];
+        }
+        [self.tableView reloadData];
+        [self.tableView.mj_footer endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       
+        // 如果网络不好而又请求了下一页，那么客户会永远看不到那一页。所以page--
+        [self.tableView.mj_footer endRefreshing];
+        self.page--;
+    }];
 
+}
 
 /**
  *  tableView的设置

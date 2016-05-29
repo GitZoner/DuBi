@@ -28,11 +28,24 @@
 -(void)drawView{
 
     
+    
+    
     UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shareBottomBackground"]];
     imageView.frame = [UIScreen mainScreen].bounds;
     imageView.userInteractionEnabled = YES;
     // [self insertSubview:imageView atIndex:0];
        [self addSubview:imageView];
+    
+    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.width , self.height)];
+    scrollView.contentSize = CGSizeMake(self.width * 2 , self.height);
+    scrollView.pagingEnabled = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.0];
+    // scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shareBottomBackground"]];
+    [imageView addSubview:scrollView];
+
+    
     
     NSArray * images = @[@"publish-text",@"publish-picture"];
     NSArray * texts = @[@"发段子",@"发图片"];
@@ -44,7 +57,7 @@
     // CGFloat xMargin = self.width - buttonW * 2  - 2 * buttonX;
     for (int i = 0 ; i < texts.count; i++) {
         ZDCustomButton * button = [[ZDCustomButton alloc]init];
-        [imageView addSubview:button];
+        [scrollView addSubview:button];
         
         [button setTitle:texts[i] forState:(UIControlStateNormal)];
         [button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
