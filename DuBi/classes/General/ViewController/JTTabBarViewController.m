@@ -19,6 +19,7 @@
 #import "ZDPublishController.h"
 #import "EaseUI.h"
 #import "JTCircleViewController.h"
+#import "ZDUserChangeViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
 
@@ -73,7 +74,7 @@
     // 圈子
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[EaseConversationListViewController new]] title:@"圈子" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     // 我
-    [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChildVCWithChildVC:[ZDUserChangeViewController new] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
 
     // 在自定义的 tabbar 里重新布局，然后替换掉系统的 tabbar
     [self setValue:[JTTabBar new] forKeyPath:@"tabBar"];
@@ -100,7 +101,7 @@
 
 -(void)setUpChildVCWithChildVC:(UIViewController *)childVC title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
     
-    childVC.view .backgroundColor = [UIColor colorWithRed:arc4random_uniform(100) / 100.0 green:arc4random_uniform(100)/ 100.0 blue:arc4random_uniform(100) / 100.0 alpha:1.0];
+    childVC.view .backgroundColor = [UIColor colorWithRed:0.9016 green:0.9264 blue:0.9461 alpha:1.0];
     childVC.title = title;
     childVC.tabBarItem.image =[UIImage imageNamed:image ];
     childVC.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];

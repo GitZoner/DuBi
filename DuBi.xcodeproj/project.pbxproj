@@ -204,6 +204,8 @@
 		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
 		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
 		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
+		C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */; };
+		C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE8001CFABF7600F2872D /* ZDChangeView.m */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
@@ -609,6 +611,10 @@
 		C2A7DC721CF311D900492355 /* ZYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYVideoViewController.m; sourceTree = "<group>"; };
 		C2A7DC7B1CF33B9B00492355 /* ZYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYButton.h; sourceTree = "<group>"; };
 		C2A7DC7C1CF33B9B00492355 /* ZYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYButton.m; sourceTree = "<group>"; };
+		C2AEE7F91CFABDB600F2872D /* ZDUserChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserChangeViewController.h; sourceTree = "<group>"; };
+		C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserChangeViewController.m; sourceTree = "<group>"; };
+		C2AEE7FF1CFABF7600F2872D /* ZDChangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDChangeView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.h; sourceTree = SOURCE_ROOT; };
+		C2AEE8001CFABF7600F2872D /* ZDChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDChangeView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.m; sourceTree = SOURCE_ROOT; };
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
 		C2C33E131CF5E37B00D3564D /* ZDPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishController.m; sourceTree = "<group>"; };
 		C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishController.xib; sourceTree = "<group>"; };
@@ -716,6 +722,8 @@
 		965C51FA1CF3EDDC00B0F22F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2AEE7FF1CFABF7600F2872D /* ZDChangeView.h */,
+				C2AEE8001CFABF7600F2872D /* ZDChangeView.m */,
 				C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */,
 				C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */,
 				C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */,
@@ -1538,6 +1546,8 @@
 			children = (
 				C220B35D1CF43499009A6560 /* ZDUserViewController.h */,
 				C220B35E1CF43499009A6560 /* ZDUserViewController.m */,
+				C2AEE7F91CFABDB600F2872D /* ZDUserChangeViewController.h */,
+				C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */,
 				C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */,
 				C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */,
 				C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */,
@@ -1942,6 +1952,7 @@
 				96FB5C921CF6FF1D009A8BCF /* MJRefreshBackFooter.m in Sources */,
 				C284223A1CF9777C00E8F9A6 /* Picture.m in Sources */,
 				C2533CC61CEDEC0A00C134C6 /* MainViewController.m in Sources */,
+				C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */,
 				96FB5CB71CF6FF1D009A8BCF /* UIImage+EMGIF.m in Sources */,
 				96FB59BD1CF6D0C3009A8BCF /* JTCircleCell.m in Sources */,
 				96FB5CF61CF6FF1D009A8BCF /* EaseRecordView.m in Sources */,
@@ -1979,6 +1990,7 @@
 				96FB5CA11CF6FF1D009A8BCF /* UIScrollView+MJExtension.m in Sources */,
 				96FB5CBC1CF6FF1D009A8BCF /* UIView+EMWebCacheOperation.m in Sources */,
 				96FB5CC21CF6FF1D009A8BCF /* PSTCollectionViewFlowLayout.m in Sources */,
+				C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */,
 				C28422341CF9772100E8F9A6 /* LWNImgView.m in Sources */,
 				96FB5C9C1CF6FF1D009A8BCF /* MJRefreshGifHeader.m in Sources */,
 				96E97E1B1CF04A7200DFA851 /* JTContactListViewController.m in Sources */,

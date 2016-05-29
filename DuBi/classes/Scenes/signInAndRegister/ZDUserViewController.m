@@ -25,6 +25,8 @@
 // 头视图
 @property(strong,nonatomic)ZDCustomHeaderView * headerView;
 
+
+
 // 右上角设置按钮
 @property(strong,nonatomic)UIButton * rightButton;
 @property (strong,nonatomic)NSString *hasSign; // YES or NO

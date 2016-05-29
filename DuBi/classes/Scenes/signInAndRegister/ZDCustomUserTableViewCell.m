@@ -66,8 +66,8 @@
 // 重写frame的setter方法
 -(void)setFrame:(CGRect)frame
 {
-    frame.origin.x = 5;
-    frame.size.width -= 10;
+   // frame.origin.x = 5;
+   // frame.size.width -= 10;
     frame.size.height -= 2;
     
     [super setFrame:frame];
