@@ -19,40 +19,52 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-uW-NRp" userLabel="点赞">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="585" image="mainCellDing">
+                                <state key="normal" image="mainCellDing">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="mainCellDingClick">
-                                    <color key="titleColor" red="1" green="0.37268658789999998" blue="0.1224248211" alpha="0.85428340520000001" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="highlighted" image="mainCellDingClick"/>
+                                <connections>
+                                    <action selector="dingButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yiG-d9-HF1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O82-0l-h4g" userLabel="fenxiang ">
                                 <rect key="frame" x="160" y="0.0" width="80" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="585" image="mainCellShare">
+                                <state key="normal" image="mainCellShare">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="mainCellShareClick"/>
+                                <state key="highlighted" image="mainCellShareClick">
+                                    <color key="titleColor" red="1" green="0.37268658789999998" blue="0.1224248211" alpha="0.85428340520000001" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="fenxiangButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LP2-5r-1lp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG3-zj-bV5" userLabel="cai">
                                 <rect key="frame" x="80" y="0.0" width="80" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
-                                <state key="normal" title="585" image="mainCellCai">
+                                <state key="normal" image="mainCellCai">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" image="mainCellCaiClick">
                                     <color key="titleColor" red="1" green="0.37268658789999998" blue="0.1224248211" alpha="0.85428340520000001" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="caiButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IUc-uC-elp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grp-hf-1Rx" userLabel="pinglun">
                                 <rect key="frame" x="240" y="0.0" width="80" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="585" image="mainCellComment">
+                                <state key="normal" image="mainCellComment">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" image="mainCellCommentClick">
@@ -98,19 +110,11 @@
                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                         </accessibility>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToZ-Bz-qHX">
-                        <rect key="frame" x="8" y="8" width="304" height="172"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.85428340520000001" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="dLy-FI-ZVE" secondAttribute="trailing" id="0Lb-J6-WAo"/>
-                    <constraint firstItem="ToZ-Bz-qHX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1ft-0a-nps"/>
-                    <constraint firstItem="dLy-FI-ZVE" firstAttribute="top" secondItem="ToZ-Bz-qHX" secondAttribute="bottom" id="7Ez-mV-fgR"/>
                     <constraint firstAttribute="bottom" secondItem="dLy-FI-ZVE" secondAttribute="bottom" id="B3N-gX-hJO"/>
-                    <constraint firstItem="ToZ-Bz-qHX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GmV-YP-pVj"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ToZ-Bz-qHX" secondAttribute="trailing" id="Qhc-hg-08A"/>
                     <constraint firstAttribute="bottomMargin" secondItem="IKR-Cm-nmi" secondAttribute="bottom" constant="35" id="hen-Cv-P0y"/>
                     <constraint firstItem="IKR-Cm-nmi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jLl-p2-s2s"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IKR-Cm-nmi" secondAttribute="trailing" id="lEF-7u-kLa"/>
@@ -125,9 +129,9 @@
                 <outlet property="dingButton" destination="xdJ-uW-NRp" id="Lrs-ZA-Psq"/>
                 <outlet property="fengxiangButton" destination="O82-0l-h4g" id="TbD-L9-vhZ"/>
                 <outlet property="pinglunButton" destination="grp-hf-1Rx" id="JFL-Xf-Vvz"/>
-                <outlet property="playerView" destination="ToZ-Bz-qHX" id="SkJ-e9-foE"/>
+                <outlet property="toolsView" destination="dLy-FI-ZVE" id="TZq-Yo-8qP"/>
             </connections>
-            <point key="canvasLocation" x="414" y="363"/>
+            <point key="canvasLocation" x="415" y="400"/>
         </tableViewCell>
     </objects>
     <resources>
