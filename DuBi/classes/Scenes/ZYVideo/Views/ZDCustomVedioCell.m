@@ -11,7 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
 #import "UIView+XYWidthHeight.h"
-#import "ZDAVplayer.h"
+
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -35,7 +35,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *toolsView;
 
-@property(strong,nonatomic)ZDAVplayer * player;
+
 
 
 
@@ -74,7 +74,7 @@
 
 -(void)layoutSubviews
 {
-    self.player.frame = self.bgImgView.frame;
+//    self.player.frame = self.bgImgView.frame;
 }
 -(void)setInfoModel:(ZDInfo *)infoModel
 {
@@ -134,9 +134,9 @@
         
     self.bgImgView.userInteractionEnabled = YES;
          
-         self.player = [[ZDAVplayer alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height - 35) WithVideoStr:_listModel.videouri];
-         [self.contentView addSubview:self.player];
-
+//         self.player = [[ZDAVplayer alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height - 35) WithVideoStr:_listModel.videouri];
+//         [self.contentView addSubview:self.player];
+//
          NSLog(@"第一个任务%d",[NSThread isMainThread]);
      });
 
