@@ -12,7 +12,7 @@
 #import "ZDCustomUserTableViewCell.h"
 #import "JTSignInChoiceViewController.h"
 
-@interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
 @property(strong,nonatomic)UITableView * tableView;
 // 头部视图
@@ -52,15 +52,23 @@
 -(void)addTopView
 {
     self.ChangeView = [[ZDChangeView alloc]initWithFrame:CGRectMake(0, -48, self.view.width, self.view.height * 2 / 7 + 48 * 2)];
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-    [self.ChangeView addGestureRecognizer:tap];
     [self.view addSubview:self.ChangeView];
+    self.ChangeView.imageViewForHeader.userInteractionEnabled = YES;
+    self.ChangeView.imageViewForUser.userInteractionEnabled = YES;
+    // [self.ChangeView.nameButton addTarget:self action:@selector(tapAction) forControlEvents:(UIControlEventTouchUpInside)];
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    tap.numberOfTapsRequired = 1;//手指数
+    tap.numberOfTapsRequired = 1;//点击次数
+    [self.ChangeView.nameButton
+     addGestureRecognizer:tap];
 }
 
 -(void)tapAction
 {
+    NSLog(@"234");
     self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
-    if ([self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil) {
+    // [self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil
+    if (1) {
         JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
         [self presentViewController:jtscVC animated:YES completion:nil];
     }else {
@@ -69,8 +77,8 @@
         
     }
 
-    
 }
+
 
 #pragma mark --- 初始化TableView
 
@@ -90,7 +98,7 @@
     // 设置头部视图
     UIView * header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height * 2 / 7 - 64)];
     self.tableView.tableHeaderView = header;
-    [self.view addSubview:self.tableView];
+    [self.view insertSubview:self.tableView atIndex:0];
 }
 
 
@@ -124,6 +132,9 @@
 #define kImageViewForUser self.ChangeView.imageViewForUser
 #define kTitleLabel self.ChangeView.titleLabel
 #define kUIBlurEffect self.ChangeView.visualEffectView
+
+#define knameButton self.ChangeView.nameButton
+
 // 滑动tableView的时候执行下面代码
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -132,24 +143,29 @@
     NSLog(@"%zd",point.y);
     if (point.y <= 0&& point.y >= -48 * 2)
     {
+        NSLog(@"1");
         kImageViewForHeader.frame = CGRectMake(0, -48 - point.y / 2, self.view.width - point.y, self.view.height * 2 / 7 + 48 * 2 - point.y );
         kImageViewForUser.frame = CGRectMake(10 +20, kImageViewForHeader.height - 55 - 48 - point.y / 2, 45, 45);
-        kTitleLabel.frame = CGRectMake(kImageViewForUser.x, CGRectGetMaxY(kImageViewForUser.frame) + 10, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
+        kTitleLabel.frame = CGRectMake(kImageViewForUser.x, CGRectGetMaxY(kImageViewForUser.frame), self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
+        knameButton.frame = CGRectMake(10+20+10 - 90, kImageViewForHeader.height - 55 - 48 - point.y / 2 + 5, knameButton.width, knameButton.height);
+        
         [UIView animateWithDuration:0.5 animations:^{
                 kUIBlurEffect.alpha = 0;
         }];
+    
         
     }
     
     else if(0 < point.y && point.y < self.view.height * 2 / 7 - 64){
-       
+       NSLog(@"2");
         kImageViewForHeader.frame = CGRectMake(0, -48-point.y, self.view.width + point.y, self.ChangeView.height + point.y);
         
         kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height -55 -48, 45, 45);
         
         //
-        kTitleLabel.frame = CGRectMake(kImageViewForUser.x, kImageViewForUser.y + 10 + kImageViewForUser.width +55, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
+        kTitleLabel.frame = CGRectMake(kImageViewForUser.x, kImageViewForUser.y + kImageViewForUser.width, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
         
+        knameButton.frame = CGRectMake(10+20+10 - 90, kImageViewForHeader.height -55-48+10, knameButton.width, knameButton.height);
         [UIView animateWithDuration:1 animations:^{
             kUIBlurEffect.alpha = point.y / (self.view.height * 2 / 7 - 64) + 0.2; 
         }];
@@ -162,9 +178,11 @@
     }
     else if (point.y >= self.view.height * 2 / 7 - 64)
     {
+        NSLog(@"3");
         kImageViewForHeader.frame = CGRectMake(0, -48 - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2);
         kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height - 55 - 48, 45, 45);
          kTitleLabel.frame = CGRectMake(kImageViewForUser.x , kImageViewForUser.y + kImageViewForUser.width +55, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
+        knameButton.frame = CGRectMake(10 +20+10 -135, kImageViewForHeader.height - 55 - 48 +10, knameButton.width, knameButton.height);
         kUIBlurEffect.alpha = 0.6;
     }
 }

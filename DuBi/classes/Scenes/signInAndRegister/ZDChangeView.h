@@ -23,6 +23,7 @@
 // 毛玻璃
 @property(strong,nonatomic)UIVisualEffectView * visualEffectView;
 
-
+// 昵称
+@property(strong,nonatomic)UIButton * nameButton;
 
 @end

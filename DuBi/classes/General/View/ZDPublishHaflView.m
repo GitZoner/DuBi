@@ -14,6 +14,7 @@
 
 @interface ZDPublishHaflView ()
 
+@property(strong,nonatomic)UIButton * button;
 @end
 
 @implementation ZDPublishHaflView
@@ -58,27 +59,27 @@
     // button之间的距离
     // CGFloat xMargin = self.width - buttonW * 2  - 2 * buttonX;
     for (int i = 0 ; i < texts.count; i++) {
-        ZDCustomButton * button = [[ZDCustomButton alloc]init];
-        [scrollView addSubview:button];
+        self.button = [[ZDCustomButton alloc]init];
+        [scrollView addSubview:self.button];
         
-        [button setTitle:texts[i] forState:(UIControlStateNormal)];
-        [button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
-        button.tag = i + 101;
-        button.titleLabel.font = [UIFont systemFontOfSize:15];
-        button.titleLabel.textColor = [UIColor blackColor];
-        [button addTarget:self action:@selector(buttonsAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        [self.button setTitle:texts[i] forState:(UIControlStateNormal)];
+        [self.button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+        self.button.tag = i + 101;
+        self.button.titleLabel.font = [UIFont systemFontOfSize:15];
+        self.button.titleLabel.textColor = [UIColor blackColor];
+        [self.button addTarget:self action:@selector(buttonsAction:) forControlEvents:(UIControlEventTouchUpInside)];
         
-        [button setTintColor:[UIColor colorWithRed:0.496 green:0.496 blue:0.496 alpha:1.0]];
-        button.imageView.image =[UIImage imageNamed:images[i]];
-        button.frame = CGRectMake(buttonX + (i * buttonW) + i * buttonX,buttonY,buttonW, buttonH);
+        [self.button setTintColor:[UIColor colorWithRed:0.496 green:0.496 blue:0.496 alpha:1.0]];
+        self.button.imageView.image =[UIImage imageNamed:images[i]];
+        self.button.frame = CGRectMake(buttonX + (i * buttonW) + i * buttonX,buttonY,buttonW, buttonH);
         // 添加动画
         POPSpringAnimation * anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
-        anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x,button.center.y + self.height)];
-        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x, button.center.y)];
+        anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.button.center.x,self.button.center.y + self.height)];
+        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(self.button.center.x, self.button.center.y)];
         anim.springSpeed = 20;
         anim.springBounciness = 20;
         // anim.beginTime = CACurrentMediaTime() + 0.5 * i;
-        [button pop_addAnimation:anim forKey:nil];
+        [self.button pop_addAnimation:anim forKey:nil];
   
     }
     UIView * fenGeX = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 31, self.width, 1)];
@@ -95,7 +96,7 @@
         NSLog(@"button1");
     }else if (button.tag == 102){
         NSLog(@"button2");
-    }else if (button.tag == 102){
+    }else if (button.tag == 103){
         NSLog(@"button3");
     }else{
         NSLog(@"button4");
