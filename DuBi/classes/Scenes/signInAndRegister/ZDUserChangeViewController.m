@@ -53,6 +53,7 @@
 {
     self.ChangeView = [[ZDChangeView alloc]initWithFrame:CGRectMake(0, -48, self.view.width, self.view.height * 2 / 7 + 48 * 2)];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    [self.ChangeView addGestureRecognizer:tap];
     [self.view addSubview:self.ChangeView];
 }
 
