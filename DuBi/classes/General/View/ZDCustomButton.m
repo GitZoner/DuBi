@@ -38,11 +38,17 @@
     self.imageView.y = 0;
     self.imageView.width = self.width;
     self.imageView.height = self.width;
+//    self.imageView.layer.cornerRadius = self.imageView.height / 2;
+//    self.imageView.layer.masksToBounds = YES;
     
-    self.titleLabel.x = 0;
-    self.titleLabel.y = self.width;
     self.titleLabel.width = self.width;
-    self.titleLabel.height = self.height - self.titleLabel.y;
+    self.titleLabel.height = self.height - self.width;
+    self.titleLabel.x = 0;
+    self.titleLabel.y = self.width - self.titleLabel.height;
+    self.titleLabel.font = [UIFont systemFontOfSize:12];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    
     
 }
 

@@ -47,7 +47,7 @@
     if (!_imageViewForHeader) {
       
         _imageViewForHeader = [[UIImageView alloc]initWithFrame:self.frame];
-        _imageViewForHeader.image = [UIImage imageNamed:@"tableViewHeader.jpg"];
+        _imageViewForHeader.image = [UIImage imageNamed:@"beijingtu2"];
         [self addSubview:_imageViewForHeader];
         
     }
@@ -59,7 +59,7 @@
     if (!_imageViewForUser) {
         
         _imageViewForUser = [[UIImageView alloc]initWithFrame:CGRectMake(10 + 20, self.imageViewForHeader.height -55 - 55, 45, 45)];
-        _imageViewForUser.image = [UIImage imageNamed:@"tableViewHeader.jpg"];
+        _imageViewForUser.image = [UIImage imageNamed:@"beijingtu2"];
         self.imageViewForUser.layer.cornerRadius = self.imageViewForUser.height / 2;
         self.imageViewForUser.layer.masksToBounds = YES;
 //         [self.imageViewForHeader addSubview:self.imageViewForUser];

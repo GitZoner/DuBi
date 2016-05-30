@@ -10,6 +10,7 @@
 #import "ZDCustomButton.h"
 #import "UIView+XYWidthHeight.h"
 #import "JTTabBar.h"
+#import <POP.h>
 
 @interface ZDPublishHaflView ()
 
@@ -35,24 +36,25 @@
     imageView.userInteractionEnabled = YES;
     // [self insertSubview:imageView atIndex:0];
        [self addSubview:imageView];
+  
+    NSArray * images = @[@"publish-text",@"publish-picture",@"publish-video",@"publish-audio"];
+    NSArray * texts = @[@"发段子",@"发图片",@"发视频",@"发位置"];
+    
+    CGFloat buttonW = 72;
+    CGFloat buttonH = 72 + 30;
+    CGFloat buttonY = self.frame.size.height / 4;
+    CGFloat buttonX =( [UIScreen mainScreen].bounds.size.width - buttonW * 3) / 4;
     
     UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.width , self.height)];
-    scrollView.contentSize = CGSizeMake(self.width * 2 , self.height);
+    scrollView.contentSize = CGSizeMake((buttonW + ((self.width -buttonW * 3) / 4)) * texts.count  + (self.width -buttonW * 3) / 4, self.height);
     scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.0];
     // scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shareBottomBackground"]];
     [imageView addSubview:scrollView];
-
     
-    
-    NSArray * images = @[@"publish-text",@"publish-picture"];
-    NSArray * texts = @[@"发段子",@"发图片"];
-    CGFloat buttonW = 72;
-    CGFloat buttonH = 72 + 30;
-    CGFloat buttonY = self.frame.size.height / 4;
-    CGFloat buttonX =( [UIScreen mainScreen].bounds.size.width - buttonW * 2) / 3;
+   
     // button之间的距离
     // CGFloat xMargin = self.width - buttonW * 2  - 2 * buttonX;
     for (int i = 0 ; i < texts.count; i++) {
@@ -61,29 +63,47 @@
         
         [button setTitle:texts[i] forState:(UIControlStateNormal)];
         [button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
-       
+        button.tag = i + 101;
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.titleLabel.textColor = [UIColor blackColor];
+        [button addTarget:self action:@selector(buttonsAction:) forControlEvents:(UIControlEventTouchUpInside)];
         
         [button setTintColor:[UIColor colorWithRed:0.496 green:0.496 blue:0.496 alpha:1.0]];
         button.imageView.image =[UIImage imageNamed:images[i]];
         button.frame = CGRectMake(buttonX + (i * buttonW) + i * buttonX,buttonY,buttonW, buttonH);
+        // 添加动画
+        POPSpringAnimation * anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+        anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x,button.center.y + self.height)];
+        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x, button.center.y)];
+        anim.springSpeed = 20;
+        anim.springBounciness = 20;
+         anim.beginTime = CACurrentMediaTime() + 0.5 * i;
+        [button pop_addAnimation:anim forKey:nil];
+  
     }
-
-    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(self.width /2 - 15, self.height - 30, 30, 30)];
-    [button setTitle:@"x" forState:(UIControlStateNormal)];
-    button.titleLabel.font = [UIFont systemFontOfSize:30];
-    [button setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
-    [button addTarget:self action:@selector(buttonAction) forControlEvents:(UIControlEventTouchUpInside)];
-    [imageView addSubview:button];
+    UIView * fenGeX = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 31, self.width, 1)];
+    fenGeX.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.7];
+    [self addSubview:fenGeX];
 
 }
--(void)buttonAction
+
+
+// 点击button响应的事件
+-(void)buttonsAction:(UIButton *)button
 {
-    JTTabBar * bar = [JTTabBar new];
-    bar.window.hidden = YES;
-    // window.hidden = YES;
+    if (button.tag == 101) {
+        NSLog(@"button1");
+    }else if (button.tag == 102){
+        NSLog(@"button2");
+    }else if (button.tag == 102){
+        NSLog(@"button3");
+    }else{
+        NSLog(@"button4");
+    }
 }
+
+
+
 
 
 @end
