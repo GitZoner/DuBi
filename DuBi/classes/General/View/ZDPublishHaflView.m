@@ -77,7 +77,7 @@
         anim.toValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x, button.center.y)];
         anim.springSpeed = 20;
         anim.springBounciness = 20;
-         anim.beginTime = CACurrentMediaTime() + 0.5 * i;
+        // anim.beginTime = CACurrentMediaTime() + 0.5 * i;
         [button pop_addAnimation:anim forKey:nil];
   
     }
