@@ -17,7 +17,7 @@
 @property(strong, nonatomic) AVPlayer *player;
 @property(strong, nonatomic) UIButton *playOrpause;
 @property(strong, nonatomic) UISlider *timeSlider;
-@property(strong, nonatomic) NSTimer *timer;
+
 @property(strong, nonatomic) UILabel *leftLabel;
 @property(strong, nonatomic) UILabel *rightLabel;
 @property(strong, nonatomic) UIButton *LoginBigbutton;
@@ -81,6 +81,7 @@ static TLFZAVplayer *avPlayer = nil;
     self.timeSlider = [[UISlider alloc]initWithFrame:CGRectMake(kWidth*0.25, kHeight*0.82, kWidth*0.5, 34)];
     //[self.timeSlider setThumbImage:[UIImage imageNamed:@""] forState:(UIControlStateNormal)];
     self.timeSlider.minimumValue = 0;
+    self.timeSlider.maximumValue = 1;
     [self.timeSlider addTarget:self action:@selector(timersliderAction) forControlEvents:(UIControlEventValueChanged)];
     self.timeSlider.minimumTrackTintColor = [UIColor whiteColor];
     [self addSubview:self.timeSlider];
@@ -134,6 +135,7 @@ static TLFZAVplayer *avPlayer = nil;
 
 -(void)timersliderAction{
 
+   
     [self.timer invalidate];// 计时器暂停
     [self.player pause]; // 视频停止
     // 视频当前播放时间为人为拖动的滑块的值
@@ -141,15 +143,25 @@ static TLFZAVplayer *avPlayer = nil;
     
     // 重启timer
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+    if (self.timeSlider.value == self.timeSlider.maximumValue) {
+        [self.playOrpause setImage:[UIImage imageNamed:@"5"] forState:(UIControlStateNormal)];
+        self.timeSlider.value = 0;
+        self.isPlaying = YES;
+    }
     // 视频播放
     [self.player play];
-
+    
 
 
 
 
 }
 
+// 暂停
+-(void)vedioPasue
+{
+    [self.AVplayerVC.player pause];
+}
 
 #pragma mark --------------------大按钮事件-------------------------
 -(void)ACtion{
@@ -158,8 +170,6 @@ static TLFZAVplayer *avPlayer = nil;
     [self palyOrpauseAction1];
 
 }
-
-
 
 
 #pragma mark --------------------定时器执行-------------------------
@@ -175,7 +185,9 @@ static TLFZAVplayer *avPlayer = nil;
 #pragma mark --------------------定时器事件-------------------------
 -(void)timerAction{
     
-     self.timeSlider.maximumValue =self.player.currentItem.duration.value/self.player.currentItem.duration.timescale;
+//    // 当前播放时间
+    
+    self.timeSlider.maximumValue =self.player.currentItem.duration.value/self.player.currentItem.duration.timescale;
     
       self.timeSlider.value = self.player.currentTime.value/self.player.currentTime.timescale;
     
@@ -198,6 +210,7 @@ static TLFZAVplayer *avPlayer = nil;
         });
 
     dispatch_group_t group = dispatch_group_create();
+    
     dispatch_group_async(group, concurrentQueue, ^{
         
         // 播放项目
@@ -255,7 +268,12 @@ static TLFZAVplayer *avPlayer = nil;
     [self.playOrpause setImage:[UIImage imageNamed:@"4"] forState:(UIControlStateHighlighted)];
     self.button.hidden = YES;
     [self.player play];
-    
+    if (self.timeSlider.value == self.timeSlider.maximumValue) {
+        [self.playOrpause setImage:[UIImage imageNamed:@"5"] forState:(UIControlStateNormal)];
+        self.timeSlider.value = 0;
+        self.isPlaying = YES;
+        [self.timer invalidate];
+    }
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
     
     

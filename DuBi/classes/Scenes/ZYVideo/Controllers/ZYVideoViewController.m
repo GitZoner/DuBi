@@ -37,6 +37,8 @@
 @property(strong,nonatomic)NSString * maxtime;
 
 @property(assign,nonatomic)NSInteger  page;
+
+@property(strong,nonatomic)TLFZAVplayer * tlPlayer;
 @end
 
 
@@ -82,7 +84,12 @@ static NSString * const registerId = @"ZDCustomVedioCell";
     // 下拉加载上啦刷新
     [self  setupRefresh];
     
+    
 }
+
+
+
+
 -(void)setupRefresh
 {
     self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestAction)];
@@ -177,7 +184,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 -(void)setTableViewAndTitle
 {
     self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.773060344827586];
-    self.navigationItem.title = @"爱AV";
+    self.navigationItem.title = @"花心大罗卜";
     
     //  [self.tableView registerNib:[UINib nibWithNibName:[NSStringFromClass([ZDCustomVedioCell class])] bundle:nil] forCellReuseIdentifier:registerId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZDCustomVedioCell class]) bundle:nil] forCellReuseIdentifier:registerId];
@@ -205,6 +212,14 @@ static NSString * const registerId = @"ZDCustomVedioCell";
      cell.listModel = self.listArry[indexPath.row];
    //  cell.infoModel = self.infoArray[indexPath.row];
     cell.themesModel = self.themesArray[indexPath.row];
+    
+//    self.tlPlayer = [TLFZAVplayer shareAVPlayer];
+//    [self.tlPlayer drawAVPlayer];
+//    self.tlPlayer.frame = cell.backgroundView.frame;
+//    [self.tlPlayer playWithString:cell.listModel.videouri];
+//    [cell.contentView addSubview:self.tlPlayer];
+//    
+    
     
     return cell;
 }

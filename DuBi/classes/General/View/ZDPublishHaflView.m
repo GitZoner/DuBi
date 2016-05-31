@@ -111,9 +111,30 @@ static UIWindow * window;
         if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
             [_myDelegate hidderWindow];
         }
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"选择模式" message:@"相册or相机" preferredStyle:(UIAlertControllerStyleActionSheet)];
+        UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"相册" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            // 调用系统相册
+            [self invokePhoto];
+            
+            
+        }];
+        UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"相机" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:action1];
+        [alert addAction:action2];
+        [alert addAction:action3];
         
-        // 调用系统相册
-        [self invokePhoto];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        
+        
+        
+        
+        
+     
         
         
         NSLog(@"button2");

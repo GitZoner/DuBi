@@ -246,6 +246,7 @@
 		C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE8001CFABF7600F2872D /* ZDChangeView.m */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
+		C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C5994B1CFDC68400D69114 /* ZDPlayVedioViewController.m */; };
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
@@ -733,6 +734,8 @@
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
 		C2C33E131CF5E37B00D3564D /* ZDPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishController.m; sourceTree = "<group>"; };
 		C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishController.xib; sourceTree = "<group>"; };
+		C2C5994A1CFDC68400D69114 /* ZDPlayVedioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPlayVedioViewController.h; sourceTree = "<group>"; };
+		C2C5994B1CFDC68400D69114 /* ZDPlayVedioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPlayVedioViewController.m; sourceTree = "<group>"; };
 		C2DEA06E1CF2E991002E1120 /* LWNCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomButton.h; sourceTree = "<group>"; };
 		C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomButton.m; sourceTree = "<group>"; };
 		C2DEA0711CF2F1EE002E1120 /* LWNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNCustomView.h; sourceTree = "<group>"; };
@@ -1961,6 +1964,8 @@
 			children = (
 				C2A7DC711CF311D900492355 /* ZYVideoViewController.h */,
 				C2A7DC721CF311D900492355 /* ZYVideoViewController.m */,
+				C2C5994A1CFDC68400D69114 /* ZDPlayVedioViewController.h */,
+				C2C5994B1CFDC68400D69114 /* ZDPlayVedioViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2358,6 +2363,7 @@
 				C2ED25361CFD689C00071078 /* ZDSendImageViewController.m in Sources */,
 				C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */,
 				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
+				C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */,
 				960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				96FB5CA71CF6FF1D009A8BCF /* MWPhoto.m in Sources */,
