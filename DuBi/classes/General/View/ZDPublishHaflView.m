@@ -11,12 +11,14 @@
 #import "UIView+XYWidthHeight.h"
 #import "JTTabBar.h"
 #import <POP.h>
-
 #import "ZDSendJokes.h"
 
-@interface ZDPublishHaflView ()<UIImagePickerControllerDelegate,UINavigationBarDelegate>
+
+#define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
+@interface ZDPublishHaflView ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 
+@property(strong,nonatomic)UIImagePickerController * pickerController;
 @end
 
 @implementation ZDPublishHaflView
@@ -94,24 +96,25 @@ static UIWindow * window;
 // 点击button响应的事件
 -(void)buttonsAction:(UIButton *)button
 {
-    if (button.tag == 101) {
+    
+    if (button.tag == 101) { // 发段子
         NSLog(@"button1");
         if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
             [_myDelegate hidderWindow];
         }
-        
-       // [[UINavigationController alloc] initWithRootViewController:<#(nonnull UIViewController *)#>]
-      
+    
         ZDSendJokes * nc =[ZDSendJokes new];
         
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nc animated:NO completion:nil];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-        });
+    }else if (button.tag == 102){ // 发图片
+        if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
+            [_myDelegate hidderWindow];
+        }
         
-    }else if (button.tag == 102){
-       
+        // 调用系统相册
+        [self invokePhoto];
+        
         
         NSLog(@"button2");
     }else if (button.tag == 103){
@@ -121,7 +124,44 @@ static UIWindow * window;
     }
 }
 
+// 调用系统相册
+-(void)invokePhoto
+{
+    self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    // 设置代理
+    self.pickerController.delegate = self;
+    // 允许编辑图片
+    self.pickerController.allowsEditing = YES;
+    // 设置相册选完照片，是否跳到编辑模式，进行图片的剪辑
+    [kpresent presentViewController:self.pickerController animated:YES completion:nil];
+}
 
+-(UIImagePickerController *)pickerController
+{
+    if (!_pickerController) {
+        _pickerController = [UIImagePickerController new];
+    }
+    
+    return _pickerController;
+}
+
+
+// 代理方法
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage  * image = nil;
+    // 判断从哪获取图片
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        // 修改前的image
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }else{
+        // 可编辑UIImagePickerControlerEditrdImage(获取编辑后的图片)
+        image = [info objectForKey:UIImagePickerControllerEditedImage];
+        
+    }
+}
+
+// 进入相册
 
 
 

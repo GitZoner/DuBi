@@ -13,6 +13,7 @@
 #import "DataModels.h" // model
 #import <AFNetworking.h>
 #import "MJRefresh.h"
+#import "TLFZAVplayer.h"
 
 #define kUrl @"http://api.budejie.com/api/api_open.php"
 
@@ -212,6 +213,10 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return self.view.height/ 9 * 4 ;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 }
 
 /*

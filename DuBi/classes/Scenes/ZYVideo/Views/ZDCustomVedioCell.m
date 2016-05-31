@@ -11,7 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
 #import "UIView+XYWidthHeight.h"
-
+#import "TLFZAVplayer.h"
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -35,7 +35,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *toolsView;
 
-
+@property(strong,nonatomic)TLFZAVplayer * player;
 
 
 
@@ -61,6 +61,8 @@
     [self.fengxiangButton setTitle:_listModel.repost forState:(UIControlStateNormal)];
     [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
     
+    
+
     
   // [self playerTools];
 //    self.videoTime.text = _listModel.videotime;
@@ -89,15 +91,7 @@
         _themesModel =nil;
         _themesModel = themesModel;
     }
-    
-// self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",_themesModel.themeName];
-    
 }
-
-
-
-
-
 /*
 -(void)flage
 {
@@ -123,6 +117,18 @@
     [self.contentView addSubview:_player];
 }
 */
+
+- (IBAction)playerButton:(UIButton *)sender {
+    self.player = [TLFZAVplayer shareAVPlayer];
+    self.player.frame = _bgImgView.frame;
+    [self.player drawAVPlayer];
+    [self addSubview:self.player];
+    [self.player playWithString:_listModel.videouri];
+    
+}
+
+
+
 
 // 播放视频
 -(void)playerTools

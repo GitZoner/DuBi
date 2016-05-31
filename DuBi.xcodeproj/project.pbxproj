@@ -252,6 +252,8 @@
 		C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */; };
 		C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25261CFD2BB200071078 /* ZDSendJokes.m */; };
 		C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */; };
+		C2ED25361CFD689C00071078 /* ZDSendImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25351CFD689C00071078 /* ZDSendImageViewController.m */; };
+		C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */; };
 		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
@@ -742,6 +744,10 @@
 		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
 		C2ED25261CFD2BB200071078 /* ZDSendJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendJokes.m; sourceTree = "<group>"; };
 		C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendJokes.xib; sourceTree = "<group>"; };
+		C2ED25341CFD689C00071078 /* ZDSendImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendImageViewController.h; sourceTree = "<group>"; };
+		C2ED25351CFD689C00071078 /* ZDSendImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendImageViewController.m; sourceTree = "<group>"; };
+		C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFZAVplayer.h; sourceTree = "<group>"; };
+		C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFZAVplayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1978,6 +1984,8 @@
 		C2A7DC741CF311D900492355 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */,
+				C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */,
 				C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */,
 				C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */,
 				C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */,
@@ -1999,6 +2007,8 @@
 				C2ED25251CFD2BB200071078 /* ZDSendJokes.h */,
 				C2ED25261CFD2BB200071078 /* ZDSendJokes.m */,
 				C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */,
+				C2ED25341CFD689C00071078 /* ZDSendImageViewController.h */,
+				C2ED25351CFD689C00071078 /* ZDSendImageViewController.m */,
 			);
 			name = otherViewController;
 			sourceTree = "<group>";
@@ -2329,6 +2339,7 @@
 				C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */,
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
+				C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
 				96FB5C991CF6FF1D009A8BCF /* MJRefreshBackGifFooter.m in Sources */,
@@ -2344,6 +2355,7 @@
 				96FB5CD01CF6FF1D009A8BCF /* NSDateFormatter+Category.m in Sources */,
 				96FB5CBE1CF6FF1D009A8BCF /* PSTCollectionView.m in Sources */,
 				96FB5C931CF6FF1D009A8BCF /* MJRefreshComponent.m in Sources */,
+				C2ED25361CFD689C00071078 /* ZDSendImageViewController.m in Sources */,
 				C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */,
 				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
 				960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */,
