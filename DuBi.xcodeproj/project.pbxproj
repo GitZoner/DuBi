@@ -249,8 +249,9 @@
 		C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA06F1CF2E991002E1120 /* LWNCustomButton.m */; };
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
-		C2E6E9CA1CFC5D6A001B198A /* ZDSendJokesControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9C81CFC5D6A001B198A /* ZDSendJokesControllerViewController.m */; };
-		C2E6E9CB1CFC5D6A001B198A /* ZDSendJokesControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6E9C91CFC5D6A001B198A /* ZDSendJokesControllerViewController.xib */; };
+		C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */; };
+		C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25261CFD2BB200071078 /* ZDSendJokes.m */; };
+		C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */; };
 		CB3964DC64143C48D3728A42 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA63ACCE108F063FF901999 /* libPods-DuBi.a */; };
 /* End PBXBuildFile section */
 
@@ -736,9 +737,11 @@
 		C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNCustomView.m; sourceTree = "<group>"; };
 		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
 		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
-		C2E6E9C71CFC5D6A001B198A /* ZDSendJokesControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokesControllerViewController.h; sourceTree = "<group>"; };
-		C2E6E9C81CFC5D6A001B198A /* ZDSendJokesControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendJokesControllerViewController.m; sourceTree = "<group>"; };
-		C2E6E9C91CFC5D6A001B198A /* ZDSendJokesControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendJokesControllerViewController.xib; sourceTree = "<group>"; };
+		C2E6E9CC1CFC7A57001B198A /* ZDPublishHaflViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflViewControl.h; sourceTree = "<group>"; };
+		C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflViewControl.m; sourceTree = "<group>"; };
+		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
+		C2ED25261CFD2BB200071078 /* ZDSendJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendJokes.m; sourceTree = "<group>"; };
+		C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendJokes.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1931,6 +1934,8 @@
 				C296858C1CF6D1FC00CA5362 /* ZDPublishHaflView.h */,
 				C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */,
 				C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */,
+				C2E6E9CC1CFC7A57001B198A /* ZDPublishHaflViewControl.h */,
+				C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */,
 			);
 			name = publishView;
 			sourceTree = "<group>";
@@ -1991,9 +1996,9 @@
 				C2C33E121CF5E37B00D3564D /* ZDPublishController.h */,
 				C2C33E131CF5E37B00D3564D /* ZDPublishController.m */,
 				C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */,
-				C2E6E9C71CFC5D6A001B198A /* ZDSendJokesControllerViewController.h */,
-				C2E6E9C81CFC5D6A001B198A /* ZDSendJokesControllerViewController.m */,
-				C2E6E9C91CFC5D6A001B198A /* ZDSendJokesControllerViewController.xib */,
+				C2ED25251CFD2BB200071078 /* ZDSendJokes.h */,
+				C2ED25261CFD2BB200071078 /* ZDSendJokes.m */,
+				C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */,
 			);
 			name = otherViewController;
 			sourceTree = "<group>";
@@ -2079,13 +2084,13 @@
 				96E97E201CF04A7200DFA851 /* SessionCell.xib in Resources */,
 				C28422371CF9772100E8F9A6 /* PictureViewCell.xib in Resources */,
 				960DE7491CFAF29B00C31DD8 /* sdRefeshView_arrow@2x.png in Resources */,
+				C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */,
 				96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				96E97E1C1CF04A7200DFA851 /* JTContactListViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
-				C2E6E9CB1CFC5D6A001B198A /* ZDSendJokesControllerViewController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
 				96FB5C9F1CF6FF1D009A8BCF /* MJRefresh.bundle in Resources */,
 				960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */,
@@ -2174,7 +2179,6 @@
 				96FB5C941CF6FF1D009A8BCF /* MJRefreshFooter.m in Sources */,
 				960DE7571CFAF31000C31DD8 /* SDPhotoBrowser.m in Sources */,
 				960DE6BD1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m in Sources */,
-				C2E6E9CA1CFC5D6A001B198A /* ZDSendJokesControllerViewController.m in Sources */,
 				960DE6C11CFAEF3900C31DD8 /* ZYTimeLineCell.m in Sources */,
 				96FB5CAE1CF6FF1D009A8BCF /* EMSDWebImageCompat.m in Sources */,
 				96FB5C831CF6FF1D009A8BCF /* EMAudioPlayerUtil.m in Sources */,
@@ -2207,6 +2211,7 @@
 				96E97E191CF04A7200DFA851 /* JTAddFriendViewController.m in Sources */,
 				96FB5CD91CF6FF1D009A8BCF /* EaseEmotionEscape.m in Sources */,
 				96FB5CD71CF6FF1D009A8BCF /* EaseEmoji.m in Sources */,
+				C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */,
 				96FB5CBB1CF6FF1D009A8BCF /* UIImageView+EMWebCache.m in Sources */,
 				96FB5CD21CF6FF1D009A8BCF /* UIViewController+DismissKeyboard.m in Sources */,
 				96FB5C841CF6FF1D009A8BCF /* EMAudioRecorderUtil.m in Sources */,
@@ -2350,6 +2355,7 @@
 				96FB5C961CF6FF1D009A8BCF /* MJRefreshAutoGifFooter.m in Sources */,
 				C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */,
 				96D5B02D1CF82462009E689C /* UserInfo.m in Sources */,
+				C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */,
 				960DE6BB1CFAEF3900C31DD8 /* ZYBaseRefresView.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96FB5CC91CF6FF1D009A8BCF /* PSTGridLayoutSection.m in Sources */,

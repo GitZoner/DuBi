@@ -12,9 +12,11 @@
 #import "JTTabBar.h"
 #import <POP.h>
 
-@interface ZDPublishHaflView ()
+#import "ZDSendJokes.h"
 
-@property(strong,nonatomic)UIButton * button;
+@interface ZDPublishHaflView ()<UIImagePickerControllerDelegate,UINavigationBarDelegate>
+
+
 @end
 
 @implementation ZDPublishHaflView
@@ -88,13 +90,29 @@
 
 }
 
-
+static UIWindow * window;
 // 点击button响应的事件
 -(void)buttonsAction:(UIButton *)button
 {
     if (button.tag == 101) {
         NSLog(@"button1");
+        if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
+            [_myDelegate hidderWindow];
+        }
+        
+       // [[UINavigationController alloc] initWithRootViewController:<#(nonnull UIViewController *)#>]
+      
+        ZDSendJokes * nc =[ZDSendJokes new];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nc animated:NO completion:nil];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+        });
+        
     }else if (button.tag == 102){
+       
+        
         NSLog(@"button2");
     }else if (button.tag == 103){
         NSLog(@"button3");

@@ -1,3 +1,4 @@
+
 //
 //  ZDSendJokes.m
 //  DuBi
@@ -7,8 +8,17 @@
 //
 
 #import "ZDSendJokes.h"
+#import <FMDB.h>
 
 @interface ZDSendJokes ()
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+//
+@property(strong,nonatomic) FMDatabase * dataBase;
+// 同时处理多任务操作，用来 代替人为多线程访问数据库资源
+@property(strong,nonatomic) FMDatabaseQueue * queue;
+
 
 @end
 
@@ -16,22 +26,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  // 构造表路径
+    NSString * path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString * fileName = [path stringByAppendingPathComponent:@"shuoshuo.sqlite"];
+    
+    // 获取数据库
+    FMDatabase * db = [FMDatabase databaseWithPath:fileName];
+    
+    if ([db open]) {
+        db executeUpdate:@"CREATE TABLE IF NOT EXISTE ";
+    }
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// 返回按钮
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// 发表按钮
+- (IBAction)faBiao:(UIButton *)sender {
+    
+    
+    
+    
 }
-*/
+
+
+- (IBAction)placeDian:(UIButton *)sender {
+}
+
+
+- (IBAction)fenXiangTime:(UIButton *)sender {
+}
+
+- (IBAction)fenXiangWeiXin:(UIButton *)sender {
+}
+
+- (IBAction)fenXiangQQ:(UIButton *)sender {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

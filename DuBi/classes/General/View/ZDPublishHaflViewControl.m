@@ -7,8 +7,13 @@
 //
 
 #import "ZDPublishHaflViewControl.h"
+#import "ZDPublishHaflView.h"
+#import "UIView+XYWidthHeight.h"
 
 @interface ZDPublishHaflViewControl ()
+
+@property(strong,nonatomic)ZDPublishHaflView * publishView;
+
 
 @end
 
@@ -16,22 +21,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor redColor];
+    [self creatView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)creatView
+{
+    ZDPublishHaflView * publishView = [[ZDPublishHaflView alloc]initWithFrame:CGRectMake(0, self.view.height / 3 * 2, self.view.width, self.view.height / 3)];
+    [self.view addSubview:publishView];
+}
+-(void)presetController{
+    
+    [self.publishView.button addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)buttonAction:(UIButton *)button
+{
+    if (button.tag == 101) {
+        
 }
-*/
+}
 
 @end

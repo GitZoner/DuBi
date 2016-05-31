@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDPublishHaflView : UIView
+@protocol ZDPublishHaflViewDelegate <NSObject>
 
+-(void)hidderWindow;
+
+@end
+
+
+@interface ZDPublishHaflView : UIView
+@property(strong,nonatomic)UIButton * button;
+
+@property(weak,nonatomic)id<ZDPublishHaflViewDelegate>myDelegate;
 @end

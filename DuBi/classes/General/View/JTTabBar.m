@@ -12,11 +12,13 @@
 #import <DCPathButton.h>
 #import "ZDPublishController.h"
 #import "ZDPublishHaflView.h"
+#import "ZDPublishHaflViewControl.h"
+
 
 #define kWindow [UIApplication sharedApplication].keyWindow
 #define kpingMuBounds [UIScreen mainScreen].bounds
 
-@interface JTTabBar ()
+@interface JTTabBar ()<ZDPublishHaflViewDelegate>
 
 // 发布按钮
 @property (strong,nonatomic)UIButton *publishButton;
@@ -32,7 +34,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+ 
         UIButton *publishButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
         [publishButton setBackgroundImage:[UIImage  imageNamed:@"tabbar_+"] forState:(UIControlStateNormal)];
         // [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:(UIControlStateHighlighted)];
@@ -58,9 +60,14 @@ UIWindow const * window;
         window.frame = [UIScreen mainScreen].bounds;
         window.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.8];
         window.hidden = NO;
+    // ZDPublishHaflViewControl * phVC = [ZDPublishHaflViewControl new];
+    // window.rootViewController = phVC;
+    
     
          ZDPublishHaflView  * publishView = [[ZDPublishHaflView alloc]initWithFrame:CGRectMake(0,self.window.height + self.window.height / 3 * 2, self.window.width, self.window.height / 3)];
-
+    publishView.myDelegate = self;
+   
+    //  [publishView.button addTarget:self action:@selector(buttonsAction:) forControlEvents:(UIControlEventTouchUpInside)];
     // 返回按钮
     UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(publishView.width /2, publishView.height - 23 ,15, 15)];
        //  [button setTitle:@"x" forState:(UIControlStateNormal)];
@@ -70,7 +77,7 @@ UIWindow const * window;
         [button addTarget:self action:@selector(buttonAction) forControlEvents:(UIControlEventTouchUpInside)];
          [window addSubview:publishView];
         //  self.block(window);
-        [publishView addSubview:button];
+         [publishView addSubview:button];
   
 #pragma mark --- 弹出视图的相关动画
     POPSpringAnimation * animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
@@ -83,10 +90,39 @@ UIWindow const * window;
 }
 
 
+// 点击button执行
+//-(void)buttonsAction:(UIButton *)button
+//{
+//    if (button.tag == 101) {
+//      
+//        ZDSendJokesControllerViewController * sendJokesVC = [ZDSendJokesControllerViewController new];
+//        
+//        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:sendJokesVC animated:YES completion:nil];
+//
+//          NSLog(@"button1");
+//        
+////        if (_wodeDelegate && [_wodeDelegate respondsToSelector:@selector(presentView:)]) {
+////            [_wodeDelegate presentView:button];
+////        }
+////
+////        ZDPublishHaflViewControl * phVC = [[ZDPublishHaflViewControl alloc]init];
+////
+////        ZDSendJokesControllerViewController * sendJokesVC = [ZDSendJokesControllerViewController new];
+////        [phVC presentViewController:sendJokesVC animated:YES completion:nil];
+//        
+//    }else if (button.tag == 102){
+//        NSLog(@"button2");
+//    }else if (button.tag == 103){
+//        NSLog(@"button3");
+//    }else{
+//        NSLog(@"button4");
+//    }
+//}
 
 // 点击返回x号 的事件
 -(void)buttonAction
 {
+    [window removeFromSuperview];
     window.hidden = YES;
 }
 
@@ -98,6 +134,16 @@ UIWindow const * window;
     }];
 
 }
+
+-(void)hidderWindow
+{
+    window.hidden = YES;
+}
+
+
+
+
+
 
 -(void)layoutSubviews {
     [super layoutSubviews];
