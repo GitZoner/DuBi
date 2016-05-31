@@ -18,7 +18,7 @@
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
 #import "EaseUI.h"
-#import "JTCircleViewController.h"
+#import "JTCircleMainController.h"
 #import "JTMainTestViewController.h"
 #import "ZYTimeLineTableViewController.h"
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
@@ -73,7 +73,7 @@
     // 视频
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabbar_video_nor" selectedImage:@"tabbar_video_h"];
     // 圈子
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYTimeLineTableViewController new]] title:@"圈子" image:@"tabbar_circle_nor" selectedImage:@"tabbar_circle_h"];
+    [self setUpChildVCWithChildVC:[JTCircleMainController new] title:@"圈子" image:@"tabbar_circle_nor" selectedImage:@"tabbar_circle_h"];
     // 我
     [self setUpChildVCWithChildVC:[ZDUserViewController new] title:@"我" image:@"tabbar_me_nor" selectedImage:@"tabbar_me_h"];
 
