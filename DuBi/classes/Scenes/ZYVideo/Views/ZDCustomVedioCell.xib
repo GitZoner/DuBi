@@ -110,14 +110,23 @@
                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                         </accessibility>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-bI-avj">
+                        <rect key="frame" x="144" y="74" width="32" height="32"/>
+                        <state key="normal" backgroundImage="5"/>
+                        <connections>
+                            <action selector="playerButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oQB-Z3-GpU"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.85428340520000001" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="dLy-FI-ZVE" secondAttribute="trailing" id="0Lb-J6-WAo"/>
                     <constraint firstAttribute="bottom" secondItem="dLy-FI-ZVE" secondAttribute="bottom" id="B3N-gX-hJO"/>
+                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerY" secondItem="IKR-Cm-nmi" secondAttribute="centerY" id="JuY-am-spF"/>
                     <constraint firstAttribute="bottomMargin" secondItem="IKR-Cm-nmi" secondAttribute="bottom" constant="35" id="hen-Cv-P0y"/>
                     <constraint firstItem="IKR-Cm-nmi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jLl-p2-s2s"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IKR-Cm-nmi" secondAttribute="trailing" id="lEF-7u-kLa"/>
+                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerX" secondItem="IKR-Cm-nmi" secondAttribute="centerX" id="rRb-L9-dpi"/>
                     <constraint firstItem="dLy-FI-ZVE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tsf-Ry-fAr"/>
                     <constraint firstItem="IKR-Cm-nmi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zsY-YX-Eso"/>
                 </constraints>
@@ -135,6 +144,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="5" width="32" height="32"/>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="mainCellCai" width="20" height="20"/>
         <image name="mainCellCaiClick" width="20" height="20"/>

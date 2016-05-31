@@ -11,6 +11,9 @@
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
 #import "UIView+XYWidthHeight.h"
+#import "TLFZAVplayer.h"
+#import "ZDPlayVedioViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 
 @interface ZDCustomVedioCell ()
@@ -35,15 +38,17 @@
 
 @property (weak, nonatomic) IBOutlet UIView *toolsView;
 
+@property(strong,nonatomic)TLFZAVplayer * player;
 
-
-
+@property(strong,nonatomic)MPMoviePlayerViewController * playerVC;
 
 
 @end
 
 // 点赞    踩    转发量    评论
 @implementation ZDCustomVedioCell
+
+
 
 #pragma mark  --- Model
 - (void)setListModel:(ZDList *)listModel
@@ -60,7 +65,8 @@
     [self.caiButton setTitle:_listModel.cai forState:(UIControlStateNormal)];
     [self.fengxiangButton setTitle:_listModel.repost forState:(UIControlStateNormal)];
     [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
-    
+
+
     
   // [self playerTools];
 //    self.videoTime.text = _listModel.videotime;
@@ -89,14 +95,16 @@
         _themesModel =nil;
         _themesModel = themesModel;
     }
-    
-// self.typeLabel.text = [NSString stringWithFormat:@"分类:%@",_themesModel.themeName];
-    
 }
 
-
-
-
+-(MPMoviePlayerViewController *)playerVC
+{
+    if (_playerVC == nil) {
+        NSURL * url = [NSURL URLWithString:_listModel.videouri];
+        _playerVC = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+    }
+    return _playerVC;
+}
 
 /*
 -(void)flage
@@ -123,6 +131,24 @@
     [self.contentView addSubview:_player];
 }
 */
+
+- (IBAction)playerButton:(UIButton *)sender {
+    // sender.hidden = YES;
+//    ZDPlayVedioViewController * playVC = [ZDPlayVedioViewController new];
+//    playVC.vedioUrl = self.listModel.videouri;
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[ZDPlayVedioViewController new] animated:YES completion:nil];
+//    self.player = [TLFZAVplayer shareAVPlayer];
+//    self.player.frame =self.bgImgView.frame;
+//    // player.center = self.view.center;
+//    [self.player drawAVPlayer];
+//    [self.player playWithString:self.listModel.videouri];
+//    [self.contentView addSubview:self.player];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.playerVC];
+    
+}
+
+
+
 
 // 播放视频
 -(void)playerTools
