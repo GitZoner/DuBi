@@ -1,5 +1,5 @@
 //
-//  ZDSendJokesControllerViewController.h
+//  ZDPublishHaflViewControl.h
 //  DuBi
 //
 //  Created by lanou3g on 16/5/30.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDSendJokesControllerViewController : UINavigationController
+@interface ZDPublishHaflViewControl : UIViewController
 
 @end
