@@ -34,7 +34,7 @@
     FMDatabase * db = [FMDatabase databaseWithPath:fileName];
     
     if ([db open]) {
-        db executeUpdate:@"CREATE TABLE IF NOT EXISTE ";
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTE "];
     }
 
 }
