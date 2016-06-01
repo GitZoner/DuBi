@@ -7,13 +7,21 @@
 //
 
 #import "ZDChangeView.h"
-
+#import "Main_marco.h"
 #import "UIView+XYWidthHeight.h"
 #import "JTSignInChoiceViewController.h"
 #import <Masonry.h>
-@interface ZDChangeView ()
+#define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
 
+@interface ZDChangeView ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+// 登录状态
 @property(strong,nonatomic)NSString * hasSign;
+
+// 调用相册
+@property(strong,nonatomic)UIImagePickerController * pickerController;
+
+
+
 @end
 @implementation ZDChangeView
 
@@ -22,13 +30,21 @@
     if (self = [super initWithFrame:frame]) {
      
         [self drawView];
+        
     }
     return self;
 }
 
-
+-(UIImagePickerController *)pickerController
+{
+    if (!_pickerController) {
+        _pickerController = [UIImagePickerController new];
+    }
+    
+    return _pickerController;
+}
 -(void)drawView{
-
+    
    // 背景图片的设置
     [self addSubview:self.imageViewForHeader];
     // 头像的设置
@@ -41,7 +57,7 @@
     // [self fuzzyView];
 }
 
-
+#pragma mark imageViewForHeader ========================================================
 // 背景图片的设置
 -(UIImageView *)imageViewForHeader
 {
@@ -55,22 +71,67 @@
     }
     return _imageViewForHeader;
 }
-
+#pragma mark imageViewForUser ========================================================
 -(UIImageView *)imageViewForUser
 {
     if (!_imageViewForUser) {
-        
         _imageViewForUser = [[UIImageView alloc]initWithFrame:CGRectMake(10 + 20, self.imageViewForHeader.height -55 - 55, 45, 45)];
         _imageViewForUser.userInteractionEnabled = YES;
         _imageViewForUser.image = [UIImage imageNamed:@"beijingtu2"];
         self.imageViewForUser.layer.cornerRadius = self.imageViewForUser.height / 2;
         self.imageViewForUser.layer.masksToBounds = YES;
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewForUserAction:)];
+        [_imageViewForUser addGestureRecognizer:tap];
 //         [self.imageViewForHeader addSubview:self.imageViewForUser];
     }
     
     return _imageViewForUser;
 }
 
+-(void)tapImageViewForUserAction:(UITapGestureRecognizer *)tap
+{
+    
+    self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfoKey_hasSign];
+    if ([self.hasSign isEqualToString:@"YES"]) {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message: nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"相册" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            // 调用系统相册
+            [self invokePhoto];
+            
+            
+        }];
+        UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"相机" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:action1];
+        [alert addAction:action2];
+        [alert addAction:action3];
+        [kpresent presentViewController:alert animated:YES completion:nil];
+    }else
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录!" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"我去" style:(UIAlertActionStyleDefault) handler:nil];
+        [alert addAction:action];
+        [kpresent presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+-(void)invokePhoto
+{
+    self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    // 设置代理
+    self.pickerController.delegate = self;
+    // 允许编辑图片
+    self.pickerController.allowsEditing = YES;
+    // 设置相册选完照片，是否跳到编辑模式，进行图片的剪辑
+    [kpresent presentViewController:self.pickerController animated:YES completion:nil];
+}
+
+
+#pragma mark label========================================================
 // 设置标题label
 -(UILabel *)titleLabel
 {
@@ -86,19 +147,27 @@
     return _titleLabel;
 }
 
+#pragma mark nameButton ========================================================
 -(UIButton *)nameButton
 {
     if (!_nameButton) {
      
         _nameButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-       
-        _nameButton.frame = CGRectMake(CGRectGetMaxX(_imageViewForUser.frame) + 10-135, CGRectGetMinY(_imageViewForUser.frame) + 5, _titleLabel.width, _titleLabel.height);
         
-        [_nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
-       
-        [_nameButton setTitleColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.866460129310345] forState:(UIControlStateNormal)];
+        // 登录状态
+        self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfoKey_hasSign];
+        
+        _nameButton.frame = CGRectMake(CGRectGetMaxX(_imageViewForUser.frame) + 10, CGRectGetMinY(_imageViewForUser.frame) + 5, _titleLabel.width, _titleLabel.height);
+        _nameButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _nameButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        if ([self.hasSign isEqualToString:@"YES"]) {
+            
+            
+        }
+        [_nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
         [_nameButton addTarget:self action:@selector(nameButtonAction) forControlEvents:(UIControlEventTouchUpInside)];
+        
+        
         //_nameButton.text = @"登录/注册";
         //_nameButton.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.866460129310345];
     }
@@ -109,7 +178,7 @@
     NSLog(@"234");
 }
 
-
+#pragma mark 毛玻璃 ========================================================
 // 毛玻璃方法
 -(void)fuzzyView
 {

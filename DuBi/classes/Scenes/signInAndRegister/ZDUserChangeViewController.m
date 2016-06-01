@@ -11,6 +11,8 @@
 #import "ZDChangeView.h"
 #import "ZDCustomUserTableViewCell.h"
 #import "JTSignInChoiceViewController.h"
+#import <POP.h>
+
 
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
@@ -84,7 +86,7 @@
 
 -(void)creatTableView
 {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64,self.view.height , self.view.height - 64) style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,109,self.view.height , self.view.height - 64) style:(UITableViewStylePlain)];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 代理
     self.tableView.delegate = self;
@@ -92,7 +94,8 @@
     
     // 注册cell
     [self.tableView registerClass:[ZDCustomUserTableViewCell class] forCellReuseIdentifier:@"tableView"];
-    
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
+    // self.tableView.contentInset = UIEdgeInsetsMake(45, 0, 44, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
     // 设置头部视图
@@ -126,6 +129,7 @@
     return cell;
 }
 
+
 #pragma mark --- 父类scorllView的delegate
 
 #define kImageViewForHeader self.ChangeView.imageViewForHeader
@@ -147,7 +151,7 @@
         kImageViewForHeader.frame = CGRectMake(0, -48 - point.y / 2, self.view.width - point.y, self.view.height * 2 / 7 + 48 * 3 - point.y );
         kImageViewForUser.frame = CGRectMake(10 +20, kImageViewForHeader.height - 55 - 48 - point.y / 3, 45, 45);
         kTitleLabel.frame = CGRectMake(kImageViewForUser.x, CGRectGetMaxY(kImageViewForUser.frame), self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
-        knameButton.frame = CGRectMake(10+20+10 - 90, kImageViewForHeader.height - 55 - 48 - point.y / 2 + 5, knameButton.width, knameButton.height);
+        knameButton.frame = CGRectMake(CGRectGetMaxX(kImageViewForUser.frame)+10, kImageViewForHeader.height - 55 - 48 - point.y / 2 + 5, knameButton.width, knameButton.height);
         
         [UIView animateWithDuration:0.5 animations:^{
                 kUIBlurEffect.alpha = 0;
@@ -158,14 +162,14 @@
     
     else if(0 < point.y && point.y < self.view.height * 2 / 7 - 64){
        NSLog(@"2");
-        kImageViewForHeader.frame = CGRectMake(0, -48-point.y, self.view.width + point.y, self.ChangeView.height - point.y / 4 * 3);
+        kImageViewForHeader.frame = CGRectMake(0, -48-point.y, self.view.width + point.y, self.view.height * 2 / 7 + 48 * 3);
         
         kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height -55 -48, 45, 45);
         
         //
         kTitleLabel.frame = CGRectMake(kImageViewForUser.x, kImageViewForUser.y + kImageViewForUser.width, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
         
-        knameButton.frame = CGRectMake(10+20+10 - 90, kImageViewForHeader.height -55-48+10, knameButton.width, knameButton.height);
+        knameButton.frame = CGRectMake(CGRectGetMaxX(kImageViewForUser.frame)+10 , kImageViewForHeader.height -55-48+10, knameButton.width, knameButton.height);
         [UIView animateWithDuration:1 animations:^{
             kUIBlurEffect.alpha = point.y / (self.view.height * 2 / 7 - 64) + 0.2; 
         }];
@@ -179,15 +183,31 @@
     else if (point.y >= self.view.height * 2 / 7 - 64)
     {
         NSLog(@"3");
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            kImageViewForHeader.frame = CGRectMake(0, -48 - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2);
+        
+            kImageViewForHeader.frame = CGRectMake(0,  - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2);
             kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height - 55 - 48, 45, 45);
             kTitleLabel.frame = CGRectMake(kImageViewForUser.x , kImageViewForUser.y + kImageViewForUser.width +55 - 35, self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);
-            knameButton.frame = CGRectMake(10 +20+10 -135, kImageViewForHeader.height - 55 - 48 +10, knameButton.width, knameButton.height);
+            knameButton.frame = CGRectMake(CGRectGetMaxX(kImageViewForUser.frame)+10, kImageViewForHeader.height - 55 - 48 +10, knameButton.width, knameButton.height);
             kUIBlurEffect.alpha = 0.6;
-
-        }];
+            //  self.tableView.tableHeaderView.frame = CGRectMake(0, 0,self.view.width, self.view.height * 2 / 7);
+        // 动画不太好用
+     /*
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            
+            POPSpringAnimation * anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+            
+            anim.fromValue = [NSValue valueWithCGRect:CGRectMake(0,  - (self.view.height * 2 / 7 - 64) - 100, self.view.width, self.view.height * 2 / 7 + 48 * 2)];
+            
+            anim.toValue = [NSValue valueWithCGRect:CGRectMake(0,  - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2)];
+            
+            anim.springSpeed = 5;
+            anim.springBounciness = 5;
+            anim.beginTime = CACurrentMediaTime();
+            // anim.beginTime = CACurrentMediaTime() + 0.5 * i;
+            [kImageViewForHeader pop_addAnimation:anim forKey:nil];
+        });
+      */
     }
 }
 
