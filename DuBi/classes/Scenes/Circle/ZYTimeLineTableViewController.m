@@ -18,10 +18,10 @@
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
 
-#import "JTCircleHeaderView.h"
+
 #import "UIView+SDAutoLayout.h"
 
-
+#import "JTCircleHeaderView.h"
 
 #define kTimeLineTableViewCellId @"SDTimeLineCell"
 
