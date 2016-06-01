@@ -72,10 +72,10 @@
                 [weakSelf tableViewDidTriggerHeaderRefresh];
                 [weakSelf.tableView.mj_header beginRefreshing];
             }];
-            //            header.updatedTimeHidden = YES;
+           
         }
         else{
-            //            [self.tableView removeHeader];
+       
         }
     }
 }

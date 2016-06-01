@@ -17,8 +17,10 @@
 // 主题颜色
 #define THEME_COLOR [UIColor whiteColor]
 
-// 主体黄
+// 主题黄
 #define tYellowColor [UIColor colorWithRed:0.9712 green:0.7187 blue:0.0345 alpha:1.0]
-// 主体绿
+// 主题绿
 #define tGreenColor [UIColor colorWithRed:0.0879 green:0.6911 blue:0.5427 alpha:1.0]
+// 主题灰
+#define tGrayColor [UIColor colorWithRed:0.9016 green:0.9264 blue:0.9461 alpha:1.0]
 #endif /* Color_marco_h */
