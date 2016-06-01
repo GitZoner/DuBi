@@ -22,8 +22,13 @@
 #define kUserInfoKey_userAlias @"userAlias"
 #define kUserInfoKey_gender @"gender"
 #define kUserInfoKey_userID @"userID"
+#define kUserInfoKey_hasSign @"hasSign"
 
 #define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
 #define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
+
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kscreenHeight [UIScreen mainScreen].bounds.size.height
 
 #endif /* Main_marco_h */

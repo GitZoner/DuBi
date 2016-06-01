@@ -18,19 +18,24 @@
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
 
+
 #import "UIView+SDAutoLayout.h"
+
+#import "JTCircleHeaderView.h"
 
 #define kTimeLineTableViewCellId @"SDTimeLineCell"
 
 static CGFloat textFieldH = 40;
 
 
-@interface ZYTimeLineTableViewController ()<ZYTimeLineCellDelegate, UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ZYTimeLineTableViewController ()<ZYTimeLineCellDelegate, UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, assign) BOOL isReplayingComment;
 @property (nonatomic, strong) NSIndexPath *currentEditingIndexthPath;
 @property (nonatomic, copy) NSString *commentToUser;
 
+// 头部视图
+@property (strong,nonatomic)JTCircleHeaderView *headerVew;
 
 @end
 
@@ -48,7 +53,15 @@ static CGFloat textFieldH = 40;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // 背景设置为黑色
     
+  
+   
+    // 头部视图
+    
+    self.tableView.autoresizesSubviews = NO;
+    self.headerVew = [[JTCircleHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.83)];
+    self.tableView.tableHeaderView =self.headerVew;
     
     self.navigationItem.title = @"我的朋友圈";
     self.view.backgroundColor = [UIColor redColor];
@@ -82,7 +95,12 @@ static CGFloat textFieldH = 40;
     [self setupTextField];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    
 }
+
+
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -298,10 +316,14 @@ static CGFloat textFieldH = 40;
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+   
+
     [_textField resignFirstResponder];
 }
 
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+   
+}
 
 
 - (CGFloat)cellContentViewWith
@@ -437,6 +459,55 @@ static CGFloat textFieldH = 40;
         _totalKeybordHeight = h;
         [self adjustTableViewToFitKeyboard];
     }
+}
+
+
+
+- (UIImageView *)createHomeButtonView {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
+    imageView.image = [UIImage imageNamed:@"buddy_buddy"];
+    imageView.layer.cornerRadius = imageView.frame.size.height / 2.f;
+    imageView.backgroundColor =[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
+    imageView.clipsToBounds = YES;
+    
+    return imageView;
+}
+
+- (NSArray *)createDemoButtonArray {
+    NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
+    
+    int i = 0;
+    for (NSString *title in @[@"A", @"B", @"C", @"D", @"E", @"F"]) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        
+        
+        
+        button.frame = CGRectMake(0.f, 0.f, 30.f, 30.f);
+        button.layer.cornerRadius = button.frame.size.height / 2.f;
+        button.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
+        button.clipsToBounds = YES;
+        button.tag = i++;
+        
+        [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [buttonsMutable addObject:button];
+    }
+    
+    return [buttonsMutable copy];
+}
+
+- (void)test:(UIButton *)sender {
+    NSLog(@"Button tapped, tag: %ld", (long)sender.tag);
+}
+
+- (UIButton *)createButtonWithName:(NSString *)imageName {
+    UIButton *button = [[UIButton alloc] init];
+    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button sizeToFit];
+    
+    [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
 }
 
 
