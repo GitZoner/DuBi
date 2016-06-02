@@ -138,7 +138,7 @@
     if (!_titleLabel) {
         
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.imageViewForUser.x, CGRectGetMaxY(self.imageViewForUser.frame)+10,self.width - self.imageViewForUser.x - (10 + self.imageViewForUser.width) , 25)];
-        self.titleLabel.text = @"别让现实挡住了你梦想的道路";
+        self.titleLabel.text = @"别让现实挡住了你梦想的去路";
         self.titleLabel.font = [UIFont systemFontOfSize:15];
         self.titleLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.866460129310345];
         [self.imageViewForHeader addSubview:self.titleLabel];

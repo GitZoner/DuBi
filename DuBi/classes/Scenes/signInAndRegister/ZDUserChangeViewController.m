@@ -72,7 +72,7 @@
     // [self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil
     if (1) {
         JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
-        [self presentViewController:jtscVC animated:YES completion:nil];
+        [self.navigationController pushViewController:jtscVC animated:YES];
     }else {
         // 如果是已登录的状态，那么点击头像按钮，能够修改头像，或者浏览个人基本信息
         // 可以先简单实现上传个人头像的图片
