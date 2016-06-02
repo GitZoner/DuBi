@@ -10,6 +10,7 @@
 
 #import "JTSegmentControl.h"
 #import "UIView+XYWidthHeight.h"
+#import "Color_marco.h"
 @interface JTSegmentControl ()
 @property (strong,nonatomic)NSArray *titleArray; // 存放标题的容器
 @property (strong,nonatomic)UIColor *normalColor; // 正常情况时的标题颜色
@@ -21,6 +22,8 @@
 @property (assign,nonatomic)CGSize segmentSize;
 @property (assign,nonatomic)CGSize itemSize;
 @property (strong,nonatomic)UIView *indicatorLine;
+@property (strong,nonatomic)UIView *searchView;
+
 
 @end
 @implementation JTSegmentControl
@@ -30,7 +33,7 @@
     self.frame = frame;
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.scrollView =[[UIScrollView alloc] initWithFrame:self.bounds];
+        self.scrollView =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.width - 44, self.height)];
         self.scrollView.contentSize = CGSizeMake(itemSize.width * titleArray.count, segmentSize.height);
         self.scrollView.showsHorizontalScrollIndicator = NO;
         [self addSubview:self.scrollView];
@@ -41,6 +44,17 @@
         self.itemSize = itemSize;
         self.titleFont  =font;
         
+        self.searchView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.scrollView.frame), 0 ,44, 44)];
+        self.searchView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:self.searchView];
+        UIButton *searchButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        searchButton.frame = CGRectMake(0, 0, 20, 20);
+        searchButton.center = CGPointMake(self.searchView.width / 2, self.searchView.height / 2);
+        [searchButton setImage:[UIImage imageNamed:@"circle_search"] forState:(UIControlStateNormal)];
+        [self.searchView addSubview:searchButton];
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 1, self.width, 1)];
+        line.backgroundColor =tGrayColor;
+        [self addSubview:line];
         [self setUpSubViews];
     }
     return self;

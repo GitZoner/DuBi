@@ -15,6 +15,7 @@
 #import "ZYWeiXinPhotoContainerView.h"
 
 #import "ZYTimeLineCellOperationMenu.h"
+#import "Color_marco.h"
 
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定
@@ -43,6 +44,8 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setup];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = tGrayColor;
+        
     }
     return self;
 }

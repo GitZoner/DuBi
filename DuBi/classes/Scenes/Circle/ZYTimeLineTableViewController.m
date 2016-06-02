@@ -22,7 +22,7 @@
 #import "UIView+SDAutoLayout.h"
 
 #import "JTCircleHeaderView.h"
-
+#import "Color_marco.h"
 #define kTimeLineTableViewCellId @"SDTimeLineCell"
 
 static CGFloat textFieldH = 40;
@@ -55,16 +55,16 @@ static CGFloat textFieldH = 40;
     [super viewDidLoad];
     // 背景设置为黑色
     
-  
+    self.tableView.backgroundColor = tGrayColor;
    
     // 头部视图
     
     self.tableView.autoresizesSubviews = NO;
-    self.headerVew = [[JTCircleHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.83)];
+    self.headerVew = [[JTCircleHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.7)];
     self.tableView.tableHeaderView =self.headerVew;
     
     self.navigationItem.title = @"我的朋友圈";
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = tGrayColor;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.edgesForExtendedLayout = UIRectEdgeTop;
