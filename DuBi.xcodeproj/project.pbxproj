@@ -207,6 +207,7 @@
 		C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */; };
 		C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
+		C230A6381CFEFC1E00DCA6BE /* ZDUIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */; };
 		C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */; };
 		C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB71CEDEBDC00C134C6 /* InfomationHandle.m */; };
 		C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CB91CEDEBDC00C134C6 /* NetWorkRequest.m */; };
@@ -664,6 +665,8 @@
 		C22BC6C91CEDFC0900E7AF10 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = DuBi/classes/Scenes/MainPageView/Singleton.h; sourceTree = SOURCE_ROOT; };
 		C22BC6CA1CEE01DA00E7AF10 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		C22BC6CB1CEE01DA00E7AF10 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		C230A6361CFEFC1E00DCA6BE /* ZDUIAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUIAlert.h; sourceTree = SOURCE_ROOT; };
+		C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUIAlert.m; sourceTree = SOURCE_ROOT; };
 		C23CA6751CEF23FD008C52C2 /* MBProgressHUD+gifHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+gifHUD.h"; sourceTree = "<group>"; };
 		C23CA6761CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+gifHUD.m"; sourceTree = "<group>"; };
 		C23CA6781CEF27B0008C52C2 /* LWNMainPageUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWNMainPageUrl.h; sourceTree = "<group>"; };
@@ -979,6 +982,8 @@
 				C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */,
 				C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */,
 				C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */,
+				C230A6361CFEFC1E00DCA6BE /* ZDUIAlert.h */,
+				C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2292,6 +2297,7 @@
 				C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */,
 				96FB5CD11CF6FF1D009A8BCF /* NSString+Valid.m in Sources */,
 				96FB5CEA1CF6FF1D009A8BCF /* EaseBubbleView+Location.m in Sources */,
+				C230A6381CFEFC1E00DCA6BE /* ZDUIAlert.m in Sources */,
 				96FB5C881CF6FF1D009A8BCF /* EMCDDeviceManager+Remind.m in Sources */,
 				96FB5CC71CF6FF1D009A8BCF /* PSTGridLayoutItem.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
