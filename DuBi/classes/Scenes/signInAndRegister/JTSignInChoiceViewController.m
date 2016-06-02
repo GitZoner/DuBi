@@ -88,7 +88,9 @@
 // 暂不注册 按钮的事件
 - (IBAction)notRegisterButtonAction:(UIButton *)sender {
     
-    
+//    [self popoverPresentationController];
+    [self.navigationController popToRootViewControllerAnimated:YES
+     ];
     
 }
 

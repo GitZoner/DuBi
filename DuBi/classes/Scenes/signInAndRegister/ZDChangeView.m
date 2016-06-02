@@ -11,6 +11,9 @@
 #import "UIView+XYWidthHeight.h"
 #import "JTSignInChoiceViewController.h"
 #import <Masonry.h>
+#import "JTRegisterViewController.h"
+#import "ZDUIAlert.h"
+
 #define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
 
 @interface ZDChangeView ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -63,7 +66,7 @@
 {
     if (!_imageViewForHeader) {
       
-        _imageViewForHeader = [[UIImageView alloc]initWithFrame:self.frame];
+        _imageViewForHeader = [[UIImageView alloc]initWithFrame:self.bounds];
         _imageViewForHeader.userInteractionEnabled = YES;
         _imageViewForHeader.image = [UIImage imageNamed:@"beijingtu2"];
         [self addSubview:_imageViewForHeader];
@@ -110,15 +113,26 @@
         [alert addAction:action2];
         [alert addAction:action3];
         [kpresent presentViewController:alert animated:YES completion:nil];
-    }else
-    {
+    }else{
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录!" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction * action = [UIAlertAction actionWithTitle:@"我去" style:(UIAlertActionStyleDefault) handler:nil];
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDestructive) handler:nil];
         [alert addAction:action];
+        UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"去注册" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            JTRegisterViewController * regtVC = [JTRegisterViewController new];
+            [kpresent presentViewController:regtVC animated:YES completion:nil];
+            
+        }];
+        [alert addAction:action1];
         [kpresent presentViewController:alert animated:YES completion:nil];
+    
+        /*
+        ZDUIAlert * alert = [[ZDUIAlert alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width * 0.33, 90)];
+        alert.center = CGPointMake(self.center.x, self.frame.size.height / 2);
+        
+        [self addSubview:alert];
+         */
     }
 }
-
 -(void)invokePhoto
 {
     self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -129,6 +143,24 @@
     // 设置相册选完照片，是否跳到编辑模式，进行图片的剪辑
     [kpresent presentViewController:self.pickerController animated:YES completion:nil];
 }
+// pickerCotnroller的代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage * image= nil;
+    // 判断一下我们从哪里获取图片
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        // 修改当前image
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }else{
+        // 可编辑UIImagePickerControllerEditedImage（获取编辑后的图片）
+        image = [info objectForKey:UIImagePickerControllerEditedImage];
+    }
+    // 设置图片
+    self.imageViewForUser.image = image;
+    [kpresent dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 
 #pragma mark label========================================================
@@ -136,6 +168,7 @@
 -(UILabel *)titleLabel
 {
     if (!_titleLabel) {
+        
         
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.imageViewForUser.x, CGRectGetMaxY(self.imageViewForUser.frame)+10,self.width - self.imageViewForUser.x - (10 + self.imageViewForUser.width) , 25)];
         self.titleLabel.text = @"别让现实挡住了你梦想的去路";
@@ -175,7 +208,10 @@
 }
 -(void)nameButtonAction
 {
-    NSLog(@"234");
+    if (_delegate && [_delegate respondsToSelector:@selector(clickTitleLabel)]) {
+        
+        [_delegate clickTitleLabel];
+    }
 }
 
 #pragma mark 毛玻璃 ========================================================

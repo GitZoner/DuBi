@@ -12,6 +12,8 @@
 #import "ZDCustomUserTableViewCell.h"
 #import "JTSignInChoiceViewController.h"
 #import <POP.h>
+#import <SDImageCache.h>
+#import "CustomNavigationController.h"
 
 
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
@@ -27,6 +29,10 @@
 @property(strong,nonatomic)NSArray * typeArray;
 
 @property(strong,nonatomic)NSString * hasSign;
+
+// 缓存大小
+@property(assign,nonatomic)CGFloat size;
+
 @end
 
 @implementation ZDUserChangeViewController
@@ -41,6 +47,9 @@
     // 初始化tableView
     [self creatTableView];
     
+    // 图片缓存 // 图片缓存大小
+//    NSUInteger size = [SDImageCache sharedImageCache].getSize;
+    // 自己方法
     
 }
 
@@ -53,7 +62,7 @@
 #pragma mark --- 添加顶部视图
 -(void)addTopView
 {
-    self.ChangeView = [[ZDChangeView alloc]initWithFrame:CGRectMake(0, -48, self.view.width, self.view.height * 2 / 7 + 48 * 3)];
+    self.ChangeView = [[ZDChangeView alloc]initWithFrame:CGRectMake(0, -48, self.view.width, self.view.height * 2 / 7 + 48 * 2)];
     [self.view addSubview:self.ChangeView];
     self.ChangeView.imageViewForHeader.userInteractionEnabled = YES;
     self.ChangeView.imageViewForUser.userInteractionEnabled = YES;
@@ -70,8 +79,9 @@
     NSLog(@"234");
     self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
     // [self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil
-    if (1) {
+    if ([self.hasSign isEqualToString:@"NO"] || self.hasSign == nil) {
         JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
+//        [self presentViewController:jtscVC animated:YES completion:nil];
         [self.navigationController pushViewController:jtscVC animated:YES];
     }else {
         // 如果是已登录的状态，那么点击头像按钮，能够修改头像，或者浏览个人基本信息
@@ -81,6 +91,12 @@
 
 }
 
+// 隐藏NavigationBar
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+   //  self.navigationController.navigationBar.hidden = YES;
+}
 
 #pragma mark --- 初始化TableView
 
@@ -101,7 +117,9 @@
     // 设置头部视图
     UIView * header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height * 2 / 7 - 64)];
     self.tableView.tableHeaderView = header;
+    self.tableView.tableHeaderView.hidden = YES;
     [self.view insertSubview:self.tableView atIndex:0];
+    //[self.view addSubview:self.tableView];
 }
 
 
@@ -125,10 +143,41 @@
     NSString * tupianStr = _images[indexPath.row];
     cell.tuBImg.image = [UIImage imageNamed:tupianStr];
     cell.contentlabel.text = self.typeArray[indexPath.row];
+    if (indexPath.section == 0 && indexPath.row == 3) {
+//        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(cell.width /2 , 0, cell.width /2, cell.height)];
+//        label.textAlignment = NSTextAlignmentRight;
+//        [cell.contentView addSubview:label];
+        self.size =[SDImageCache sharedImageCache].getSize/1000.0/1000;
+        cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
+    }
 //     cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 清楚缓存
+    if (indexPath.section == 0 && indexPath.row == 3) {
+        
+        [[SDImageCache sharedImageCache]clearDisk];
+      
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"清楚缓存" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDestructive) handler:nil];
+        UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }];
+        [alert addAction:action];
+        [alert addAction:action1];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if(indexPath.section == 0 && indexPath.row == 0 ){
+        [self.navigationController pushViewController:[UIViewController new] animated:YES];
+    }
+    
+    
+}
 
 #pragma mark --- 父类scorllView的delegate
 

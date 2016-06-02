@@ -6,9 +6,20 @@
 //  Copyright © 2016年 JasonTian. All rights reserved.
 //
 
+
+@protocol ZDChangeViewDelegate <NSObject>
+
+-(void)clickTitleLabel;
+
+@end
+
 #import <UIKit/UIKit.h>
 
 @interface ZDChangeView : UIView
+
+
+@property(strong,nonatomic)id<ZDChangeViewDelegate>delegate;
+
 
 // 背景 大图
 @property(strong,nonatomic)UIImageView * imageViewForHeader;
