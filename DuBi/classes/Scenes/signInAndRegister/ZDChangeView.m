@@ -120,6 +120,7 @@
         UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"去注册" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             JTRegisterViewController * regtVC = [JTRegisterViewController new];
             [kpresent presentViewController:regtVC animated:YES completion:nil];
+            
         }];
         [alert addAction:action1];
         [kpresent presentViewController:alert animated:YES completion:nil];
@@ -207,7 +208,10 @@
 }
 -(void)nameButtonAction
 {
-    NSLog(@"234");
+    if (_delegate && [_delegate respondsToSelector:@selector(clickTitleLabel)]) {
+        
+        [_delegate clickTitleLabel];
+    }
 }
 
 #pragma mark 毛玻璃 ========================================================
