@@ -11,10 +11,9 @@
 #import "UIImage+ImageContentWithColor.h"
 #import "Color_marco.h"
 #import "MainViewController.h"
-#import "JTSessionViewController.h"
 #import <DCPathButton.h>
 #import "ZYVideoViewController.h"
-#import "ZDUserViewController.h"
+
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
 #import "EaseUI.h"

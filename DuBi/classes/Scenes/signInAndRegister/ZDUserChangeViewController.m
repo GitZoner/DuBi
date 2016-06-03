@@ -14,7 +14,8 @@
 #import <POP.h>
 #import <SDImageCache.h>
 #import "CustomNavigationController.h"
-
+#import "ZDPersonInfo.h"
+#import "JTCircleMainController.h"
 
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
@@ -33,6 +34,8 @@
 // 缓存大小
 @property(assign,nonatomic)CGFloat size;
 
+
+
 @end
 
 @implementation ZDUserChangeViewController
@@ -46,6 +49,7 @@
     [self addTopView];
     // 初始化tableView
     [self creatTableView];
+    
     
     // 图片缓存 // 图片缓存大小
 //    NSUInteger size = [SDImageCache sharedImageCache].getSize;
@@ -95,7 +99,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   //  self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 #pragma mark --- 初始化TableView
@@ -144,9 +148,7 @@
     cell.tuBImg.image = [UIImage imageNamed:tupianStr];
     cell.contentlabel.text = self.typeArray[indexPath.row];
     if (indexPath.section == 0 && indexPath.row == 3) {
-//        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(cell.width /2 , 0, cell.width /2, cell.height)];
-//        label.textAlignment = NSTextAlignmentRight;
-//        [cell.contentView addSubview:label];
+
         self.size =[SDImageCache sharedImageCache].getSize/1000.0/1000;
         cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
     }
@@ -173,7 +175,29 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     }else if(indexPath.section == 0 && indexPath.row == 0 ){
-        [self.navigationController pushViewController:[UIViewController new] animated:YES];
+        
+        self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
+        if ([self.hasSign isEqualToString:@"YES"] == 0) {
+            [self.navigationController pushViewController:[ZDPersonInfo new] animated:YES];
+        }else{
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        
+    }else if(indexPath.section == 0 && indexPath.row == 1){
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"] isEqualToString:@"YES"] == 0) {
+            JTCircleMainController * jtclVC = [JTCircleMainController new];
+            [self.navigationController pushViewController:jtclVC animated:YES];
+        }else{
+           
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
     
     
@@ -193,7 +217,7 @@
 {
     
     CGPoint point = scrollView.contentOffset;
-    NSLog(@"%zd",point.y);
+   // NSLog(@"%zd",point.y);
     if (point.y <= 0&& point.y >= -48 * 2)
     {
         NSLog(@"1");
@@ -210,7 +234,7 @@
     }
     
     else if(0 < point.y && point.y < self.view.height * 2 / 7 - 64){
-       NSLog(@"2");
+     //  NSLog(@"2");
         kImageViewForHeader.frame = CGRectMake(0, -48-point.y, self.view.width + point.y, self.view.height * 2 / 7 + 48 * 3);
         
         kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height -55 -48, 45, 45);
@@ -231,7 +255,7 @@
     }
     else if (point.y >= self.view.height * 2 / 7 - 64)
     {
-        NSLog(@"3");
+       // NSLog(@"3");
         
             kImageViewForHeader.frame = CGRectMake(0,  - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2);
             kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height - 55 - 48, 45, 45);

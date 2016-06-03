@@ -214,7 +214,6 @@
 		C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */; };
 		C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */; };
 		C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */; };
-		C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B35E1CF43499009A6560 /* ZDUserViewController.m */; };
 		C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */; };
 		C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */; };
 		C22BC6CC1CEE01DA00E7AF10 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = C22BC6CB1CEE01DA00E7AF10 /* Topic.m */; };
@@ -257,6 +256,10 @@
 		C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */; };
 		C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE8001CFABF7600F2872D /* ZDChangeView.m */; };
 		C2BBD9561D00541D008F0008 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD9551D00541D008F0008 /* CustomNavigationController.m */; };
+		C2BBD95D1D006AB6008F0008 /* ZDPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */; };
+		C2BBD95E1D006AB6008F0008 /* ZDPersonInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */; };
+		C2BBD9621D007514008F0008 /* ZDPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */; };
+		C2BBD9631D007514008F0008 /* ZDPersonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
 		C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C5994B1CFDC68400D69114 /* ZDPlayVedioViewController.m */; };
@@ -693,8 +696,6 @@
 		C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSignInChoiceViewController.h; sourceTree = "<group>"; };
 		C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSignInChoiceViewController.m; sourceTree = "<group>"; };
 		C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSignInChoiceViewController.xib; sourceTree = "<group>"; };
-		C220B35D1CF43499009A6560 /* ZDUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserViewController.h; sourceTree = "<group>"; };
-		C220B35E1CF43499009A6560 /* ZDUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserViewController.m; sourceTree = "<group>"; };
 		C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomUserTableViewCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		C220B3661CF43AA1009A6560 /* ZDCustomUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDCustomUserTableViewCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		C220B3731CF451E6009A6560 /* ZDCustomHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDCustomHeaderView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDCustomHeaderView.h; sourceTree = SOURCE_ROOT; };
@@ -773,6 +774,12 @@
 		C2AEE8001CFABF7600F2872D /* ZDChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDChangeView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.m; sourceTree = SOURCE_ROOT; };
 		C2BBD9541D00541D008F0008 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		C2BBD9551D00541D008F0008 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		C2BBD95A1D006AB6008F0008 /* ZDPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPersonInfo.h; sourceTree = "<group>"; };
+		C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPersonInfo.m; sourceTree = "<group>"; };
+		C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPersonInfo.xib; sourceTree = "<group>"; };
+		C2BBD95F1D007514008F0008 /* ZDPersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDPersonInfoCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.h; sourceTree = SOURCE_ROOT; };
+		C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDPersonInfoCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.m; sourceTree = SOURCE_ROOT; };
+		C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDPersonInfoCell.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.xib; sourceTree = SOURCE_ROOT; };
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
 		C2C33E131CF5E37B00D3564D /* ZDPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishController.m; sourceTree = "<group>"; };
 		C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishController.xib; sourceTree = "<group>"; };
@@ -1141,6 +1148,9 @@
 				C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */,
 				C230A6361CFEFC1E00DCA6BE /* ZDUIAlert.h */,
 				C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */,
+				C2BBD95F1D007514008F0008 /* ZDPersonInfoCell.h */,
+				C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */,
+				C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1961,10 +1971,11 @@
 		C220B3571CF433B0009A6560 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C220B35D1CF43499009A6560 /* ZDUserViewController.h */,
-				C220B35E1CF43499009A6560 /* ZDUserViewController.m */,
 				C2AEE7F91CFABDB600F2872D /* ZDUserChangeViewController.h */,
 				C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */,
+				C2BBD95A1D006AB6008F0008 /* ZDPersonInfo.h */,
+				C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */,
+				C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */,
 				C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */,
 				C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */,
 				C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */,
@@ -2243,11 +2254,13 @@
 				960DE7491CFAF29B00C31DD8 /* sdRefeshView_arrow@2x.png in Resources */,
 				C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */,
 				96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */,
+				C2BBD9631D007514008F0008 /* ZDPersonInfoCell.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
+				C2BBD95E1D006AB6008F0008 /* ZDPersonInfo.xib in Resources */,
 				96FB5C9F1CF6FF1D009A8BCF /* MJRefresh.bundle in Resources */,
 				960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
@@ -2332,6 +2345,7 @@
 				96FB5CC31CF6FF1D009A8BCF /* PSTCollectionViewItemKey.m in Sources */,
 				96FB5CC51CF6FF1D009A8BCF /* PSTCollectionViewUpdateItem.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
+				C2BBD95D1D006AB6008F0008 /* ZDPersonInfo.m in Sources */,
 				96FB5C941CF6FF1D009A8BCF /* MJRefreshFooter.m in Sources */,
 				960DE7571CFAF31000C31DD8 /* SDPhotoBrowser.m in Sources */,
 				960DE6BD1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m in Sources */,
@@ -2438,7 +2452,6 @@
 				C284A8721CF583770093E851 /* ZDInfo.m in Sources */,
 				96FB5CB01CF6FF1D009A8BCF /* EMSDWebImageDownloader.m in Sources */,
 				96FB5C951CF6FF1D009A8BCF /* MJRefreshHeader.m in Sources */,
-				C220B35F1CF43499009A6560 /* ZDUserViewController.m in Sources */,
 				96FB5CD11CF6FF1D009A8BCF /* NSString+Valid.m in Sources */,
 				96FB5CEA1CF6FF1D009A8BCF /* EaseBubbleView+Location.m in Sources */,
 				C230A6381CFEFC1E00DCA6BE /* ZDUIAlert.m in Sources */,
@@ -2486,6 +2499,7 @@
 				96123BC91CFECF0000DF5631 /* EMSearchBar.m in Sources */,
 				9622F38B1CFDE1B9000A39C9 /* JTCircleMainController.m in Sources */,
 				96123BEF1CFED36F00DF5631 /* ContactListSelectViewController.m in Sources */,
+				C2BBD9621D007514008F0008 /* ZDPersonInfoCell.m in Sources */,
 				96FB5CAB1CF6FF1D009A8BCF /* MWZoomingScrollView.m in Sources */,
 				96123C091CFED63B00DF5631 /* ApplyViewController.m in Sources */,
 				96E3BE461CFAC94100099938 /* JTSelectTopView.m in Sources */,
