@@ -14,7 +14,7 @@
 #import <POP.h>
 #import <SDImageCache.h>
 #import "CustomNavigationController.h"
-
+#import "Main_marco.h"
 
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
@@ -74,6 +74,9 @@
      addGestureRecognizer:tap];
 }
 
+
+
+
 -(void)tapAction
 {
     NSLog(@"234");
@@ -95,7 +98,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   //  self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"] && kUserDefaultGetValue(kUserInfoKey_userAlias) != nil) {
+        [self.ChangeView.nameButton setTitle:kUserDefaultGetValue(kUserInfoKey_userAlias) forState:(UIControlStateNormal)];
+    }
 }
 
 #pragma mark --- 初始化TableView

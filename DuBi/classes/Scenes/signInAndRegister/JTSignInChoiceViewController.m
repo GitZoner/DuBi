@@ -70,15 +70,14 @@
 
 // 登录已有账户 按钮的事件
 - (IBAction)signInButtonAction:(UIButton *)sender {
-    [self presentViewController:[JTSignInViewController new] animated:YES completion:nil];
+    [self.navigationController pushViewController:[JTSignInViewController new] animated:YES];
     
 }
 
 // 新用户注册 按钮的事件
 - (IBAction)registerNewUserButtonAction:(UIButton *)sender {
     JTRegisterViewController *registerVC = [JTRegisterViewController new];
-   [self presentViewController:registerVC animated:YES completion:^{
-          }];
+   [self.navigationController pushViewController:registerVC animated:YES];
     
 
     

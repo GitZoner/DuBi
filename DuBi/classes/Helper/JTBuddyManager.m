@@ -11,6 +11,7 @@
 #import "Main_marco.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "Main_marco.h"
+#import "Main_marco.h"
 
 
 @interface JTBuddyManager  () <EMContactManagerDelegate>
@@ -72,7 +73,7 @@ singleton_implementation(JTBuddyManager);
                 
             }
         }];
-        
+        kUserDefaultSetValue(@"YES", kUserInfoKey_hasSign);
         successed();
         
     }else {
@@ -98,16 +99,9 @@ singleton_implementation(JTBuddyManager);
                     if (succeeded) {
                         // 存储成功
                         NSLog(@"%@",newUser.objectId);// 保存成功之后，objectId 会自动从服务端加载到本地
-                        kUserDefaultSetValue(newUser.objectId, @"userID");
-                        kUserDefaultSetValue(userName, @"telNum");
-                        kUserDefaultSetValue(passWord, @"passWord");
-                        // 设置登录状态
-                        kUserDefaultSetValue(@"YES", @"hasSign");
-                        [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:userName password:@"123456" successed:^{
-                            NSLog(@"环信注册成功并实现登录");
-                        } failed:^(NSError * error) {
-                            NSLog(@"环信注册成功，但登录失败");
-                        }];
+                        kUserDefaultSetValue(newUser.objectId, kUserInfoKey_userID);
+                        kUserDefaultSetValue(userName, kUserInfoKey_telNum);
+                        kUserDefaultSetValue(passWord, kUserInfoKey_passWord);
                         successed();
                         
                     } else {
@@ -170,4 +164,26 @@ singleton_implementation(JTBuddyManager);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_gender], kUserInfoKey_gender);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_passWord], kUserInfoKey_passWord);
 }
+
+-(void)searchBuddyWithString:(NSString *)keyString searchSuccess:(SearchSuccess)searchSuccess failed:(Failed)failed {
+    AVQuery *aliasQuery = [AVQuery queryWithClassName:@"userInfo"];
+   [aliasQuery whereKey:kUserInfoKey_userAlias equalTo:keyString];
+    
+    AVQuery *telNumQuery = [AVQuery queryWithClassName:@"userInfo"];
+    [telNumQuery whereKey:kUserInfoKey_telNum equalTo:keyString];
+    
+    AVQuery *query = [AVQuery orQueryWithSubqueries:[NSArray arrayWithObjects:aliasQuery, telNumQuery,nil]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        
+        if (!error) {
+            searchSuccess(results);
+            [[NSNotificationCenter defaultCenter]  postNotificationName:@"searchViewControllerReloadDataNotifiCation" object:nil];
+        
+        }else {
+            failed(error);
+        }
+        
+    }];
+}
+
 @end

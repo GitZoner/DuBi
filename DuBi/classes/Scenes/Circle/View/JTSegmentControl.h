@@ -19,6 +19,6 @@
 
 
 @property (weak,nonatomic)id<JTSegmentControlDelegate> delegate; // 选择器的代理对象
-
+@property (strong,nonatomic)UIButton *searchButton;
 -(instancetype)initWithFrame:(CGRect)frame normalColor:(UIColor *)normalColor selectColor:(UIColor *)selectColor titles:(NSArray *)titleArray SegmentSize:(CGSize)segmentSize ItemSize:(CGSize)itemSize titleFont:(UIFont *)font;
 @end

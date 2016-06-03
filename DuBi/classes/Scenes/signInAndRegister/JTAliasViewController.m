@@ -9,6 +9,9 @@
 #import "JTAliasViewController.h"
 #import "JTRegisterViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "JTBuddyManager.h"
+#import "Main_marco.h"
+#import "XHToast.h"
 @interface JTAliasViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userAlias; // 用户别名
@@ -32,9 +35,16 @@
         }];
        
     }];
+    
+    [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:kUserDefaultGetValue(kUserInfoKey_telNum) password:kUserDefaultGetValue(kUserInfoKey_passWord) successed:^{
+        [XHToast showBottomWithText:@"登录成功" bottomOffset:100 duration:3];
+          } failed:^(NSError *error) {
+        [XHToast showBottomWithText:@"登录失败，请稍后重试" bottomOffset:100 duration:3];
+    }];
+    
 
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 

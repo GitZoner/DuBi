@@ -18,6 +18,7 @@
 #import "JTSignInViewController.h"
 #import "ContactListViewController.h"
 #import "ConversationListController.h"
+#import "JTSearchViewController.h"
 @interface JTCircleMainController ()<UIScrollViewDelegate>
 
 @property (strong,nonatomic)JTSegmentControl *segmentControl;
@@ -54,6 +55,7 @@
     
     self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"消息",@"朋友",@"关注",@"其他1",@"其他2",@"其他3",@"其他4",@"其他5",@"其他6", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(50, 20) titleFont:[UIFont systemFontOfSize:13]];
     self.navigationItem.titleView = self.segmentControl;
+    [self.segmentControl.searchButton  addTarget:self action:@selector(pushSearchVCACtion:) forControlEvents:(UIControlEventTouchUpInside)];
    //  [self.view addSubview:self.segmentControl];
     
     // 添加搜索按钮
@@ -73,6 +75,9 @@
   
    
     
+}
+-(void)pushSearchVCACtion:(UIButton *)button {
+    [self.navigationController pushViewController:[JTSearchViewController new] animated:YES];
 }
 
 

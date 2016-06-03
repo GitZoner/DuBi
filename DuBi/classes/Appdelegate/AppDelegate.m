@@ -12,6 +12,7 @@
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import "SMS_SDK/SMSSDK.h"
+#import "Main_marco.h"
 @interface AppDelegate ()
 
 @end
@@ -56,6 +57,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
+    kUserDefaultSetValue(@"NO", kUserInfoKey_hasSign);
 }
 
 
