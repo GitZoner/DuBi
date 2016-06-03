@@ -215,6 +215,7 @@
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
 		B81AD0F5AE18BA16421A0DE7 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB615BC163FB4E048172EBBE /* libPods-DuBi.a */; };
+		C21D86321D01A4F800E898B3 /* ZYGetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D86311D01A4F800E898B3 /* ZYGetObject.m */; };
 		C220B3531CF433A0009A6560 /* JTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */; };
 		C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */; };
 		C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */; };
@@ -697,6 +698,8 @@
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
+		C21D86301D01A4F800E898B3 /* ZYGetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGetObject.h; sourceTree = "<group>"; };
+		C21D86311D01A4F800E898B3 /* ZYGetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGetObject.m; sourceTree = "<group>"; };
 		C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
 		C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRegisterViewController.m; sourceTree = "<group>"; };
 		C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTRegisterViewController.xib; sourceTree = "<group>"; };
@@ -2020,6 +2023,8 @@
 				C284222A1CF975E300E8F9A6 /* public.h */,
 				C2BBD9541D00541D008F0008 /* CustomNavigationController.h */,
 				C2BBD9551D00541D008F0008 /* CustomNavigationController.m */,
+				C21D86301D01A4F800E898B3 /* ZYGetObject.h */,
+				C21D86311D01A4F800E898B3 /* ZYGetObject.m */,
 				9605E9CC1CF485A6000D1834 /* XHToast */,
 				9605E9C81CF47E47000D1834 /* RegularUtils */,
 				C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */,
@@ -2472,6 +2477,7 @@
 				96FB5CE71CF6FF1D009A8BCF /* EaseBubbleView+File.m in Sources */,
 				96FB5CB51CF6FF1D009A8BCF /* NSData+EMImageContentType.m in Sources */,
 				96FB5CC41CF6FF1D009A8BCF /* PSTCollectionViewLayout.m in Sources */,
+				C21D86321D01A4F800E898B3 /* ZYGetObject.m in Sources */,
 				96FB5CBD1CF6FF1D009A8BCF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				C28422461CF9778A00E8F9A6 /* PictureController.m in Sources */,
 				96FB5CC01CF6FF1D009A8BCF /* PSTCollectionViewController.m in Sources */,

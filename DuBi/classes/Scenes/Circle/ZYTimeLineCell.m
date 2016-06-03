@@ -184,7 +184,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     
     _shouldOpenContentLabel = NO;
     
-    _iconView.image = [UIImage imageNamed:model.iconName];
+//    _iconView.image = [UIImage imageNamed:model.iconName];
     _nameLable.text = model.name;
     // 防止单行文本label在重用时宽度计算不准的问题
     [_nameLable sizeToFit];
