@@ -34,7 +34,7 @@
 
 // 注册按钮
 - (IBAction)registerAction:(UIButton *)sender {
-    [self presentViewController:[JTRegisterViewController new] animated:YES completion:nil];
+    [self.navigationController pushViewController:[JTRegisterViewController new] animated:YES];
 }
 
 // 登录按钮
@@ -43,7 +43,7 @@
     if ([RegularUtils checkTelNumber:self.userNameTextField.text ]&& [RegularUtils checkPassword:self.passWordTextField.text]) {
         [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:self.userNameTextField.text password:self.passWordTextField.text successed:^{
             [XHToast showBottomWithText:@"登录成功" bottomOffset:100 duration:3];
-        
+            [self.navigationController popToRootViewControllerAnimated:YES];
         } failed:^(NSError * error) {
             [XHToast showBottomWithText:error.domain bottomOffset:100 duration:0];
         }];
@@ -52,6 +52,11 @@
     }
     
     
+}
+- (IBAction)goBackAction:(UIButton *)sender {
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

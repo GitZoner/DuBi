@@ -11,9 +11,10 @@
 #import "UIImage+ImageContentWithColor.h"
 #import "Color_marco.h"
 #import "MainViewController.h"
+
 #import <DCPathButton.h>
 #import "ZYVideoViewController.h"
-
+#import "ZDUserViewController.h"
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
 #import "EaseUI.h"
@@ -22,6 +23,7 @@
 #import "ZYTimeLineTableViewController.h"
 #import "ZDUserChangeViewController.h"
 #import "CustomNavigationController.h"
+#import "JTCircleMainController.h"
 
 @interface JTTabBarViewController ()<UITabBarControllerDelegate>
 
@@ -75,7 +77,7 @@
     // 视频
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabbar_video_nor" selectedImage:@"tabbar_video_h"];
     // 圈子
-    [self setUpChildVCWithChildVC:[UINavigationController new] title:@"圈子" image:@"tabbar_circle_nor" selectedImage:@"tabbar_circle_h"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc]initWithRootViewController:[JTCircleMainController new]] title:@"圈子" image:@"tabbar_circle_nor" selectedImage:@"tabbar_circle_h"];
     // 我
   
     [self setUpChildVCWithChildVC:  [[UINavigationController alloc]initWithRootViewController:[ZDUserChangeViewController new]] title:@"我" image:@"tabbar_me_nor" selectedImage:@"tabbar_me_h"];

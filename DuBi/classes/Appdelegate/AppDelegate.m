@@ -12,29 +12,12 @@
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import "SMS_SDK/SMSSDK.h"
-
+#import "Main_marco.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-#pragma  mark --- 获取app实例
-+(AppDelegate *)getAppDelegate
-{
-    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
-}
-
-// 将图片压缩到指定大小
--(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)theTize
-{
-    UIGraphicsBeginImageContext(theTize);
-    [image drawInRect:CGRectMake(0, 0, theTize.width, theTize.height)];
-    UIImage * scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return scaledImage;
-}
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -74,6 +57,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
+    kUserDefaultSetValue(@"NO", kUserInfoKey_hasSign);
 }
 
 

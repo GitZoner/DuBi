@@ -10,7 +10,8 @@
 #import "Singleton.h"
 
 typedef void(^Successed)(void);
-typedef void(^Failed)(NSError *);
+typedef void(^Failed)(NSError *error);
+typedef void(^SearchSuccess)(NSArray *array);
 @interface JTBuddyManager : NSObject
 /**
  *  该类单例方法的声明
@@ -45,4 +46,13 @@ singleton_interface(JTBuddyManager);
  *  @param failed       发送请求失败的Bloc回调
  */
 -(void)addContact:(NSString *)userName message:(NSString *)leaveMessage successed:(Successed)successed failed:(Failed)failed;
+
+/**
+ *  根据关键字搜索好友
+ *
+ *  @param keyString     搜索关键字
+ *  @param searchSuccess 搜索成功后的Block回调，返回一个带有全部搜索结果的数组
+ *  @param failed        搜索失败后的Block回调，返回一个NSError错误信息
+ */
+-(void)searchBuddyWithString:(NSString *)keyString searchSuccess:(SearchSuccess)searchSuccess failed:(Failed)failed;
 @end

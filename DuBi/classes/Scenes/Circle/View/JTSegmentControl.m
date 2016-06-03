@@ -25,6 +25,8 @@
 @property (strong,nonatomic)UIView *searchView;
 
 
+
+
 @end
 @implementation JTSegmentControl
 
@@ -47,11 +49,12 @@
         self.searchView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.scrollView.frame), 0 ,44, 44)];
         self.searchView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.searchView];
-        UIButton *searchButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        searchButton.frame = CGRectMake(0, 0, 20, 20);
-        searchButton.center = CGPointMake(self.searchView.width / 2, self.searchView.height / 2);
-        [searchButton setImage:[UIImage imageNamed:@"circle_search"] forState:(UIControlStateNormal)];
-        [self.searchView addSubview:searchButton];
+       self.searchButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        self.searchButton.frame = CGRectMake(0, 0, 20, 20);
+        self.searchButton.center = CGPointMake(self.searchView.width / 2, self.searchView.height / 2);
+        [_searchButton setImage:[UIImage imageNamed:@"circle_search"] forState:(UIControlStateNormal)];
+        
+        [self.searchView addSubview:_searchButton];
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 1, self.width, 1)];
         line.backgroundColor =tGrayColor;
         [self addSubview:line];
@@ -59,6 +62,8 @@
     }
     return self;
 }
+
+
 
 -(void)setUpSubViews {
     

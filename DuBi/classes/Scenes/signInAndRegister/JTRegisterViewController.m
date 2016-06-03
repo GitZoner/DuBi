@@ -104,7 +104,7 @@
                     // 弹出注册成功的提示
                     [XHToast showBottomWithText:@"注册成功" bottomOffset:100 duration:3];
                     // 进入昵称界面
-                    [self presentViewController:[JTAliasViewController new] animated:YES completion:nil];
+                    [self.navigationController pushViewController:[JTAliasViewController new] animated:YES];
                 } failed:^(NSError * error) {
                     // 注册失败，弹出提示窗口
                     [XHToast showBottomWithText:error.domain bottomOffset:100 duration:3];
@@ -127,7 +127,7 @@
 // 返回按钮事件
 - (IBAction)goBackButtonAction:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

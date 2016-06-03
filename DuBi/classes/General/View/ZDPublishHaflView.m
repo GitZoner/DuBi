@@ -148,6 +148,19 @@ static UIWindow * window;
         NSLog(@"button2");
     }else if (button.tag == 103){
         NSLog(@"button3");
+        
+        if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
+            [_myDelegate hidderWindow];
+        }
+        
+        ZDSendJokes * nc =[ZDSendJokes new];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nc animated:NO completion:nil];
+        
+
+        
+        
+        
     }else{
         NSLog(@"button4");
     }
