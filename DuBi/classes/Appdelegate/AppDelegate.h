@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
++(AppDelegate *)getAppDelegate;
+-(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)theTize;
 @end
 

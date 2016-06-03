@@ -16,6 +16,10 @@
 #import "CustomNavigationController.h"
 #import "ZDPersonInfo.h"
 #import "JTCircleMainController.h"
+#import "AppDelegate.h"
+
+#define kScreen_w [UIScreen mainScreen].bounds.size.width
+#define kScreen_h [UIScreen mainScreen].bounds.size.height
 
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
@@ -34,7 +38,8 @@
 // 缓存大小
 @property(assign,nonatomic)CGFloat size;
 
-
+// 夜间模式用
+@property(strong,nonatomic)UIView * drakView;
 
 @end
 
@@ -107,7 +112,7 @@
 -(void)creatTableView
 {
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,109,self.view.height , self.view.height - 64) style:(UITableViewStylePlain)];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    // self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 代理
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -152,10 +157,55 @@
         self.size =[SDImageCache sharedImageCache].getSize/1000.0/1000;
         cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
     }
+    
+    if (indexPath.row == 2 && indexPath.section == 0) {
+        
+        UISwitch * swi = [[UISwitch alloc]initWithFrame:CGRectMake(kScreen_w - 60, 5, 50, 30)];
+        // 设置颜色
+        swi.onTintColor = [UIColor greenColor];
+        swi.tag = indexPath.row;
+        [swi addTarget:self action:@selector(changeOption:) forControlEvents:(UIControlEventValueChanged)];
+        [cell.contentView addSubview:swi];
+    }
 //     cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
+static UIWindow * window;
+// 实现swi方法(设置夜间模式)
+-(void)changeOption:(UISwitch *)swi
+{
+
+    //    UIApplication * app = [UIApplication sharedApplication];
+    //    AppDelegate * delegate = app.delegate;
+    if(swi.on == NO)
+    {
+        [self.drakView removeFromSuperview];
+    window.hidden = YES;
+    }
+    if(swi.on) {
+        
+       
+        window  = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        // 设置view的背景色
+        self.drakView = [[UIView alloc]initWithFrame:self.view.bounds];
+        self.drakView.backgroundColor = [UIColor blackColor];
+        self.drakView.userInteractionEnabled = NO;
+        window.hidden = NO;
+        window.userInteractionEnabled = NO;
+        self.drakView.alpha = 0.3;
+        [window addSubview:self.drakView];
+    }
+
+}
+
+
+/**
+ *  cell的点击事件
+ *
+ *  @param tableView
+ *  @param indexPath
+ */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 清楚缓存
@@ -198,6 +248,10 @@
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];
         }
+    }else{
+        
+       
+        
     }
     
     
