@@ -14,7 +14,7 @@
 
 #import <DCPathButton.h>
 #import "ZYVideoViewController.h"
-#import "ZDUserViewController.h"
+
 #import "JTTabBar.h"
 #import "ZDPublishController.h"
 #import "EaseUI.h"
