@@ -17,6 +17,7 @@
 #import "ZDPersonInfo.h"
 #import "JTCircleMainController.h"
 #import "AppDelegate.h"
+#import "Main_marco.h"
 
 #define kScreen_w [UIScreen mainScreen].bounds.size.width
 #define kScreen_h [UIScreen mainScreen].bounds.size.height
@@ -68,6 +69,7 @@
     self.images = @[@"ziliao.png",@"quanzi.png",@"zhuti.png",@"huancun.png",@"anquan.png"];
 }
 
+
 #pragma mark --- 添加顶部视图
 -(void)addTopView
 {
@@ -105,7 +107,21 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
+        // 刷新数据
+        [self reloadDataAction];
+    }
 }
+
+
+#pragma mark --- 刷新uUI
+-(void)reloadDataAction
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 
 #pragma mark --- 初始化TableView
 
@@ -138,11 +154,22 @@
 #pragma mark --- tableViewDelegate 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"])
+    {
+        return 2;
+    }
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"])
+        {
+            if (section == 0) {
+                return self.images.count;
+            }
+            return 1;
+        }
     return self.images.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -152,12 +179,16 @@
     NSString * tupianStr = _images[indexPath.row];
     cell.tuBImg.image = [UIImage imageNamed:tupianStr];
     cell.contentlabel.text = self.typeArray[indexPath.row];
+    // 清楚缓存
     if (indexPath.section == 0 && indexPath.row == 3) {
 
+        // 获取缓存
         self.size =[SDImageCache sharedImageCache].getSize/1000.0/1000;
+        // 清楚缓存
         cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
     }
     
+    // 夜间模式
     if (indexPath.row == 2 && indexPath.section == 0) {
         
         UISwitch * swi = [[UISwitch alloc]initWithFrame:CGRectMake(kScreen_w - 60, 5, 50, 30)];
@@ -166,6 +197,17 @@
         swi.tag = indexPath.row;
         [swi addTarget:self action:@selector(changeOption:) forControlEvents:(UIControlEventValueChanged)];
         [cell.contentView addSubview:swi];
+    }
+    // 退出登录
+    if (indexPath.row == 0 && indexPath.section == 1)
+    {
+        cell.backgroundColor = [UIColor redColor];
+        cell.contentlabel.textColor = [UIColor whiteColor];
+        cell.contentlabel.text = @"退出登录";
+        cell.contentlabel.center = cell.center;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }
 //     cell.backgroundColor = [UIColor clearColor];
     return cell;
@@ -248,13 +290,16 @@ static UIWindow * window;
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];
         }
-    }else{
-        
-       
-        
     }
-    
-    
+   
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"NO" ]) {
+        if (indexPath.row == 0 && indexPath.section == 1)
+        {
+            // 退出登录
+            NSString * logStr = @"NO";
+            [[NSUserDefaults standardUserDefaults] setObject:logStr forKey:@"hasSign"];
+        }
+    }
 }
 
 #pragma mark --- 父类scorllView的delegate

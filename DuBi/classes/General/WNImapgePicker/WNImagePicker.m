@@ -13,7 +13,7 @@
 #import "UIView+Additions.h"
 #import "UIImage+Additions.h"
 #import "ImageEditVC.h"
-
+#import "ZDSendPicture.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
@@ -481,6 +481,12 @@
     CGRect rect = CGRectMake(imgX*scraled, imgY*scraled, imgW*scraled, imgH*scraled);
     
     UIImage *imageCut = [self.imageSelected.image getSubImage:rect];
+
+    ZDSendPicture * picture = [[ZDSendPicture alloc]init];
+    picture.image = imageCut;
+    [self.navigationController pushViewController:picture animated:YES];
+
+    
 
     if ([self.delegate respondsToSelector:@selector(getCutImage:controller:)]) {
         [self.delegate getCutImage:imageCut controller:self];

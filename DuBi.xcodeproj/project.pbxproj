@@ -255,6 +255,8 @@
 		C284A8741CF583770093E851 /* ZDThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8701CF583770093E851 /* ZDThemes.m */; };
 		C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */ = {isa = PBXBuildFile; fileRef = C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */; };
 		C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */; };
+		C29B23651D026A030032426D /* ZDSendPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C29B23631D026A030032426D /* ZDSendPicture.m */; };
+		C29B23661D026A030032426D /* ZDSendPicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29B23641D026A030032426D /* ZDSendPicture.xib */; };
 		C2A7DC771CF311D900492355 /* ZYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */; };
 		C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A7DC701CF311D900492355 /* ZYVideoCell.xib */; };
 		C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC721CF311D900492355 /* ZYVideoViewController.m */; };
@@ -273,7 +275,6 @@
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
 		C2E33A7E1D01A02500BB4C67 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E33A7C1D019F6100BB4C67 /* MobileCoreServices.framework */; };
-		C2E33A811D01AB3F00BB4C67 /* ZDSendPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A801D01AB3F00BB4C67 /* ZDSendPicture.m */; };
 		C2E33A871D01CAFF00BB4C67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A861D01CAFF00BB4C67 /* ViewController.m */; };
 		C2E33A9B1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A8A1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		C2E33A9C1D01CBB000BB4C67 /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A8C1D01CBB000BB4C67 /* AlbumPhotoCell.m */; };
@@ -788,6 +789,9 @@
 		C296858C1CF6D1FC00CA5362 /* ZDPublishHaflView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflView.h; sourceTree = "<group>"; };
 		C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflView.m; sourceTree = "<group>"; };
 		C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishHaflView.xib; sourceTree = "<group>"; };
+		C29B23621D026A030032426D /* ZDSendPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendPicture.h; sourceTree = "<group>"; };
+		C29B23631D026A030032426D /* ZDSendPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendPicture.m; sourceTree = "<group>"; };
+		C29B23641D026A030032426D /* ZDSendPicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendPicture.xib; sourceTree = "<group>"; };
 		C2A7DC6E1CF311D900492355 /* ZYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYVideoCell.h; path = ../Controllers/ZYVideoCell.h; sourceTree = "<group>"; };
 		C2A7DC6F1CF311D900492355 /* ZYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYVideoCell.m; path = ../Controllers/ZYVideoCell.m; sourceTree = "<group>"; };
 		C2A7DC701CF311D900492355 /* ZYVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZYVideoCell.xib; path = ../Controllers/ZYVideoCell.xib; sourceTree = "<group>"; };
@@ -819,8 +823,6 @@
 		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
 		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
 		C2E33A7C1D019F6100BB4C67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		C2E33A7F1D01AB3F00BB4C67 /* ZDSendPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendPicture.h; sourceTree = "<group>"; };
-		C2E33A801D01AB3F00BB4C67 /* ZDSendPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendPicture.m; sourceTree = "<group>"; };
 		C2E33A851D01CAFF00BB4C67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C2E33A861D01CAFF00BB4C67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C2E33A891D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
@@ -2236,8 +2238,9 @@
 				C2ED25251CFD2BB200071078 /* ZDSendJokes.h */,
 				C2ED25261CFD2BB200071078 /* ZDSendJokes.m */,
 				C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */,
-				C2E33A7F1D01AB3F00BB4C67 /* ZDSendPicture.h */,
-				C2E33A801D01AB3F00BB4C67 /* ZDSendPicture.m */,
+				C29B23621D026A030032426D /* ZDSendPicture.h */,
+				C29B23631D026A030032426D /* ZDSendPicture.m */,
+				C29B23641D026A030032426D /* ZDSendPicture.xib */,
 				C2E33A881D01CBB000BB4C67 /* WNImapgePicker */,
 				C2E33A851D01CAFF00BB4C67 /* ViewController.h */,
 				C2E33A861D01CAFF00BB4C67 /* ViewController.m */,
@@ -2284,6 +2287,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				688DE6782A79E959A8BF2EF8 /* 📦 Embed Pods Frameworks */,
 				64DF5DBA6A219BE1D8398AD5 /* 📦 Copy Pods Resources */,
+				044A6A20A9142A7872B5827D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2338,6 +2342,7 @@
 				96D5B0261CF7FE0A009E689C /* JTAliasViewController.xib in Resources */,
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
 				C2E33A9D1D01CBB000BB4C67 /* AlbumPhotoCell.xib in Resources */,
+				C29B23661D026A030032426D /* ZDSendPicture.xib in Resources */,
 				C284A8541CF53F9E0093E851 /* ZDCustomVedioCell.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
@@ -2374,6 +2379,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		044A6A20A9142A7872B5827D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		64DF5DBA6A219BE1D8398AD5 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2461,7 +2481,6 @@
 				96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */,
 				96FB5CD41CF6FF1D009A8BCF /* EaseChineseToPinyin.m in Sources */,
 				96FB5CA51CF6FF1D009A8BCF /* MWGridCell.m in Sources */,
-				C2E33A811D01AB3F00BB4C67 /* ZDSendPicture.m in Sources */,
 				96FB5CB91CF6FF1D009A8BCF /* UIImage+EMWebP.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
@@ -2595,6 +2614,7 @@
 				C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */,
 				96FB5CE31CF6FF1D009A8BCF /* EaseBaseMessageCell.m in Sources */,
 				960DE7481CFAF29B00C31DD8 /* UIView+SDAutoLayout.m in Sources */,
+				C29B23651D026A030032426D /* ZDSendPicture.m in Sources */,
 				96123BC91CFECF0000DF5631 /* EMSearchBar.m in Sources */,
 				9622F38B1CFDE1B9000A39C9 /* JTCircleMainController.m in Sources */,
 				96123BEF1CFED36F00DF5631 /* ContactListSelectViewController.m in Sources */,

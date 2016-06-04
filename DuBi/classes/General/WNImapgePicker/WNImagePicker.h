@@ -12,8 +12,10 @@
 
 @protocol WNImagePickerDelegate <NSObject>
 
+//
 - (void)getCutImage:(UIImage *)image controller:(WNImagePicker *)vc;
 
+// 取消照片
 - (void)onCancel:(WNImagePicker *)vc;
 @end
 

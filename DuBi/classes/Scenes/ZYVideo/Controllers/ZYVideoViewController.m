@@ -148,6 +148,12 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 }
 -(void)loadMoreTopics
 {
+    
+    AFHTTPSessionManager * manager =[AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    
+    
     self.page++;
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
@@ -184,7 +190,7 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 -(void)setTableViewAndTitle
 {
     self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.773060344827586];
-    self.navigationItem.title = @"花心大罗卜";
+    self.navigationItem.title = @"视频";
     
     //  [self.tableView registerNib:[UINib nibWithNibName:[NSStringFromClass([ZDCustomVedioCell class])] bundle:nil] forCellReuseIdentifier:registerId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZDCustomVedioCell class]) bundle:nil] forCellReuseIdentifier:registerId];

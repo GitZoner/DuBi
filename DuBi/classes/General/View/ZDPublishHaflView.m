@@ -128,6 +128,7 @@ static UIWindow * window;
             // ViewController * vc = [[ViewController alloc]init];
             WNImagePicker * pickerVC = [[WNImagePicker alloc]init];
             pickerVC.delegate = self;
+            
             UINavigationController * navVC = [[UINavigationController alloc]initWithRootViewController:pickerVC];
             [kpresent  presentViewController:navVC animated:YES completion:nil];
             
@@ -167,14 +168,14 @@ static UIWindow * window;
 }
 
 // WNImagePicker代理方法
--(void)getCutImage:(UIImage *)image controller:(WNImagePicker *)vc
-{
-    [vc.navigationController dismissViewControllerAnimated:NO completion:nil];
-    ImageEditVC * editVC = [[ImageEditVC alloc]init];
-    editVC.image = image;
-    [kpresent.navigationController pushViewController:editVC animated:YES];
-    
-}
+//-(void)getCutImage:(UIImage *)image controller:(WNImagePicker *)vc
+//{
+//    [vc.navigationController dismissViewControllerAnimated:NO completion:nil];
+//    ImageEditVC * editVC = [[ImageEditVC alloc]init];
+//    editVC.image = image;
+//    [kpresent.navigationController pushViewController:editVC animated:YES];
+//    
+//}
 
 -(void)onCancel:(WNImagePicker *)vc
 {

@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "WNImagePicker.h"
 #import "WNImapgePicker/ImageEditVC.h"
+#import "ZDSendPicture.h"
 
-@interface ViewController ()<WNImagePickerDelegate>
+@interface ViewController ()
 
 @end
 
@@ -18,7 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   //  WNImagePicker * picker = [WNImagePicker new];
+   //  picker.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +31,7 @@
 
 - (IBAction)onCamare:(id)sender {
     WNImagePicker *pickerVC  = [[WNImagePicker alloc]init];
-    pickerVC.delegate = self;
+    // pickerVC.delegate = self;
     UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:pickerVC];
     [self presentViewController:navVC animated:YES completion:nil];
 }
@@ -36,10 +39,12 @@
 #pragma mark -- WNImagePickerDelegate
 - (void)getCutImage:(UIImage *)image controller:(WNImagePicker *)vc
 {
-    [vc.navigationController dismissViewControllerAnimated:NO completion:nil];
-    ImageEditVC *editVC = [[ImageEditVC alloc]init];
-    editVC.image = image;
-    [self.navigationController pushViewController:editVC animated:YES];
+    // [vc.navigationController dismissViewControllerAnimated:NO completion:nil];
+   //  ImageEditVC *editVC = [[ImageEditVC alloc]init];
+  //  editVC.image = image;
+    ZDSendPicture * picture = [[ZDSendPicture alloc]init];
+    picture.picture.image = image;
+    [self.navigationController pushViewController:picture animated:YES];
 }
 
 - (void)onCancel:(WNImagePicker *)vc
