@@ -24,6 +24,7 @@
     dispatch_queue_t refreshQueue;
 }
 
+
 @end
 
 @implementation EaseConversationListViewController
@@ -38,12 +39,12 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self unregisterNotifications];
+    //[self unregisterNotifications];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -217,11 +218,13 @@
     [self unregisterNotifications];
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
+    
 }
 
 -(void)unregisterNotifications{
     [[EMClient sharedClient].chatManager removeDelegate:self];
     [[EMClient sharedClient].groupManager removeDelegate:self];
+    
 }
 
 - (void)dealloc{

@@ -13,8 +13,8 @@
 #import "ConversationListController.h"
 
 #import "ChatViewController.h"
-#import "EMSearchBar.h"
-#import "EMSearchDisplayController.h"
+
+
 #import "UserProfileManager.h"
 #import "RealtimeSearchUtil.h"
 
@@ -39,7 +39,7 @@
 
 @property (nonatomic, strong) UIView *networkStateView;
 
-@property (strong, nonatomic) EMSearchDisplayController *searchController;
+
 
 @end
 
@@ -232,19 +232,7 @@
     return YES;
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    __weak typeof(self) weakSelf = self;
-    [[RealtimeSearchUtil currentUtil] realtimeSearchWithSource:self.dataArray searchText:(NSString *)searchText collationStringSelector:@selector(title) resultBlock:^(NSArray *results) {
-        if (results) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.searchController.resultsSource removeAllObjects];
-                [weakSelf.searchController.resultsSource addObjectsFromArray:results];
-                [weakSelf.searchController.searchResultsTableView reloadData];
-            });
-        }
-    }];
-}
+
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
 {

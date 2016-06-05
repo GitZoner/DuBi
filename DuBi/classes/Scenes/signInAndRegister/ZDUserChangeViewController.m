@@ -15,7 +15,7 @@
 #import <SDImageCache.h>
 #import "CustomNavigationController.h"
 #import "Main_marco.h"
-
+#import <UIImageView+WebCache.h>
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
 @property(strong,nonatomic)UITableView * tableView;
@@ -36,6 +36,8 @@
 @end
 
 @implementation ZDUserChangeViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -101,7 +103,18 @@
     self.navigationController.navigationBar.hidden = YES;
     if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"] && kUserDefaultGetValue(kUserInfoKey_userAlias) != nil) {
         [self.ChangeView.nameButton setTitle:kUserDefaultGetValue(kUserInfoKey_userAlias) forState:(UIControlStateNormal)];
+    }else {
+        [self.ChangeView.nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
     }
+    
+ 
+
+    
+        
+        
+        NSLog(@"**********%@",kUserDefaultGetValue(kUserInfoKey_userAlias));
+        [self.ChangeView.imageViewForUser  sd_setImageWithURL:[NSURL URLWithString:kUserDefaultGetValue(kUserInfoKey_protrait)]];
+  
 }
 
 #pragma mark --- 初始化TableView

@@ -49,12 +49,10 @@
 		961238B91CFE6C4800DF5631 /* JTSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 961238B71CFE6C4800DF5631 /* JTSegmentControl.m */; };
 		96123BC31CFEC8FD00DF5631 /* ContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BC21CFEC8FD00DF5631 /* ContactListViewController.m */; };
 		96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BC51CFECE3C00DF5631 /* UserProfileEditViewController.m */; };
-		96123BC91CFECF0000DF5631 /* EMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BC81CFECF0000DF5631 /* EMSearchBar.m */; };
 		96123BCF1CFECFB000DF5631 /* UserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BCC1CFECFB000DF5631 /* UserProfileManager.m */; };
 		96123BD01CFECFB000DF5631 /* InvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BCE1CFECFB000DF5631 /* InvitationManager.m */; };
 		96123BDD1CFED0EF00DF5631 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BDC1CFED0EF00DF5631 /* BaseTableViewCell.m */; };
 		96123BE51CFED1F300DF5631 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BE11CFED1F300DF5631 /* ConversationListController.m */; };
-		96123BE91CFED2C300DF5631 /* EMSearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BE81CFED2C300DF5631 /* EMSearchDisplayController.m */; };
 		96123BEC1CFED35F00DF5631 /* RealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BEB1CFED35F00DF5631 /* RealtimeSearchUtil.m */; };
 		96123BEF1CFED36F00DF5631 /* ContactListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BEE1CFED36F00DF5631 /* ContactListSelectViewController.m */; };
 		96123C061CFED63B00DF5631 /* AddFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123BFF1CFED63B00DF5631 /* AddFriendCell.m */; };
@@ -82,6 +80,7 @@
 		965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F51CF3ED3700B0F22F /* libstdc++.tbd */; };
 		965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52011CF4085B00B0F22F /* JTTabBarViewController.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
+		96A783D41D02BCE100F3648E /* JTNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A783D31D02BCE100F3648E /* JTNotificationModel.m */; };
 		96D5B0201CF7E1AD009E689C /* JTSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */; };
 		96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */; };
 		96D5B0251CF7FE0A009E689C /* JTAliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D5B0231CF7FE0A009E689C /* JTAliasViewController.m */; };
@@ -91,6 +90,9 @@
 		96D5B0331CF84976009E689C /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D5B0321CF84976009E689C /* NSString+MD5.m */; };
 		96E3BE431CFAC4AB00099938 /* JTMainTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3BE421CFAC4AB00099938 /* JTMainTestViewController.m */; };
 		96E3BE461CFAC94100099938 /* JTSelectTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3BE451CFAC94100099938 /* JTSelectTopView.m */; };
+		96E429D21D01AE0600C72C19 /* JTNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E429D11D01AE0600C72C19 /* JTNotificationViewController.m */; };
+		96E429D61D01C46B00C72C19 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E429D41D01C46B00C72C19 /* SessionCell.m */; };
+		96E429D71D01C46B00C72C19 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E429D51D01C46B00C72C19 /* SessionCell.xib */; };
 		96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E97E211CF04F3300DFA851 /* Assets.xcassets */; };
 		96FB5C821CF6FF1D009A8BCF /* EaseUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB5B601CF6FF1D009A8BCF /* EaseUI.m */; };
 		96FB5C831CF6FF1D009A8BCF /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB5B6A1CF6FF1D009A8BCF /* EMAudioPlayerUtil.m */; };
@@ -360,8 +362,6 @@
 		96123BC21CFEC8FD00DF5631 /* ContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListViewController.m; sourceTree = "<group>"; };
 		96123BC41CFECE3C00DF5631 /* UserProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEditViewController.h; sourceTree = "<group>"; };
 		96123BC51CFECE3C00DF5631 /* UserProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileEditViewController.m; sourceTree = "<group>"; };
-		96123BC71CFECF0000DF5631 /* EMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSearchBar.h; sourceTree = "<group>"; };
-		96123BC81CFECF0000DF5631 /* EMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSearchBar.m; sourceTree = "<group>"; };
 		96123BCB1CFECFB000DF5631 /* UserProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileManager.h; sourceTree = "<group>"; };
 		96123BCC1CFECFB000DF5631 /* UserProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileManager.m; sourceTree = "<group>"; };
 		96123BCD1CFECFB000DF5631 /* InvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationManager.h; sourceTree = "<group>"; };
@@ -370,8 +370,6 @@
 		96123BDC1CFED0EF00DF5631 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		96123BE01CFED1F300DF5631 /* ConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListController.h; sourceTree = "<group>"; };
 		96123BE11CFED1F300DF5631 /* ConversationListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListController.m; sourceTree = "<group>"; };
-		96123BE71CFED2C300DF5631 /* EMSearchDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSearchDisplayController.h; sourceTree = "<group>"; };
-		96123BE81CFED2C300DF5631 /* EMSearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSearchDisplayController.m; sourceTree = "<group>"; };
 		96123BEA1CFED35F00DF5631 /* RealtimeSearchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimeSearchUtil.h; sourceTree = "<group>"; };
 		96123BEB1CFED35F00DF5631 /* RealtimeSearchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealtimeSearchUtil.m; sourceTree = "<group>"; };
 		96123BED1CFED36F00DF5631 /* ContactListSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListSelectViewController.h; sourceTree = "<group>"; };
@@ -420,6 +418,8 @@
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
 		968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageContentWithColor.m"; sourceTree = "<group>"; };
+		96A783D21D02BCE100F3648E /* JTNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNotificationModel.h; sourceTree = "<group>"; };
+		96A783D31D02BCE100F3648E /* JTNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNotificationModel.m; sourceTree = "<group>"; };
 		96D5B01D1CF7E1AD009E689C /* JTSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSignInViewController.h; sourceTree = "<group>"; };
 		96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSignInViewController.m; sourceTree = "<group>"; };
 		96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTSignInViewController.xib; sourceTree = "<group>"; };
@@ -436,6 +436,11 @@
 		96E3BE421CFAC4AB00099938 /* JTMainTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTMainTestViewController.m; sourceTree = "<group>"; };
 		96E3BE441CFAC94100099938 /* JTSelectTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSelectTopView.h; sourceTree = "<group>"; };
 		96E3BE451CFAC94100099938 /* JTSelectTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSelectTopView.m; sourceTree = "<group>"; };
+		96E429D01D01AE0600C72C19 /* JTNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNotificationViewController.h; sourceTree = "<group>"; };
+		96E429D11D01AE0600C72C19 /* JTNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNotificationViewController.m; sourceTree = "<group>"; };
+		96E429D31D01C46B00C72C19 /* SessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionCell.h; sourceTree = "<group>"; };
+		96E429D41D01C46B00C72C19 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
+		96E429D51D01C46B00C72C19 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		96E97E211CF04F3300DFA851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96FB5B5E1CF6FF1D009A8BCF /* EaseUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseUI-Prefix.pch"; sourceTree = "<group>"; };
 		96FB5B5F1CF6FF1D009A8BCF /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -1009,10 +1014,6 @@
 				96123BEE1CFED36F00DF5631 /* ContactListSelectViewController.m */,
 				96123BEA1CFED35F00DF5631 /* RealtimeSearchUtil.h */,
 				96123BEB1CFED35F00DF5631 /* RealtimeSearchUtil.m */,
-				96123BE71CFED2C300DF5631 /* EMSearchDisplayController.h */,
-				96123BE81CFED2C300DF5631 /* EMSearchDisplayController.m */,
-				96123BC71CFECF0000DF5631 /* EMSearchBar.h */,
-				96123BC81CFECF0000DF5631 /* EMSearchBar.m */,
 				96123BC41CFECE3C00DF5631 /* UserProfileEditViewController.h */,
 				96123BC51CFECE3C00DF5631 /* UserProfileEditViewController.m */,
 				96123BC11CFEC8FD00DF5631 /* ContactListViewController.h */,
@@ -1181,6 +1182,7 @@
 		96E97E091CF04A7200DFA851 /* BuddyAndMessageView */ = {
 			isa = PBXGroup;
 			children = (
+				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96123C171CFEDD6600DF5631 /* Profile */,
 				96123C0A1CFEDA6A00DF5631 /* Category */,
 				96123BFD1CFED63B00DF5631 /* FriendApply */,
@@ -1236,6 +1238,8 @@
 		96FB59B61CF6D0C3009A8BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96A783D21D02BCE100F3648E /* JTNotificationModel.h */,
+				96A783D31D02BCE100F3648E /* JTNotificationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1247,6 +1251,9 @@
 				961238B71CFE6C4800DF5631 /* JTSegmentControl.m */,
 				9622F3861CFDE14C000A39C9 /* JTCircleHeaderView.h */,
 				9622F3871CFDE14C000A39C9 /* JTCircleHeaderView.m */,
+				96E429D31D01C46B00C72C19 /* SessionCell.h */,
+				96E429D41D01C46B00C72C19 /* SessionCell.m */,
+				96E429D51D01C46B00C72C19 /* SessionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1256,6 +1263,8 @@
 			children = (
 				9622F3891CFDE1B9000A39C9 /* JTCircleMainController.h */,
 				9622F38A1CFDE1B9000A39C9 /* JTCircleMainController.m */,
+				96E429D01D01AE0600C72C19 /* JTNotificationViewController.h */,
+				96E429D11D01AE0600C72C19 /* JTNotificationViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1278,7 +1287,6 @@
 				96FB5C131CF6FF1D009A8BCF /* Helper */,
 				96FB5C161CF6FF1D009A8BCF /* Model */,
 				96FB5C221CF6FF1D009A8BCF /* Util */,
-				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96FB5C4C1CF6FF1D009A8BCF /* Views */,
 			);
 			path = EMUIKit;
@@ -1694,7 +1702,8 @@
 				96FB5C4A1CF6FF1D009A8BCF /* EaseViewController.h */,
 				96FB5C4B1CF6FF1D009A8BCF /* EaseViewController.m */,
 			);
-			path = ViewController;
+			name = ViewController;
+			path = EaseUI/EMUIKit/ViewController;
 			sourceTree = "<group>";
 		};
 		96FB5C4C1CF6FF1D009A8BCF /* Views */ = {
@@ -2275,6 +2284,7 @@
 				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
+				96E429D71D01C46B00C72C19 /* SessionCell.xib in Resources */,
 				96FB5C9F1CF6FF1D009A8BCF /* MJRefresh.bundle in Resources */,
 				960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
@@ -2430,6 +2440,7 @@
 				96FB5CF01CF6FF1D009A8BCF /* EaseChatToolbarItem.m in Sources */,
 				96D5B0201CF7E1AD009E689C /* JTSignInViewController.m in Sources */,
 				96FB5CE21CF6FF1D009A8BCF /* EaseUserCell.m in Sources */,
+				96E429D61D01C46B00C72C19 /* SessionCell.m in Sources */,
 				96FB5CAC1CF6FF1D009A8BCF /* DACircularProgressView.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				96FB5CA91CF6FF1D009A8BCF /* MWTapDetectingImageView.m in Sources */,
@@ -2471,6 +2482,7 @@
 				960DE74B1CFAF29B00C31DD8 /* SDRefreshHeaderView.m in Sources */,
 				96FB5CE71CF6FF1D009A8BCF /* EaseBubbleView+File.m in Sources */,
 				96FB5CB51CF6FF1D009A8BCF /* NSData+EMImageContentType.m in Sources */,
+				96A783D41D02BCE100F3648E /* JTNotificationModel.m in Sources */,
 				96FB5CC41CF6FF1D009A8BCF /* PSTCollectionViewLayout.m in Sources */,
 				96FB5CBD1CF6FF1D009A8BCF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				C28422461CF9778A00E8F9A6 /* PictureController.m in Sources */,
@@ -2497,7 +2509,6 @@
 				C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */,
 				96FB5CE31CF6FF1D009A8BCF /* EaseBaseMessageCell.m in Sources */,
 				960DE7481CFAF29B00C31DD8 /* UIView+SDAutoLayout.m in Sources */,
-				96123BC91CFECF0000DF5631 /* EMSearchBar.m in Sources */,
 				9622F38B1CFDE1B9000A39C9 /* JTCircleMainController.m in Sources */,
 				96123BEF1CFED36F00DF5631 /* ContactListSelectViewController.m in Sources */,
 				96FB5CAB1CF6FF1D009A8BCF /* MWZoomingScrollView.m in Sources */,
@@ -2513,7 +2524,6 @@
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
 				96FB5C991CF6FF1D009A8BCF /* MJRefreshBackGifFooter.m in Sources */,
-				96123BE91CFED2C300DF5631 /* EMSearchDisplayController.m in Sources */,
 				96FB5C851CF6FF1D009A8BCF /* EMCDDeviceManager+Media.m in Sources */,
 				96FB5CEF1CF6FF1D009A8BCF /* EaseChatToolbar.m in Sources */,
 				96FB5CA01CF6FF1D009A8BCF /* MJRefreshConst.m in Sources */,
@@ -2559,6 +2569,7 @@
 				961238B91CFE6C4800DF5631 /* JTSegmentControl.m in Sources */,
 				96FB5CD31CF6FF1D009A8BCF /* UIViewController+HUD.m in Sources */,
 				960DE73D1CFAF29B00C31DD8 /* MLExpressionManager.m in Sources */,
+				96E429D21D01AE0600C72C19 /* JTNotificationViewController.m in Sources */,
 				96FB5C981CF6FF1D009A8BCF /* MJRefreshAutoStateFooter.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 				C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */,

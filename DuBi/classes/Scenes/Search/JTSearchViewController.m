@@ -11,6 +11,10 @@
 #import "Main_marco.h"
 #import "JTBuddySearchCell.h"
 #import "JTBuddyManager.h"
+#import "XHToast.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <UIImageView+WebCache.h>
 @interface JTSearchViewController ()<UITextFieldDelegate>
 @property (strong,nonatomic)JTSearchBar *searchBar;
 @property (strong,nonatomic)NSMutableArray *searchResultList;
@@ -18,18 +22,27 @@
 static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
 @implementation JTSearchViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewReloadData) name:@"searchViewControllerReloadDataNotifiCation" object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _searchBar = [[JTSearchBar alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44)];
+    _searchBar = [[JTSearchBar alloc] initWithFrame:CGRectMake(0, 30, kScreenWidth, 30)];
     _searchBar.searchTextField.delegate = self;
     [_searchBar.cancleButton  addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    self.navigationController.navigationItem.hidesBackButton = YES;
+    self.navigationItem.hidesBackButton = YES;
     self.navigationItem.titleView = _searchBar;
     self.searchResultList  = [NSMutableArray array];
    
     
-   [ self.tableView registerClass:[JTBuddySearchCell class] forCellReuseIdentifier:JTBuddySearchCellID];
+   [ self.tableView registerNib:[UINib nibWithNibName:@"JTBuddySearchCell" bundle:nil] forCellReuseIdentifier:JTBuddySearchCellID];
     
+}
+
+-(void)tableViewReloadData {
+    [self.tableView reloadData];
 }
 
 -(void)goBackAction:(UIButton *)button {
@@ -57,13 +70,25 @@ static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     JTBuddySearchCell *cell = [tableView dequeueReusableCellWithIdentifier:JTBuddySearchCellID forIndexPath:indexPath];
+    AVObject *userObject = self.searchResultList[indexPath.row];
+    NSString *imageUrlString = [userObject objectForKey:@"protrait"];
+    NSURL *url = [NSURL URLWithString:imageUrlString];
     
+    [cell.userImageView sd_setImageWithURL:url];
+    
+    NSString *userName = [userObject objectForKey:@"userAlias"];
+    cell.userAliasLabel.text = userName;
+    
+    cell.telNum = [userObject objectForKey:@"telNum"];
+    cell.userAlias = userObject[@"userAlias"];
 
     
     return cell;
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
 
 #pragma mark -UITextFieldDelegate
 
@@ -91,15 +116,28 @@ static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
     return YES;
 }// called when clear button pressed. return NO to ignore (no notifications)
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    __weak typeof (JTSearchViewController *)weakSelf = self;
     [[JTBuddyManager sharedJTBuddyManager] searchBuddyWithString:textField.text searchSuccess:^(NSArray *array) {
+        weakSelf.searchResultList = array.mutableCopy;
+        [self.tableView reloadData];
+        
+        NSLog(@"%ld",array.count);
         
     } failed:^(NSError *error) {
-        
+        [XHToast showBottomWithText:@"搜索失败，请稍后重试" bottomOffset:100 duration:3];
     }];
     
     [textField resignFirstResponder];
     return YES;
 }// called when 'return' key pressed. return NO to ignore.
+
+
+-(void)setSearchResultList:(NSMutableArray *)searchResultList {
+    if (_searchResultList != searchResultList) {
+        _searchResultList = nil;
+        _searchResultList = searchResultList;
+    }
+}
 
 
 
