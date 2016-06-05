@@ -20,7 +20,7 @@
                             <constraint firstAttribute="height" constant="21" id="yed-nN-WzL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83z-lX-KFl">
@@ -29,9 +29,13 @@
                         <state key="normal" title="+关注">
                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="addAttentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mi8-gg-ICN"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1f-t5-Wex">
                         <rect key="frame" x="15" y="12" width="42" height="42"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="ElX-fQ-S9z"/>
                             <constraint firstAttribute="height" constant="42" id="LZU-2o-3yV"/>
@@ -47,6 +51,9 @@
                         <state key="normal" title="+好友">
                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="addBuddyAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VAl-dU-gTz"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

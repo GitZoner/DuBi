@@ -25,6 +25,8 @@
 #import "JTCircleHeaderView.h"
 #import "Color_marco.h"
 #define kTimeLineTableViewCellId @"SDTimeLineCell"
+#import "Main_marco.h"
+
 
 static CGFloat textFieldH = 40;
 
@@ -34,6 +36,9 @@ static CGFloat textFieldH = 40;
 @property (nonatomic, assign) BOOL isReplayingComment;
 @property (nonatomic, strong) NSIndexPath *currentEditingIndexthPath;
 @property (nonatomic, copy) NSString *commentToUser;
+/*请求的动态avObject对象数组*/
+@property (strong, nonatomic) NSMutableArray *avObjectArray;
+
 
 // 头部视图
 @property (strong,nonatomic)JTCircleHeaderView *headerVew;
@@ -132,14 +137,14 @@ static CGFloat textFieldH = 40;
     [_textField resignFirstResponder];
 }
 
-//- (void)dealloc
-//{
-//    [_refreshHeader removeFromSuperview];
-//    [_refreshFooter removeFromSuperview];
-//    
-//    [_textField removeFromSuperview];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
+- (void)dealloc
+{
+    [_refreshHeader removeFromSuperview];
+    [_refreshFooter removeFromSuperview];
+    
+    [_textField removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)setupTextField
 {
@@ -264,10 +269,27 @@ static CGFloat textFieldH = 40;
 //    }
 //    return [resArr copy];
     
-    ZYGetObject *zygetObject = [ZYGetObject sharedZYGetObject];
-   NSArray *arr = [zygetObject userDeliverInfoWithClassName:@"userDeliverInfo"];
+   //  ZYGetObject *zygetObject = [ZYGetObject sharedZYGetObject];
+    // NSArray *arr = [zygetObject userDeliverInfoWithClassName:@"userDeliverInfo"];
     
-    return arr;
+    
+    AVQuery *query = [AVQuery queryWithClassName:@"userDeliverInfo"];
+    self.avObjectArray = [NSMutableArray array];
+    self.avObjectArray = [query findObjects].mutableCopy;
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (AVObject *object in self.avObjectArray) {
+        
+        ZYTimeLineCellModel *zymodel = [ZYTimeLineCellModel new];
+        zymodel.userAlias = object[@"userAlias"];
+        zymodel.publishType = object[@"publishType"];
+        zymodel.msgContent = object[@"msgContent"];
+    
+        zymodel.createdAt = object[@"createdAt"];
+        
+        [tempArray addObject:zymodel];
+    }
+    
+    return tempArray;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -307,6 +329,7 @@ static CGFloat textFieldH = 40;
     ///////////////////////////////////////////////////////////////////////
     
     cell.model = self.dataArray[indexPath.row];
+    cell.contentAVObject = self.avObjectArray[indexPath.row];
     
     NSLog(@"%@",cell);
     return cell;
@@ -358,26 +381,55 @@ static CGFloat textFieldH = 40;
 
 - (void)didClickLikeButtonInCell:(UITableViewCell *)cell
 {
+    __weak typeof(ZYTimeLineTableViewController *) weakSelf = self;
     NSIndexPath *index = [self.tableView indexPathForCell:cell];
     ZYTimeLineCellModel *model = self.dataArray[index.row];
     NSMutableArray *temp = [NSMutableArray arrayWithArray:model.likeItemsArray];
     
     if (!model.isLiked) {
+        
+        
+        
         ZYTimeLineCellLikeItemModel *likeModel = [ZYTimeLineCellLikeItemModel new];
-        likeModel.userName = @"GSD_iOS";
-        likeModel.userId = @"gsdios";
+        likeModel.userName = kUserDefaultGetValue(kUserInfoKey_userAlias);
+        //        likeModel.userId = @"gsdios";
         [temp addObject:likeModel];
         model.liked = YES;
+   
+        // 新建一个 AVRelation
+        AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
+        [query whereKey:@"telNum" equalTo:kUserDefaultGetValue(kUserInfoKey_telNum)];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if(!error && objects.count > 0) {
+            AVObject *deliverObject = weakSelf.avObjectArray[index.row];
+            
+            AVRelation *relation = [deliverObject relationforKey:@"likeItems"];
+            [relation addObject:[objects firstObject]];
+            [deliverObject saveInBackground];
+        
+            }else {
+                NSLog(@"++++++%@",kUserDefaultGetValue(kUserInfoKey_telNum));
+                NSLog(@"没有获取到点赞人的对象");
+            }
+          
+        }];
+        
+       
+
+        
+        
+        
     } else {
-        ZYTimeLineCellLikeItemModel *tempLikeModel = nil;
+        
+       ZYTimeLineCellLikeItemModel *tempLikeModel = nil;
         for (ZYTimeLineCellLikeItemModel *likeModel in model.likeItemsArray) {
-            if ([likeModel.userId isEqualToString:@"gsdios"]) {
+           if ([likeModel.userName isEqualToString:kUserDefaultGetValue(kUserInfoKey_userAlias)]) {
                 tempLikeModel = likeModel;
                 break;
             }
         }
         [temp removeObject:tempLikeModel];
-        model.liked = NO;
+       model.liked = NO;
     }
     model.likeItemsArray = [temp copy];
     
@@ -387,11 +439,13 @@ static CGFloat textFieldH = 40;
 
 - (void)adjustTableViewToFitKeyboard
 {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:_currentEditingIndexthPath];
-    CGRect rect = [cell.superview convertRect:cell.frame toView:window];
-    [self adjustTableViewToFitKeyboardWithRect:rect];
+            UIWindow *window = [UIApplication sharedApplication].keyWindow;
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:_currentEditingIndexthPath];
+            CGRect rect = [cell.superview convertRect:cell.frame toView:window];
+            [self adjustTableViewToFitKeyboardWithRect:rect];
 }
+         
+
 
 - (void)adjustTableViewToFitKeyboardWithRect:(CGRect)rect
 {
@@ -420,17 +474,17 @@ static CGFloat textFieldH = 40;
         ZYTimeLineCellCommentItemModel *commentItemModel = [ZYTimeLineCellCommentItemModel new];
         
         if (self.isReplayingComment) {
-            commentItemModel.firstUserName = @"GSD_iOS";
-            commentItemModel.firstUserId = @"GSD_iOS";
-            commentItemModel.secondUserName = self.commentToUser;
-            commentItemModel.secondUserId = self.commentToUser;
+            commentItemModel.firstUserName = kUserDefaultGetValue(kUserInfoKey_userAlias);
+//            commentItemModel.firstUserId = @"GSD_iOS";
+//            commentItemModel.secondUserName = self.commentToUser;
+//            commentItemModel.secondUserId = self.commentToUser;
             commentItemModel.commentString = textField.text;
             
             self.isReplayingComment = NO;
         } else {
-            commentItemModel.firstUserName = @"GSD_iOS";
+            commentItemModel.firstUserName = kUserDefaultGetValue(kUserInfoKey_userAlias);
             commentItemModel.commentString = textField.text;
-            commentItemModel.firstUserId = @"GSD_iOS";
+//            commentItemModel.firstUserId = @"GSD_iOS";
         }
         [temp addObject:commentItemModel];
         model.commentItemsArray = [temp copy];
