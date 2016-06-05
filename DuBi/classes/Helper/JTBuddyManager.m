@@ -62,7 +62,7 @@ singleton_implementation(JTBuddyManager);
         [telNumQuery whereKey:@"telNum" equalTo:userName];
         
         AVQuery *passWordQuery = [AVQuery queryWithClassName:@"userInfo"];
-        [telNumQuery whereKey:@"passWord" equalTo:[NSNumber numberWithInt:0]];
+        [telNumQuery whereKey:@"passWord" equalTo:passWord];
         
         AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:telNumQuery,passWordQuery,nil]];
         
@@ -70,16 +70,19 @@ singleton_implementation(JTBuddyManager);
             if (results.count == 1) {
                 AVObject *userInfo = [results firstObject];
                 [manager saveUserInfoToLocal:userInfo];
+                kUserDefaultSetValue(@"YES", kUserInfoKey_hasSign);
+                successed();
+
+            }else{
                 
+                NSError *aError = [NSError errorWithDomain:@"登录失败，稍后重试" code:001 userInfo:nil];
+                failed(aError);
             }
         }];
-        kUserDefaultSetValue(@"YES", kUserInfoKey_hasSign);
-        successed();
         
     }else {
         NSLog(@"环信登录错误：%@",error);
-        NSError *aError = [NSError errorWithDomain:@"登录失败，稍后重试" code:001 userInfo:nil];
-        failed(aError);
+        
     }
 }
 #pragma mark -注册方法
@@ -159,7 +162,10 @@ singleton_implementation(JTBuddyManager);
 #pragma mark - private method
 -(void)saveUserInfoToLocal:(AVObject *)avObject {
     kUserDefaultSetValue(avObject.objectId, kUserInfoKey_userID);
+    
+    NSLog(@"%@",kUserDefaultGetValue(kUserInfoKey_userID));
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_telNum], kUserInfoKey_telNum);
+     NSLog(@"-----------------%@",kUserDefaultGetValue(kUserInfoKey_telNum));
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_userAlias], kUserInfoKey_userAlias);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_gender], kUserInfoKey_gender);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_passWord], kUserInfoKey_passWord);

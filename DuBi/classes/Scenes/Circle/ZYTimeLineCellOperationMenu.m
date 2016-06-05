@@ -9,6 +9,9 @@
 #import "ZYTimeLineCellOperationMenu.h"
 #import "UIView+SDAutoLayout.h"
 #import "GlobalDefines.h"
+
+#import <AVOSCloud/AVOSCloud.h>
+
 @implementation ZYTimeLineCellOperationMenu
 {
     UIButton *_likeButton;
@@ -76,6 +79,15 @@
 {
     if (self.likeButtonClickedOperation) {
         self.likeButtonClickedOperation();
+//        NSLog(@"ebfuerufurgiurtgrtgrtrtgurtghrtgvrtgurt");
+//        AVObject *userDeliverInfo = [AVObject  objectWithClassName:@"userDeliverInfo"];// 构建对象
+//        NSNumber *num1 = [NSNumber numberWithInt:0];
+//        NSNumber *num2 = [NSNumber numberWithInt:1];
+//        NSArray *arr = [NSArray arrayWithObjects:num1,num2, nil];
+//        [userDeliverInfo setObject:arr[1] forKey:@"likeItems"];
+//         [userDeliverInfo saveInBackground];
+        
+  
     }
 }
 
