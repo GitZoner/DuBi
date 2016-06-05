@@ -75,7 +75,10 @@ static CGFloat textFieldH = 40;
     
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
-//    [self.dataArray addObjectsFromArray:[self creatModelsWithCount:10]];
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
+        
+    
+    [self.dataArray addObjectsFromArray:[self creatModelsWithCount:10]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     __weak typeof(self) weakSelf = self;
@@ -102,7 +105,7 @@ static CGFloat textFieldH = 40;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    
+    }
 }
 
 
@@ -111,7 +114,7 @@ static CGFloat textFieldH = 40;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"])  {
     if (!_refreshHeader.superview) {
         
         _refreshHeader = [ZYTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, 45)];
@@ -129,6 +132,9 @@ static CGFloat textFieldH = 40;
             });
         }];
         [self.tableView.superview addSubview:_refreshHeader];
+    }
+        
+        
     }
 }
 
@@ -294,8 +300,13 @@ static CGFloat textFieldH = 40;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%@",self.dataArray);
-    return self.dataArray.count;
+    NSLog(@"+++++++++++++++++++++++++++++-----------=========%ld",self.dataArray.count);
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
+         return self.dataArray.count;
+    }else {
+        return 1;
+    }
+   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -396,15 +407,19 @@ static CGFloat textFieldH = 40;
         [temp addObject:likeModel];
         model.liked = YES;
    
+        
+        
         // 新建一个 AVRelation
         AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
         [query whereKey:@"telNum" equalTo:kUserDefaultGetValue(kUserInfoKey_telNum)];
+       
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error && objects.count > 0) {
             AVObject *deliverObject = weakSelf.avObjectArray[index.row];
             
             AVRelation *relation = [deliverObject relationforKey:@"likeItems"];
             [relation addObject:[objects firstObject]];
+            
             [deliverObject saveInBackground];
         
             }else {

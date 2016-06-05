@@ -24,6 +24,7 @@
 
 /*发表图片*/
 @property (strong, nonatomic) NSArray *picNamesArray;
+
 /*当前时间*/
 @property (strong, nonatomic) NSDate *createdAt;
 

@@ -28,6 +28,7 @@
 
 - (void)setup
 {
+    // 如果子视图的范围超过父视图的边界，那么超出的部分就会被裁减掉。YES裁剪，NO不裁剪。默认是NO；
     self.clipsToBounds = YES;
     self.layer.cornerRadius = 5;
     self.backgroundColor = SDColor(69, 74, 76, 1);

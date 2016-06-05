@@ -95,9 +95,12 @@
 
 // 添加子控制器
 -(void)setUpChildControllers {
-
+    
+    
     self.circleViewController = [ZYTimeLineTableViewController new] ;
     [self addChildViewController:self.circleViewController];
+    
+  
 
     self.conversationController = [ConversationListController new] ;
     [self addChildViewController:self.conversationController];
@@ -106,10 +109,10 @@
     [self addChildViewController:self.userListController];
     
     self.noticeMessageController = [JTNotificationViewController new] ;
-    [self addChildViewController:self.circleViewController];
+    [self addChildViewController:self.noticeMessageController];
     
     self.attentionController = [UIViewController new] ;
-    [self addChildViewController:self.circleViewController];
+    [self addChildViewController:self.attentionController];
 
     
     
@@ -120,13 +123,16 @@
  // 向ScrollView中添加子控制器的视图
 
 -(void)addChildControllerView {
-    self.circleViewController.view.frame = self.view.bounds;
-    //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
-    UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
-    edgeInset.top = 44;
-    edgeInset.bottom = 49;
-    self.circleViewController.tableView.contentInset = edgeInset ;
-    [self.scrollView addSubview:self.circleViewController.view];
+//    self.circleViewController.view.frame = self.view.bounds;
+//    //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
+//    UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
+//    edgeInset.top = 44;
+//    edgeInset.bottom = 49;
+//    self.circleViewController.tableView.contentInset = edgeInset ;
+//    [self.scrollView addSubview:self.circleViewController.view];
+    
+    UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.scrollView addSubview:view];
     
     self.conversationController.view.frame = self.view.bounds;
     self.conversationController.view.x = CGRectGetMaxX(self.circleViewController.view.frame);
