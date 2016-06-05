@@ -231,6 +231,8 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C25E83801D03FBD90079A08F /* ZDVisitingIdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E837F1D03FBD90079A08F /* ZDVisitingIdViewController.m */; };
+		C25E83831D03FBF30079A08F /* ZDVisitingIdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83821D03FBF30079A08F /* ZDVisitingIdView.m */; };
 		C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422251CF975E300E8F9A6 /* LWNDataBase.m */; };
 		C284222C1CF975E300E8F9A6 /* LWNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422271CF975E300E8F9A6 /* LWNTableView.m */; };
 		C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422291CF975E300E8F9A6 /* PictureHandle.m */; };
@@ -746,6 +748,10 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C25E837E1D03FBD90079A08F /* ZDVisitingIdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDVisitingIdViewController.h; sourceTree = "<group>"; };
+		C25E837F1D03FBD90079A08F /* ZDVisitingIdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDVisitingIdViewController.m; sourceTree = "<group>"; };
+		C25E83811D03FBF30079A08F /* ZDVisitingIdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDVisitingIdView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.h; sourceTree = SOURCE_ROOT; };
+		C25E83821D03FBF30079A08F /* ZDVisitingIdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDVisitingIdView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.m; sourceTree = SOURCE_ROOT; };
 		C28422241CF975E300E8F9A6 /* LWNDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNDataBase.h; sourceTree = "<group>"; };
 		C28422251CF975E300E8F9A6 /* LWNDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNDataBase.m; sourceTree = "<group>"; };
 		C28422261CF975E300E8F9A6 /* LWNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNTableView.h; sourceTree = "<group>"; };
@@ -823,8 +829,8 @@
 		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
 		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
 		C2E33A7C1D019F6100BB4C67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		C2E33A851D01CAFF00BB4C67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C2E33A861D01CAFF00BB4C67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C2E33A851D01CAFF00BB4C67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		C2E33A861D01CAFF00BB4C67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		C2E33A891D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		C2E33A8A1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		C2E33A8B1D01CBB000BB4C67 /* AlbumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotoCell.h; sourceTree = "<group>"; };
@@ -843,7 +849,7 @@
 		C2E33A981D01CBB000BB4C67 /* WNImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNImagePicker.h; sourceTree = "<group>"; };
 		C2E33A991D01CBB000BB4C67 /* WNImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNImagePicker.m; sourceTree = "<group>"; };
 		C2E33A9A1D01CBB000BB4C67 /* WNImagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WNImagePicker.xib; sourceTree = "<group>"; };
-		C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ViewController/ViewController.xib; sourceTree = "<group>"; };
+		C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController/ViewController.xib; sourceTree = "<group>"; };
 		C2E6E9CC1CFC7A57001B198A /* ZDPublishHaflViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflViewControl.h; sourceTree = "<group>"; };
 		C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflViewControl.m; sourceTree = "<group>"; };
 		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
@@ -1220,6 +1226,8 @@
 				C2BBD95F1D007514008F0008 /* ZDPersonInfoCell.h */,
 				C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */,
 				C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */,
+				C25E83811D03FBF30079A08F /* ZDVisitingIdView.h */,
+				C25E83821D03FBF30079A08F /* ZDVisitingIdView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2157,6 +2165,8 @@
 				C284A84B1CF5322F0093E851 /* ZDSetUpController.m */,
 				C284A84D1CF536540093E851 /* ZDSetUpViewController.h */,
 				C284A84E1CF536540093E851 /* ZDSetUpViewController.m */,
+				C25E837E1D03FBD90079A08F /* ZDVisitingIdViewController.h */,
+				C25E837F1D03FBD90079A08F /* ZDVisitingIdViewController.m */,
 			);
 			name = otherController;
 			sourceTree = "<group>";
@@ -2242,9 +2252,6 @@
 				C29B23631D026A030032426D /* ZDSendPicture.m */,
 				C29B23641D026A030032426D /* ZDSendPicture.xib */,
 				C2E33A881D01CBB000BB4C67 /* WNImapgePicker */,
-				C2E33A851D01CAFF00BB4C67 /* ViewController.h */,
-				C2E33A861D01CAFF00BB4C67 /* ViewController.m */,
-				C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */,
 			);
 			name = otherViewController;
 			sourceTree = "<group>";
@@ -2270,6 +2277,9 @@
 				C2E33A981D01CBB000BB4C67 /* WNImagePicker.h */,
 				C2E33A991D01CBB000BB4C67 /* WNImagePicker.m */,
 				C2E33A9A1D01CBB000BB4C67 /* WNImagePicker.xib */,
+				C2E33A851D01CAFF00BB4C67 /* ViewController.h */,
+				C2E33A861D01CAFF00BB4C67 /* ViewController.m */,
+				C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */,
 			);
 			path = WNImapgePicker;
 			sourceTree = "<group>";
@@ -2479,6 +2489,7 @@
 				960DE6C01CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m in Sources */,
 				96FB5C911CF6FF1D009A8BCF /* MJRefreshAutoFooter.m in Sources */,
 				96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */,
+				C25E83831D03FBF30079A08F /* ZDVisitingIdView.m in Sources */,
 				96FB5CD41CF6FF1D009A8BCF /* EaseChineseToPinyin.m in Sources */,
 				96FB5CA51CF6FF1D009A8BCF /* MWGridCell.m in Sources */,
 				96FB5CB91CF6FF1D009A8BCF /* UIImage+EMWebP.m in Sources */,
@@ -2652,6 +2663,7 @@
 				96FB5C931CF6FF1D009A8BCF /* MJRefreshComponent.m in Sources */,
 				C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */,
 				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
+				C25E83801D03FBD90079A08F /* ZDVisitingIdViewController.m in Sources */,
 				C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */,
 				960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
