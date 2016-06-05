@@ -13,6 +13,8 @@
 #import "JTSignInChoiceViewController.h"
 #import "ZDSetUpController.h"
 #import "ZDSetUpViewController.h"
+#import "Main_marco.h"
+#import <UIImageView+WebCache.h>
 
 @interface ZDUserViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic)UITableView * tableView;
@@ -35,11 +37,7 @@ static NSString * const cellID = @"cellID";
 
 @implementation ZDUserViewController
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    
-}
+
 
 
 - (void)viewDidLoad {

@@ -14,7 +14,9 @@
 
 #import "UIViewController+HUD.h"
 #import "EaseMessageViewController.h"
-
+#import <AVOSCloud/AVOSCloud.h>
+#import "JTBuddyManager.h"
+#import "Main_marco.h"
 @interface EaseUsersListViewController ()
 
 @property (strong, nonatomic) UISearchBar *searchBar;
@@ -146,30 +148,30 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         EMError *error = nil;
         NSArray *buddyList = [[EMClient sharedClient].contactManager getContactsFromServerWithError:&error];
+        // TODO:在这里获取环信中好友列表 ，也要从LeanCloud中获取好友列表，通过LeanCloud中的好友列表，获得用户的头像，昵称信息，并放入EaseUserModel中，给cell赋值
+        NSMutableArray *queruArray = [NSMutableArray array];
+        
+        
         if (!error) {
-            [weakself.dataArray removeAllObjects];
-            NSMutableArray *contactsSource = [NSMutableArray arrayWithArray:buddyList];
+            for (NSString *buddy in buddyList) {
+                AVQuery *buddyQuery = [AVQuery queryWithClassName:@"userInfo"];
+                [buddyQuery whereKey:@"telNum" equalTo:buddy];
+                [queruArray addObject:buddyQuery];
+            }
             
-            //从获取的数据中剔除黑名单中的好友
-            NSArray *blockList = [[EMClient sharedClient].contactManager getBlackListFromDB];
-            for (NSInteger i = (buddyList.count - 1); i >= 0; i--) {
-                NSString *buddy = [buddyList objectAtIndex:i];
-                if (![blockList containsObject:buddy]) {
-                    [contactsSource addObject:buddy];
-                    
+            AVQuery *query = [AVQuery orQueryWithSubqueries:queruArray];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                
+                for(AVObject *buddy in results) {
                     id<IUserModel> model = nil;
-                    if (weakself.dataSource && [weakself.dataSource respondsToSelector:@selector(userListViewController:modelForBuddy:)]) {
-                        model = [weakself.dataSource userListViewController:self modelForBuddy:buddy];
-                    }
-                    else{
-                        model = [[EaseUserModel alloc] initWithBuddy:buddy];
-                    }
-                    
+                    model = [[EaseUserModel alloc] initWithBuddy:[buddy objectForKey:kUserInfoKey_telNum]];
+                    model.nickname  = [buddy objectForKey:kUserInfoKey_userAlias];
+                    model.avatarURLPath = [buddy objectForKey:kUserInfoKey_protrait];
                     if(model){
                         [weakself.dataArray addObject:model];
                     }
                 }
-            }
+            }];
         }
         [weakself tableViewDidFinishTriggerHeader:YES reload:YES];
     });

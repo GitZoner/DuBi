@@ -19,6 +19,9 @@
 #import "ContactListViewController.h"
 #import "ConversationListController.h"
 #import "JTSearchViewController.h"
+#import "JTNotificationViewController.h"
+#import "EaseUsersListViewController.h"
+#import "JTBuddyManager.h"
 @interface JTCircleMainController ()<UIScrollViewDelegate>
 
 @property (strong,nonatomic)JTSegmentControl *segmentControl;
@@ -26,8 +29,8 @@
 // 各自控制器
 @property (strong,nonatomic)ZYTimeLineTableViewController *circleViewController; // 圈子动态控制器
 @property (strong,nonatomic)ConversationListController *conversationController; // 会话界面控制器
-@property (strong,nonatomic)ContactListViewController *userListController; // 好友界面
-@property (strong,nonatomic)UIViewController *noticeMessageController ;// 通知控制器
+@property (strong,nonatomic)EaseUsersListViewController *userListController; // 好友界面
+@property (strong,nonatomic)JTNotificationViewController *noticeMessageController ;// 通知控制器
 @property (strong,nonatomic)UIViewController *attentionController; // 关注控制器
 @property (strong,nonatomic)UIView *contentView;
 
@@ -36,8 +39,17 @@
 
 @implementation JTCircleMainController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+        [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:kUserDefaultGetValue(kUserInfoKey_telNum) password:kUserDefaultGetValue(kUserInfoKey_passWord) successed:^{
+            NSLog(@"自动登录成功");
+        } failed:^(NSError *error) {
+            NSLog(@"自动登录失败");
+        }];
+        
     
   
     [self setUpSubViews];
@@ -90,10 +102,10 @@
     self.conversationController = [ConversationListController new] ;
     [self addChildViewController:self.conversationController];
     
-    self.userListController = [ContactListViewController new] ;
+    self.userListController = [EaseUsersListViewController new] ;
     [self addChildViewController:self.userListController];
     
-    self.noticeMessageController = [UIViewController new] ;
+    self.noticeMessageController = [JTNotificationViewController new] ;
     [self addChildViewController:self.circleViewController];
     
     self.attentionController = [UIViewController new] ;
@@ -123,6 +135,11 @@
     self.userListController.view.frame = self.view.bounds;
     self.userListController.view.x = CGRectGetMaxX(self.conversationController.view.frame);
     [self.scrollView addSubview:self.userListController.view];
+    
+    self.noticeMessageController.view.frame = self.view.bounds;
+    self.noticeMessageController.view.x = CGRectGetMaxX(self.userListController.view.frame);
+    [self.scrollView addSubview:self.noticeMessageController.view];
+    
     
 }
 

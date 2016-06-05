@@ -12,10 +12,12 @@
 #import "JTTabBar.h"
 #import <POP.h>
 #import "ZDSendJokes.h"
-
+#import "ViewController.h"
+#import "WNImagePicker.h"
+#import "ImageEditVC.h"
 
 #define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
-@interface ZDPublishHaflView ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ZDPublishHaflView ()<WNImagePickerDelegate>
 
 
 @property(strong,nonatomic)UIImagePickerController * pickerController;
@@ -108,20 +110,34 @@ static UIWindow * window;
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nc animated:NO completion:nil];
         
     }else if (button.tag == 102){ // 发图片
+       
         if (_myDelegate && [_myDelegate respondsToSelector:@selector(hidderWindow)]) {
             [_myDelegate hidderWindow];
         }
+        
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"选择模式" message:@"相册or相机" preferredStyle:(UIAlertControllerStyleActionSheet)];
         UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"相册" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             // 调用系统相册
-            [self invokePhoto];
+            //  [self invokePhoto];
+//            LocalPhotoViewController * localVC =
+//            [[UINavigationController alloc]initWithRootViewController:
+//            [LocalPhotoViewController new]];
+////            localVC.selectPhotoDelegate = kpresent;
+//            localVC.selectPhotos = _selectphotoArray;
+//            [kpresent presentViewController:localVC animated:YES completion:nil];
+            // ViewController * vc = [[ViewController alloc]init];
+            WNImagePicker * pickerVC = [[WNImagePicker alloc]init];
+            pickerVC.delegate = self;
+            
+            UINavigationController * navVC = [[UINavigationController alloc]initWithRootViewController:pickerVC];
+            [kpresent  presentViewController:navVC animated:YES completion:nil];
             
             
         }];
         UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"相机" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
         }];
-        UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
             
         }];
         [alert addAction:action1];
@@ -129,14 +145,7 @@ static UIWindow * window;
         [alert addAction:action3];
         
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-        
-        
-        
-        
-        
-     
-        
-        
+
         NSLog(@"button2");
     }else if (button.tag == 103){
         NSLog(@"button3");
@@ -156,6 +165,21 @@ static UIWindow * window;
     }else{
         NSLog(@"button4");
     }
+}
+
+// WNImagePicker代理方法
+//-(void)getCutImage:(UIImage *)image controller:(WNImagePicker *)vc
+//{
+//    [vc.navigationController dismissViewControllerAnimated:NO completion:nil];
+//    ImageEditVC * editVC = [[ImageEditVC alloc]init];
+//    editVC.image = image;
+//    [kpresent.navigationController pushViewController:editVC animated:YES];
+//    
+//}
+
+-(void)onCancel:(WNImagePicker *)vc
+{
+    [vc.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 // 调用系统相册

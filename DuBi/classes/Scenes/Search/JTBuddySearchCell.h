@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userAliasLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addAttentionButton;
 @property (weak, nonatomic) IBOutlet UIButton *addBuddyButtton;
+@property (strong,nonatomic)NSString *telNum;
+@property (strong,nonatomic) NSString *userAlias;
 
 @end

@@ -55,4 +55,7 @@ singleton_interface(JTBuddyManager);
  *  @param failed        搜索失败后的Block回调，返回一个NSError错误信息
  */
 -(void)searchBuddyWithString:(NSString *)keyString searchSuccess:(SearchSuccess)searchSuccess failed:(Failed)failed;
+
+
+
 @end

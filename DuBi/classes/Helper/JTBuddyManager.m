@@ -11,7 +11,7 @@
 #import "Main_marco.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "Main_marco.h"
-#import "Main_marco.h"
+
 
 
 @interface JTBuddyManager  () <EMContactManagerDelegate>
@@ -19,6 +19,8 @@
 @property (strong,nonatomic)EMClient *emClient;
 // 存放所有好友的数组
 @property (strong,nonatomic)NSMutableArray *userList;
+@property (strong,nonatomic)NSArray *addApplyMessageArray;
+
 @end
 
 
@@ -44,9 +46,9 @@ singleton_implementation(JTBuddyManager);
        
         _emClient = [EMClient sharedClient];
       [_emClient initializeSDKWithOptions:options];
-        // 好友管理的代理
-        [self.emClient.contactManager addDelegate:self delegateQueue:nil];
+  
         
+       
     }
     return self;
 }
@@ -58,6 +60,10 @@ singleton_implementation(JTBuddyManager);
     // 环信登录
     EMError *error = [self.emClient loginWithUsername:userName  password:@"123456"];
     if (!error) {
+        
+        // 设置环信自动登录
+        [[EMClient sharedClient].options setIsAutoLogin:YES];
+        
         AVQuery *telNumQuery = [AVQuery queryWithClassName:@"userInfo"];
         [telNumQuery whereKey:@"telNum" equalTo:userName];
         
@@ -72,17 +78,14 @@ singleton_implementation(JTBuddyManager);
                 [manager saveUserInfoToLocal:userInfo];
                 kUserDefaultSetValue(@"YES", kUserInfoKey_hasSign);
                 successed();
-
-            }else{
-                
-                NSError *aError = [NSError errorWithDomain:@"登录失败，稍后重试" code:001 userInfo:nil];
-                failed(aError);
             }
         }];
+       
         
     }else {
         NSLog(@"环信登录错误：%@",error);
-        
+        NSError *aError = [NSError errorWithDomain:@"登录失败，稍后重试" code:001 userInfo:nil];
+        failed(aError);
     }
 }
 #pragma mark -注册方法
@@ -147,14 +150,14 @@ singleton_implementation(JTBuddyManager);
     [[NSNotificationCenter defaultCenter] postNotificationName:JT_NewFriendInvitationNotification object:self userInfo:@{@"userName":aUsername,@"message":aMessage}];
 }
 #pragma mark - 好友申请处理结果的回调
-// 对方同意添加为好友
-- (void)didReceiveAgreedFromUsername:(NSString *)aUsername {
-    [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"YES"}];
-}
-// 对方拒绝添加为好友
-- (void)didReceiveDeclinedFromUsername:(NSString *)aUsername {
-    [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"NO"}];
-}
+//// 对方同意添加为好友
+//- (void)didReceiveAgreedFromUsername:(NSString *)aUsername {
+//    [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"YES"}];
+//}
+//// 对方拒绝添加为好友
+//- (void)didReceiveDeclinedFromUsername:(NSString *)aUsername {
+//    [[NSNotificationCenter defaultCenter] postNotificationName:JT_FriendApplyResult object:self userInfo:@{@"result":@"NO"}];
+//}
 
 
 
@@ -162,13 +165,11 @@ singleton_implementation(JTBuddyManager);
 #pragma mark - private method
 -(void)saveUserInfoToLocal:(AVObject *)avObject {
     kUserDefaultSetValue(avObject.objectId, kUserInfoKey_userID);
-    
-    NSLog(@"%@",kUserDefaultGetValue(kUserInfoKey_userID));
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_telNum], kUserInfoKey_telNum);
-     NSLog(@"-----------------%@",kUserDefaultGetValue(kUserInfoKey_telNum));
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_userAlias], kUserInfoKey_userAlias);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_gender], kUserInfoKey_gender);
     kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_passWord], kUserInfoKey_passWord);
+    kUserDefaultSetValue([avObject objectForKey:kUserInfoKey_protrait], kUserInfoKey_protrait);
 }
 
 -(void)searchBuddyWithString:(NSString *)keyString searchSuccess:(SearchSuccess)searchSuccess failed:(Failed)failed {
@@ -184,6 +185,7 @@ singleton_implementation(JTBuddyManager);
         if (!error) {
             searchSuccess(results);
             [[NSNotificationCenter defaultCenter]  postNotificationName:@"searchViewControllerReloadDataNotifiCation" object:nil];
+    
         
         }else {
             failed(error);
@@ -192,4 +194,8 @@ singleton_implementation(JTBuddyManager);
     }];
 }
 
+- (void)dealloc
+{
+   
+}
 @end

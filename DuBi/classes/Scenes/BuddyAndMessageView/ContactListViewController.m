@@ -15,12 +15,12 @@
 #import "ChatViewController.h"
 
 #import "ApplyViewController.h"
-#import "EMSearchBar.h"
-#import "EMSearchDisplayController.h"
+
+
 #import "UserProfileManager.h"
 #import "RealtimeSearchUtil.h"
 
-@interface ContactListViewController ()<BaseTableCellDelegate,UIActionSheetDelegate,EaseUserCellDelegate>
+@interface ContactListViewController ()<UIActionSheetDelegate,EaseUserCellDelegate>
 {
     // 长按cell，cell的index
     NSIndexPath *_currentLongPressIndex;
