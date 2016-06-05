@@ -114,67 +114,67 @@
     return _commentLabelsArray;
 }
 
-//- (void)setupWithLikeItemsArray:(NSArray *)likeItemsArray commentItemsArray:(NSArray *)commentItemsArray
-//{
-//    self.likeItemsArray = likeItemsArray;
-//    self.commentItemsArray = commentItemsArray;
-//    
-//    if (self.commentLabelsArray.count) {
-//        [self.commentLabelsArray enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
-//            [label sd_clearAutoLayoutSettings];
-//            label.hidden = YES; //重用时先隐藏所以评论label，然后根据评论个数显示label
-//        }];
-//    }
-//    
-//    CGFloat margin = 5;
-//    
-//    UIView *lastTopView = nil;
-//    
-//    if (likeItemsArray.count) {
-//        _likeLabel.sd_resetLayout
-//        .leftSpaceToView(self, margin)
-//        .rightSpaceToView(self, margin)
-//        .topSpaceToView(lastTopView, 10)
-//        .autoHeightRatio(0);
-//        
-//        _likeLabel.isAttributedContent = YES;
-//        
-//        lastTopView = _likeLabel;
-//        
-//    } else {
-//        _likeLabel.sd_resetLayout
-//        .heightIs(0);
-//    }
-//    
-//    
-//    if (self.commentItemsArray.count && self.likeItemsArray.count) {
-//        _likeLableBottomLine.sd_resetLayout
-//        .leftSpaceToView(self, 0)
-//        .rightSpaceToView(self, 0)
-//        .heightIs(1)
-//        .topSpaceToView(lastTopView, 3);
-//        
-//        lastTopView = _likeLableBottomLine;
-//    } else {
-//        _likeLableBottomLine.sd_resetLayout.heightIs(0);
-//    }
-//    
-//    for (int i = 0; i < self.commentItemsArray.count; i++) {
-//        UILabel *label = (UILabel *)self.commentLabelsArray[i];
-//        label.hidden = NO;
-//        CGFloat topMargin = (i == 0 && likeItemsArray.count == 0) ? 10 : 5;
-//        label.sd_layout
-//        .leftSpaceToView(self, 8)
-//        .rightSpaceToView(self, 5)
-//        .topSpaceToView(lastTopView, topMargin)
-//        .autoHeightRatio(0);
-//        
-//        label.isAttributedContent = YES;
-//        lastTopView = label;
-//    }
-//    
-//    [self setupAutoHeightWithBottomView:lastTopView bottomMargin:6];
-//}
+- (void)setupWithLikeItemsArray:(NSArray *)likeItemsArray commentItemsArray:(NSArray *)commentItemsArray
+{
+    self.likeItemsArray = likeItemsArray;
+    self.commentItemsArray = commentItemsArray;
+    
+    if (self.commentLabelsArray.count) {
+        [self.commentLabelsArray enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+            [label sd_clearAutoLayoutSettings];
+            label.hidden = YES; //重用时先隐藏所以评论label，然后根据评论个数显示label
+        }];
+    }
+    
+    CGFloat margin = 5;
+    
+    UIView *lastTopView = nil;
+    
+    if (likeItemsArray.count) {
+        _likeLabel.sd_resetLayout
+        .leftSpaceToView(self, margin)
+        .rightSpaceToView(self, margin)
+        .topSpaceToView(lastTopView, 10)
+        .autoHeightRatio(0);
+        
+        _likeLabel.isAttributedContent = YES;
+        
+        lastTopView = _likeLabel;
+        
+    } else {
+        _likeLabel.sd_resetLayout
+        .heightIs(0);
+    }
+    
+    
+    if (self.commentItemsArray.count && self.likeItemsArray.count) {
+        _likeLableBottomLine.sd_resetLayout
+        .leftSpaceToView(self, 0)
+        .rightSpaceToView(self, 0)
+        .heightIs(1)
+        .topSpaceToView(lastTopView, 3);
+        
+        lastTopView = _likeLableBottomLine;
+    } else {
+        _likeLableBottomLine.sd_resetLayout.heightIs(0);
+    }
+    
+    for (int i = 0; i < self.commentItemsArray.count; i++) {
+        UILabel *label = (UILabel *)self.commentLabelsArray[i];
+        label.hidden = NO;
+        CGFloat topMargin = (i == 0 && likeItemsArray.count == 0) ? 10 : 5;
+        label.sd_layout
+        .leftSpaceToView(self, 8)
+        .rightSpaceToView(self, 5)
+        .topSpaceToView(lastTopView, topMargin)
+        .autoHeightRatio(0);
+        
+        label.isAttributedContent = YES;
+        lastTopView = label;
+    }
+    
+    [self setupAutoHeightWithBottomView:lastTopView bottomMargin:6];
+}
 
 - (void)setFrame:(CGRect)frame
 {
@@ -196,15 +196,15 @@
 - (NSMutableAttributedString *)generateAttributedStringWithCommentItemModel:(ZYTimeLineCellCommentItemModel *)model
 {
     NSString *text = model.firstUserName;
-    if (model.secondUserName.length) {
-        text = [text stringByAppendingString:[NSString stringWithFormat:@"回复%@", model.secondUserName]];
-    }
+//    if (model.secondUserName.length) {
+//        text = [text stringByAppendingString:[NSString stringWithFormat:@"回复%@", model.secondUserName]];
+//    }
     text = [text stringByAppendingString:[NSString stringWithFormat:@"：%@", model.commentString]];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:text];
-    [attString setAttributes:@{NSLinkAttributeName : model.firstUserId} range:[text rangeOfString:model.firstUserName]];
-    if (model.secondUserName) {
-        [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
-    }
+//    [attString setAttributes:@{NSLinkAttributeName : model.firstUserId} range:[text rangeOfString:model.firstUserName]];
+//    if (model.secondUserName) {
+//        [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
+//    }
     return attString;
 }
 
@@ -213,7 +213,7 @@
     NSString *text = model.userName;
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:text];
     UIColor *highLightColor = [UIColor blueColor];
-    [attString setAttributes:@{NSForegroundColorAttributeName : highLightColor, NSLinkAttributeName : model.userId} range:[text rangeOfString:model.userName]];
+   [attString setAttributes:@{NSForegroundColorAttributeName : highLightColor, NSLinkAttributeName : model.userName} range:[text rangeOfString:model.userName]];
     
     return attString;
 }
@@ -223,7 +223,7 @@
 
 - (void)didClickLink:(MLLink *)link linkText:(NSString *)linkText linkLabel:(MLLinkLabel *)linkLabel
 {
-    NSLog(@"%@", link.linkValue);
+//    NSLog(@"%@", link.linkValue);
 }
 
 

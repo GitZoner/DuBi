@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AVOSCloud/AVOSCloud.h>
 @protocol ZYTimeLineCellDelegate <NSObject>
 
 - (void)didClickLikeButtonInCell:(UITableViewCell *)cell;
@@ -32,6 +32,10 @@
 @property (nonatomic, copy) void (^moreButtonClickedBlock)(NSIndexPath *indexPath);
 
 @property (nonatomic, copy) void (^didClickCommentLabelBlock)(NSString *commentId, CGRect rectInWindow, NSIndexPath *indexPath);
+
+/*avObject对象*/
+
+@property (strong, nonatomic) AVObject *contentAVObject;
 
 
 @end

@@ -1,25 +1,22 @@
 //
-//  ImageEditVC.m
-//  Buggy
+//  ZDSendImageViewController.m
+//  DuBi
 //
-//  Created by wuning on 16/5/10.
-//  Copyright © 2016年 ningwu. All rights reserved.
+//  Created by lanou3g on 16/5/31.
+//  Copyright © 2016年 JasonTian. All rights reserved.
 //
 
-#import "ImageEditVC.h"
+#import "ZDSendImageViewController.h"
 
-@interface ImageEditVC ()
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@interface ZDSendImageViewController ()
 
 @end
 
-@implementation ImageEditVC
+@implementation ZDSendImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.imgView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgView setImage:self.image];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
