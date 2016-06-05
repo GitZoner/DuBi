@@ -14,8 +14,14 @@
 #import <POP.h>
 #import <SDImageCache.h>
 #import "CustomNavigationController.h"
+#import "ZDPersonInfo.h"
+#import "JTCircleMainController.h"
+#import "AppDelegate.h"
 #import "Main_marco.h"
-#import <UIImageView+WebCache.h>
+
+#define kScreen_w [UIScreen mainScreen].bounds.size.width
+#define kScreen_h [UIScreen mainScreen].bounds.size.height
+
 @interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 // tableVIew
 @property(strong,nonatomic)UITableView * tableView;
@@ -33,11 +39,12 @@
 // 缓存大小
 @property(assign,nonatomic)CGFloat size;
 
+// 夜间模式用
+@property(strong,nonatomic)UIView * drakView;
+
 @end
 
 @implementation ZDUserChangeViewController
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,6 +55,7 @@
     [self addTopView];
     // 初始化tableView
     [self creatTableView];
+    
     
     // 图片缓存 // 图片缓存大小
 //    NSUInteger size = [SDImageCache sharedImageCache].getSize;
@@ -60,6 +68,7 @@
     self.typeArray = @[@"个人资料",@"都圈",@"更换主题",@"清除缓存",@"安全设置"];
     self.images = @[@"ziliao.png",@"quanzi.png",@"zhuti.png",@"huancun.png",@"anquan.png"];
 }
+
 
 #pragma mark --- 添加顶部视图
 -(void)addTopView
@@ -75,9 +84,6 @@
     [self.ChangeView.nameButton
      addGestureRecognizer:tap];
 }
-
-
-
 
 -(void)tapAction
 {
@@ -101,28 +107,28 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"] && kUserDefaultGetValue(kUserInfoKey_userAlias) != nil) {
-        [self.ChangeView.nameButton setTitle:kUserDefaultGetValue(kUserInfoKey_userAlias) forState:(UIControlStateNormal)];
-    }else {
-        [self.ChangeView.nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
+    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
+        // 刷新数据
+        [self reloadDataAction];
     }
-    
- 
-
-    
-        
-        
-        NSLog(@"**********%@",kUserDefaultGetValue(kUserInfoKey_userAlias));
-        [self.ChangeView.imageViewForUser  sd_setImageWithURL:[NSURL URLWithString:kUserDefaultGetValue(kUserInfoKey_protrait)]];
-  
 }
+
+
+#pragma mark --- 刷新uUI
+-(void)reloadDataAction
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 
 #pragma mark --- 初始化TableView
 
 -(void)creatTableView
 {
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,109,self.view.height , self.view.height - 64) style:(UITableViewStylePlain)];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    // self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 代理
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -148,11 +154,22 @@
 #pragma mark --- tableViewDelegate 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"])
+    {
+        return 2;
+    }
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"])
+        {
+            if (section == 0) {
+                return self.images.count;
+            }
+            return 1;
+        }
     return self.images.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -162,17 +179,75 @@
     NSString * tupianStr = _images[indexPath.row];
     cell.tuBImg.image = [UIImage imageNamed:tupianStr];
     cell.contentlabel.text = self.typeArray[indexPath.row];
+    // 清楚缓存
     if (indexPath.section == 0 && indexPath.row == 3) {
-//        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(cell.width /2 , 0, cell.width /2, cell.height)];
-//        label.textAlignment = NSTextAlignmentRight;
-//        [cell.contentView addSubview:label];
+
+        // 获取缓存
         self.size =[SDImageCache sharedImageCache].getSize/1000.0/1000;
+        // 清楚缓存
         cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
+    }
+    
+    // 夜间模式
+    if (indexPath.row == 2 && indexPath.section == 0) {
+        
+        UISwitch * swi = [[UISwitch alloc]initWithFrame:CGRectMake(kScreen_w - 60, 5, 50, 30)];
+        // 设置颜色
+        swi.onTintColor = [UIColor greenColor];
+        swi.tag = indexPath.row;
+        [swi addTarget:self action:@selector(changeOption:) forControlEvents:(UIControlEventValueChanged)];
+        [cell.contentView addSubview:swi];
+    }
+    // 退出登录
+    if (indexPath.row == 0 && indexPath.section == 1)
+    {
+        cell.backgroundColor = [UIColor redColor];
+        cell.contentlabel.textColor = [UIColor whiteColor];
+        cell.contentlabel.text = @"退出登录";
+        cell.contentlabel.center = cell.center;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }
 //     cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
+static UIWindow * window;
+// 实现swi方法(设置夜间模式)
+-(void)changeOption:(UISwitch *)swi
+{
+
+    //    UIApplication * app = [UIApplication sharedApplication];
+    //    AppDelegate * delegate = app.delegate;
+    if(swi.on == NO)
+    {
+        [self.drakView removeFromSuperview];
+    window.hidden = YES;
+    }
+    if(swi.on) {
+        
+       
+        window  = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        // 设置view的背景色
+        self.drakView = [[UIView alloc]initWithFrame:self.view.bounds];
+        self.drakView.backgroundColor = [UIColor blackColor];
+        self.drakView.userInteractionEnabled = NO;
+        window.hidden = NO;
+        window.userInteractionEnabled = NO;
+        self.drakView.alpha = 0.3;
+        [window addSubview:self.drakView];
+    }
+
+}
+
+
+/**
+ *  cell的点击事件
+ *
+ *  @param tableView
+ *  @param indexPath
+ */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 清楚缓存
@@ -192,10 +267,39 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     }else if(indexPath.section == 0 && indexPath.row == 0 ){
-        [self.navigationController pushViewController:[UIViewController new] animated:YES];
+        
+        self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
+        if ([self.hasSign isEqualToString:@"YES"] == 0) {
+            [self.navigationController pushViewController:[ZDPersonInfo new] animated:YES];
+        }else{
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        
+    }else if(indexPath.section == 0 && indexPath.row == 1){
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"] isEqualToString:@"YES"] == 0) {
+            JTCircleMainController * jtclVC = [JTCircleMainController new];
+            [self.navigationController pushViewController:jtclVC animated:YES];
+        }else{
+           
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
-    
-    
+   
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"NO" ]) {
+        if (indexPath.row == 0 && indexPath.section == 1)
+        {
+            // 退出登录
+            NSString * logStr = @"NO";
+            [[NSUserDefaults standardUserDefaults] setObject:logStr forKey:@"hasSign"];
+        }
+    }
 }
 
 #pragma mark --- 父类scorllView的delegate
@@ -212,7 +316,7 @@
 {
     
     CGPoint point = scrollView.contentOffset;
-    NSLog(@"%zd",point.y);
+   // NSLog(@"%zd",point.y);
     if (point.y <= 0&& point.y >= -48 * 2)
     {
         NSLog(@"1");
@@ -229,7 +333,7 @@
     }
     
     else if(0 < point.y && point.y < self.view.height * 2 / 7 - 64){
-       NSLog(@"2");
+     //  NSLog(@"2");
         kImageViewForHeader.frame = CGRectMake(0, -48-point.y, self.view.width + point.y, self.view.height * 2 / 7 + 48 * 3);
         
         kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height -55 -48, 45, 45);
@@ -250,7 +354,7 @@
     }
     else if (point.y >= self.view.height * 2 / 7 - 64)
     {
-        NSLog(@"3");
+       // NSLog(@"3");
         
             kImageViewForHeader.frame = CGRectMake(0,  - (self.view.height * 2 / 7 - 64), self.view.width, self.view.height * 2 / 7 + 48 * 2);
             kImageViewForUser.frame = CGRectMake(10 + 20, kImageViewForHeader.height - 55 - 48, 45, 45);

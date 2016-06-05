@@ -59,7 +59,7 @@
     }
     // [self playerTools];
     
-     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"wangluolianjieTB"]];
+     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:listModel.image1] placeholderImage:[UIImage imageNamed:@"video_placeholder"]];
    
     [self.dingButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
     [self.caiButton setTitle:_listModel.cai forState:(UIControlStateNormal)];

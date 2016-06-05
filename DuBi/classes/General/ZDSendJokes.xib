@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSendJokes">
             <connections>
                 <outlet property="textView" destination="32u-ec-yZU" id="Fhg-cJ-3uU"/>
+                <outlet property="tipLabel" destination="VMM-5T-eDh" id="7Cc-ZJ-SD0"/>
                 <outlet property="view" destination="yxy-lO-pvp" id="a5n-vw-Q7P"/>
             </connections>
         </placeholder>
@@ -24,7 +25,7 @@
                         <constraint firstAttribute="height" constant="1" id="nY3-2n-kzA"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="说点什么吧..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32u-ec-yZU">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32u-ec-yZU">
                     <rect key="frame" x="0.0" y="64" width="320" height="170"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,7 +93,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                     <state key="normal" title="   地点">
-                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="placeDian:" destination="-1" eventType="touchUpInside" id="NcO-pr-iM8"/>
@@ -108,7 +109,7 @@
                                 <constraint firstAttribute="width" constant="51" id="oye-dY-RwC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBR-yS-owa">
@@ -156,11 +157,18 @@
                         <action selector="fenXiangQQ:" destination="-1" eventType="touchUpInside" id="ib6-0z-T9l"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说点什么吧..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMM-5T-eDh">
+                    <rect key="frame" x="5" y="70" width="83" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6ey-9k-4um" secondAttribute="trailing" id="01F-5s-T0Z"/>
                 <constraint firstItem="RUi-e4-DCN" firstAttribute="leading" secondItem="yxy-lO-pvp" secondAttribute="leading" id="1hY-nU-D23"/>
+                <constraint firstItem="VMM-5T-eDh" firstAttribute="leading" secondItem="yxy-lO-pvp" secondAttribute="leading" constant="5" id="2Kl-xs-SUR"/>
                 <constraint firstItem="t5m-WB-9ce" firstAttribute="leading" secondItem="yxy-lO-pvp" secondAttribute="leading" constant="5" id="3Nu-XV-x9T"/>
                 <constraint firstItem="9t6-jn-2mm" firstAttribute="leading" secondItem="yxy-lO-pvp" secondAttribute="leading" id="58r-tw-IYJ"/>
                 <constraint firstItem="4x8-HZ-JSG" firstAttribute="top" secondItem="9t6-jn-2mm" secondAttribute="bottom" constant="5" id="5K9-E5-qGd"/>
@@ -191,6 +199,7 @@
                 <constraint firstItem="32u-ec-yZU" firstAttribute="top" secondItem="t5m-WB-9ce" secondAttribute="bottom" id="qM4-By-g1W"/>
                 <constraint firstAttribute="trailing" secondItem="gGo-Yp-O0H" secondAttribute="trailing" constant="10" id="qqH-J1-2bt"/>
                 <constraint firstAttribute="trailing" secondItem="t5m-WB-9ce" secondAttribute="trailing" id="qqW-dS-Z26"/>
+                <constraint firstItem="VMM-5T-eDh" firstAttribute="top" secondItem="RUi-e4-DCN" secondAttribute="bottom" constant="5" id="vGr-zL-BJK"/>
                 <constraint firstAttribute="trailing" secondItem="32u-ec-yZU" secondAttribute="trailing" id="y8M-aO-Izg"/>
                 <constraint firstAttribute="trailing" secondItem="RUi-e4-DCN" secondAttribute="trailing" id="yWT-i2-dVg"/>
             </constraints>
