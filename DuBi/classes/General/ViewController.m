@@ -43,7 +43,7 @@
    //  ImageEditVC *editVC = [[ImageEditVC alloc]init];
   //  editVC.image = image;
     ZDSendPicture * picture = [[ZDSendPicture alloc]init];
-    picture.picture.image = image;
+   picture.image = image;
     [self.navigationController pushViewController:picture animated:YES];
 }
 
