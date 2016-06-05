@@ -22,7 +22,7 @@
 #import "JTNotificationViewController.h"
 #import "EaseUsersListViewController.h"
 #import "JTBuddyManager.h"
-@interface JTCircleMainController ()<UIScrollViewDelegate>
+@interface JTCircleMainController ()<UIScrollViewDelegate,JTSegmentControlDelegate>
 
 @property (strong,nonatomic)JTSegmentControl *segmentControl;
 @property (strong,nonatomic)UIScrollView *scrollView;
@@ -65,7 +65,7 @@
     navgationView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     [self.view addSubview:navgationView];
     
-    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"消息",@"朋友",@"关注",@"其他1",@"其他2",@"其他3",@"其他4",@"其他5",@"其他6", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(50, 20) titleFont:[UIFont systemFontOfSize:13]];
+    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(50, 20) titleFont:[UIFont systemFontOfSize:13]];
     self.navigationItem.titleView = self.segmentControl;
     [self.segmentControl.searchButton  addTarget:self action:@selector(pushSearchVCACtion:) forControlEvents:(UIControlEventTouchUpInside)];
    //  [self.view addSubview:self.segmentControl];
@@ -95,19 +95,19 @@
 
 // 添加子控制器
 -(void)setUpChildControllers {
-
+    // 动态
     self.circleViewController = [ZYTimeLineTableViewController new] ;
     [self addChildViewController:self.circleViewController];
-
+    // 会话
     self.conversationController = [ConversationListController new] ;
     [self addChildViewController:self.conversationController];
-    
+    // 好友
     self.userListController = [EaseUsersListViewController new] ;
     [self addChildViewController:self.userListController];
-    
+    // 通知
     self.noticeMessageController = [JTNotificationViewController new] ;
     [self addChildViewController:self.circleViewController];
-    
+    // 关注
     self.attentionController = [UIViewController new] ;
     [self addChildViewController:self.circleViewController];
 
@@ -116,10 +116,19 @@
     
 }
 
+#pragma mark - JTSegmentControllerDelegate
+-(void)segment:(JTSegmentControl *)segment didSelectColumnIndex:(NSUInteger)index {
+    // 当点击button的时候，使scrollView进行偏移
+    self.scrollView.contentOffset = CGPointMake(index * self.scrollView.width, 0);
+}
+
+
 
  // 向ScrollView中添加子控制器的视图
 
 -(void)addChildControllerView {
+    
+    // 动态
     self.circleViewController.view.frame = self.view.bounds;
     //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
     UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
@@ -128,22 +137,37 @@
     self.circleViewController.tableView.contentInset = edgeInset ;
     [self.scrollView addSubview:self.circleViewController.view];
     
+    // 会话
     self.conversationController.view.frame = self.view.bounds;
     self.conversationController.view.x = CGRectGetMaxX(self.circleViewController.view.frame);
     [self.scrollView addSubview:self.conversationController.view];
     
+    // 好友列表
     self.userListController.view.frame = self.view.bounds;
     self.userListController.view.x = CGRectGetMaxX(self.conversationController.view.frame);
     [self.scrollView addSubview:self.userListController.view];
     
+    // 通知
     self.noticeMessageController.view.frame = self.view.bounds;
     self.noticeMessageController.view.x = CGRectGetMaxX(self.userListController.view.frame);
     [self.scrollView addSubview:self.noticeMessageController.view];
+    
+    // 关注
     
     
 }
 
 #pragma mark - UIScrollViewDelegate
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    
+    NSInteger index = self.scrollView.contentOffset.x / self.scrollView.width;
+    
+    UIViewController *childVC = self.childViewControllers[index];
+    childVC.view.x = self.scrollView.contentOffset.x;
+    [self.scrollView addSubview:childVC.view];
+}
+
 
 - (void)searchButttonAction:(UIButton *)button {
     

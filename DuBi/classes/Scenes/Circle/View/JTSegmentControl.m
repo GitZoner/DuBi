@@ -139,6 +139,9 @@
 
 -(void)clickButtonAction:(UIButton *)button {
     self.selectedButton = button;
+    if (_delegate && [_delegate respondsToSelector:@selector(segment:didSelectColumnIndex:)]) {
+        [_delegate segment:self didSelectColumnIndex:button.tag];
+    }
 }
 
 @end
