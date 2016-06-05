@@ -129,13 +129,15 @@
 -(void)addChildControllerView {
     
     // 动态
-    self.circleViewController.view.frame = self.view.bounds;
-    //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
-    UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
-    edgeInset.top = 44;
-    edgeInset.bottom = 49;
-    self.circleViewController.tableView.contentInset = edgeInset ;
-    [self.scrollView addSubview:self.circleViewController.view];
+//    self.circleViewController.view.frame = self.view.bounds;
+//    //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
+//    UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
+//    edgeInset.top = 44;
+//    edgeInset.bottom = 49;
+//    self.circleViewController.tableView.contentInset = edgeInset ;
+//    [self.scrollView addSubview:self.circleViewController.view];
+    UIView *view = [[UIView alloc] initWithFrame:self.scrollView.bounds];
+    [self.scrollView addSubview:view];
     
     // 会话
     self.conversationController.view.frame = self.view.bounds;

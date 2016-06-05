@@ -82,13 +82,13 @@
         button.frame = CGRectMake(self.itemSize.width * i, 0, self.itemSize.width, self.segmentSize.height - 2);
         [button setTitle:self.titleArray[i] forState:(UIControlStateNormal)];
         [button setTitleColor:self.normalColor forState:(UIControlStateNormal)];
-        [button addTarget:self action:@selector(clickButtonAction:) forControlEvents:(UIControlEventTouchDown)];
+        [button addTarget:self action:@selector(clickButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
         button.titleLabel.font = self.titleFont;
         button.tag = i;
         if (i == 0) {
             self.defaultIndex = 0;
             self.selectedButton = button;
-            self.selectedButton.enabled = NO;
+            self.selectedButton.enabled = YES;
             button.enabled = YES;
             [UIView animateWithDuration:0.25 animations:^{
                 CGPoint centerPoint = self.indicatorLine.center;
