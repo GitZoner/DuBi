@@ -131,13 +131,11 @@
     }
     
     if (model) {
-        if (_delegate && [_delegate respondsToSelector:@selector(userListViewController:didSelectUserModel:)]) {
-            [_delegate userListViewController:self didSelectUserModel:model];
-        } else {
+        
             EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
             viewController.title = model.nickname;
             [self.navigationController pushViewController:viewController animated:YES];
-        }
+        
     }}
 
 #pragma mark - data
@@ -161,7 +159,8 @@
             
             AVQuery *query = [AVQuery orQueryWithSubqueries:queruArray];
             [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-                
+                NSLog(@"好友个数 %ld",results.count);
+            
                 for(AVObject *buddy in results) {
                     id<IUserModel> model = nil;
                     model = [[EaseUserModel alloc] initWithBuddy:[buddy objectForKey:kUserInfoKey_telNum]];
@@ -171,9 +170,11 @@
                         [weakself.dataArray addObject:model];
                     }
                 }
+                
+                [weakself tableViewDidFinishTriggerHeader:YES reload:YES];
             }];
         }
-        [weakself tableViewDidFinishTriggerHeader:YES reload:YES];
+        
     });
 }
 
