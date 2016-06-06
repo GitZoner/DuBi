@@ -1088,6 +1088,7 @@
 		96123BDE1CFED1F300DF5631 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96123BDF1CFED1F300DF5631 /* ChatList */,
 				96123BE21CFED1F300DF5631 /* ChatView */,
 			);
@@ -1335,7 +1336,6 @@
 				96FB5C131CF6FF1D009A8BCF /* Helper */,
 				96FB5C161CF6FF1D009A8BCF /* Model */,
 				96FB5C221CF6FF1D009A8BCF /* Util */,
-				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96FB5C4C1CF6FF1D009A8BCF /* Views */,
 			);
 			path = EMUIKit;
@@ -1751,7 +1751,8 @@
 				96FB5C4A1CF6FF1D009A8BCF /* EaseViewController.h */,
 				96FB5C4B1CF6FF1D009A8BCF /* EaseViewController.m */,
 			);
-			path = ViewController;
+			name = ViewController;
+			path = ../EaseUI/EMUIKit/ViewController;
 			sourceTree = "<group>";
 		};
 		96FB5C4C1CF6FF1D009A8BCF /* Views */ = {
