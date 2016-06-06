@@ -308,7 +308,7 @@
                             atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                     animated:NO];
     CGPoint offSet = _collectionView.contentOffset;
-    if (page == 0) {
+    if (page == 0) { 
         [_collectionView setContentOffset:CGPointMake(0, 0) animated:NO];
     } else {
         [_collectionView setContentOffset:CGPointMake(CGRectGetWidth(self.frame)*((int)(offSet.x/CGRectGetWidth(self.frame))+1), 0) animated:NO];

@@ -42,8 +42,6 @@
         [XHToast showBottomWithText:@"登录失败，请稍后重试" bottomOffset:100 duration:3];
     }];
     
-
-
     [self.navigationController popToRootViewControllerAnimated:YES];
     
 }

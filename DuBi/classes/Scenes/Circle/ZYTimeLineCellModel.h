@@ -14,7 +14,7 @@
 
 
 /*用户名*/
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *userAlias;
 
 /*发表内容的类型*/
 @property (strong, nonatomic) NSString *publishType;
@@ -24,6 +24,8 @@
 
 /*发表图片*/
 @property (strong, nonatomic) NSArray *picNamesArray;
+/*当前时间*/
+@property (strong, nonatomic) NSDate *createdAt;
 
 
 //@property (nonatomic, copy) NSString *iconName;
@@ -43,7 +45,7 @@
 @interface ZYTimeLineCellLikeItemModel : NSObject
 
 @property (nonatomic, copy) NSString *userName;
-@property (nonatomic, copy) NSString *userId;
+//@property (nonatomic, copy) NSString *userId;
 
 @end
 
@@ -53,9 +55,9 @@
 @property (nonatomic, copy) NSString *commentString;
 
 @property (nonatomic, copy) NSString *firstUserName;
-@property (nonatomic, copy) NSString *firstUserId;
-
-@property (nonatomic, copy) NSString *secondUserName;
-@property (nonatomic, strong) NSString *secondUserId;
+//@property (nonatomic, copy) NSString *firstUserId;
+//
+//@property (nonatomic, copy) NSString *secondUserName;
+//@property (nonatomic, strong) NSString *secondUserId;
 
 @end

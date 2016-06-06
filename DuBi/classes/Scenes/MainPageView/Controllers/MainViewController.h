@@ -10,9 +10,9 @@
 
 @interface MainViewController : UIViewController
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *TopicButton;
-@property (weak, nonatomic) IBOutlet UIButton *PictureButton;
-@property (weak, nonatomic) IBOutlet UIButton *MovieButton;
-@property (weak, nonatomic) IBOutlet UIButton *MainPage;
+//@property (weak, nonatomic) IBOutlet UIButton *TopicButton;
+//@property (weak, nonatomic) IBOutlet UIButton *PictureButton;
+//@property (weak, nonatomic) IBOutlet UIButton *MovieButton;
+//@property (weak, nonatomic) IBOutlet UIButton *MainPage;
 
 @end

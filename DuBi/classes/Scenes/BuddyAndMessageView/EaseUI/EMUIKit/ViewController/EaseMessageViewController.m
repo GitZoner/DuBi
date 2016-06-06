@@ -25,6 +25,7 @@
 #import "EaseCustomMessageCell.h"
 #import "UIImage+EMGIF.h"
 #import "EaseLocalDefine.h"
+#import "Color_marco.h"
 
 #define KHintAdjustY    50
 
@@ -42,6 +43,8 @@
 @property (strong, nonatomic) id<IMessageModel> playingVoiceModel;
 @property (nonatomic) BOOL isKicked;
 @property (nonatomic) BOOL isPlayingAudio;
+
+@property (strong,nonatomic)UIView *navigationView;
 
 @end
 
@@ -78,15 +81,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:248 / 255.0 green:248 / 255.0 blue:248 / 255.0 alpha:1.0];
+    
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(goBackAction:)];
+    self.navigationController.navigationBar.tintColor =tGreenColor;
+    
+    self.hidesBottomBarWhenPushed = YES;
+
+    CGRect rect  = self.tableView.frame;
+    rect.origin.y = 64;
+    rect.size.height =  rect.size.height - 49;
+    self.tableView.frame = rect;
+    
+    self.navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen ].bounds.size.width, 64)];
+    [self.view addSubview:self.navigationView];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 150, 44)];
+    label.center = CGPointMake(self.navigationView.center .x, self.navigationView.bounds.size.height / 2 );
+    label.text = self.title;
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.navigationView addSubview:label];
+    
+    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    button.frame = CGRectMake(20, 20, 30, 30);
+    [button setImage:[UIImage imageNamed:@"back_icon"] forState:(UIControlStateNormal)];
+    [button addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.navigationView addSubview:button];
+    
+    
+    
+ 
+    self.view.backgroundColor = tGrayColor;
+    self.parentViewController.tabBarController.tabBar.hidden = YES;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //初始化页面
     CGFloat chatbarHeight = [EaseChatToolbar defaultHeight];
     EMChatToolbarType barType = self.conversation.type == EMConversationTypeChat ? EMChatToolbarTypeChat : EMChatToolbarTypeGroup;
-    self.chatToolbar = [[EaseChatToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - chatbarHeight, self.view.frame.size.width, chatbarHeight) type:barType];
-    self.chatToolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;    
+//    self.chatToolbar = [[EaseChatToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - chatbarHeight, self.view.frame.size.width, chatbarHeight) type:barType];
+//
+    self.chatToolbar = [[EaseChatToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-chatbarHeight, self.view.frame.size.width, chatbarHeight) type:barType];
+    self.chatToolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     
     //初始化手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyBoardHidden:)];
@@ -127,6 +164,13 @@
     [self tableViewDidTriggerHeaderRefresh];
 }
 
+-(void)goBackAction:(UIBarButtonItem *)buttonItem {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+
 - (void)setupEmotion
 {
     if ([self.dataSource respondsToSelector:@selector(emotionFormessageViewController:)]) {
@@ -165,7 +209,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+//    self.tabBarController.tabBar.hidden = YES;
     self.isViewDidAppear = YES;
     [[EaseSDKHelper shareHelper] setIsShowingimagePicker:NO];
     
@@ -178,6 +222,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+//    self.tabBarController.tabBar.hidden = NO;
     
     self.isViewDidAppear = NO;
     [[EMCDDeviceManager sharedInstance] disableProximitySensor];
@@ -303,7 +348,9 @@
     }
     
     CGRect tableFrame = self.tableView.frame;
-    tableFrame.size.height = self.view.frame.size.height - _chatToolbar.frame.size.height;
+    tableFrame.size.height = self.view.frame.size.height - _chatToolbar.frame.size.height - 49;
+    tableFrame.origin.y = 49;
+//    tableFrame.size.height = self.view.frame.size.height;
     self.tableView.frame = tableFrame;
     if ([chatToolbar isKindOfClass:[EaseChatToolbar class]]) {
         [(EaseChatToolbar *)self.chatToolbar setDelegate:self];

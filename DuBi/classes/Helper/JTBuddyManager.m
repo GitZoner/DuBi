@@ -77,6 +77,7 @@ singleton_implementation(JTBuddyManager);
                 AVObject *userInfo = [results firstObject];
                 [manager saveUserInfoToLocal:userInfo];
                 kUserDefaultSetValue(@"YES", kUserInfoKey_hasSign);
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginInNotification" object:nil];
                 successed();
             }
         }];

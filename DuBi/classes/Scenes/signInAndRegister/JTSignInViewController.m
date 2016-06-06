@@ -43,6 +43,11 @@
     if ([RegularUtils checkTelNumber:self.userNameTextField.text ]&& [RegularUtils checkPassword:self.passWordTextField.text]) {
         [[JTBuddyManager sharedJTBuddyManager] loginWithUsername:self.userNameTextField.text password:self.passWordTextField.text successed:^{
             [XHToast showBottomWithText:@"登录成功" bottomOffset:100 duration:3];
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(reloadView)]) {
+                [_delegate reloadView];
+            }
+
             [self.navigationController popToRootViewControllerAnimated:YES];
         } failed:^(NSError * error) {
             [XHToast showBottomWithText:error.domain bottomOffset:100 duration:0];

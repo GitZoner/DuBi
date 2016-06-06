@@ -16,6 +16,7 @@
 
 #import "ZYTimeLineCellOperationMenu.h"
 #import "Color_marco.h"
+#import "ZYGetObject.h"
 
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定
@@ -92,8 +93,8 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     }];
     
     _timeLabel = [UILabel new];
-    _timeLabel.font = [UIFont systemFontOfSize:13];
-    _timeLabel.textColor = [UIColor lightGrayColor];
+    _timeLabel.font = [UIFont systemFontOfSize:12];
+    _timeLabel.textColor = [UIColor blackColor];
     
     
     _operationMenu = [ZYTimeLineCellOperationMenu new];
@@ -149,7 +150,8 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     .leftEqualToView(_contentLabel)
     .topSpaceToView(_picContainerView, margin)
     .heightIs(15)
-    .autoHeightRatio(0);
+    .widthIs(120);
+//    .autoHeightRatio(0);
     
     _operationButton.sd_layout
     .rightSpaceToView(contentView, margin)
@@ -185,7 +187,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     _shouldOpenContentLabel = NO;
     
 //    _iconView.image = [UIImage imageNamed:model.iconName];
-    _nameLable.text = model.name;
+    _nameLable.text = model.userAlias;
     // 防止单行文本label在重用时宽度计算不准的问题
     [_nameLable sizeToFit];
     _contentLabel.text = model.msgContent;
@@ -227,8 +229,19 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     }
     
     [self setupAutoHeightWithBottomView:bottomView bottomMargin:15];
+#warning 获取系统时间
+   
+        
+         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat: @"yyyy/MM/dd HH:mm:ss"];
     
-    _timeLabel.text = @"1分钟前";
+        NSString *dateString = [dateFormatter stringFromDate:_model.createdAt];
+        _timeLabel.text = dateString;
+    
+        
+        
+   
+   
 }
 
 - (void)setFrame:(CGRect)frame

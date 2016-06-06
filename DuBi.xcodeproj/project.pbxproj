@@ -210,6 +210,24 @@
 		96FC7CEF1D03D30D00EEABAA /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7CED1D03D30D00EEABAA /* SessionCell.m */; };
 		96FC7CF01D03D30D00EEABAA /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7CEE1D03D30D00EEABAA /* SessionCell.xib */; };
 		96FC7CF31D03D33100EEABAA /* JTNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7CF21D03D33100EEABAA /* JTNotificationModel.m */; };
+		96FC7CF71D03FE6200EEABAA /* ZDPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7CF51D03FE6200EEABAA /* ZDPersonInfo.m */; };
+		96FC7CF81D03FE6200EEABAA /* ZDPersonInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7CF61D03FE6200EEABAA /* ZDPersonInfo.xib */; };
+		96FC7D011D03FF2400EEABAA /* ZDPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7CFF1D03FF2400EEABAA /* ZDPersonInfoCell.m */; };
+		96FC7D021D03FF2400EEABAA /* ZDPersonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D001D03FF2400EEABAA /* ZDPersonInfoCell.xib */; };
+		96FC7D061D03FFE500EEABAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D041D03FFE500EEABAA /* ViewController.m */; };
+		96FC7D071D03FFE500EEABAA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D051D03FFE500EEABAA /* ViewController.xib */; };
+		96FC7D1B1D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D0A1D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
+		96FC7D1C1D04010300EEABAA /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D0C1D04010300EEABAA /* AlbumPhotoCell.m */; };
+		96FC7D1D1D04010300EEABAA /* AlbumPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D0D1D04010300EEABAA /* AlbumPhotoCell.xib */; };
+		96FC7D1E1D04010300EEABAA /* CAM1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D0E1D04010300EEABAA /* CAM1.png */; };
+		96FC7D1F1D04010300EEABAA /* ImageEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D101D04010300EEABAA /* ImageEditVC.m */; };
+		96FC7D201D04010300EEABAA /* ImageEditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D111D04010300EEABAA /* ImageEditVC.xib */; };
+		96FC7D211D04010300EEABAA /* MutiCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D131D04010300EEABAA /* MutiCollectionLayout.m */; };
+		96FC7D221D04010300EEABAA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D151D04010300EEABAA /* UIImage+Additions.m */; };
+		96FC7D231D04010300EEABAA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D171D04010300EEABAA /* UIView+Additions.m */; };
+		96FC7D241D04010300EEABAA /* WNImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC7D191D04010300EEABAA /* WNImagePicker.m */; };
+		96FC7D251D04010300EEABAA /* WNImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D1A1D04010300EEABAA /* WNImagePicker.xib */; };
+		96FC7D271D040CAD00EEABAA /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96FC7D261D040CAD00EEABAA /* EaseUIResource.bundle */; };
 		96FD78781CED92FE000FCB3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78771CED92FE000FCB3C /* main.m */; };
 		96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD787F1CED92FE000FCB3C /* Main.storyboard */; };
 		96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD78841CED92FE000FCB3C /* LaunchScreen.storyboard */; };
@@ -233,6 +251,11 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C25E83901D041A9D0079A08F /* ZDVisitingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */; };
+		C25E83911D041A9D0079A08F /* ZDVisitingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */; };
+		C25E839A1D0428A90079A08F /* ZDVisitingIdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83991D0428A90079A08F /* ZDVisitingIdView.m */; };
+		C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */; };
+		C25E839F1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */; };
 		C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422251CF975E300E8F9A6 /* LWNDataBase.m */; };
 		C284222C1CF975E300E8F9A6 /* LWNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422271CF975E300E8F9A6 /* LWNTableView.m */; };
 		C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422291CF975E300E8F9A6 /* PictureHandle.m */; };
@@ -266,10 +289,6 @@
 		C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */; };
 		C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE8001CFABF7600F2872D /* ZDChangeView.m */; };
 		C2BBD9561D00541D008F0008 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD9551D00541D008F0008 /* CustomNavigationController.m */; };
-		C2BBD95D1D006AB6008F0008 /* ZDPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */; };
-		C2BBD95E1D006AB6008F0008 /* ZDPersonInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */; };
-		C2BBD9621D007514008F0008 /* ZDPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */; };
-		C2BBD9631D007514008F0008 /* ZDPersonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
 		C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C5994B1CFDC68400D69114 /* ZDPlayVedioViewController.m */; };
@@ -277,19 +296,6 @@
 		C2DEA0731CF2F1EE002E1120 /* LWNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0721CF2F1EE002E1120 /* LWNCustomView.m */; };
 		C2E0C4811CF05636006CCD96 /* ZDCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */; };
 		C2E33A7E1D01A02500BB4C67 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E33A7C1D019F6100BB4C67 /* MobileCoreServices.framework */; };
-		C2E33A871D01CAFF00BB4C67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A861D01CAFF00BB4C67 /* ViewController.m */; };
-		C2E33A9B1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A8A1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
-		C2E33A9C1D01CBB000BB4C67 /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A8C1D01CBB000BB4C67 /* AlbumPhotoCell.m */; };
-		C2E33A9D1D01CBB000BB4C67 /* AlbumPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E33A8D1D01CBB000BB4C67 /* AlbumPhotoCell.xib */; };
-		C2E33A9E1D01CBB000BB4C67 /* CAM1.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E33A8E1D01CBB000BB4C67 /* CAM1.png */; };
-		C2E33A9F1D01CBB000BB4C67 /* ImageEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A901D01CBB000BB4C67 /* ImageEditVC.m */; };
-		C2E33AA01D01CBB000BB4C67 /* ImageEditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E33A911D01CBB000BB4C67 /* ImageEditVC.xib */; };
-		C2E33AA11D01CBB000BB4C67 /* MutiCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A931D01CBB000BB4C67 /* MutiCollectionLayout.m */; };
-		C2E33AA21D01CBB000BB4C67 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A951D01CBB000BB4C67 /* UIImage+Additions.m */; };
-		C2E33AA31D01CBB000BB4C67 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A971D01CBB000BB4C67 /* UIView+Additions.m */; };
-		C2E33AA41D01CBB000BB4C67 /* WNImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E33A991D01CBB000BB4C67 /* WNImagePicker.m */; };
-		C2E33AA51D01CBB000BB4C67 /* WNImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E33A9A1D01CBB000BB4C67 /* WNImagePicker.xib */; };
-		C2E33AA71D01CC9D00BB4C67 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */; };
 		C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */; };
 		C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25261CFD2BB200071078 /* ZDSendJokes.m */; };
 		C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */; };
@@ -710,6 +716,34 @@
 		96FC7CEE1D03D30D00EEABAA /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		96FC7CF11D03D33100EEABAA /* JTNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNotificationModel.h; sourceTree = "<group>"; };
 		96FC7CF21D03D33100EEABAA /* JTNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNotificationModel.m; sourceTree = "<group>"; };
+		96FC7CF41D03FE6200EEABAA /* ZDPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDPersonInfo.h; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfo.h; sourceTree = SOURCE_ROOT; };
+		96FC7CF51D03FE6200EEABAA /* ZDPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDPersonInfo.m; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfo.m; sourceTree = SOURCE_ROOT; };
+		96FC7CF61D03FE6200EEABAA /* ZDPersonInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDPersonInfo.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfo.xib; sourceTree = SOURCE_ROOT; };
+		96FC7CFE1D03FF2400EEABAA /* ZDPersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDPersonInfoCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.h; sourceTree = SOURCE_ROOT; };
+		96FC7CFF1D03FF2400EEABAA /* ZDPersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDPersonInfoCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.m; sourceTree = SOURCE_ROOT; };
+		96FC7D001D03FF2400EEABAA /* ZDPersonInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDPersonInfoCell.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.xib; sourceTree = SOURCE_ROOT; };
+		96FC7D031D03FFE500EEABAA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		96FC7D041D03FFE500EEABAA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		96FC7D051D03FFE500EEABAA /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		96FC7D091D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		96FC7D0A1D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		96FC7D0B1D04010300EEABAA /* AlbumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotoCell.h; sourceTree = "<group>"; };
+		96FC7D0C1D04010300EEABAA /* AlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoCell.m; sourceTree = "<group>"; };
+		96FC7D0D1D04010300EEABAA /* AlbumPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumPhotoCell.xib; sourceTree = "<group>"; };
+		96FC7D0E1D04010300EEABAA /* CAM1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAM1.png; sourceTree = "<group>"; };
+		96FC7D0F1D04010300EEABAA /* ImageEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditVC.h; sourceTree = "<group>"; };
+		96FC7D101D04010300EEABAA /* ImageEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditVC.m; sourceTree = "<group>"; };
+		96FC7D111D04010300EEABAA /* ImageEditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditVC.xib; sourceTree = "<group>"; };
+		96FC7D121D04010300EEABAA /* MutiCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutiCollectionLayout.h; sourceTree = "<group>"; };
+		96FC7D131D04010300EEABAA /* MutiCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutiCollectionLayout.m; sourceTree = "<group>"; };
+		96FC7D141D04010300EEABAA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		96FC7D151D04010300EEABAA /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		96FC7D161D04010300EEABAA /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		96FC7D171D04010300EEABAA /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		96FC7D181D04010300EEABAA /* WNImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNImagePicker.h; sourceTree = "<group>"; };
+		96FC7D191D04010300EEABAA /* WNImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNImagePicker.m; sourceTree = "<group>"; };
+		96FC7D1A1D04010300EEABAA /* WNImagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WNImagePicker.xib; sourceTree = "<group>"; };
+		96FC7D261D040CAD00EEABAA /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
 		96FD78731CED92FE000FCB3C /* DuBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD78771CED92FE000FCB3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96FD78801CED92FE000FCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -752,6 +786,14 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C25E838D1D041A9D0079A08F /* ZDVisitingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDVisitingTableViewCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDVisitingTableViewCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDVisitingTableViewCell.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C25E83981D0428A90079A08F /* ZDVisitingIdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDVisitingIdView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.h; sourceTree = SOURCE_ROOT; };
+		C25E83991D0428A90079A08F /* ZDVisitingIdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDVisitingIdView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.m; sourceTree = SOURCE_ROOT; };
+		C25E839B1D042AB20079A08F /* ZDVisitingIdViewCotnroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDVisitingIdViewCotnroller.h; sourceTree = "<group>"; };
+		C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDVisitingIdViewCotnroller.m; sourceTree = "<group>"; };
+		C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDVisitingIdViewCotnroller.xib; sourceTree = "<group>"; };
 		C28422241CF975E300E8F9A6 /* LWNDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNDataBase.h; sourceTree = "<group>"; };
 		C28422251CF975E300E8F9A6 /* LWNDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNDataBase.m; sourceTree = "<group>"; };
 		C28422261CF975E300E8F9A6 /* LWNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNTableView.h; sourceTree = "<group>"; };
@@ -811,12 +853,6 @@
 		C2AEE8001CFABF7600F2872D /* ZDChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDChangeView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.m; sourceTree = SOURCE_ROOT; };
 		C2BBD9541D00541D008F0008 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		C2BBD9551D00541D008F0008 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
-		C2BBD95A1D006AB6008F0008 /* ZDPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPersonInfo.h; sourceTree = "<group>"; };
-		C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPersonInfo.m; sourceTree = "<group>"; };
-		C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPersonInfo.xib; sourceTree = "<group>"; };
-		C2BBD95F1D007514008F0008 /* ZDPersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDPersonInfoCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.h; sourceTree = SOURCE_ROOT; };
-		C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDPersonInfoCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.m; sourceTree = SOURCE_ROOT; };
-		C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDPersonInfoCell.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDPersonInfoCell.xib; sourceTree = SOURCE_ROOT; };
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
 		C2C33E131CF5E37B00D3564D /* ZDPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishController.m; sourceTree = "<group>"; };
 		C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishController.xib; sourceTree = "<group>"; };
@@ -829,27 +865,6 @@
 		C2E0C47C1CF05636006CCD96 /* ZDCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomButton.h; sourceTree = "<group>"; };
 		C2E0C47D1CF05636006CCD96 /* ZDCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomButton.m; sourceTree = "<group>"; };
 		C2E33A7C1D019F6100BB4C67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		C2E33A851D01CAFF00BB4C67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C2E33A861D01CAFF00BB4C67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C2E33A891D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
-		C2E33A8A1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
-		C2E33A8B1D01CBB000BB4C67 /* AlbumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotoCell.h; sourceTree = "<group>"; };
-		C2E33A8C1D01CBB000BB4C67 /* AlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoCell.m; sourceTree = "<group>"; };
-		C2E33A8D1D01CBB000BB4C67 /* AlbumPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumPhotoCell.xib; sourceTree = "<group>"; };
-		C2E33A8E1D01CBB000BB4C67 /* CAM1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAM1.png; sourceTree = "<group>"; };
-		C2E33A8F1D01CBB000BB4C67 /* ImageEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditVC.h; sourceTree = "<group>"; };
-		C2E33A901D01CBB000BB4C67 /* ImageEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditVC.m; sourceTree = "<group>"; };
-		C2E33A911D01CBB000BB4C67 /* ImageEditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditVC.xib; sourceTree = "<group>"; };
-		C2E33A921D01CBB000BB4C67 /* MutiCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutiCollectionLayout.h; sourceTree = "<group>"; };
-		C2E33A931D01CBB000BB4C67 /* MutiCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutiCollectionLayout.m; sourceTree = "<group>"; };
-		C2E33A941D01CBB000BB4C67 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
-		C2E33A951D01CBB000BB4C67 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
-		C2E33A961D01CBB000BB4C67 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
-		C2E33A971D01CBB000BB4C67 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
-		C2E33A981D01CBB000BB4C67 /* WNImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNImagePicker.h; sourceTree = "<group>"; };
-		C2E33A991D01CBB000BB4C67 /* WNImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNImagePicker.m; sourceTree = "<group>"; };
-		C2E33A9A1D01CBB000BB4C67 /* WNImagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WNImagePicker.xib; sourceTree = "<group>"; };
-		C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ViewController/ViewController.xib; sourceTree = "<group>"; };
 		C2E6E9CC1CFC7A57001B198A /* ZDPublishHaflViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflViewControl.h; sourceTree = "<group>"; };
 		C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflViewControl.m; sourceTree = "<group>"; };
 		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
@@ -1086,6 +1101,7 @@
 		96123BDE1CFED1F300DF5631 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96123BDF1CFED1F300DF5631 /* ChatList */,
 				96123BE21CFED1F300DF5631 /* ChatView */,
 			);
@@ -1201,6 +1217,9 @@
 		965C51FA1CF3EDDC00B0F22F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96FC7CFE1D03FF2400EEABAA /* ZDPersonInfoCell.h */,
+				96FC7CFF1D03FF2400EEABAA /* ZDPersonInfoCell.m */,
+				96FC7D001D03FF2400EEABAA /* ZDPersonInfoCell.xib */,
 				C2AEE7FF1CFABF7600F2872D /* ZDChangeView.h */,
 				C2AEE8001CFABF7600F2872D /* ZDChangeView.m */,
 				C220B3651CF43AA1009A6560 /* ZDCustomUserTableViewCell.h */,
@@ -1209,9 +1228,14 @@
 				C220B3741CF451E6009A6560 /* ZDCustomHeaderView.m */,
 				C230A6361CFEFC1E00DCA6BE /* ZDUIAlert.h */,
 				C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */,
-				C2BBD95F1D007514008F0008 /* ZDPersonInfoCell.h */,
-				C2BBD9601D007514008F0008 /* ZDPersonInfoCell.m */,
-				C2BBD9611D007514008F0008 /* ZDPersonInfoCell.xib */,
+				96FC7CF41D03FE6200EEABAA /* ZDPersonInfo.h */,
+				96FC7CF51D03FE6200EEABAA /* ZDPersonInfo.m */,
+				C25E83981D0428A90079A08F /* ZDVisitingIdView.h */,
+				C25E83991D0428A90079A08F /* ZDVisitingIdView.m */,
+				96FC7CF61D03FE6200EEABAA /* ZDPersonInfo.xib */,
+				C25E838D1D041A9D0079A08F /* ZDVisitingTableViewCell.h */,
+				C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */,
+				C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1330,7 +1354,6 @@
 				96FB5C131CF6FF1D009A8BCF /* Helper */,
 				96FB5C161CF6FF1D009A8BCF /* Model */,
 				96FB5C221CF6FF1D009A8BCF /* Util */,
-				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96FB5C4C1CF6FF1D009A8BCF /* Views */,
 			);
 			path = EMUIKit;
@@ -1746,7 +1769,8 @@
 				96FB5C4A1CF6FF1D009A8BCF /* EaseViewController.h */,
 				96FB5C4B1CF6FF1D009A8BCF /* EaseViewController.m */,
 			);
-			path = ViewController;
+			name = ViewController;
+			path = ../EaseUI/EMUIKit/ViewController;
 			sourceTree = "<group>";
 		};
 		96FB5C4C1CF6FF1D009A8BCF /* Views */ = {
@@ -1872,6 +1896,31 @@
 			path = conversationList;
 			sourceTree = "<group>";
 		};
+		96FC7D081D04010300EEABAA /* WNImapgePicker */ = {
+			isa = PBXGroup;
+			children = (
+				96FC7D091D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				96FC7D0A1D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+				96FC7D0B1D04010300EEABAA /* AlbumPhotoCell.h */,
+				96FC7D0C1D04010300EEABAA /* AlbumPhotoCell.m */,
+				96FC7D0D1D04010300EEABAA /* AlbumPhotoCell.xib */,
+				96FC7D0E1D04010300EEABAA /* CAM1.png */,
+				96FC7D0F1D04010300EEABAA /* ImageEditVC.h */,
+				96FC7D101D04010300EEABAA /* ImageEditVC.m */,
+				96FC7D111D04010300EEABAA /* ImageEditVC.xib */,
+				96FC7D121D04010300EEABAA /* MutiCollectionLayout.h */,
+				96FC7D131D04010300EEABAA /* MutiCollectionLayout.m */,
+				96FC7D141D04010300EEABAA /* UIImage+Additions.h */,
+				96FC7D151D04010300EEABAA /* UIImage+Additions.m */,
+				96FC7D161D04010300EEABAA /* UIView+Additions.h */,
+				96FC7D171D04010300EEABAA /* UIView+Additions.m */,
+				96FC7D181D04010300EEABAA /* WNImagePicker.h */,
+				96FC7D191D04010300EEABAA /* WNImagePicker.m */,
+				96FC7D1A1D04010300EEABAA /* WNImagePicker.xib */,
+			);
+			path = WNImapgePicker;
+			sourceTree = "<group>";
+		};
 		96FD786A1CED92FD000FCB3C = {
 			isa = PBXGroup;
 			children = (
@@ -1893,6 +1942,7 @@
 		96FD78751CED92FE000FCB3C /* DuBi */ = {
 			isa = PBXGroup;
 			children = (
+				96FC7D261D040CAD00EEABAA /* EaseUIResource.bundle */,
 				96FD788D1CED93F2000FCB3C /* classes */,
 				96FD78761CED92FE000FCB3C /* Supporting Files */,
 			);
@@ -2016,6 +2066,9 @@
 		96FD78C21CEDD501000FCB3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				96FC7D031D03FFE500EEABAA /* ViewController.h */,
+				96FC7D041D03FFE500EEABAA /* ViewController.m */,
+				96FC7D051D03FFE500EEABAA /* ViewController.xib */,
 				965C52001CF4085B00B0F22F /* JTTabBarViewController.h */,
 				965C52011CF4085B00B0F22F /* JTTabBarViewController.m */,
 			);
@@ -2042,9 +2095,6 @@
 			children = (
 				C2AEE7F91CFABDB600F2872D /* ZDUserChangeViewController.h */,
 				C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */,
-				C2BBD95A1D006AB6008F0008 /* ZDPersonInfo.h */,
-				C2BBD95B1D006AB6008F0008 /* ZDPersonInfo.m */,
-				C2BBD95C1D006AB6008F0008 /* ZDPersonInfo.xib */,
 				C220B3501CF433A0009A6560 /* JTSignInChoiceViewController.h */,
 				C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */,
 				C220B3521CF433A0009A6560 /* JTSignInChoiceViewController.xib */,
@@ -2057,6 +2107,9 @@
 				96D5B01D1CF7E1AD009E689C /* JTSignInViewController.h */,
 				96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */,
 				96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */,
+				C25E839B1D042AB20079A08F /* ZDVisitingIdViewCotnroller.h */,
+				C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */,
+				C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -2231,6 +2284,7 @@
 		C2C33E111CF5E2AF00D3564D /* otherViewController */ = {
 			isa = PBXGroup;
 			children = (
+				96FC7D081D04010300EEABAA /* WNImapgePicker */,
 				C2C33E121CF5E37B00D3564D /* ZDPublishController.h */,
 				C2C33E131CF5E37B00D3564D /* ZDPublishController.m */,
 				C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */,
@@ -2240,37 +2294,8 @@
 				C29B23621D026A030032426D /* ZDSendPicture.h */,
 				C29B23631D026A030032426D /* ZDSendPicture.m */,
 				C29B23641D026A030032426D /* ZDSendPicture.xib */,
-				C2E33A881D01CBB000BB4C67 /* WNImapgePicker */,
-				C2E33A851D01CAFF00BB4C67 /* ViewController.h */,
-				C2E33A861D01CAFF00BB4C67 /* ViewController.m */,
-				C2E33AA61D01CC9D00BB4C67 /* ViewController.xib */,
 			);
 			name = otherViewController;
-			sourceTree = "<group>";
-		};
-		C2E33A881D01CBB000BB4C67 /* WNImapgePicker */ = {
-			isa = PBXGroup;
-			children = (
-				C2E33A891D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
-				C2E33A8A1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
-				C2E33A8B1D01CBB000BB4C67 /* AlbumPhotoCell.h */,
-				C2E33A8C1D01CBB000BB4C67 /* AlbumPhotoCell.m */,
-				C2E33A8D1D01CBB000BB4C67 /* AlbumPhotoCell.xib */,
-				C2E33A8E1D01CBB000BB4C67 /* CAM1.png */,
-				C2E33A8F1D01CBB000BB4C67 /* ImageEditVC.h */,
-				C2E33A901D01CBB000BB4C67 /* ImageEditVC.m */,
-				C2E33A911D01CBB000BB4C67 /* ImageEditVC.xib */,
-				C2E33A921D01CBB000BB4C67 /* MutiCollectionLayout.h */,
-				C2E33A931D01CBB000BB4C67 /* MutiCollectionLayout.m */,
-				C2E33A941D01CBB000BB4C67 /* UIImage+Additions.h */,
-				C2E33A951D01CBB000BB4C67 /* UIImage+Additions.m */,
-				C2E33A961D01CBB000BB4C67 /* UIView+Additions.h */,
-				C2E33A971D01CBB000BB4C67 /* UIView+Additions.m */,
-				C2E33A981D01CBB000BB4C67 /* WNImagePicker.h */,
-				C2E33A991D01CBB000BB4C67 /* WNImagePicker.m */,
-				C2E33A9A1D01CBB000BB4C67 /* WNImagePicker.xib */,
-			);
-			path = WNImapgePicker;
 			sourceTree = "<group>";
 		};
 		ECF6CBA5377B03CC2E01F9C0 /* Pods */ = {
@@ -2295,6 +2320,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				C26AA09A77D00EF94129002B /* 📦 Embed Pods Frameworks */,
 				F485FAD68D9B9A25885D1886 /* 📦 Copy Pods Resources */,
+				DCF6A2F87961700ECF37DA27 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2345,40 +2371,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25E83911D041A9D0079A08F /* ZDVisitingTableViewCell.xib in Resources */,
 				C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */,
 				96D5B0261CF7FE0A009E689C /* JTAliasViewController.xib in Resources */,
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
-				C2E33A9D1D01CBB000BB4C67 /* AlbumPhotoCell.xib in Resources */,
 				C29B23661D026A030032426D /* ZDSendPicture.xib in Resources */,
 				C284A8541CF53F9E0093E851 /* ZDCustomVedioCell.xib in Resources */,
 				96FD78811CED92FE000FCB3C /* Main.storyboard in Resources */,
 				96E97E221CF04F3300DFA851 /* Assets.xcassets in Resources */,
 				C28422491CF9778A00E8F9A6 /* PictureDetailController.xib in Resources */,
-				C2E33AA51D01CBB000BB4C67 /* WNImagePicker.xib in Resources */,
+				96FC7D071D03FFE500EEABAA /* ViewController.xib in Resources */,
+				96FC7CF81D03FE6200EEABAA /* ZDPersonInfo.xib in Resources */,
+				96FC7D021D03FF2400EEABAA /* ZDPersonInfoCell.xib in Resources */,
+				96FC7D1E1D04010300EEABAA /* CAM1.png in Resources */,
+				96FC7D271D040CAD00EEABAA /* EaseUIResource.bundle in Resources */,
 				96FB5CCA1CF6FF1D009A8BCF /* MWPhotoBrowser.bundle in Resources */,
 				C28422351CF9772100E8F9A6 /* LWNImgView.xib in Resources */,
 				960DE7441CFAF29B00C31DD8 /* LICENSE in Resources */,
 				960DE7381CFAF29B00C31DD8 /* MLEmoji_ExpressionImage.plist in Resources */,
+				96FC7D1D1D04010300EEABAA /* AlbumPhotoCell.xib in Resources */,
 				C28422471CF9778A00E8F9A6 /* PictureController.xib in Resources */,
 				960DE7371CFAF29B00C31DD8 /* MLEmoji_Expression.plist in Resources */,
 				96FC7CF01D03D30D00EEABAA /* SessionCell.xib in Resources */,
 				963BFD611D0137E400E5E74C /* JTBuddySearchCell.xib in Resources */,
 				C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */,
 				C28422371CF9772100E8F9A6 /* PictureViewCell.xib in Resources */,
+				96FC7D201D04010300EEABAA /* ImageEditVC.xib in Resources */,
 				960DE7491CFAF29B00C31DD8 /* sdRefeshView_arrow@2x.png in Resources */,
 				C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */,
 				96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */,
-				C2BBD9631D007514008F0008 /* ZDPersonInfoCell.xib in Resources */,
 				C2A7DC781CF311D900492355 /* ZYVideoCell.xib in Resources */,
-				C2E33AA71D01CC9D00BB4C67 /* ViewController.xib in Resources */,
+				96FC7D251D04010300EEABAA /* WNImagePicker.xib in Resources */,
 				C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */,
 				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
-				C2BBD95E1D006AB6008F0008 /* ZDPersonInfo.xib in Resources */,
+				C25E839F1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib in Resources */,
 				96FB5C9F1CF6FF1D009A8BCF /* MJRefresh.bundle in Resources */,
-				C2E33AA01D01CBB000BB4C67 /* ImageEditVC.xib in Resources */,
-				C2E33A9E1D01CBB000BB4C67 /* CAM1.png in Resources */,
 				960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
 			);
@@ -2395,6 +2424,21 @@
 			inputPaths = (
 			);
 			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF6A2F87961700ECF37DA27 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2443,15 +2487,12 @@
 				960DE74D1CFAF29B00C31DD8 /* UIView+SDExtension.m in Sources */,
 				96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */,
 				96FB5CF11CF6FF1D009A8BCF /* EaseImageView.m in Sources */,
-				C2E33A9B1D01CBB000BB4C67 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				C284A8731CF583770093E851 /* ZDList.m in Sources */,
 				96FB5CC31CF6FF1D009A8BCF /* PSTCollectionViewItemKey.m in Sources */,
 				96FB5CC51CF6FF1D009A8BCF /* PSTCollectionViewUpdateItem.m in Sources */,
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
-				C2BBD95D1D006AB6008F0008 /* ZDPersonInfo.m in Sources */,
 				96FB5C941CF6FF1D009A8BCF /* MJRefreshFooter.m in Sources */,
 				960DE7571CFAF31000C31DD8 /* SDPhotoBrowser.m in Sources */,
-				C2E33AA31D01CBB000BB4C67 /* UIView+Additions.m in Sources */,
 				960DE6BD1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m in Sources */,
 				960DE6C11CFAEF3900C31DD8 /* ZYTimeLineCell.m in Sources */,
 				96FB5CAE1CF6FF1D009A8BCF /* EMSDWebImageCompat.m in Sources */,
@@ -2460,7 +2501,6 @@
 				960DE7391CFAF29B00C31DD8 /* MLEmojiLabel.m in Sources */,
 				960DE7471CFAF29B00C31DD8 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				96FB5CC61CF6FF1D009A8BCF /* PSTGridLayoutInfo.m in Sources */,
-				C2E33A9C1D01CBB000BB4C67 /* AlbumPhotoCell.m in Sources */,
 				96FB5CE01CF6FF1D009A8BCF /* EaseUsersListViewController.m in Sources */,
 				96FB5C971CF6FF1D009A8BCF /* MJRefreshAutoNormalFooter.m in Sources */,
 				96FB5C8B1CF6FF1D009A8BCF /* wav.mm in Sources */,
@@ -2470,6 +2510,7 @@
 				96FB5CE51CF6FF1D009A8BCF /* EaseMessageCell.m in Sources */,
 				96FB5CDF1CF6FF1D009A8BCF /* EaseRefreshTableViewController.m in Sources */,
 				960DE6C01CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m in Sources */,
+				C25E83901D041A9D0079A08F /* ZDVisitingTableViewCell.m in Sources */,
 				96FB5C911CF6FF1D009A8BCF /* MJRefreshAutoFooter.m in Sources */,
 				96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */,
 				96FB5CD41CF6FF1D009A8BCF /* EaseChineseToPinyin.m in Sources */,
@@ -2478,7 +2519,10 @@
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
 				C2533CBA1CEDEBDC00C134C6 /* InfomationHandle.m in Sources */,
 				C28422361CF9772100E8F9A6 /* PictureViewCell.m in Sources */,
+				96FC7D1C1D04010300EEABAA /* AlbumPhotoCell.m in Sources */,
+				96FC7D1B1D04010300EEABAA /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				96FB5CBF1CF6FF1D009A8BCF /* PSTCollectionViewCell.m in Sources */,
+				96FC7D1F1D04010300EEABAA /* ImageEditVC.m in Sources */,
 				96FB5CC81CF6FF1D009A8BCF /* PSTGridLayoutRow.m in Sources */,
 				9622F3881CFDE14C000A39C9 /* JTCircleHeaderView.m in Sources */,
 				96FB5CCD1CF6FF1D009A8BCF /* EaseMessageModel.m in Sources */,
@@ -2486,14 +2530,13 @@
 				96FB5CAA1CF6FF1D009A8BCF /* MWTapDetectingView.m in Sources */,
 				96FB5CF31CF6FF1D009A8BCF /* EaseFaceView.m in Sources */,
 				96FB5CD91CF6FF1D009A8BCF /* EaseEmotionEscape.m in Sources */,
-				C2E33AA41D01CBB000BB4C67 /* WNImagePicker.m in Sources */,
 				96FB5CD71CF6FF1D009A8BCF /* EaseEmoji.m in Sources */,
 				C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */,
 				96123C081CFED63B00DF5631 /* ApplyFriendCell.m in Sources */,
-				C2E33A9F1D01CBB000BB4C67 /* ImageEditVC.m in Sources */,
 				96FB5CBB1CF6FF1D009A8BCF /* UIImageView+EMWebCache.m in Sources */,
 				96FB5CD21CF6FF1D009A8BCF /* UIViewController+DismissKeyboard.m in Sources */,
 				96FB5C841CF6FF1D009A8BCF /* EMAudioRecorderUtil.m in Sources */,
+				96FC7D011D03FF2400EEABAA /* ZDPersonInfoCell.m in Sources */,
 				96FC7CEB1D03D2F000EEABAA /* JTNotificationViewController.m in Sources */,
 				960DE6BA1CFAEF3900C31DD8 /* ZYBaseTableViewController.m in Sources */,
 				960DE6BF1CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m in Sources */,
@@ -2568,7 +2611,6 @@
 				C230A6381CFEFC1E00DCA6BE /* ZDUIAlert.m in Sources */,
 				96FB5C881CF6FF1D009A8BCF /* EMCDDeviceManager+Remind.m in Sources */,
 				96FB5CC71CF6FF1D009A8BCF /* PSTGridLayoutItem.m in Sources */,
-				C2E33AA21D01CBB000BB4C67 /* UIImage+Additions.m in Sources */,
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */,
 				96FB5CA21CF6FF1D009A8BCF /* UIScrollView+MJRefresh.m in Sources */,
@@ -2581,6 +2623,7 @@
 				960DE6C21CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m in Sources */,
 				960DE74B1CFAF29B00C31DD8 /* SDRefreshHeaderView.m in Sources */,
 				96FB5CE71CF6FF1D009A8BCF /* EaseBubbleView+File.m in Sources */,
+				96FC7D221D04010300EEABAA /* UIImage+Additions.m in Sources */,
 				96FB5CB51CF6FF1D009A8BCF /* NSData+EMImageContentType.m in Sources */,
 				96FB5CC41CF6FF1D009A8BCF /* PSTCollectionViewLayout.m in Sources */,
 				C21D86321D01A4F800E898B3 /* ZYGetObject.m in Sources */,
@@ -2590,8 +2633,10 @@
 				96FB5CE91CF6FF1D009A8BCF /* EaseBubbleView+Image.m in Sources */,
 				96FB5CA81CF6FF1D009A8BCF /* MWPhotoBrowser.m in Sources */,
 				96FB5CE61CF6FF1D009A8BCF /* EaseMessageTimeCell.m in Sources */,
+				96FC7CF71D03FE6200EEABAA /* ZDPersonInfo.m in Sources */,
 				96FB5CB31CF6FF1D009A8BCF /* EMSDWebImagePrefetcher.m in Sources */,
 				960DE7561CFAF31000C31DD8 /* SDBrowserImageView.m in Sources */,
+				96FC7D231D04010300EEABAA /* UIView+Additions.m in Sources */,
 				C284A84F1CF536540093E851 /* ZDSetUpViewController.m in Sources */,
 				96FB5CD81CF6FF1D009A8BCF /* EaseEmojiEmoticons.m in Sources */,
 				96FB5C8A1CF6FF1D009A8BCF /* amrFileCodec.mm in Sources */,
@@ -2608,12 +2653,12 @@
 				96FB5C9D1CF6FF1D009A8BCF /* MJRefreshNormalHeader.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */,
+				C25E839A1D0428A90079A08F /* ZDVisitingIdView.m in Sources */,
 				96FB5CE31CF6FF1D009A8BCF /* EaseBaseMessageCell.m in Sources */,
 				960DE7481CFAF29B00C31DD8 /* UIView+SDAutoLayout.m in Sources */,
 				C29B23651D026A030032426D /* ZDSendPicture.m in Sources */,
 				9622F38B1CFDE1B9000A39C9 /* JTCircleMainController.m in Sources */,
 				96123BEF1CFED36F00DF5631 /* ContactListSelectViewController.m in Sources */,
-				C2BBD9621D007514008F0008 /* ZDPersonInfoCell.m in Sources */,
 				96FB5CAB1CF6FF1D009A8BCF /* MWZoomingScrollView.m in Sources */,
 				96123C091CFED63B00DF5631 /* ApplyViewController.m in Sources */,
 				96E3BE461CFAC94100099938 /* JTSelectTopView.m in Sources */,
@@ -2623,6 +2668,7 @@
 				C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */,
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
+				C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */,
 				C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
@@ -2633,7 +2679,6 @@
 				96FB5CDC1CF6FF1D009A8BCF /* EaseConversationListViewController.m in Sources */,
 				963BFD5C1D012F9600E5E74C /* JTSearchBar.m in Sources */,
 				96FB5C861CF6FF1D009A8BCF /* EMCDDeviceManager+Microphone.m in Sources */,
-				C2E33AA11D01CBB000BB4C67 /* MutiCollectionLayout.m in Sources */,
 				960DE7421CFAF29B00C31DD8 /* MLLabel.m in Sources */,
 				960DE73B1CFAF29B00C31DD8 /* NSMutableAttributedString+MLLabel.m in Sources */,
 				96FB5CBA1CF6FF1D009A8BCF /* UIImageView+EMHighlightedWebCache.m in Sources */,
@@ -2649,7 +2694,7 @@
 				C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */,
 				960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
-				C2E33A871D01CAFF00BB4C67 /* ViewController.m in Sources */,
+				96FC7D241D04010300EEABAA /* WNImagePicker.m in Sources */,
 				96FB5CA71CF6FF1D009A8BCF /* MWPhoto.m in Sources */,
 				96123C201CFEDEF100DF5631 /* ChatViewController.m in Sources */,
 				96FB5CED1CF6FF1D009A8BCF /* EaseBubbleView+Voice.m in Sources */,
@@ -2674,11 +2719,13 @@
 				96FB5CD31CF6FF1D009A8BCF /* UIViewController+HUD.m in Sources */,
 				960DE73D1CFAF29B00C31DD8 /* MLExpressionManager.m in Sources */,
 				96FB5C981CF6FF1D009A8BCF /* MJRefreshAutoStateFooter.m in Sources */,
+				96FC7D061D03FFE500EEABAA /* ViewController.m in Sources */,
 				968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */,
 				C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */,
 				96FB5CAD1CF6FF1D009A8BCF /* EMSDImageCache.m in Sources */,
 				96D5B0291CF8238D009E689C /* JTLocalInfoManager.m in Sources */,
 				960DE7461CFAF29B00C31DD8 /* TTTAttributedLabel.m in Sources */,
+				96FC7D211D04010300EEABAA /* MutiCollectionLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

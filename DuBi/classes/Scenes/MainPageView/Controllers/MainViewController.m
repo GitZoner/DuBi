@@ -21,66 +21,79 @@
 #import "LWNTableView.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
+static NSString *const reuseIdentifier = @"cellID";
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property(strong,nonatomic)UIScrollView *scrollView;
-@property(strong,nonatomic)LWNTableView *tableView1;
-@property(strong,nonatomic)LWNTableView *tableView2;
-@property(strong,nonatomic)LWNTableView *tableView3;
+@property(strong,nonatomic)LWNTableView *topicTableView;
+@property(strong,nonatomic)LWNTableView *pictureTableView;
+@property(strong,nonatomic)LWNTableView *mainTableView;
 
 @end
-
 @implementation MainViewController
-// 懒加载数组
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView1 = [[LWNTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kTopicUrl,@""]];
-    self.tableView1.delegate = self;
-    self.tableView1.backgroundColor = [UIColor yellowColor];
-    self.tableView2 = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kPictureUrl,@""]];
-    self.tableView2.delegate = self;
-
-    self.tableView2.backgroundColor = [UIColor blackColor];
-    self.tableView3 = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth * 2, 0, kWidth, kHeight) withUrl:@""];
-    self.tableView3.backgroundColor = [UIColor redColor];
-    self.tableView3.delegate = self;
-
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth * 3, kHeight)];
-    [self.scrollView addSubview:self.tableView1];
-    [self.scrollView addSubview:self.tableView2];
-    [self.scrollView addSubview:self.tableView3];
-    self.scrollView.contentSize = CGSizeMake(kWidth, 0);
+    [self setUpViews];
+    
+    // 注册cell
+    [self.topicTableView registerClass:[PictureViewCell class] forCellReuseIdentifier:reuseIdentifier];
+}
+-(void)setUpViews{
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth , kHeight)];
     self.scrollView.pagingEnabled = YES;
-    [self.view addSubview:self.scrollView];
+    self.scrollView.userInteractionEnabled = YES;
+   // self.scrollView.delegate = self;
+    self.scrollView.contentSize = CGSizeMake(kWidth * 3, 0);
+    self.scrollView.bounces = NO;
+    //self.scrollView.scrollEnabled = YES;
+   // self.scrollView.contentOffset= CGPointMake(kWidth, 0);
+    [self.view addSubview:_scrollView];
     
+//    LWNTableView *table1 = [[LWNTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
+//    [self.scrollView addSubview:table1];
+//    
+   
+    self.mainTableView = [[LWNTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) ];
+    [self.mainTableView getDataWithString:[NSString stringWithFormat:kTopicUrl,@""]];
+    self.mainTableView.tag = 100;
+    self.mainTableView.backgroundColor = [UIColor orangeColor];
+    self.mainTableView.delegate = self;
+    self.mainTableView.dataSource = self;
+    self.topicTableView = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth, kHeight)];
+    self.topicTableView.backgroundColor = [UIColor greenColor];
+    [self.topicTableView getDataWithString:[NSString stringWithFormat:kTopicUrl,@""]];
+    self.topicTableView.tag = 101;
+    self.topicTableView.delegate = self;
+    self.topicTableView.dataSource = self;
+    self.pictureTableView = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth * 2, 0, kWidth, kHeight)];
+    //self.pictureTableView.backgroundColor = [UIColor redColor];
+    [self.pictureTableView getDataWithString:[NSString stringWithFormat:kPictureUrl,@""]];
+    self.pictureTableView.tag = 102;
+    self.pictureTableView.delegate = self;
+    self.pictureTableView.dataSource = self;
+    // 三个tableView 添加到scrollview
+    [self.scrollView addSubview:self.mainTableView];
+    [self.scrollView addSubview:self.topicTableView];
+    [self.scrollView addSubview:self.pictureTableView];
     
-    
-    
+
+
+
 }
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSInteger number = scrollView.contentOffset.x / kWidth;
-    if (number == 0) {
-        
-    }else if (number == 1){
-    
-    }else if (number == 3){
-    
-    }
-    
-    
-}
--(void)requestData{
- // 加载菊花样式
-    [MBProgressHUD setUpHUDWithFrame:CGRectMake(0, 0, 50, 50) gifName:@"pika"andShowToView:self.view];
-    [kPictureHandle getDataWithString:[NSString stringWithFormat:kTopicUrl,@""] comptionBlock:^(NSMutableArray *array) {
-        [self updateData];
-    }];
-}
--(void)updateData{
-    //[self.tableView reloadData];
-  // 数据加载完毕,就可以隐藏菊花样式
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-}
+
+
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSInteger number = scrollView.contentOffset.x / kWidth;
+//    if (number == 0) {
+//        
+//    }else if (number == 1){
+//    
+//    }else if (number == 2){
+//    
+//    }
+//    
+//    
+//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -89,28 +102,36 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if ([tableView isEqual:_tableView1]) {
-        return self.tableView1.array.count ;
+    if (tableView.tag == 100) {
+        NSLog(@"%ld",self.topicTableView.dataArray.count);
+        return [self.mainTableView numberOfRows:section] ;
 
-    } else if ([tableView isEqual:_tableView2]) {
+    } else if (tableView.tag == 101 ) {
     
-        return self.tableView2.array.count ;
+        return [self.topicTableView numberOfRows:section] ;
         
     }else{
-        return self.tableView3.array.count ;
+        return [self.pictureTableView numberOfRows:section] ;
 
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PictureViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCellID" forIndexPath:indexPath];
-    if ([tableView isEqual:_tableView1]) {
-      cell.picture =  self.tableView1.array[indexPath.row] ;
-    } else if ([tableView isEqual:_tableView2]) {
-      cell.picture =  self.tableView1.array[indexPath.row] ;
+    PictureViewCell *cell = [self.topicTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if (tableView.tag == 100) {
+        Picture *picture = [self.mainTableView piturForRowInSection:indexPath];
+      cell.picture =  picture;
+        NSLog(@"%@11",cell.picture);
+    
+    } else if (tableView.tag == 101) {
+        Picture *picture = [self.topicTableView piturForRowInSection:indexPath];
+        cell.picture = picture;
+        NSLog(@"%@22",cell.picture);
+
     }else{
-      cell.picture =  self.tableView1.array[indexPath.row] ;
+        Picture *picture = [self.pictureTableView piturForRowInSection:indexPath];
+        cell.picture = picture;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+ //   cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -119,15 +140,15 @@
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([tableView isEqual:_tableView1]) {
-      Picture * picture =  self.tableView1.array[indexPath.row] ;
+    if (tableView.tag == 100) {
+      Picture * picture =  self.mainTableView.dataArray[indexPath.row] ;
         return [PictureViewCell heightFor:picture];
-    } else if ([tableView isEqual:_tableView2]) {
-      Picture * picture =  self.tableView1.array[indexPath.row] ;
+    } else if (tableView.tag == 101) {
+      Picture * picture =  self.topicTableView.dataArray[indexPath.row] ;
         return [PictureViewCell heightFor:picture];
 
     }else{
-      Picture * picture =  self.tableView1.array[indexPath.row] ;
+      Picture * picture =  self.pictureTableView.dataArray[indexPath.row] ;
         return [PictureViewCell heightFor:picture];
 
     }
@@ -160,24 +181,20 @@
 }
 #pragma mark ----点击button进行不同的页面跳转--------
 
-
+/*
 - (IBAction)pictureAction:(id)sender {
   // 点击button,进行不同的数据请求
     [self requestPictureData];
 }
 -(void)requestPictureData{
-    // 加载菊花样式
-    [MBProgressHUD setUpHUDWithFrame:CGRectMake(0, 0, 50, 50) gifName:@"pika"andShowToView:self.view];
-    [kPictureHandle getDataWithString:[NSString stringWithFormat:kPictureUrl,@""] comptionBlock:^(NSMutableArray *array) {
-        [self updateData];
-    }];
+  
 }
 
 - (IBAction)pushAction:(id)sender {
     LWNViewController *lwn = [LWNViewController new];
     [self.navigationController pushViewController:lwn animated:YES];
 }
-
+*/
 
 
 

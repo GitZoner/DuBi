@@ -82,13 +82,13 @@
         button.frame = CGRectMake(self.itemSize.width * i, 0, self.itemSize.width, self.segmentSize.height - 2);
         [button setTitle:self.titleArray[i] forState:(UIControlStateNormal)];
         [button setTitleColor:self.normalColor forState:(UIControlStateNormal)];
-        [button addTarget:self action:@selector(clickButtonAction:) forControlEvents:(UIControlEventTouchDown)];
+        [button addTarget:self action:@selector(clickButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
         button.titleLabel.font = self.titleFont;
         button.tag = i;
         if (i == 0) {
             self.defaultIndex = 0;
             self.selectedButton = button;
-            self.selectedButton.enabled = NO;
+            self.selectedButton.enabled = YES;
             button.enabled = YES;
             [UIView animateWithDuration:0.25 animations:^{
                 CGPoint centerPoint = self.indicatorLine.center;
@@ -119,7 +119,7 @@
             if (self.scrollView.contentOffset.x < 0) {
                 self.scrollView.contentOffset = CGPointZero;
             }else if(self.scrollView.contentOffset.x > (self.scrollView.contentSize.width - self.segmentSize.width) ) {
-                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.segmentSize.width ,0);
+                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.width ,0);
             }
             CGPoint centerPoint = self.indicatorLine.center;
             centerPoint.x = _selectedButton.center.x;
@@ -138,7 +138,11 @@
 
 
 -(void)clickButtonAction:(UIButton *)button {
+    NSLog(@"分段选择器按钮已点击");
     self.selectedButton = button;
+    if (_delegate && [_delegate respondsToSelector:@selector(segment:didSelectColumnIndex:)]) {
+        [_delegate segment:self didSelectColumnIndex:button.tag];
+    }
 }
 
 @end
