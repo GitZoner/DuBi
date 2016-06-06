@@ -55,49 +55,21 @@
 - (IBAction)faBiao:(UIButton *)sender {
     
     
+    
+    
     AVObject *userDeliverInfo = [AVObject  objectWithClassName:@"userDeliverInfo"];// 构建对象
     
     
     
-//    AVObject *todo1 = [[AVObject alloc] initWithClassName:@"userInfo"];
-//    AVObject *todo2 = [[AVObject alloc] initWithClassName:@"userInfo"];
-//    AVObject *todo3 = [[AVObject alloc] initWithClassName:@"userInfo"];
-//    
-//#warning 一共两个字段需要关联所以不能这样写吧；
-//    
-//    
-//[AVObject saveAllInBackground:@[todo1,todo2,todo3] block:^(BOOL succeeded, NSError *error) {
-//        if (error) {
-//            // 出现错误
-//            NSLog(@"%@",error);
-//        } else {
-//            // 保存成功
-//            AVRelation *relation = [userDeliverInfo relationforKey:@"likeItems"];// 新建一个 AVRelation
-//            [relation addObject:todo1];
-//            [relation addObject:todo2];
-//            [relation addObject:todo3];
-//            // 上述 3 行代码表示 relation 关联了 3 个 Todo 对象
-//            
-//            [userDeliverInfo saveInBackground];// 保存到云端
-//        }
-//    }];
-//
-
     
     [userDeliverInfo setObject:kUserDefaultGetValue(kUserInfoKey_telNum) forKey:@"name"];// 设置名称
-//    [userDeliverInfo setObject:kUserDefaultGetValue(kUserInfoKey_userAlias) forKey:@"userAlias"];
     [userDeliverInfo setObject:@"纯文本" forKey:@"publishType"];// 设置名称
     [userDeliverInfo setObject:@1 forKey:@"priority"];// 设置优先级
     [userDeliverInfo setObject:self.textView.text forKey:@"msgContent"];
+    [userDeliverInfo setObject:kUserDefaultGetValue(kUserInfoKey_userAlias) forKey:@"userAlias"];
+    [userDeliverInfo setObject:kUserDefaultGetValue(kUserInfoKey_protrait) forKey:@"iconName"];
     
-    
-    
-   
-    
-    
-    
-    
-    
+        
     [userDeliverInfo saveInBackground];// 保存到服务端
     [self.textView resignFirstResponder];
     
@@ -146,7 +118,7 @@
     
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
-    NSLog(@"EFERg");
+   
 }
 
 
