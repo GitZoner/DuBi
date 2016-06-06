@@ -24,6 +24,8 @@
 #define kUserInfoKey_userID @"userID"
 #define kUserInfoKey_hasSign @"hasSign"
 
+#define kUserDefaultValue_void @"void"
+
 #define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
 #define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
 

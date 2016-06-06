@@ -118,23 +118,28 @@
 }
 
 
-- (IBAction)placeDian:(UIButton *)sender {
+- (IBAction)placeDian:(UIButton *)sender
+{
     
     
 }
 
 
-- (IBAction)fenXiangTime:(UIButton *)sender {
+- (IBAction)fenXiangTime:(UIButton *)sender
+{
 }
 
-- (IBAction)fenXiangWeiXin:(UIButton *)sender {
+- (IBAction)fenXiangWeiXin:(UIButton *)sender
+{
 }
 
-- (IBAction)fenXiangQQ:(UIButton *)sender {
+- (IBAction)fenXiangQQ:(UIButton *)sender
+{
 }
 
 
-- (void)textViewDidBeginEditing:(UITextView *)textView {
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
     
     NSLog(@"SDFERfgre");
     [self.tipLabel removeFromSuperview];
