@@ -9,29 +9,96 @@
 #import "ZDVisitingIdViewCotnroller.h"
 
 @interface ZDVisitingIdViewCotnroller ()
+/**
+ *  头像属性
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *protraitImageView;
 
+/**
+ *  别名儿
+ */
+@property (weak, nonatomic) IBOutlet UILabel *aliasLabel;
+
+/**
+ * tableView
+ */
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+// 数组存放信息类别
+@property(strong,nonatomic)NSMutableArray * typeArray;
+
+// 存放信息
+@property(strong,nonatomic)NSMutableArray * infoArray;
 @end
 
 @implementation ZDVisitingIdViewCotnroller
 
+-(NSMutableArray *)typeArray
+{
+    if (!_typeArray) {
+     
+        _typeArray = [NSMutableArray array];
+    }
+    return _typeArray;
+}
+
+-(NSMutableArray *)infoArray
+{
+    if (!_infoArray) {
+     
+        _infoArray = [NSMutableArray array];
+    }
+    return _infoArray;
+}
+
+-(void)addDataForArray{
+
+    NSArray * typeArr = @[@"昵称",@"性别",@"生日",@"爱好",@"个人说明"];
+    
+    
+    NSArray * dataArr = @[];
+    
+
+}
+
+
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// 返回上一页面
+- (IBAction)dismissAction {
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
