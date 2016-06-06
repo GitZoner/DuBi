@@ -9,7 +9,6 @@
                 <outlet property="imgView" destination="794-w3-gip" id="uKG-v0-V2x"/>
                 <outlet property="insterButton" destination="2vg-k7-ZWy" id="stb-bl-lyI"/>
                 <outlet property="jiahaojulizuojuli" destination="Dbb-Pb-Qrj" id="BdS-0H-fFR"/>
-                <outlet property="picture" destination="794-w3-gip" id="oNx-MY-LqP"/>
                 <outlet property="theTextView" destination="GND-Sn-T8W" id="Xzx-ri-pCg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

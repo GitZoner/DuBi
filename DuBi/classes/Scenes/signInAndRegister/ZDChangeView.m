@@ -13,6 +13,7 @@
 #import <Masonry.h>
 #import "JTRegisterViewController.h"
 #import "ZDUIAlert.h"
+#import <UIImageView+WebCache.h>
 
 #define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
 
@@ -78,9 +79,23 @@
 -(UIImageView *)imageViewForUser
 {
     if (!_imageViewForUser) {
+        
+        
         _imageViewForUser = [[UIImageView alloc]initWithFrame:CGRectMake(10 + 20, self.imageViewForHeader.height -55 - 55, 45, 45)];
         _imageViewForUser.userInteractionEnabled = YES;
-        _imageViewForUser.image = [UIImage imageNamed:@"beijingtu2"];
+       
+        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"]) {
+            
+            NSString * imgStr = [[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait];
+            [_imageViewForUser sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"pro"]];
+            
+            //   _imageViewForUser.image = [[UIImage alloc]initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgStr]]];
+        }else
+        {
+             _imageViewForUser.image = [UIImage imageNamed:@"beijingtu2"];
+        }
+        
+       
         self.imageViewForUser.layer.cornerRadius = self.imageViewForUser.height / 2;
         self.imageViewForUser.layer.masksToBounds = YES;
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewForUserAction:)];
@@ -151,12 +166,22 @@
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         // 修改当前image
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    }else{
+    }else {
         // 可编辑UIImagePickerControllerEditedImage（获取编辑后的图片）
         image = [info objectForKey:UIImagePickerControllerEditedImage];
     }
+    NSLog(@"修改前~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
     // 设置图片
     self.imageViewForUser.image = image;
+    NSData * data = UIImageJPEGRepresentation(self.imageViewForUser.image, 1);
+    NSURL * url = [NSURL URLWithDataRepresentation:data relativeToURL:nil];
+    
+    NSString * proaitl = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding   error:nil];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:proaitl forKey:kUserInfoKey_protrait];
+    
+    
+    NSLog(@"修改后~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
     [kpresent dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -192,12 +217,17 @@
         
         _nameButton.frame = CGRectMake(CGRectGetMaxX(_imageViewForUser.frame) + 10, CGRectGetMinY(_imageViewForUser.frame) + 5, _titleLabel.width, _titleLabel.height);
         _nameButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        _nameButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        if ([self.hasSign isEqualToString:@"YES"]) {
+        _nameButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        if ([self.hasSign isEqualToString:@"YES"])
+        {
             
+            [_nameButton setTitle:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_userAlias] forState:(UIControlStateNormal)];
             
+        }else {
+          
+            [_nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
         }
-        [_nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
+      
         [_nameButton addTarget:self action:@selector(nameButtonAction) forControlEvents:(UIControlEventTouchUpInside)];
         
         

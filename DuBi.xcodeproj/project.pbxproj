@@ -251,6 +251,11 @@
 		C2533CC71CEDEC0A00C134C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC01CEDEC0A00C134C6 /* MainViewController.xib */; };
 		C2533CC81CEDEC0A00C134C6 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */; };
 		C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */; };
+		C25E83901D041A9D0079A08F /* ZDVisitingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */; };
+		C25E83911D041A9D0079A08F /* ZDVisitingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */; };
+		C25E839A1D0428A90079A08F /* ZDVisitingIdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83991D0428A90079A08F /* ZDVisitingIdView.m */; };
+		C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */; };
+		C25E839F1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */; };
 		C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422251CF975E300E8F9A6 /* LWNDataBase.m */; };
 		C284222C1CF975E300E8F9A6 /* LWNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422271CF975E300E8F9A6 /* LWNTableView.m */; };
 		C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C28422291CF975E300E8F9A6 /* PictureHandle.m */; };
@@ -781,6 +786,14 @@
 		C2533CC31CEDEC0A00C134C6 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		C2533CC41CEDEC0A00C134C6 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		C2533CC51CEDEC0A00C134C6 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		C25E838D1D041A9D0079A08F /* ZDVisitingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDVisitingTableViewCell.h; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDVisitingTableViewCell.m; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDVisitingTableViewCell.xib; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C25E83981D0428A90079A08F /* ZDVisitingIdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDVisitingIdView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.h; sourceTree = SOURCE_ROOT; };
+		C25E83991D0428A90079A08F /* ZDVisitingIdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDVisitingIdView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDVisitingIdView.m; sourceTree = SOURCE_ROOT; };
+		C25E839B1D042AB20079A08F /* ZDVisitingIdViewCotnroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDVisitingIdViewCotnroller.h; sourceTree = "<group>"; };
+		C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDVisitingIdViewCotnroller.m; sourceTree = "<group>"; };
+		C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDVisitingIdViewCotnroller.xib; sourceTree = "<group>"; };
 		C28422241CF975E300E8F9A6 /* LWNDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNDataBase.h; sourceTree = "<group>"; };
 		C28422251CF975E300E8F9A6 /* LWNDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNDataBase.m; sourceTree = "<group>"; };
 		C28422261CF975E300E8F9A6 /* LWNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNTableView.h; sourceTree = "<group>"; };
@@ -1088,6 +1101,7 @@
 		96123BDE1CFED1F300DF5631 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96123BDF1CFED1F300DF5631 /* ChatList */,
 				96123BE21CFED1F300DF5631 /* ChatView */,
 			);
@@ -1216,7 +1230,12 @@
 				C230A6371CFEFC1E00DCA6BE /* ZDUIAlert.m */,
 				96FC7CF41D03FE6200EEABAA /* ZDPersonInfo.h */,
 				96FC7CF51D03FE6200EEABAA /* ZDPersonInfo.m */,
+				C25E83981D0428A90079A08F /* ZDVisitingIdView.h */,
+				C25E83991D0428A90079A08F /* ZDVisitingIdView.m */,
 				96FC7CF61D03FE6200EEABAA /* ZDPersonInfo.xib */,
+				C25E838D1D041A9D0079A08F /* ZDVisitingTableViewCell.h */,
+				C25E838E1D041A9D0079A08F /* ZDVisitingTableViewCell.m */,
+				C25E838F1D041A9D0079A08F /* ZDVisitingTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1335,7 +1354,6 @@
 				96FB5C131CF6FF1D009A8BCF /* Helper */,
 				96FB5C161CF6FF1D009A8BCF /* Model */,
 				96FB5C221CF6FF1D009A8BCF /* Util */,
-				96FB5C3F1CF6FF1D009A8BCF /* ViewController */,
 				96FB5C4C1CF6FF1D009A8BCF /* Views */,
 			);
 			path = EMUIKit;
@@ -1751,7 +1769,8 @@
 				96FB5C4A1CF6FF1D009A8BCF /* EaseViewController.h */,
 				96FB5C4B1CF6FF1D009A8BCF /* EaseViewController.m */,
 			);
-			path = ViewController;
+			name = ViewController;
+			path = ../EaseUI/EMUIKit/ViewController;
 			sourceTree = "<group>";
 		};
 		96FB5C4C1CF6FF1D009A8BCF /* Views */ = {
@@ -2088,6 +2107,9 @@
 				96D5B01D1CF7E1AD009E689C /* JTSignInViewController.h */,
 				96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */,
 				96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */,
+				C25E839B1D042AB20079A08F /* ZDVisitingIdViewCotnroller.h */,
+				C25E839C1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m */,
+				C25E839D1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -2298,6 +2320,7 @@
 				96FD78711CED92FE000FCB3C /* Resources */,
 				C26AA09A77D00EF94129002B /* 📦 Embed Pods Frameworks */,
 				F485FAD68D9B9A25885D1886 /* 📦 Copy Pods Resources */,
+				DCF6A2F87961700ECF37DA27 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2348,6 +2371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25E83911D041A9D0079A08F /* ZDVisitingTableViewCell.xib in Resources */,
 				C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */,
 				96D5B0261CF7FE0A009E689C /* JTAliasViewController.xib in Resources */,
 				96FD78861CED92FE000FCB3C /* LaunchScreen.storyboard in Resources */,
@@ -2382,6 +2406,7 @@
 				C28422451CF9778A00E8F9A6 /* LWNViewController.xib in Resources */,
 				C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */,
 				C220B3561CF433A0009A6560 /* JTSignInChoiceViewController.xib in Resources */,
+				C25E839F1D042AB20079A08F /* ZDVisitingIdViewCotnroller.xib in Resources */,
 				96FB5C9F1CF6FF1D009A8BCF /* MJRefresh.bundle in Resources */,
 				960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */,
 				C2533CC91CEDEC0A00C134C6 /* MainViewCell.xib in Resources */,
@@ -2399,6 +2424,21 @@
 			inputPaths = (
 			);
 			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF6A2F87961700ECF37DA27 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2470,6 +2510,7 @@
 				96FB5CE51CF6FF1D009A8BCF /* EaseMessageCell.m in Sources */,
 				96FB5CDF1CF6FF1D009A8BCF /* EaseRefreshTableViewController.m in Sources */,
 				960DE6C01CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m in Sources */,
+				C25E83901D041A9D0079A08F /* ZDVisitingTableViewCell.m in Sources */,
 				96FB5C911CF6FF1D009A8BCF /* MJRefreshAutoFooter.m in Sources */,
 				96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */,
 				96FB5CD41CF6FF1D009A8BCF /* EaseChineseToPinyin.m in Sources */,
@@ -2612,6 +2653,7 @@
 				96FB5C9D1CF6FF1D009A8BCF /* MJRefreshNormalHeader.m in Sources */,
 				C2533CBB1CEDEBDC00C134C6 /* NetWorkRequest.m in Sources */,
 				C284222D1CF975E300E8F9A6 /* PictureHandle.m in Sources */,
+				C25E839A1D0428A90079A08F /* ZDVisitingIdView.m in Sources */,
 				96FB5CE31CF6FF1D009A8BCF /* EaseBaseMessageCell.m in Sources */,
 				960DE7481CFAF29B00C31DD8 /* UIView+SDAutoLayout.m in Sources */,
 				C29B23651D026A030032426D /* ZDSendPicture.m in Sources */,
@@ -2626,6 +2668,7 @@
 				C284222B1CF975E300E8F9A6 /* LWNDataBase.m in Sources */,
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
+				C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */,
 				C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,

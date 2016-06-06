@@ -50,7 +50,7 @@
             NSLog(@"自动登录失败");
         }];
         
-    
+   
   
     [self setUpSubViews];
     [self setUpChildControllers];
@@ -67,6 +67,7 @@
     
     self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(50, 20) titleFont:[UIFont systemFontOfSize:13]];
     self.navigationItem.titleView = self.segmentControl;
+    self.segmentControl.delegate = self;
     [self.segmentControl.searchButton  addTarget:self action:@selector(pushSearchVCACtion:) forControlEvents:(UIControlEventTouchUpInside)];
    //  [self.view addSubview:self.segmentControl];
     
@@ -81,7 +82,7 @@
     self.scrollView.bounces = NO;
     // self.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
    //  self.scrollView.contentSize = CGSizeMake(kScreenWidth * 5, kscreenHeight);
-    
+     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView ];
     // [self.view insertSubview:self.scrollView belowSubview:self.segmentControl];
   
@@ -106,10 +107,10 @@
     [self addChildViewController:self.userListController];
     // 通知
     self.noticeMessageController = [JTNotificationViewController new] ;
-    [self addChildViewController:self.circleViewController];
+    [self addChildViewController:self.noticeMessageController];
     // 关注
     self.attentionController = [UIViewController new] ;
-    [self addChildViewController:self.circleViewController];
+    [self addChildViewController:self.attentionController];
 
     
     
@@ -118,8 +119,10 @@
 
 #pragma mark - JTSegmentControllerDelegate
 -(void)segment:(JTSegmentControl *)segment didSelectColumnIndex:(NSUInteger)index {
+    NSLog(@"segment代理方:%lu",(unsigned long)index);
     // 当点击button的时候，使scrollView进行偏移
     self.scrollView.contentOffset = CGPointMake(index * self.scrollView.width, 0);
+    NSLog(@"scrollView偏移量：%f",self.scrollView. contentOffset.x);
 }
 
 
@@ -153,14 +156,19 @@
     self.noticeMessageController.view.x = CGRectGetMaxX(self.userListController.view.frame);
     [self.scrollView addSubview:self.noticeMessageController.view];
     
-    // 关注
+
     
     
 }
 
 #pragma mark - UIScrollViewDelegate
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
 
+
+}
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+  
+    NSLog(@"MainScrollViewDelegate");
     
     NSInteger index = self.scrollView.contentOffset.x / self.scrollView.width;
     

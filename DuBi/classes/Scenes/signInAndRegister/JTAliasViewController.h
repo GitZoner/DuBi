@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface JTAliasViewController : UIViewController
+
 
 
 @end
