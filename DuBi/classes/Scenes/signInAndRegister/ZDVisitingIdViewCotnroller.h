@@ -1,5 +1,5 @@
 //
-//  ZDVisitingIdViewController.h
+//  ZDVisitingIdViewCotnroller.h
 //  DuBi
 //
 //  Created by lanou3g on 16/6/5.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDVisitingIdViewController : UIViewController
+@interface ZDVisitingIdViewCotnroller : UIViewController
 
 @end

@@ -18,6 +18,9 @@
 #import "JTCircleMainController.h"
 #import "AppDelegate.h"
 #import "Main_marco.h"
+#import <HyphenateFullSDK/EMSDKFull.h>
+#import <UIImageView+WebCache.h>
+#import "SVProgressHUD.h"
 
 #define kScreen_w [UIScreen mainScreen].bounds.size.width
 #define kScreen_h [UIScreen mainScreen].bounds.size.height
@@ -75,12 +78,21 @@
 {
     self.ChangeView = [[ZDChangeView alloc]initWithFrame:CGRectMake(0, -48, self.view.width, self.view.height * 2 / 7 + 48 * 2)];
     [self.view addSubview:self.ChangeView];
+    
     self.ChangeView.imageViewForHeader.userInteractionEnabled = YES;
     self.ChangeView.imageViewForUser.userInteractionEnabled = YES;
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_hasSign]isEqualToString:@"YES"]) {
+        [self.ChangeView.imageViewForUser sd_setImageWithURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]] placeholderImage:[UIImage imageNamed:@"pro"]];
+    }
+    
+    
+    
     // [self.ChangeView.nameButton addTarget:self action:@selector(tapAction) forControlEvents:(UIControlEventTouchUpInside)];
+    
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     tap.numberOfTapsRequired = 1;//手指数
     tap.numberOfTapsRequired = 1;//点击次数
+    
     [self.ChangeView.nameButton
      addGestureRecognizer:tap];
 }
@@ -107,10 +119,10 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
-        // 刷新数据
-        [self reloadDataAction];
-    }
+//    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
+//        // 刷新数据
+//        [self reloadDataAction];
+//    }
 }
 
 
@@ -176,9 +188,18 @@
 {
     ZDCustomUserTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"tableView"];
     
+#pragma mark  -- 图标图片名字
     NSString * tupianStr = _images[indexPath.row];
-    cell.tuBImg.image = [UIImage imageNamed:tupianStr];
+    if (indexPath.section == 1 && indexPath.row == 0 ) {
+        
+        cell.tuBImg.image = nil;
+    }else{
+    
+        cell.tuBImg.image = [UIImage imageNamed:tupianStr];
+    }
     cell.contentlabel.text = self.typeArray[indexPath.row];
+    
+#pragma mark  -- 清除缓存的显示设置
     // 清楚缓存
     if (indexPath.section == 0 && indexPath.row == 3) {
 
@@ -188,27 +209,33 @@
         cell.contentlabel.text = [NSString stringWithFormat:@"清楚缓存(已使用%0.1fMB)",self.size];
     }
     
+#pragma mark -- 夜间模式的显示
     // 夜间模式
-    if (indexPath.row == 2 && indexPath.section == 0) {
+    if (indexPath.section == 0 && indexPath.row == 2) {
         
-        UISwitch * swi = [[UISwitch alloc]initWithFrame:CGRectMake(kScreen_w - 60, 5, 50, 30)];
+                       UISwitch * swi = [[UISwitch alloc]initWithFrame:CGRectMake(kScreen_w - 60, 5, 50, 30)];
         // 设置颜色
         swi.onTintColor = [UIColor greenColor];
         swi.tag = indexPath.row;
         [swi addTarget:self action:@selector(changeOption:) forControlEvents:(UIControlEventValueChanged)];
-        [cell.contentView addSubview:swi];
+        // [cell.contentView addSubview:swi];
     }
+#pragma mark  --  退出登录
     // 退出登录
-    if (indexPath.row == 0 && indexPath.section == 1)
+    if (indexPath.section == 1 && indexPath.row == 0)
     {
         cell.backgroundColor = [UIColor redColor];
         cell.contentlabel.textColor = [UIColor whiteColor];
         cell.contentlabel.text = @"退出登录";
-        cell.contentlabel.center = cell.center;
+//        cell.contentlabel.center = cell.center;
+        cell.contentlabel.textAlignment = NSTextAlignmentCenter;
+        cell.contentlabel.font = [UIFont systemFontOfSize:17];
+        // cell.contentlabel.center = cell.center;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     }
+    
 //     cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
@@ -250,6 +277,8 @@ static UIWindow * window;
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+ 
+#pragma mark  --- 清楚缓存
     // 清楚缓存
     if (indexPath.section == 0 && indexPath.row == 3) {
         
@@ -266,10 +295,14 @@ static UIWindow * window;
         [alert addAction:action1];
         
         [self presentViewController:alert animated:YES completion:nil];
+#pragma mark --- 个人资料
     }else if(indexPath.section == 0 && indexPath.row == 0 ){
         
         self.hasSign = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"];
-        if ([self.hasSign isEqualToString:@"YES"] == 0) {
+        if ([self.hasSign isEqualToString:@"YES"]) {
+            
+//            [self.navigationController pushViewController:[ZDVisitingIdViewController new] animated:YES];
+            
             [self.navigationController pushViewController:[ZDPersonInfo new] animated:YES];
         }else{
             
@@ -278,29 +311,59 @@ static UIWindow * window;
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];
         }
-        
+    
+#pragma mark  --- 独臂圈
     }else if(indexPath.section == 0 && indexPath.row == 1){
-        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"] isEqualToString:@"YES"] == 0) {
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"] isEqualToString:@"YES"]) {
             JTCircleMainController * jtclVC = [JTCircleMainController new];
             [self.navigationController pushViewController:jtclVC animated:YES];
-        }else{
+        }else if(indexPath.section == 0 && indexPath.row == 1){
            
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];
         }
-    }
-   
-    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"NO" ]) {
-        if (indexPath.row == 0 && indexPath.section == 1)
-        {
-            // 退出登录
-            NSString * logStr = @"NO";
-            [[NSUserDefaults standardUserDefaults] setObject:logStr forKey:@"hasSign"];
+    }else if (indexPath.row == 0 && indexPath.section == 1)
+    {
+        //        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"NO" ]) {
+        // 退出登录
+        [SVProgressHUD show];
+        kUserDefaultSetValue(@"NO", kUserInfoKey_hasSign);
+        
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_telNum);
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userAlias);
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_protrait);
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_gender);
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userID);
+        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_passWord);
+        
+        EMError *error = [[EMClient sharedClient] logout:YES];
+        if (!error) {
+            NSLog(@"退出成功");
         }
+        
+       // 添加通知中心
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            [self.tableView reloadData];
+            // [self.ChangeView.imageViewForUser setNeedsDisplay];
+        });
     }
-}
+
+#pragma mark --- 有待开发的功能
+    else{
+    
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"此功能有待开发，敬请期待" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+ }
 
 #pragma mark --- 父类scorllView的delegate
 
