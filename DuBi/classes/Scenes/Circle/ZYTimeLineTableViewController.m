@@ -14,7 +14,6 @@
 #import "ZYTimeLinerefreshFooter.h"
 #import "ZYTimeLineCell.h"
 #import "ZYTimeLineCellModel.h"
-
 #import <AVOSCloud/AVOSCloud.h>
 #import "ZYGetObject.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
@@ -38,6 +37,7 @@ static CGFloat textFieldH = 40;
 @property (nonatomic, copy) NSString *commentToUser;
 /*请求的动态avObject对象数组*/
 @property (strong, nonatomic) NSMutableArray *avObjectArray;
+
 
 
 // 头部视图
@@ -75,7 +75,10 @@ static CGFloat textFieldH = 40;
     
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
-//    [self.dataArray addObjectsFromArray:[self creatModelsWithCount:10]];
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
+        
+    
+    [self.dataArray addObjectsFromArray:[self creatModelsWithCount:10]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     __weak typeof(self) weakSelf = self;
@@ -102,7 +105,7 @@ static CGFloat textFieldH = 40;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    
+    }
 }
 
 
@@ -111,7 +114,7 @@ static CGFloat textFieldH = 40;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"])  {
     if (!_refreshHeader.superview) {
         
         _refreshHeader = [ZYTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, 45)];
@@ -129,6 +132,9 @@ static CGFloat textFieldH = 40;
             });
         }];
         [self.tableView.superview addSubview:_refreshHeader];
+    }
+        
+        
     }
 }
 
@@ -277,13 +283,41 @@ static CGFloat textFieldH = 40;
     self.avObjectArray = [NSMutableArray array];
     self.avObjectArray = [query findObjects].mutableCopy;
     NSMutableArray *tempArray = [NSMutableArray array];
+    
+   
     for (AVObject *object in self.avObjectArray) {
         
         ZYTimeLineCellModel *zymodel = [ZYTimeLineCellModel new];
         zymodel.userAlias = object[@"userAlias"];
         zymodel.publishType = object[@"publishType"];
         zymodel.msgContent = object[@"msgContent"];
-    
+        zymodel.picNamesArray = object[@"picNamesArray"];
+        zymodel.iconName = object[@"iconName"];
+        
+       
+        AVRelation *relation = [object relationforKey:@"likeItems"];
+        AVQuery *query = [relation query];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count > 0) {
+                // 临时存放点赞model的数组
+                NSMutableArray *likeArray = [NSMutableArray array];
+                
+                for (AVObject *object in objects) {
+                    ZYTimeLineCellLikeItemModel *likeModel = [ZYTimeLineCellLikeItemModel new];
+                    likeModel.userName = object[@"userAlias"];
+                    [likeArray addObject:likeModel];
+                }
+                
+                zymodel.likeItemsArray = likeArray;
+                
+            }
+        }];
+        
+        
+       
+        
+        
+       
         zymodel.createdAt = object[@"createdAt"];
         
         [tempArray addObject:zymodel];
@@ -294,8 +328,13 @@ static CGFloat textFieldH = 40;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%@",self.dataArray);
-    return self.dataArray.count;
+    NSLog(@"++++++++++============%ld",self.dataArray.count);
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
+         return self.dataArray.count;
+    }else {
+        return 1;
+    }
+   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -329,7 +368,7 @@ static CGFloat textFieldH = 40;
     ///////////////////////////////////////////////////////////////////////
     
     cell.model = self.dataArray[indexPath.row];
-    cell.contentAVObject = self.avObjectArray[indexPath.row];
+   // cell.contentAVObject = self.avObjectArray[indexPath.row];
     
     NSLog(@"%@",cell);
     return cell;
@@ -376,7 +415,7 @@ static CGFloat textFieldH = 40;
     _currentEditingIndexthPath = [self.tableView indexPathForCell:cell];
     
     [self adjustTableViewToFitKeyboard];
-    
+    NSLog(@"我可以评论了");
 }
 
 - (void)didClickLikeButtonInCell:(UITableViewCell *)cell
@@ -389,16 +428,18 @@ static CGFloat textFieldH = 40;
     if (!model.isLiked) {
         
         
-        
         ZYTimeLineCellLikeItemModel *likeModel = [ZYTimeLineCellLikeItemModel new];
         likeModel.userName = kUserDefaultGetValue(kUserInfoKey_userAlias);
-        //        likeModel.userId = @"gsdios";
+        // likeModel.userId = @"gsdios";
         [temp addObject:likeModel];
         model.liked = YES;
-   
+        
+        
+        
         // 新建一个 AVRelation
         AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
         [query whereKey:@"telNum" equalTo:kUserDefaultGetValue(kUserInfoKey_telNum)];
+       
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error && objects.count > 0) {
             AVObject *deliverObject = weakSelf.avObjectArray[index.row];
@@ -411,7 +452,6 @@ static CGFloat textFieldH = 40;
                 NSLog(@"++++++%@",kUserDefaultGetValue(kUserInfoKey_telNum));
                 NSLog(@"没有获取到点赞人的对象");
             }
-          
         }];
         
        
@@ -429,6 +469,10 @@ static CGFloat textFieldH = 40;
             }
         }
         [temp removeObject:tempLikeModel];
+        
+        
+        
+        
        model.liked = NO;
     }
     model.likeItemsArray = [temp copy];
@@ -465,6 +509,7 @@ static CGFloat textFieldH = 40;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+
     if (textField.text.length) {
         [_textField resignFirstResponder];
         
@@ -473,10 +518,28 @@ static CGFloat textFieldH = 40;
         [temp addObjectsFromArray:model.commentItemsArray];
         ZYTimeLineCellCommentItemModel *commentItemModel = [ZYTimeLineCellCommentItemModel new];
         
+        
+        
+        AVObject * deliverObject = self.avObjectArray[_currentEditingIndexthPath.row];
+        NSLog(@"sdfsdsdf:%@",deliverObject.objectId);
+        
+          commentItemModel.commentString = textField.text;
+        NSLog(@"评论：：：%@",commentItemModel.commentString);
+            deliverObject[@"commentItemsArray"] = [NSArray arrayWithObjects:commentItemModel.commentString, nil];
+            
+            
+             [deliverObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                 NSLog(@"%d,%@",succeeded,error);
+             }];
+            
+     
+        
+        
+        
         if (self.isReplayingComment) {
             commentItemModel.firstUserName = kUserDefaultGetValue(kUserInfoKey_userAlias);
 //            commentItemModel.firstUserId = @"GSD_iOS";
-//            commentItemModel.secondUserName = self.commentToUser;
+            commentItemModel.secondUserName = self.commentToUser;
 //            commentItemModel.secondUserId = self.commentToUser;
             commentItemModel.commentString = textField.text;
             
@@ -490,10 +553,15 @@ static CGFloat textFieldH = 40;
         model.commentItemsArray = [temp copy];
         [self.tableView reloadRowsAtIndexPaths:@[_currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
         
-        _textField.text = @"";
+       
+   
+         _textField.text = @"";
         
         return YES;
     }
+    
+    
+    
     return NO;
 }
 
@@ -520,6 +588,8 @@ static CGFloat textFieldH = 40;
         _totalKeybordHeight = h;
         [self adjustTableViewToFitKeyboard];
     }
+    
+    NSLog(@"我们");
 }
 
 

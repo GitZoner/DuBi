@@ -196,15 +196,14 @@
 - (NSMutableAttributedString *)generateAttributedStringWithCommentItemModel:(ZYTimeLineCellCommentItemModel *)model
 {
     NSString *text = model.firstUserName;
-//    if (model.secondUserName.length) {
-//        text = [text stringByAppendingString:[NSString stringWithFormat:@"回复%@", model.secondUserName]];
-//    }
-    text = [text stringByAppendingString:[NSString stringWithFormat:@"：%@", model.commentString]];
+    if (model.secondUserName.length) {
+        text = [text stringByAppendingString:[NSString stringWithFormat:@"回复%@", model.secondUserName]];
+   }
+   text = [text stringByAppendingString:[NSString stringWithFormat:@"：%@", model.commentString]];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:text];
 //    [attString setAttributes:@{NSLinkAttributeName : model.firstUserId} range:[text rangeOfString:model.firstUserName]];
-//    if (model.secondUserName) {
-//        [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
-//    }
+//       [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
+   
     return attString;
 }
 

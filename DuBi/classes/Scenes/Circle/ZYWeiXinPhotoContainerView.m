@@ -11,7 +11,7 @@
 #import "UIView+SDAutoLayout.h"
 
 #import "SDPhotoBrowser.h"
-
+#import <UIImageView+WebCache.h>
 @interface ZYWeiXinPhotoContainerView () <SDPhotoBrowserDelegate>
 
 @property (nonatomic, strong) NSArray *imageViewsArray;
@@ -81,7 +81,7 @@
         long rowIndex = idx / perRowItemCount;
         UIImageView *imageView = [_imageViewsArray objectAtIndex:idx];
         imageView.hidden = NO;
-        imageView.image = [UIImage imageNamed:obj];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:obj]];
         imageView.frame = CGRectMake(columnIndex * (itemW + margin), rowIndex * (itemH + margin), itemW, itemH);
     }];
     
@@ -135,7 +135,7 @@
 - (NSURL *)photoBrowser:(SDPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
 {
     NSString *imageName = self.picPathStringsArray[index];
-    NSURL *url = [[NSBundle mainBundle] URLForResource:imageName withExtension:nil];
+    NSURL *url = [NSURL URLWithString:imageName];
     return url;
 }
 
