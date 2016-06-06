@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JTSignInViewController : UIViewController
+@protocol JTAliasViewControllerDelegate <NSObject>
 
+-(void)reloadView;
+
+@end
+
+@interface JTSignInViewController : UIViewController
+@property(weak,nonatomic)id<JTAliasViewControllerDelegate>delegate;
 @end

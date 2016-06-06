@@ -170,8 +170,18 @@
         // 可编辑UIImagePickerControllerEditedImage（获取编辑后的图片）
         image = [info objectForKey:UIImagePickerControllerEditedImage];
     }
+    NSLog(@"修改前~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
     // 设置图片
     self.imageViewForUser.image = image;
+    NSData * data = UIImageJPEGRepresentation(self.imageViewForUser.image, 1);
+    NSURL * url = [NSURL URLWithDataRepresentation:data relativeToURL:nil];
+    
+    NSString * proaitl = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding   error:nil];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:proaitl forKey:kUserInfoKey_protrait];
+    
+    
+    NSLog(@"修改后~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
     [kpresent dismissViewControllerAnimated:YES completion:nil];
     
 }

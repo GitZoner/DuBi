@@ -21,11 +21,12 @@
 #import <HyphenateFullSDK/EMSDKFull.h>
 #import <UIImageView+WebCache.h>
 #import "SVProgressHUD.h"
-
+#import "ZDVisitingIdViewCotnroller.h"
+#import "JTSignInViewController.h"
 #define kScreen_w [UIScreen mainScreen].bounds.size.width
 #define kScreen_h [UIScreen mainScreen].bounds.size.height
 
-@interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+@interface ZDUserChangeViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,JTAliasViewControllerDelegate>
 // tableVIew
 @property(strong,nonatomic)UITableView * tableView;
 // 头部视图
@@ -48,6 +49,11 @@
 @end
 
 @implementation ZDUserChangeViewController
+
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,6 +113,7 @@
 //        [self presentViewController:jtscVC animated:YES completion:nil];
         [self.navigationController pushViewController:jtscVC animated:YES];
     }else {
+        
         // 如果是已登录的状态，那么点击头像按钮，能够修改头像，或者浏览个人基本信息
         // 可以先简单实现上传个人头像的图片
         
@@ -119,12 +126,16 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-//    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
-//        // 刷新数据
-//        [self reloadDataAction];
-//    }
+    if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
+        // 刷新数据
+        [self reloadDataAction];
+    }
 }
 
+-(void)reloadView
+{
+    [self reloadDataAction];
+}
 
 #pragma mark --- 刷新uUI
 -(void)reloadDataAction
@@ -154,7 +165,8 @@
     // 设置头部视图
     UIView * header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height * 2 / 7 - 64)];
     self.tableView.tableHeaderView = header;
-    self.tableView.tableHeaderView.hidden = YES;
+     self.tableView.tableHeaderView.hidden = YES;
+    // self.tableView.tableHeaderView = self.ChangeView;
     [self.view insertSubview:self.tableView atIndex:0];
     //[self.view addSubview:self.tableView];
 }
@@ -184,6 +196,9 @@
         }
     return self.images.count;
 }
+
+#pragma mark -- TableViewCell设置
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZDCustomUserTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"tableView"];
@@ -230,6 +245,8 @@
 //        cell.contentlabel.center = cell.center;
         cell.contentlabel.textAlignment = NSTextAlignmentCenter;
         cell.contentlabel.font = [UIFont systemFontOfSize:17];
+        // cell.contentlabel.frame = CGRectMake(5, 2, cell.width - 10, cell.height - 4);
+        cell.contentlabel.layer.cornerRadius = 10;
         // cell.contentlabel.center = cell.center;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -303,7 +320,7 @@ static UIWindow * window;
             
 //            [self.navigationController pushViewController:[ZDVisitingIdViewController new] animated:YES];
             
-            [self.navigationController pushViewController:[ZDPersonInfo new] animated:YES];
+            [self presentViewController:[ZDVisitingIdViewCotnroller new]  animated:YES completion:nil];
         }else{
             
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
@@ -312,11 +329,11 @@ static UIWindow * window;
             [self presentViewController:alert animated:YES completion:nil];
         }
     
-#pragma mark  --- 独臂圈
+#pragma mark  --- DUBI圈
     }else if(indexPath.section == 0 && indexPath.row == 1){
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"hasSign"] isEqualToString:@"YES"]) {
             JTCircleMainController * jtclVC = [JTCircleMainController new];
-            [self.navigationController pushViewController:jtclVC animated:YES];
+            // [self.navigationController pushViewController:jtclVC animated:YES];
         }else if(indexPath.section == 0 && indexPath.row == 1){
            
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
@@ -324,34 +341,48 @@ static UIWindow * window;
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];
         }
-    }else if (indexPath.row == 0 && indexPath.section == 1)
-    {
-        //        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"NO" ]) {
-        // 退出登录
-        [SVProgressHUD show];
-        kUserDefaultSetValue(@"NO", kUserInfoKey_hasSign);
-        
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_telNum);
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userAlias);
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_protrait);
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_gender);
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userID);
-        kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_passWord);
-        
-        EMError *error = [[EMClient sharedClient] logout:YES];
-        if (!error) {
-            NSLog(@"退出成功");
-        }
-        
-       // 添加通知中心
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-            [self.tableView reloadData];
-            // [self.ChangeView.imageViewForUser setNeedsDisplay];
-        });
     }
+#pragma mark --- 退出登录
+    
+    else if (indexPath.row == 0 && indexPath.section == 1)
+    {
+     
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"确认退出" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+            
+            // 退出登录
+            [SVProgressHUD show];
+            kUserDefaultSetValue(@"NO", kUserInfoKey_hasSign);
+            
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_telNum);
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userAlias);
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_protrait);
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_gender);
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_userID);
+            kUserDefaultSetValue(kUserDefaultValue_void, kUserInfoKey_passWord);
+            
+            EMError *error = [[EMClient sharedClient] logout:YES];
+            if (!error) {
+                NSLog(@"退出成功");
+            }
+            
+            // 添加通知中心
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+                [self.tableView reloadData];
+                // [self.ChangeView.imageViewForUser setNeedsDisplay];
+            });
+
+        }];
+        UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+        [alert addAction:okAction];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+}
 
 #pragma mark --- 有待开发的功能
     else{
