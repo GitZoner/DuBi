@@ -201,7 +201,14 @@
 
 
 - (IBAction)fenxiangButton:(UIButton *)sender {
+    int fenxiang = [self.listModel.comment intValue];
+    fenxiang += 1;
+    [self.dingButton setTitle:[NSString stringWithFormat:@"%zd",fenxiang]  forState:(UIControlStateNormal)];
     
+//    [self.caiButton setTitle:_listModel.cai forState:(UIControlStateNormal)];
+//    [self.fengxiangButton setTitle:_listModel.repost forState:(UIControlStateNormal)];
+//    [self.pinglunButton setTitle:_listModel.comment forState:(UIControlStateNormal)];
+
    
 
 }

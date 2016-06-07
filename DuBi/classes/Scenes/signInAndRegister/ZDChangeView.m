@@ -69,7 +69,7 @@
       
         _imageViewForHeader = [[UIImageView alloc]initWithFrame:self.bounds];
         _imageViewForHeader.userInteractionEnabled = YES;
-        _imageViewForHeader.image = [UIImage imageNamed:@"beijingtu2"];
+        _imageViewForHeader.image = [UIImage imageNamed:@"bgimage-2"];
         [self addSubview:_imageViewForHeader];
         
     }
@@ -93,7 +93,7 @@
             //   _imageViewForUser.image = [[UIImage alloc]initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgStr]]];
         }else
         {
-             _imageViewForUser.image = [UIImage imageNamed:@"beijingtu2"];
+            _imageViewForUser.image = [UIImage imageNamed:@"touxiang"];
         }
         
        
@@ -199,7 +199,7 @@
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.imageViewForUser.x, CGRectGetMaxY(self.imageViewForUser.frame)+10,self.width - self.imageViewForUser.x - (10 + self.imageViewForUser.width) , 25)];
         self.titleLabel.text = @"别让现实挡住了你梦想的去路";
         self.titleLabel.font = [UIFont systemFontOfSize:15];
-        self.titleLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.866460129310345];
+        self.titleLabel.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
         [self.imageViewForHeader addSubview:self.titleLabel];
     }
     

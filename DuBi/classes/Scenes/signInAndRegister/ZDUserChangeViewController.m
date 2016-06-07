@@ -88,14 +88,6 @@
     self.ChangeView.imageViewForHeader.userInteractionEnabled = YES;
     self.ChangeView.imageViewForUser.userInteractionEnabled = YES;
     
-    // if ([[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_hasSign]isEqualToString:@"YES"]) {
-        // [self.ChangeView.imageViewForUser sd_setImageWithURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]] placeholderImage:[UIImage imageNamed:@"pro"]];
-    // }
-    
-    
-    
-    // [self.ChangeView.nameButton addTarget:self action:@selector(tapAction) forControlEvents:(UIControlEventTouchUpInside)];
-    
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     tap.numberOfTapsRequired = 1;//手指数
     tap.numberOfTapsRequired = 1;//点击次数
@@ -130,7 +122,17 @@
     if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
         // 刷新数据
         [self reloadDataAction];
+        [self.ChangeView.nameButton setTitle:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_userAlias] forState:(UIControlStateNormal)];
+        [self.ChangeView.imageViewForUser sd_setImageWithURL:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait] placeholderImage:[UIImage imageNamed:@"pro"]];
     }
+    else
+    {
+        self.ChangeView.imageViewForUser.image = [UIImage imageNamed:@"touxiang"];
+        [self.ChangeView.nameButton setTitle:@"登录/注册" forState:(UIControlStateNormal)];
+    }
+    
+    
+    
 }
 
 -(void)reloadView
@@ -240,14 +242,24 @@
     // 退出登录
     if (indexPath.section == 1 && indexPath.row == 0)
     {
-        cell.backgroundColor = [UIColor redColor];
-        cell.contentlabel.textColor = [UIColor whiteColor];
-        cell.contentlabel.text = @"退出登录";
-//        cell.contentlabel.center = cell.center;
-        cell.contentlabel.textAlignment = NSTextAlignmentCenter;
-        cell.contentlabel.font = [UIFont systemFontOfSize:17];
-        // cell.contentlabel.frame = CGRectMake(5, 2, cell.width - 10, cell.height - 4);
-        cell.contentlabel.layer.cornerRadius = 10;
+        UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 2, self.view.width - 10, cell.height - 4)];
+          [cell addSubview:titleLabel];
+        titleLabel.text = @"退出登录";
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.backgroundColor = [UIColor colorWithRed:0.502 green:0.0 blue:0.0 alpha:1.0];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.font = [UIFont systemFontOfSize:17];
+        titleLabel.layer.cornerRadius = 10;
+      
+        
+//        cell.backgroundColor = [UIColor redColor];
+//        cell.contentlabel.textColor = [UIColor whiteColor];
+//        cell.contentlabel.text = @"退出登录";
+////        cell.contentlabel.center = cell.center;
+//        cell.contentlabel.textAlignment = NSTextAlignmentCenter;
+//        cell.contentlabel.font = [UIFont systemFontOfSize:17];
+//        // cell.contentlabel.frame = CGRectMake(5, 2, cell.width - 10, cell.height - 4);
+//        cell.contentlabel.layer.cornerRadius = 10;
         // cell.contentlabel.center = cell.center;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -367,7 +379,7 @@ static UIWindow * window;
             if (!error) {
                 NSLog(@"退出成功");
             }
-            
+            [self viewWillAppear:YES];
             // 添加通知中心
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
             
@@ -375,6 +387,7 @@ static UIWindow * window;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SVProgressHUD dismiss];
                 [self.tableView reloadData];
+                
                 // [self.ChangeView.imageViewForUser setNeedsDisplay];
             });
 

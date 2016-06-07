@@ -72,7 +72,7 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect] forBarMetrics:(UIBarMetricsDefault)];
     
     // 精华
-    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[MainViewController new]] title:@"精选" image:@"tabbar_jingxuan_nor" selectedImage:@"tabbar_jingxuan_h"];
+    [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[UIViewController new]] title:@"精选" image:@"tabbar_jingxuan_nor" selectedImage:@"tabbar_jingxuan_h"];
     // 视频
     [self setUpChildVCWithChildVC:[[UINavigationController alloc] initWithRootViewController:[ZYVideoViewController new]] title:@"视频" image:@"tabbar_video_nor" selectedImage:@"tabbar_video_h"];
     // 圈子

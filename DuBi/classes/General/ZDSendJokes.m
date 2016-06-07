@@ -75,9 +75,9 @@
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已发表成功！" preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
       
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
     
