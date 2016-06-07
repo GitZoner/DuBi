@@ -14,7 +14,7 @@
 #import "JTRegisterViewController.h"
 #import "ZDUIAlert.h"
 #import <UIImageView+WebCache.h>
-
+#import <AVOSCloud.h>
 #define kpresent [UIApplication sharedApplication].keyWindow.rootViewController
 
 @interface ZDChangeView ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -162,27 +162,67 @@
 // pickerCotnroller的代理方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    
     UIImage * image= nil;
     // 判断一下我们从哪里获取图片
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         // 修改当前image
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        NSLog(@"相机");
     }else {
         // 可编辑UIImagePickerControllerEditedImage（获取编辑后的图片）
-        image = [info objectForKey:UIImagePickerControllerEditedImage];
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        NSLog(@"相册");
     }
-    NSLog(@"修改前~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
-    // 设置图片
-    self.imageViewForUser.image = image;
-    NSData * data = UIImageJPEGRepresentation(self.imageViewForUser.image, 1);
-    NSURL * url = [NSURL URLWithDataRepresentation:data relativeToURL:nil];
+    NSLog(@"修改前~~~~~~~~~~~~~~~%@",image);
     
-    NSString * proaitl = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding   error:nil];
+    NSData * data = UIImageJPEGRepresentation(image, 1);
+    NSLog(@"data --------- %@",data);
+    AVFile * userFile = [AVFile fileWithName:@"alise.png" data:data];
+    NSLog(@"-------------- %@",userFile.url);
     
-    [[NSUserDefaults standardUserDefaults]setObject:proaitl forKey:kUserInfoKey_protrait];
+    [userFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        
+        if (succeeded) {
+            
+            NSLog(@"成功");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // 设置图片
+                [self.imageViewForUser sd_setImageWithURL:[NSURL URLWithString:userFile.url]];
+            });
+            
+            AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
+            [query getObjectInBackgroundWithId:kUserInfoKey_userID block:^(AVObject *object, NSError *error) {
+                NSLog(@"成功。");
+                [object setObject:userFile.url forKey:kUserInfoKey_protrait];
+            }];
+        }
+        
+        
+    } progressBlock:nil];
     
     
-    NSLog(@"修改后~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    
+//    NSURL * url = [NSURL URLWithDataRepresentation:data relativeToURL:nil];
+//    
+//    NSString * proaitl = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding   error:nil];
+//    
+//    [[NSUserDefaults standardUserDefaults]setObject:proaitl forKey:kUserInfoKey_protrait];
+//    
+//    
+//    NSLog(@"修改后~~~~~~~~~~~~~~~%@",[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]);
     [kpresent dismissViewControllerAnimated:YES completion:nil];
     
 }
