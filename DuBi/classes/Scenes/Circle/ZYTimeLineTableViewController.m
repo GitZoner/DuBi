@@ -332,7 +332,7 @@ static CGFloat textFieldH = 40;
     if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
          return self.dataArray.count;
     }else {
-        return 1;
+        return 0;
     }
    
 }
