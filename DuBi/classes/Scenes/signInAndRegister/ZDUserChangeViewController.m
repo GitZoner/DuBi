@@ -103,6 +103,7 @@
     // [self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil
     if ([self.hasSign isEqualToString:@"NO"] || self.hasSign == nil) {
         JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
+        self.hidesBottomBarWhenPushed = YES;
 //        [self presentViewController:jtscVC animated:YES completion:nil];
         [self.navigationController pushViewController:jtscVC animated:YES];
     }else {
@@ -119,6 +120,9 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+    
+    
     if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
         // 刷新数据
         [self reloadDataAction];
@@ -381,7 +385,7 @@ static UIWindow * window;
             }
             [self viewWillAppear:YES];
             // 添加通知中心
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_loginOut object:nil];
             
             
             dispatch_async(dispatch_get_main_queue(), ^{

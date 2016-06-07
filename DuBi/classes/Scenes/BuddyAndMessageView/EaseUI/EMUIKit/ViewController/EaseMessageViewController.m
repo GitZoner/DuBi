@@ -88,27 +88,24 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(goBackAction:)];
     self.navigationController.navigationBar.tintColor =tGreenColor;
     
-    self.hidesBottomBarWhenPushed = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
 
-    CGRect rect  = self.tableView.frame;
-    rect.origin.y = 64;
-    rect.size.height =  rect.size.height - 49;
-    self.tableView.frame = rect;
+   
     
-    self.navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen ].bounds.size.width, 64)];
-    [self.view addSubview:self.navigationView];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 150, 44)];
-    label.center = CGPointMake(self.navigationView.center .x, self.navigationView.bounds.size.height / 2 );
-    label.text = self.title;
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.navigationView addSubview:label];
-    
-    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    button.frame = CGRectMake(20, 20, 30, 30);
-    [button setImage:[UIImage imageNamed:@"back_icon"] forState:(UIControlStateNormal)];
-    [button addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.navigationView addSubview:button];
+//    self.navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen ].bounds.size.width, 64)];
+//    [self.view addSubview:self.navigationView];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 150, 44)];
+//    label.center = CGPointMake(self.navigationView.center .x, self.navigationView.bounds.size.height / 2 );
+//    label.text = self.title;
+//    label.textColor = [UIColor blackColor];
+//    label.textAlignment = NSTextAlignmentCenter;
+//    [self.navigationView addSubview:label];
+//    
+//    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+//    button.frame = CGRectMake(20, 20, 30, 30);
+//    [button setImage:[UIImage imageNamed:@"back_icon"] forState:(UIControlStateNormal)];
+//    [button addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
+//    [self.navigationView addSubview:button];
     
     
     
@@ -209,7 +206,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    self.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+  self.tabBarController.tabBar.hidden = YES;
     self.isViewDidAppear = YES;
     [[EaseSDKHelper shareHelper] setIsShowingimagePicker:NO];
     
@@ -222,7 +220,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    self.tabBarController.tabBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
     
     self.isViewDidAppear = NO;
     [[EMCDDeviceManager sharedInstance] disableProximitySensor];
@@ -350,7 +348,7 @@
     CGRect tableFrame = self.tableView.frame;
     tableFrame.size.height = self.view.frame.size.height - _chatToolbar.frame.size.height - 49;
     tableFrame.origin.y = 49;
-//    tableFrame.size.height = self.view.frame.size.height;
+    tableFrame.size.height = self.view.frame.size.height;
     self.tableView.frame = tableFrame;
     if ([chatToolbar isKindOfClass:[EaseChatToolbar class]]) {
         [(EaseChatToolbar *)self.chatToolbar setDelegate:self];

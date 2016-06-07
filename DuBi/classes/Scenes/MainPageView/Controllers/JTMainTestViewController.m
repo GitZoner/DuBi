@@ -15,6 +15,12 @@
 
 @implementation JTMainTestViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden  = NO;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     JTSelectTopView *topView = [[JTSelectTopView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 50 ,30)];

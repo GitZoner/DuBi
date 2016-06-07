@@ -45,6 +45,13 @@
 
 static NSString * const registerId = @"ZDCustomVedioCell";
 @implementation ZYVideoViewController
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden  = NO;
+    
+}
+
+
 
 #pragma mark --- setter getter 方法
 -(NSMutableArray *)listArry

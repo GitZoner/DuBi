@@ -49,6 +49,7 @@ static CGFloat textFieldH = 40;
 
 
 
+
 {
     ZYTimeLinerefreshFooter *_refreshFooter;
     ZYTimeLineRefreshHeader *_refreshHeader;
@@ -108,8 +109,39 @@ static CGFloat textFieldH = 40;
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logInNotificationAction:) name:kNotification_loginIn object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOutNotificationAction:) name:kNotification_loginOut object:nil];
+}
 
 
+-(void)logInNotificationAction:(NSNotification *)notification {
+    __weak typeof(self) weakSelf = self;
+    _refreshFooter = [ZYTimeLinerefreshFooter refreshFooterWithRefreshingText:@"正在加载数据..."];
+    __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
+    [_refreshFooter addToScrollView:self.tableView refreshOpration:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.dataArray addObjectsFromArray:[weakSelf creatModelsWithCount:10]];
+            [weakSelf.tableView reloadData];
+            [weakRefreshFooter endRefreshing];
+        });
+    }];
+   
+}
+
+-(void)logOutNotificationAction:(NSNotification *)notification {
+    NSLog(@"朋友圈接收到退出通知");
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 414, 200)];
+    imageView.image = [UIImage imageNamed:@"login_remind"];
+    self.tableView.tableFooterView = imageView;
+    self.tableView.tableFooterView = nil;
+    
+    [self.tableView reloadData];
+    
+    
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -123,7 +155,7 @@ static CGFloat textFieldH = 40;
         __weak typeof(self) weakSelf = self;
         [_refreshHeader setRefreshingBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-#warning 从数据库获取发布内容对象，并对获取的对象进行解析，解析数据封装到model
+
                 weakSelf.dataArray = [[weakSelf creatModelsWithCount:10] mutableCopy];
                 [weakHeader endRefreshing];
                 dispatch_async(dispatch_get_main_queue(), ^{
