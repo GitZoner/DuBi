@@ -7,8 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Picture.h"
 @interface LWNTableView : UITableView
--(instancetype)initWithFrame:(CGRect)frame withUrl:(NSString *)string;
-@property(strong,nonatomic)NSMutableArray *array;
+@property(strong,nonatomic)NSMutableArray *dataArray;
+
+
+/**
+ *  初始化并请求数据
+ *
+ *  @param frame  大小
+ *  @param string URL
+ *
+ *  @return self
+ */
+//-(instancetype)initWithFrame:(CGRect)frame;
+-(void)getDataWithString:(NSString *)urlString;
+-(NSInteger)numberOfRows:(NSInteger)section;
+-(Picture *)piturForRowInSection:(NSIndexPath*)indexPath;
+//+(NSMutableArray *)arrayWithURL:(NSString *)string;
+
 @end

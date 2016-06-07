@@ -14,14 +14,15 @@
 #import "PictureViewCell.h"
 #import "LWNMainPageUrl.h"
 #import <MBProgressHUD.h>
+#import "LWNTableView.h"
 @interface LWNViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *TopicButton;
 @property (weak, nonatomic) IBOutlet UIButton *PictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *MovieButton;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITableView *topicTableView;
-@property (weak, nonatomic) IBOutlet UITableView *pictureTableView;
-@property (weak, nonatomic) IBOutlet UITableView *MovieTableView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UITableView *topicTableView;
+@property (strong, nonatomic) IBOutlet UITableView *pictureTableView;
+@property (strong, nonatomic) IBOutlet UITableView *MovieTableView;
 @property(strong,nonatomic)UIView *middleView;
 @end
 
@@ -29,6 +30,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.topicTableView = [[LWNTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kTopicUrl,@""]];
+    self.topicTableView.delegate = self;
+    //self.tableView.backgroundColor = [UIColor yellowColor];
+   // self.pictureTableView = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth, kHeight) withUrl:[NSString stringWithFormat:kPictureUrl,@""]];
+    self.pictureTableView.delegate = self;
+    
+//    self.tableView2.backgroundColor = [UIColor blackColor];
+//    self.tableView3 = [[LWNTableView alloc]initWithFrame:CGRectMake(kWidth * 2, 0, kWidth, kHeight) withUrl:@""];
+//    self.tableView3.backgroundColor = [UIColor redColor];
+//    self.tableView3.delegate = self;
+//    
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth * 3, kHeight)];
+    [self.scrollView addSubview:self.topicTableView];
+    [self.scrollView addSubview:self.pictureTableView];
+   // [self.scrollView addSubview:self.tableView3];
+    self.scrollView.contentSize = CGSizeMake(kWidth, 0);
+    self.scrollView.pagingEnabled = YES;
     // 添加下面的视图
     /*
     NSLog(@"%f",_MovieButton.center.x);
@@ -42,12 +60,12 @@
     [self requestData];
     [self showHUD];
     // 设置代理
-    self.scrollView.delegate = self;
-    self.scrollView.pagingEnabled = YES;
-    self.topicTableView.delegate = self;
-    self.topicTableView.dataSource = self;
-    self.pictureTableView.delegate = self;
-    self.pictureTableView.dataSource = self;
+//    self.scrollView.delegate = self;
+//    self.scrollView.pagingEnabled = YES;
+//    self.topicTableView.delegate = self;
+//    self.topicTableView.dataSource = self;
+//    self.pictureTableView.delegate = self;
+//    self.pictureTableView.dataSource = self;
     // 注册cell
     [self.topicTableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"topicID"];
     [self.pictureTableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"pictureID"];
@@ -117,12 +135,25 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return [kHandle numberOfSections];
+    return 1;
 }
+/*
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return [kHandle numofRowsAtSection:section];
+    if ([tableView isEqual:_topicTableView]) {
+        return self.topicTableView.array.count ;
+        
+    } else if ([tableView isEqual:_tableView2]) {
+        
+        return self.tableView2.array.count ;
+        
+    }else{
+        return self.tableView3.array.count ;
+        
+    }
+
 }
+*/
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView.tag == 100) {

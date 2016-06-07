@@ -84,10 +84,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vi1-gx-QcG">
-                    <rect key="frame" x="30" y="30" width="30" height="30"/>
+                    <rect key="frame" x="30" y="30" width="23" height="23"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="KoF-Ny-jHh"/>
-                        <constraint firstAttribute="height" constant="30" id="mdY-XS-Ms3"/>
+                        <constraint firstAttribute="width" constant="23" id="KoF-Ny-jHh"/>
+                        <constraint firstAttribute="height" constant="23" id="mdY-XS-Ms3"/>
                     </constraints>
                     <state key="normal" backgroundImage="signIn_cancel"/>
                     <connections>

@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [self tableViewDidTriggerHeaderRefresh];
 }
 
@@ -131,7 +131,8 @@
     if (model) {
             EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
             viewController.title = model.nickname;
-            [self presentViewController:viewController animated:YES completion:nil];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
        
 
         

@@ -62,9 +62,12 @@
     [self removeEmptyConversationsFromDB];
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
     [self refresh];
 }
 

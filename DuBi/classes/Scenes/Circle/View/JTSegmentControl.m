@@ -119,7 +119,7 @@
             if (self.scrollView.contentOffset.x < 0) {
                 self.scrollView.contentOffset = CGPointZero;
             }else if(self.scrollView.contentOffset.x > (self.scrollView.contentSize.width - self.segmentSize.width) ) {
-                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.width ,0);
+                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.width + 50 ,0);
             }
             CGPoint centerPoint = self.indicatorLine.center;
             centerPoint.x = _selectedButton.center.x;

@@ -28,6 +28,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden= YES;
+    self.tabBarController.tabBar.hidden= YES;
 
 }
 
@@ -108,7 +109,11 @@
 }
 
 
-
+-(void)layoutSublayersOfLayer:(CALayer *)layer {
+    [super layoutSublayersOfLayer:layer];
+    
+    self.view.frame = [UIScreen mainScreen].bounds;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
