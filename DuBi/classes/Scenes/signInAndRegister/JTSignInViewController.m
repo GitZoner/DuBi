@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.signInButton.layer.cornerRadius = 7;
+    self.signInButton.layer.masksToBounds = YES;
 }
 
 // 重设密码按钮

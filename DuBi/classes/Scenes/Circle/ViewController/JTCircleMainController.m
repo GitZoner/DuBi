@@ -22,6 +22,7 @@
 #import "JTNotificationViewController.h"
 #import "EaseUsersListViewController.h"
 #import "JTBuddyManager.h"
+#import "JTTabBarViewController.h"
 @interface JTCircleMainController ()<UIScrollViewDelegate,JTSegmentControlDelegate>
 
 @property (strong,nonatomic)JTSegmentControl *segmentControl;
@@ -39,6 +40,13 @@
 
 @implementation JTCircleMainController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+        JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+//        ((JTCircleMainController *)tabbarVC.viewControllers[2]).navigationItem.titleView = self.segmentControl;
+    tabbarVC.navigationItem.titleView = self.segmentControl;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,10 +71,15 @@
     // 添加segmentControl;
     UIView *navgationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
     navgationView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    [self.view addSubview:navgationView];
+//    [self.view addSubview:navgationView];
     
-    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(50, 20) titleFont:[UIFont systemFontOfSize:13]];
-    self.navigationItem.titleView = self.segmentControl;
+    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth-20, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(kScreenWidth / 5, 20) titleFont:[UIFont systemFontOfSize:13]];
+    
+//    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+//    tabbarVC.viewControllers[2].navigationItem.titleView = self.segmentControl;
+//    self.navigationItem.titleView = self.segmentControl;
+//    self.parentViewController.navigationItem.titleView;
+    
     self.segmentControl.delegate = self;
     [self.segmentControl.searchButton  addTarget:self action:@selector(pushSearchVCACtion:) forControlEvents:(UIControlEventTouchUpInside)];
    //  [self.view addSubview:self.segmentControl];

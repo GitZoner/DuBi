@@ -67,7 +67,10 @@
 -(void)setWindowAndRootVC {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[JTTabBarViewController new]];
+    UINavigationController * NC = (UINavigationController *)self.window.rootViewController;
+    // [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [JTTabBarViewController new];
+
 }
 @end

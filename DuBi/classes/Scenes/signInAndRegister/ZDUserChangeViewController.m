@@ -110,6 +110,7 @@
     // [self.hasSign isEqualToString:@"NO"] ||self.hasSign == nil
     if ([self.hasSign isEqualToString:@"NO"] || self.hasSign == nil) {
         JTSignInChoiceViewController * jtscVC = [JTSignInChoiceViewController new];
+        self.hidesBottomBarWhenPushed = YES;
 //        [self presentViewController:jtscVC animated:YES completion:nil];
         [self.navigationController pushViewController:jtscVC animated:YES];
     }else {
@@ -126,6 +127,9 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+    
+    
     if ([kUserDefaultGetValue(@"hasSign") isEqualToString:@"YES"]) {
         // 刷新数据
         [self reloadDataAction];

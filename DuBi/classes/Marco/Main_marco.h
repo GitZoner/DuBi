@@ -29,6 +29,9 @@
 #define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
 #define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
 
+// 通知名
+#define kNotification_loginIn @""
+
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kscreenHeight [UIScreen mainScreen].bounds.size.height
