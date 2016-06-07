@@ -17,6 +17,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "JTBuddyManager.h"
 #import "Main_marco.h"
+#import "UIImageView+WebCache.h"
 @interface EaseUsersListViewController ()
 
 @property (strong, nonatomic) UISearchBar *searchBar;
@@ -123,18 +124,16 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     id<IUserModel> model = nil;
-    if (_dataSource && [_dataSource respondsToSelector:@selector(userListViewController:userModelForIndexPath:)]) {
-        model = [_dataSource userListViewController:self userModelForIndexPath:indexPath];
-    }
-    else {
+   
+   
         model = [self.dataArray objectAtIndex:indexPath.row];
-    }
     
     if (model) {
-        
             EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
             viewController.title = model.nickname;
-            [self.navigationController pushViewController:viewController animated:YES];
+            [self presentViewController:viewController animated:YES completion:nil];
+       
+
         
     }}
 
@@ -166,6 +165,18 @@
                     model = [[EaseUserModel alloc] initWithBuddy:[buddy objectForKey:kUserInfoKey_telNum]];
                     model.nickname  = [buddy objectForKey:kUserInfoKey_userAlias];
                     model.avatarURLPath = [buddy objectForKey:kUserInfoKey_protrait];
+                    
+                    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+                    [manager downloadImageWithURL:[NSURL URLWithString:model.avatarURLPath]
+                                          options:0
+                                         progress:nil
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                            if (image) {
+                                                model.avatarImage = image;
+                                            }
+                                        }];
+                    
+                    
                     if(model){
                         [weakself.dataArray addObject:model];
                     }

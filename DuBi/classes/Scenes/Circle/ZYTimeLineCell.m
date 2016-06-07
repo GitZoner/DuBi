@@ -17,6 +17,9 @@
 #import "ZYTimeLineCellOperationMenu.h"
 #import "Color_marco.h"
 #import "ZYGetObject.h"
+#import "Main_marco.h"
+#import <UIImageView+WebCache.h>
+
 
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定
@@ -187,7 +190,8 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     _shouldOpenContentLabel = NO;
     
 //    _iconView.image = [UIImage imageNamed:model.iconName];
-    _nameLable.text = model.userAlias;
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:_model.iconName]];
+    _nameLable.text = _model.userAlias;
     // 防止单行文本label在重用时宽度计算不准的问题
     [_nameLable sizeToFit];
     _contentLabel.text = model.msgContent;

@@ -119,7 +119,7 @@
             if (self.scrollView.contentOffset.x < 0) {
                 self.scrollView.contentOffset = CGPointZero;
             }else if(self.scrollView.contentOffset.x > (self.scrollView.contentSize.width - self.segmentSize.width) ) {
-                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.segmentSize.width ,0);
+                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.width ,0);
             }
             CGPoint centerPoint = self.indicatorLine.center;
             centerPoint.x = _selectedButton.center.x;
@@ -138,6 +138,7 @@
 
 
 -(void)clickButtonAction:(UIButton *)button {
+    NSLog(@"分段选择器按钮已点击");
     self.selectedButton = button;
     if (_delegate && [_delegate respondsToSelector:@selector(segment:didSelectColumnIndex:)]) {
         [_delegate segment:self didSelectColumnIndex:button.tag];

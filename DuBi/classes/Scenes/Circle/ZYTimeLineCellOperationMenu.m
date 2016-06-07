@@ -28,6 +28,7 @@
 
 - (void)setup
 {
+    // 如果子视图的范围超过父视图的边界，那么超出的部分就会被裁减掉。YES裁剪，NO不裁剪。默认是NO；
     self.clipsToBounds = YES;
     self.layer.cornerRadius = 5;
     self.backgroundColor = SDColor(69, 74, 76, 1);
@@ -79,14 +80,7 @@
 {
     if (self.likeButtonClickedOperation) {
         self.likeButtonClickedOperation();
-//        NSLog(@"ebfuerufurgiurtgrtgrtrtgurtghrtgvrtgurt");
-//        AVObject *userDeliverInfo = [AVObject  objectWithClassName:@"userDeliverInfo"];// 构建对象
-//        NSNumber *num1 = [NSNumber numberWithInt:0];
-//        NSNumber *num2 = [NSNumber numberWithInt:1];
-//        NSArray *arr = [NSArray arrayWithObjects:num1,num2, nil];
-//        [userDeliverInfo setObject:arr[1] forKey:@"likeItems"];
-//         [userDeliverInfo saveInBackground];
-        
+
   
     }
 }

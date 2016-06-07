@@ -45,7 +45,7 @@ static ZYGetObject *sington = nil;
         _zymodel = [ZYTimeLineCellModel new];
         _zymodel.userAlias = object[@"userAlias"];
         _zymodel.publishType = object[@"publishType"];
-        _zymodel.msgContent = object[@"msgContent"];
+        _zymodel.msgContent = object[@"msgCotent"];
         
         _zymodel.createdAt = object[@"createdAt"];
         

@@ -13,6 +13,7 @@
 @interface ZYTimeLineCellModel : NSObject
 
 
+
 /*用户名*/
 @property (strong, nonatomic) NSString *userAlias;
 
@@ -24,14 +25,15 @@
 
 /*发表图片*/
 @property (strong, nonatomic) NSArray *picNamesArray;
+
 /*当前时间*/
 @property (strong, nonatomic) NSDate *createdAt;
 
+// 用户头像
+@property (nonatomic, copy) NSString *iconName;
 
-//@property (nonatomic, copy) NSString *iconName;
-//@property (nonatomic, copy) NSString *name;
-//@property (nonatomic, copy) NSString *msgContent;
-//@property (nonatomic, strong) NSArray *picNamesArray;
+
+
 
 @property (nonatomic, assign, getter = isLiked) BOOL liked;
 
@@ -55,9 +57,9 @@
 @property (nonatomic, copy) NSString *commentString;
 
 @property (nonatomic, copy) NSString *firstUserName;
-//@property (nonatomic, copy) NSString *firstUserId;
-//
-//@property (nonatomic, copy) NSString *secondUserName;
-//@property (nonatomic, strong) NSString *secondUserId;
+@property (nonatomic, copy) NSString *firstUserId;
+
+@property (nonatomic, copy) NSString *secondUserName;
+@property (nonatomic, strong) NSString *secondUserId;
 
 @end

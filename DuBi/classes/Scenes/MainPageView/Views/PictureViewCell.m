@@ -49,6 +49,17 @@
             }
             
             self.lwnView.frame = CGRectMake(CGRectGetMinX(self.pictureTextLabel.frame), CGRectGetMaxY(self.pictureTextLabel.frame) + 10, ImgWidth, ImgHeight);
+            [_headerImgView sd_setImageWithURL:[NSURL URLWithString:picture.profile_image]];
+            CGRect nameRect = _nameLabel.frame;
+            nameRect.size.height = [[self class]heightWithString:picture.text];
+            self.nameLabel.frame = nameRect;
+            // 内容
+            _pictureTextLabel.text = picture.text;
+            _pictureTextLabel.numberOfLines = 0;
+            CGRect textRect = _pictureTextLabel.frame;
+            textRect.size.height = [[self class]heightWithString:picture.text];
+            self.pictureTextLabel.frame = textRect;
+
         }else if (picture.type == 29){ // 段子类型
             // 布局
             CGRect frame = _pictureTextLabel.frame;
@@ -61,21 +72,21 @@
         // 用户名
         _nameLabel.text = picture.name;
         // 头像
-        [_headerImgView sd_setImageWithURL:[NSURL URLWithString:_picture.profile_image]];
+        [_headerImgView sd_setImageWithURL:[NSURL URLWithString:picture.profile_image]];
        CGRect nameRect = _nameLabel.frame;
-       nameRect.size.height = [[self class]heightWithString:_picture.text];
+       nameRect.size.height = [[self class]heightWithString:picture.text];
        self.nameLabel.frame = nameRect;
         // 内容
-        _pictureTextLabel.text = _picture.text;
+        _pictureTextLabel.text = picture.text;
         _pictureTextLabel.numberOfLines = 0;
         CGRect textRect = _pictureTextLabel.frame;
-        textRect.size.height = [[self class]heightWithString:_picture.text];
+        textRect.size.height = [[self class]heightWithString:picture.text];
         self.pictureTextLabel.frame = textRect;
-       // NSLog(@"得到值后的的高度%f",textRect.size.height + 70 + 10);
         
     }
 
 }
+
 +(CGFloat)heightWithString:(NSString *)string{
     CGSize size = CGSizeMake(kWidth - 20 , 0);
     NSDictionary *dict = @{kCIAttributeName:[UIFont systemFontOfSize:14]};
@@ -106,12 +117,12 @@
 
 }
 -(void)setFrame:(CGRect)frame{
-    frame.origin.x = 5;
-    //frame.origin.y = 5;
-    frame.size.width -= 10;
-  // frame.size.height -= 5;
+   frame.origin.x = 5;
+  // frame.origin.y = 5;
+  // frame.size.width -= 10;
+   frame.size.height -= 5;
     //  NSLog(@"%f",frame.size.height);
-    [super setFrame:frame];
+  [super setFrame:frame];
 
 }
 - (void)awakeFromNib {
