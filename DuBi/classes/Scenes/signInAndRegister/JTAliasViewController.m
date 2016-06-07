@@ -12,7 +12,7 @@
 #import "JTBuddyManager.h"
 #import "Main_marco.h"
 #import "XHToast.h"
-@interface JTAliasViewController ()
+@interface JTAliasViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userAlias; // 用户别名
 @end
@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userAlias.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)completedRegisterAction:(UIButton *)sender {
@@ -44,6 +45,16 @@
     
     [self.navigationController popToRootViewControllerAnimated:YES];
     
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.userAlias resignFirstResponder];
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

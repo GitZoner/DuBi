@@ -42,11 +42,12 @@ static CGFloat textFieldH = 40;
 
 // 头部视图
 @property (strong,nonatomic)JTCircleHeaderView *headerVew;
+// 获取数据的所在页
+@property (assign,nonatomic)NSInteger dataPageNum;
 
 @end
 
 @implementation ZYTimeLineTableViewController
-
 
 
 
@@ -79,26 +80,27 @@ static CGFloat textFieldH = 40;
     if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
         
     
-    [self.dataArray addObjectsFromArray:[self creatModelsWithCount:10]];
+    [self.dataArray addObjectsFromArray:[self getDeliverDataWithPageNum:self.dataPageNum]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     __weak typeof(self) weakSelf = self;
     
     
     // 上拉加载
+        self.dataPageNum = 0;
     _refreshFooter = [ZYTimeLinerefreshFooter refreshFooterWithRefreshingText:@"正在加载数据..."];
     __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
     [_refreshFooter addToScrollView:self.tableView refreshOpration:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.dataArray addObjectsFromArray:[weakSelf creatModelsWithCount:10]];
+            [weakSelf.dataArray addObjectsFromArray:[weakSelf getDeliverDataWithPageNum:++weakSelf.dataPageNum]];
             [weakSelf.tableView reloadData];
             [weakRefreshFooter endRefreshing];
         });
     }];
     
-    //    SDTimeLineTableHeaderView *headerView = [SDTimeLineTableHeaderView new];
-    //    headerView.frame = CGRectMake(0, 0, 0, 260);
-    //    self.tableView.tableHeaderView = headerView;
+//       SDTimeLineTableHeaderView *headerView = [SDTimeLineTableHeaderView new];
+//        headerView.frame = CGRectMake(0, 0, 0, 260);
+//       self.tableView.tableHeaderView = headerView;
     
     [self.tableView registerClass:[ZYTimeLineCell class] forCellReuseIdentifier:kTimeLineTableViewCellId];
     
@@ -109,39 +111,8 @@ static CGFloat textFieldH = 40;
     }
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logInNotificationAction:) name:kNotification_loginIn object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOutNotificationAction:) name:kNotification_loginOut object:nil];
-}
 
 
--(void)logInNotificationAction:(NSNotification *)notification {
-    __weak typeof(self) weakSelf = self;
-    _refreshFooter = [ZYTimeLinerefreshFooter refreshFooterWithRefreshingText:@"正在加载数据..."];
-    __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
-    [_refreshFooter addToScrollView:self.tableView refreshOpration:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.dataArray addObjectsFromArray:[weakSelf creatModelsWithCount:10]];
-            [weakSelf.tableView reloadData];
-            [weakRefreshFooter endRefreshing];
-        });
-    }];
-   
-}
-
--(void)logOutNotificationAction:(NSNotification *)notification {
-    NSLog(@"朋友圈接收到退出通知");
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 414, 200)];
-    imageView.image = [UIImage imageNamed:@"login_remind"];
-    self.tableView.tableFooterView = imageView;
-    self.tableView.tableFooterView = nil;
-    
-    [self.tableView reloadData];
-    
-    
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -155,8 +126,9 @@ static CGFloat textFieldH = 40;
         __weak typeof(self) weakSelf = self;
         [_refreshHeader setRefreshingBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-                weakSelf.dataArray = [[weakSelf creatModelsWithCount:10] mutableCopy];
+#warning 从数据库获取发布内容对象，并对获取的对象进行解析，解析数据封装到model
+               
+                weakSelf.dataArray = [[weakSelf getDeliverDataWithPageNum:weakSelf.dataPageNum] mutableCopy];
                 [weakHeader endRefreshing];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf.tableView reloadData];
@@ -199,6 +171,78 @@ static CGFloat textFieldH = 40;
     [_textField resignFirstResponder];
 }
 
+/**
+ *  从数据库获取朋友圈数据
+ *
+ *  @param ItemsNum 查询结果，每页的个数
+ *  @param pageNum  需要返回第几页的数据
+ *
+ *  @return 数组
+ */
+
+
+-(NSArray *)getDeliverDataWithPageNum:(NSInteger)pageNum {
+    
+    AVQuery *query = [AVQuery queryWithClassName:@"userDeliverInfo"];
+    NSDate *now = [NSDate date];
+    [query whereKey:@"createdAt" lessThanOrEqualTo:now];
+    query.limit = 5; // 最多返回 10 条结果
+    query.skip = pageNum * 5;  // 跳过 20 条结果
+    
+    
+    
+   
+    
+    
+    NSMutableArray *tempArray = [NSMutableArray array];
+    
+    
+    for (AVObject *object in self.avObjectArray) {
+        
+        ZYTimeLineCellModel *zymodel = [ZYTimeLineCellModel new];
+        zymodel.userAlias = object[@"userAlias"];
+        zymodel.publishType = object[@"publishType"];
+        zymodel.msgContent = object[@"msgContent"];
+        zymodel.picNamesArray = object[@"picNamesArray"];
+        zymodel.iconName = object[@"iconName"];
+        
+        
+        AVRelation *relation = [object relationforKey:@"likeItems"];
+        AVQuery *query = [relation query];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count > 0) {
+                // 临时存放点赞model的数组
+                NSMutableArray *likeArray = [NSMutableArray array];
+                
+                for (AVObject *object in objects) {
+                    ZYTimeLineCellLikeItemModel *likeModel = [ZYTimeLineCellLikeItemModel new];
+                    likeModel.userName = object[@"userAlias"];
+                    [likeArray addObject:likeModel];
+                }
+                
+                zymodel.likeItemsArray = likeArray;
+                
+            }
+        }];
+        
+        
+        
+        
+        
+        
+        zymodel.createdAt = object[@"createdAt"];
+        
+        [tempArray addObject:zymodel];
+    }
+    
+    return tempArray;
+    
+    
+    
+    
+}
+
+/*
 - (NSArray *)creatModelsWithCount:(NSInteger)count
 {
 //    NSArray *iconImageNamesArray = @[@"icon0.jpg",
@@ -357,6 +401,7 @@ static CGFloat textFieldH = 40;
     
     return tempArray;
 }
+   */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -422,8 +467,32 @@ static CGFloat textFieldH = 40;
     [_textField resignFirstResponder];
 }
 
+
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
    
+    AVQuery *query = [AVQuery queryWithClassName:@"userDeliverInfo"];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        for (AVObject *object in objects) {
+            
+            ZYTimeLineCellModel *zyModel = [ZYTimeLineCellModel new];
+            
+            
+        }
+        
+        
+        self.avObjectArray = objects.mutableCopy;
+        
+    
+        
+        
+    }];
+    
+    
+    
+    
 }
 
 
