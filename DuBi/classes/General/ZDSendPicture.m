@@ -97,6 +97,9 @@
 -(void)quxiaoAction
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
+    
+
+    
 }
 
 // 发布按钮

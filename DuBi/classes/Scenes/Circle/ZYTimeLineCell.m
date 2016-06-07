@@ -20,7 +20,7 @@
 #import "Main_marco.h"
 #import <UIImageView+WebCache.h>
 
-
+#import "NSDate+HFExtension.h"
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定
 
@@ -153,7 +153,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     .leftEqualToView(_contentLabel)
     .topSpaceToView(_picContainerView, margin)
     .heightIs(15)
-    .widthIs(120);
+    .widthIs(150);
 //    .autoHeightRatio(0);
     
     _operationButton.sd_layout
@@ -235,18 +235,67 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     [self setupAutoHeightWithBottomView:bottomView bottomMargin:15];
 #warning 获取系统时间
    
-        
-         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat: @"yyyy/MM/dd HH:mm:ss"];
-    
-        NSString *dateString = [dateFormatter stringFromDate:_model.createdAt];
-        _timeLabel.text = dateString;
     
         
-        
-   
+//         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat: @"yyyy/MM/dd HH:mm:ss"];
+//    
+//        NSString *dateString = [dateFormatter stringFromDate:_model.createdAt];
+//        _timeLabel.text = dateString;
+//    
+    
+    
+    
+    
+    
+    
+    // 设置发帖时间
+    /**
+     *  日期的最终显示格式
+     *今年
+     *  今天
+     *      1分钟内：刚刚
+     *      1小时内：xx分钟前
+     *      其他：xx小时前
+     *  昨天：昨天 18：56：35
+     *非今年：2015-04-05 18：45：34
+     */
+    // 日期格式化类
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    // 设置日期格式
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    if (_model.createdAt.isThisYear) {
+        // 今年
+        if (_model.createdAt.isToday) {
+            // 今天
+            NSDateComponents *cmps = [[NSDate date] deltaFrom:_model.createdAt];
+            if (cmps.hour >= 1) {
+                // 时间差距 >= 1小时
+                _timeLabel.text = [NSString stringWithFormat:@"%ld小时前", cmps.hour];
+            }else if (cmps.minute >= 1) {
+                // 1小时 > 时间差距 >= 1分钟
+                _timeLabel.text = [NSString stringWithFormat:@"%ld分钟前", cmps.minute];
+            }else {
+                // 1分钟 > 时间差距
+                _timeLabel.text = @"刚刚";
+            }
+        } else if (_model.createdAt.isYesterday) {
+            // 昨天
+            fmt.dateFormat = @"昨天 HH:mm:ss";
+            _timeLabel.text = [fmt stringFromDate:_model.createdAt];
+        } else {
+            // 其他
+            fmt.dateFormat = @"MM-dd HH:mm:ss";
+            _timeLabel.text = [fmt stringFromDate:_model.createdAt];
+        }
+    }else {
+        // 非今年
+        _timeLabel.text = [NSString stringWithFormat:@"%@", _model.createdAt];
+    }
+  
    
 }
+
 
 - (void)setFrame:(CGRect)frame
 {

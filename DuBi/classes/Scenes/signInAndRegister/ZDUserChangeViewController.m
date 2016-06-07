@@ -88,6 +88,7 @@
     self.ChangeView.imageViewForHeader.userInteractionEnabled = YES;
     self.ChangeView.imageViewForUser.userInteractionEnabled = YES;
     if ([[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_hasSign]isEqualToString:@"YES"]) {
+       
         [self.ChangeView.imageViewForUser sd_setImageWithURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait]] placeholderImage:[UIImage imageNamed:@"pro"]];
     }
     
