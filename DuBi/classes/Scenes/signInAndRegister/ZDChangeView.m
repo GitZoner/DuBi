@@ -87,7 +87,8 @@
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"hasSign"] isEqualToString:@"YES"]) {
             
             NSString * imgStr = [[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoKey_protrait];
-            [_imageViewForUser sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"pro"]];
+          
+             [_imageViewForUser sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"pro"]];
             
             //   _imageViewForUser.image = [[UIImage alloc]initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgStr]]];
         }else
