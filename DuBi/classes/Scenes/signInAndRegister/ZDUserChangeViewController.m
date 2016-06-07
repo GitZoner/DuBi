@@ -373,7 +373,7 @@ static UIWindow * window;
             }
             
             // 添加通知中心
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutNotification" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_loginOut object:nil];
             
             
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -11,6 +11,7 @@
 #import "RegularUtils.h"
 #import "XHToast.h"
 #import "JTBuddyManager.h"
+#import "Main_marco.h"
 @interface JTSignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 
@@ -49,7 +50,10 @@
             if (_delegate && [_delegate respondsToSelector:@selector(reloadView)]) {
                 [_delegate reloadView];
             }
-
+            
+            [[NSNotificationCenter  defaultCenter] postNotificationName:kNotification_loginIn object:nil];
+            
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
         } failed:^(NSError * error) {
             [XHToast showBottomWithText:error.domain bottomOffset:100 duration:0];

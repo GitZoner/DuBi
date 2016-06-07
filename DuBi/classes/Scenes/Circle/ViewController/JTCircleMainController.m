@@ -44,6 +44,7 @@
     [super viewWillAppear:animated];
         JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
 //        ((JTCircleMainController *)tabbarVC.viewControllers[2]).navigationItem.titleView = self.segmentControl;
+    
     tabbarVC.navigationItem.titleView = self.segmentControl;
     
 }
@@ -111,6 +112,7 @@
 -(void)setUpChildControllers {
     // 动态
     self.circleViewController = [ZYTimeLineTableViewController new] ;
+   
     [self addChildViewController:self.circleViewController];
     // 会话
     self.conversationController = [ConversationListController new] ;
@@ -147,10 +149,6 @@
     // 动态
     self.circleViewController.view.frame = self.view.bounds;
     //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
-    UIEdgeInsets edgeInset = self.circleViewController.tableView.contentInset;
-    edgeInset.top = 44;
-    edgeInset.bottom = 49;
-    self.circleViewController.tableView.contentInset = edgeInset ;
     [self.scrollView addSubview:self.circleViewController.view];
    
     
