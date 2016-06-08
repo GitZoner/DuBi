@@ -19,7 +19,6 @@
 #import "ZYGetObject.h"
 #import "Main_marco.h"
 #import <UIImageView+WebCache.h>
-
 #import "NSDate+HFExtension.h"
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定

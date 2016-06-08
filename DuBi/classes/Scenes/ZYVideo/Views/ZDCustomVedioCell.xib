@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -105,13 +104,13 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IKR-Cm-nmi">
-                        <rect key="frame" x="8" y="8" width="304" height="164"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                         </accessibility>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-bI-avj">
-                        <rect key="frame" x="144" y="74" width="32" height="32"/>
+                        <rect key="frame" x="144" y="92" width="32" height="32"/>
                         <state key="normal" backgroundImage="5"/>
                         <connections>
                             <action selector="playerButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oQB-Z3-GpU"/>
@@ -122,13 +121,13 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="dLy-FI-ZVE" secondAttribute="trailing" id="0Lb-J6-WAo"/>
                     <constraint firstAttribute="bottom" secondItem="dLy-FI-ZVE" secondAttribute="bottom" id="B3N-gX-hJO"/>
-                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerY" secondItem="IKR-Cm-nmi" secondAttribute="centerY" id="JuY-am-spF"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="IKR-Cm-nmi" secondAttribute="bottom" constant="35" id="hen-Cv-P0y"/>
-                    <constraint firstItem="IKR-Cm-nmi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jLl-p2-s2s"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="IKR-Cm-nmi" secondAttribute="trailing" id="lEF-7u-kLa"/>
-                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerX" secondItem="IKR-Cm-nmi" secondAttribute="centerX" id="rRb-L9-dpi"/>
+                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UEm-ap-Geh"/>
+                    <constraint firstItem="xbM-bI-avj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="YdI-MA-56A"/>
+                    <constraint firstItem="dLy-FI-ZVE" firstAttribute="top" secondItem="IKR-Cm-nmi" secondAttribute="bottom" id="dq4-MS-iVh"/>
+                    <constraint firstItem="IKR-Cm-nmi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fWl-Cx-mgP"/>
+                    <constraint firstItem="IKR-Cm-nmi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l8w-Mp-VQM"/>
+                    <constraint firstAttribute="trailing" secondItem="IKR-Cm-nmi" secondAttribute="trailing" id="qVu-rd-sFt"/>
                     <constraint firstItem="dLy-FI-ZVE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tsf-Ry-fAr"/>
-                    <constraint firstItem="IKR-Cm-nmi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zsY-YX-Eso"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="1" green="0.92399126909999996" blue="0.72027488669999995" alpha="0.88895474139999997" colorSpace="calibratedRGB"/>

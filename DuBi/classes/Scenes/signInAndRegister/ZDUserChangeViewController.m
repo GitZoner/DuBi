@@ -432,7 +432,7 @@ static UIWindow * window;
    // NSLog(@"%zd",point.y);
     if (point.y <= 0&& point.y >= -48 * 2)
     {
-        NSLog(@"1");
+       // NSLog(@"1");
         kImageViewForHeader.frame = CGRectMake(0, -48 - point.y / 2, self.view.width - point.y, self.view.height * 2 / 7 + 48 * 3 - point.y );
         kImageViewForUser.frame = CGRectMake(10 +20, kImageViewForHeader.height - 55 - 48 - point.y / 3, 45, 45);
         kTitleLabel.frame = CGRectMake(kImageViewForUser.x, CGRectGetMaxY(kImageViewForUser.frame), self.view.width - kImageViewForUser.x - kImageViewForUser.width - 10, 25);

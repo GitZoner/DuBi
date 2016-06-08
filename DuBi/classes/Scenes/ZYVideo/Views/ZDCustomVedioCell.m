@@ -11,10 +11,10 @@
 #import <UIImageView+WebCache.h>
 #import "ZDAVPlayer.h"
 #import "UIView+XYWidthHeight.h"
-#import "TLFZAVplayer.h"
+//#import "TLFZAVplayer.h"
 #import "ZDPlayVedioViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "ZDAVPlayer.h"
 
 @interface ZDCustomVedioCell ()
 // 背景图片
@@ -38,10 +38,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *toolsView;
 
-@property(strong,nonatomic)TLFZAVplayer * player;
+//@property(strong,nonatomic)TLFZAVplayer * player;
 
-@property(strong,nonatomic)MPMoviePlayerViewController * playerVC;
+// @property(strong,nonatomic)MPMoviePlayerViewController * playerVC;
 
+@property(strong,nonatomic)ZDAVPlayer * zdPlayer;
 
 @end
 
@@ -97,57 +98,22 @@
     }
 }
 
--(MPMoviePlayerViewController *)playerVC
-{
-    if (_playerVC == nil) {
-        NSURL * url = [NSURL URLWithString:_listModel.videouri];
-        _playerVC = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
-    }
-    return _playerVC;
-}
+//-(MPMoviePlayerViewController *)playerVC
+//{
+//    if (_playerVC == nil) {
+//        NSURL * url = [NSURL URLWithString:_listModel.videouri];
+//        _playerVC = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+//    }
+//    return _playerVC;
+//}
 
-/*
--(void)flage
-{
-    if (_flag == NO) {
-        _flag = YES;
-        _bgImgView.hidden = YES;
-        _typeLabel.hidden = YES;
-        _contentLabel.hidden = YES;
-        _centerButton.hidden = YES;
-    }else{
-        _flag = NO;
-        _bgImgView.hidden = NO;
-        _typeLabel.hidden = NO;
-        _contentLabel.hidden = NO;
-        _centerButton.hidden = NO;
-    }
-}
-
-// 点击中间播放按钮的事件
-- (IBAction)playerButton:(UIButton *)sender {
-    // [self flage];
-   _player = [[ZDAVPlayer alloc]initWithFrame:CGRectMake(8, 0, _bgImgView.frame.size.width, _bgImgView.frame.size.height) WithVideoStr:_listModel.videouri];
-    [self.contentView addSubview:_player];
-}
-*/
 
 - (IBAction)playerButton:(UIButton *)sender {
-    // sender.hidden = YES;
-//    ZDPlayVedioViewController * playVC = [ZDPlayVedioViewController new];
-//    playVC.vedioUrl = self.listModel.videouri;
-//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[ZDPlayVedioViewController new] animated:YES completion:nil];
-//    self.player = [TLFZAVplayer shareAVPlayer];
-//    self.player.frame =self.bgImgView.frame;
-//    // player.center = self.view.center;
-//    [self.player drawAVPlayer];
-//    [self.player playWithString:self.listModel.videouri];
-//    [self.contentView addSubview:self.player];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.playerVC];
-    
+
+  //   [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.playerVC];
+    self.zdPlayer = [[ZDAVPlayer alloc]initwithFrame:self.bgImgView.bounds vedioUrl:self.listModel.videouri];
+    [self.contentView addSubview:self.zdPlayer];
 }
-
-
 
 
 // 播放视频
@@ -160,9 +126,6 @@
         
     self.bgImgView.userInteractionEnabled = YES;
          
-//         self.player = [[ZDAVplayer alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height - 35) WithVideoStr:_listModel.videouri];
-//         [self.contentView addSubview:self.player];
-//
          NSLog(@"第一个任务%d",[NSThread isMainThread]);
      });
 

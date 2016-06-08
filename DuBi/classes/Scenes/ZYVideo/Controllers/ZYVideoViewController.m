@@ -13,7 +13,7 @@
 #import "DataModels.h" // model
 #import <AFNetworking.h>
 #import "MJRefresh.h"
-#import "TLFZAVplayer.h"
+//#import "TLFZAVplayer.h"
 
 #define kUrl @"http://api.budejie.com/api/api_open.php"
 
@@ -38,7 +38,7 @@
 
 @property(assign,nonatomic)NSInteger  page;
 
-@property(strong,nonatomic)TLFZAVplayer * tlPlayer;
+//@property(strong,nonatomic)TLFZAVplayer * tlPlayer;
 @end
 
 
