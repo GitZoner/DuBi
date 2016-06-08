@@ -37,7 +37,7 @@
 // 退出登录通知
 #define kNotification_loginOut @"JTLoginOutNotification"
 
-
+#define kNotification_conversationReload @"conversationReload"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kscreenHeight [UIScreen mainScreen].bounds.size.height

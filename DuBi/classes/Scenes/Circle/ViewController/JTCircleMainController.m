@@ -42,9 +42,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-        JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
-//        ((JTCircleMainController *)tabbarVC.viewControllers[2]).navigationItem.titleView = self.segmentControl;
-    
+    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
     tabbarVC.navigationItem.titleView = self.segmentControl;
     
 }
@@ -94,6 +92,7 @@
     self.scrollView.showsHorizontalScrollIndicator = YES;
     self.scrollView.pagingEnabled = YES;
     self.scrollView.bounces = NO;
+    self.scrollView.scrollEnabled = NO;
     // self.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
    //  self.scrollView.contentSize = CGSizeMake(kScreenWidth * 5, kscreenHeight);
      self.scrollView.delegate = self;

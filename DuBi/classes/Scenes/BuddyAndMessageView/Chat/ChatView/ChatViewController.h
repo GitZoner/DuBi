@@ -7,8 +7,11 @@
 //
 
 #import "EaseMessageViewController.h"
-
+#import <AVOSCloud.h>
 #define KNOTIFICATIONNAME_DELETEALLMESSAGE @"RemoveAllMessages"
 @interface ChatViewController : EaseMessageViewController
-
+@property (strong,nonatomic)AVObject  *user;
+@property (strong,nonatomic)UIImage *userAvater;
+@property (strong,nonatomic)NSString *avaterUrlString;
+@property (strong,nonatomic)NSString *nickName;
 @end

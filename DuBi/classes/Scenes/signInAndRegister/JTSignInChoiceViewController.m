@@ -12,6 +12,7 @@
 #import "JTAliasViewController.h"
 #import "RegularUtils.h"
 #import "JTSignInViewController.h"
+
 @interface JTSignInChoiceViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
@@ -27,7 +28,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden= YES;
+    
+  
     self.tabBarController.tabBar.hidden= YES;
 
 }

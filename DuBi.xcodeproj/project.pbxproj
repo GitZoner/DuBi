@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8156FFD79E5F3DF11C4E7DB2 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEFB259BEA9FD6BF5E6A70 /* libPods-DuBi.a */; };
+		1EF07BDA047E1DAA71C38B2F /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */; };
 		9605E9CB1CF47E47000D1834 /* RegularUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9605E9CA1CF47E47000D1834 /* RegularUtils.m */; };
 		9605E9CF1CF485A6000D1834 /* XHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9605E9CE1CF485A6000D1834 /* XHToast.m */; };
 		960DE6BA1CFAEF3900C31DD8 /* ZYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6A61CFAEF3900C31DD8 /* ZYBaseTableViewController.m */; };
@@ -80,6 +80,7 @@
 		965C51F41CF3ED2200B0F22F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */; };
 		965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F51CF3ED3700B0F22F /* libstdc++.tbd */; };
 		965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52011CF4085B00B0F22F /* JTTabBarViewController.m */; };
+		965CCE561D07A28600DB8139 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96D5B0201CF7E1AD009E689C /* JTSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */; };
 		96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */; };
@@ -277,7 +278,6 @@
 		C284A8721CF583770093E851 /* ZDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86C1CF583770093E851 /* ZDInfo.m */; };
 		C284A8731CF583770093E851 /* ZDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A86E1CF583770093E851 /* ZDList.m */; };
 		C284A8741CF583770093E851 /* ZDThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = C284A8701CF583770093E851 /* ZDThemes.m */; };
-		C29375A91D0823F40049DA4D /* ZDAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C29375A81D0823F40049DA4D /* ZDAVPlayer.m */; };
 		C296858E1CF6D1FC00CA5362 /* ZDPublishHaflView.m in Sources */ = {isa = PBXBuildFile; fileRef = C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */; };
 		C29685901CF6D22600CA5362 /* ZDPublishHaflView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */; };
 		C29B23651D026A030032426D /* ZDSendPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C29B23631D026A030032426D /* ZDSendPicture.m */; };
@@ -288,7 +288,6 @@
 		C2A7DC7D1CF33B9B00492355 /* ZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7DC7C1CF33B9B00492355 /* ZYButton.m */; };
 		C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */; };
 		C2AEE8011CFABF7600F2872D /* ZDChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEE8001CFABF7600F2872D /* ZDChangeView.m */; };
-		C2BA3EA51D070708004CDF6A /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BA3EA41D070708004CDF6A /* NSDate+HFExtension.m */; };
 		C2BBD9561D00541D008F0008 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBD9551D00541D008F0008 /* CustomNavigationController.m */; };
 		C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C33E131CF5E37B00D3564D /* ZDPublishController.m */; };
 		C2C33E161CF5E37B00D3564D /* ZDPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C33E141CF5E37B00D3564D /* ZDPublishController.xib */; };
@@ -300,11 +299,12 @@
 		C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */; };
 		C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25261CFD2BB200071078 /* ZDSendJokes.m */; };
 		C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */; };
+		C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		245B07D57B93F44AD518F957 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
-		55426092B17FA3694D8D0C6F /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
+		3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
 		9605E9C91CF47E47000D1834 /* RegularUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularUtils.h; sourceTree = "<group>"; };
 		9605E9CA1CF47E47000D1834 /* RegularUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularUtils.m; sourceTree = "<group>"; };
 		9605E9CD1CF485A6000D1834 /* XHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHToast.h; sourceTree = "<group>"; };
@@ -439,6 +439,8 @@
 		965C51F51CF3ED3700B0F22F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		965C52001CF4085B00B0F22F /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
 		965C52011CF4085B00B0F22F /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
+		965CCE541D07A28600DB8139 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
+		965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HFExtension.m"; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
@@ -755,7 +757,7 @@
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
-		A2FEFB259BEA9FD6BF5E6A70 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D86301D01A4F800E898B3 /* ZYGetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGetObject.h; sourceTree = "<group>"; };
 		C21D86311D01A4F800E898B3 /* ZYGetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGetObject.m; sourceTree = "<group>"; };
 		C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
@@ -833,8 +835,6 @@
 		C284A86E1CF583770093E851 /* ZDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDList.m; sourceTree = "<group>"; };
 		C284A86F1CF583770093E851 /* ZDThemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemes.h; sourceTree = "<group>"; };
 		C284A8701CF583770093E851 /* ZDThemes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemes.m; sourceTree = "<group>"; };
-		C29375A71D0823F40049DA4D /* ZDAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAVPlayer.h; sourceTree = "<group>"; };
-		C29375A81D0823F40049DA4D /* ZDAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAVPlayer.m; sourceTree = "<group>"; };
 		C296858C1CF6D1FC00CA5362 /* ZDPublishHaflView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishHaflView.h; sourceTree = "<group>"; };
 		C296858D1CF6D1FC00CA5362 /* ZDPublishHaflView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPublishHaflView.m; sourceTree = "<group>"; };
 		C296858F1CF6D22600CA5362 /* ZDPublishHaflView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDPublishHaflView.xib; sourceTree = "<group>"; };
@@ -852,8 +852,6 @@
 		C2AEE7FA1CFABDB600F2872D /* ZDUserChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserChangeViewController.m; sourceTree = "<group>"; };
 		C2AEE7FF1CFABF7600F2872D /* ZDChangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDChangeView.h; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.h; sourceTree = SOURCE_ROOT; };
 		C2AEE8001CFABF7600F2872D /* ZDChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDChangeView.m; path = DuBi/classes/Scenes/signInAndRegister/ZDChangeView.m; sourceTree = SOURCE_ROOT; };
-		C2BA3EA31D070708004CDF6A /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
-		C2BA3EA41D070708004CDF6A /* NSDate+HFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HFExtension.m"; sourceTree = "<group>"; };
 		C2BBD9541D00541D008F0008 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		C2BBD9551D00541D008F0008 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		C2C33E121CF5E37B00D3564D /* ZDPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPublishController.h; sourceTree = "<group>"; };
@@ -873,6 +871,8 @@
 		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
 		C2ED25261CFD2BB200071078 /* ZDSendJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendJokes.m; sourceTree = "<group>"; };
 		C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendJokes.xib; sourceTree = "<group>"; };
+		C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFZAVplayer.h; sourceTree = "<group>"; };
+		C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFZAVplayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -890,7 +890,7 @@
 				96FB5C8E1CF6FF1D009A8BCF /* libopencore-amrwb.a in Frameworks */,
 				965C51EC1CF3EBA000B0F22F /* SMS_SDK.framework in Frameworks */,
 				965C51EB1CF3EBA000B0F22F /* MOBFoundation.framework in Frameworks */,
-				8156FFD79E5F3DF11C4E7DB2 /* libPods-DuBi.a in Frameworks */,
+				1EF07BDA047E1DAA71C38B2F /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,9 +906,18 @@
 				965C51F11CF3EC8400B0F22F /* MessageUI.framework */,
 				965C51EF1CF3EC5100B0F22F /* libicucore.tbd */,
 				965C51ED1CF3EC1F00B0F22F /* libz.tbd */,
-				A2FEFB259BEA9FD6BF5E6A70 /* libPods-DuBi.a */,
+				AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B17CF485B4CF68652A6CBA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */,
+				04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9605E9C81CF47E47000D1834 /* RegularUtils */ = {
@@ -1275,6 +1284,8 @@
 		96FB59B51CF6D0C3009A8BCF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				965CCE541D07A28600DB8139 /* NSDate+HFExtension.h */,
+				965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */,
 				960DE6A51CFAEF3900C31DD8 /* ZYBaseTableViewController.h */,
 				960DE6A61CFAEF3900C31DD8 /* ZYBaseTableViewController.m */,
 				960DE6A71CFAEF3900C31DD8 /* ZYBaseRefresView.h */,
@@ -1928,7 +1939,7 @@
 				96FD78751CED92FE000FCB3C /* DuBi */,
 				96FD78741CED92FE000FCB3C /* Products */,
 				79939B0E58BB4BC289F17EB9 /* Frameworks */,
-				BD6950852B980C1C39248CF5 /* Pods */,
+				8B17CF485B4CF68652A6CBA9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2079,8 +2090,6 @@
 		96FD78C71CEDD8D9000FCB3C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				C2BA3EA31D070708004CDF6A /* NSDate+HFExtension.h */,
-				C2BA3EA41D070708004CDF6A /* NSDate+HFExtension.m */,
 				968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */,
 				968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */,
 				96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */,
@@ -2091,15 +2100,6 @@
 				96D5B0321CF84976009E689C /* NSString+MD5.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		BD6950852B980C1C39248CF5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				55426092B17FA3694D8D0C6F /* Pods-DuBi.debug.xcconfig */,
-				245B07D57B93F44AD518F957 /* Pods-DuBi.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		C220B3571CF433B0009A6560 /* Controller */ = {
@@ -2278,8 +2278,8 @@
 		C2A7DC741CF311D900492355 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C29375A71D0823F40049DA4D /* ZDAVPlayer.h */,
-				C29375A81D0823F40049DA4D /* ZDAVPlayer.m */,
+				C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */,
+				C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */,
 				C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */,
 				C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */,
 				C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */,
@@ -2316,13 +2316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96FD788A1CED92FE000FCB3C /* Build configuration list for PBXNativeTarget "DuBi" */;
 			buildPhases = (
-				7836F9747494BBCF7AD6F987 /* 📦 Check Pods Manifest.lock */,
+				7A6E2E457A22901E52546721 /* 📦 Check Pods Manifest.lock */,
 				96FD786F1CED92FE000FCB3C /* Sources */,
 				96FD78701CED92FE000FCB3C /* Frameworks */,
 				96FD78711CED92FE000FCB3C /* Resources */,
-				5E07B8B3938A47D4E616AF72 /* 📦 Embed Pods Frameworks */,
-				456B6DFE688B7E6700B57475 /* 📦 Copy Pods Resources */,
-				CFBDB0185EE5FC16286F02DB /* Embed Pods Frameworks */,
+				05EBDE64E7794AEDA42E2546 /* 📦 Embed Pods Frameworks */,
+				646FF75CAD01FCE058A853F3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2417,22 +2416,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		456B6DFE688B7E6700B57475 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E07B8B3938A47D4E616AF72 /* 📦 Embed Pods Frameworks */ = {
+		05EBDE64E7794AEDA42E2546 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2447,7 +2431,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7836F9747494BBCF7AD6F987 /* 📦 Check Pods Manifest.lock */ = {
+		646FF75CAD01FCE058A853F3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6E2E457A22901E52546721 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2460,21 +2459,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CFBDB0185EE5FC16286F02DB /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2603,7 +2587,6 @@
 				960DE74C1CFAF29B00C31DD8 /* SDRefreshView.m in Sources */,
 				96FB5CA61CF6FF1D009A8BCF /* MWGridViewController.m in Sources */,
 				96FB5CEE1CF6FF1D009A8BCF /* EaseBubbleView.m in Sources */,
-				C29375A91D0823F40049DA4D /* ZDAVPlayer.m in Sources */,
 				96123C241CFEE4A400DF5631 /* EMAlertView.m in Sources */,
 				C284A8721CF583770093E851 /* ZDInfo.m in Sources */,
 				96FB5CB01CF6FF1D009A8BCF /* EMSDWebImageDownloader.m in Sources */,
@@ -2671,8 +2654,9 @@
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
 				C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */,
+				C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
-				C2BA3EA51D070708004CDF6A /* NSDate+HFExtension.m in Sources */,
+				965CCE561D07A28600DB8139 /* NSDate+HFExtension.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
 				96FB5C991CF6FF1D009A8BCF /* MJRefreshBackGifFooter.m in Sources */,
 				96FB5C851CF6FF1D009A8BCF /* EMCDDeviceManager+Media.m in Sources */,
@@ -2837,7 +2821,7 @@
 		};
 		96FD788B1CED92FE000FCB3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55426092B17FA3694D8D0C6F /* Pods-DuBi.debug.xcconfig */;
+			baseConfigurationReference = 3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -2869,7 +2853,7 @@
 		};
 		96FD788C1CED92FE000FCB3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245B07D57B93F44AD518F957 /* Pods-DuBi.release.xcconfig */;
+			baseConfigurationReference = 04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;

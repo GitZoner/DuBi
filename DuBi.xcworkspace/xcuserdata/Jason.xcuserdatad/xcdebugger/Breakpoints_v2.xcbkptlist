@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DuBi/classes/Scenes/BuddyAndMessageView/EaseUI/EMUIKit/ViewController/EaseMessageViewController.m"
-            timestampString = "486960789.064347"
+            timestampString = "487061942.15884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "880"
-            endingLineNumber = "880"
+            startingLineNumber = "865"
+            endingLineNumber = "865"
             landmarkName = "-keyBoardHidden:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DuBi/classes/Scenes/Circle/ViewController/JTCircleMainController.m"
-            timestampString = "486979118.05191"
+            timestampString = "487070870.744379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-addChildControllerView"
             landmarkType = "5">
          </BreakpointContent>
