@@ -19,6 +19,10 @@
 #import "NSDate+Category.h"
 #import "EaseLocalDefine.h"
 
+#import "MJRefresh.h"
+
+#import "Main_marco.h"
+
 @interface EaseConversationListViewController ()
 {
     dispatch_queue_t refreshQueue;
@@ -43,8 +47,17 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
- 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataSubView) name:kNotification_conversationReload object:nil];
+    
+    
+}
+
+- (void)reloadDataSubView {
+    
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -17,6 +17,11 @@
 
 #import "UserProfileManager.h"
 #import "RealtimeSearchUtil.h"
+#import <AVOSCloud.h>
+#import "Main_marco.h"
+
+// 临时处理
+#import "MJRefresh.h"
 
 @implementation EMConversation (search)
 
@@ -47,6 +52,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     // Do any additional setup after loading the view.
     self.showRefreshHeader = YES;
@@ -145,11 +151,17 @@
     EaseConversationModel *model = [[EaseConversationModel alloc] initWithConversation:conversation];
     if (model.conversation.type == EMConversationTypeChat) {
         
-            UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:conversation.conversationId];
-            if (profileEntity) {
-                model.title = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
-                model.avatarURLPath = profileEntity.imageUrl;
+        AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
+        [query whereKey:@"telNum" equalTo:conversation.conversationId];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count > 0) {
+                AVObject  *object = objects[0];
+                model.title = object[@"userAlias"];
+                model.avatarURLPath = object[kUserInfoKey_protrait];
             }
+        }];
+        
+        
         
     } else if (model.conversation.type == EMConversationTypeGroupChat) {
         NSString *imageName = @"groupPublicHeader";

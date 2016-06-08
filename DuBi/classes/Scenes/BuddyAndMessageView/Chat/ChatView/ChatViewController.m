@@ -17,7 +17,9 @@
 #import "UserProfileViewController.h"
 #import "UserProfileManager.h"
 #import "ContactListSelectViewController.h"
-
+#import "Main_marco.h"
+#import "Color_marco.h"
+#import "JTTabBarViewController.h"
 
 @interface ChatViewController ()<UIAlertViewDelegate, EaseMessageViewControllerDelegate, EaseMessageViewControllerDataSource,EMClientDelegate>
 {
@@ -40,6 +42,15 @@
     self.showRefreshHeader = YES;
     self.delegate = self;
     self.dataSource = self;
+    
+    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+    
+    tabbarVC.navigationItem.hidesBackButton = YES;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(backAction)];
+    self.navigationController.navigationBar.tintColor =tGreenColor;
+    self.view.backgroundColor = tGrayColor;
+    self.tableView.backgroundColor = tGrayColor;
     
     [self _setupBarButtonItem];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteAllMessages:) name:KNOTIFICATIONNAME_DELETEALLMESSAGE object:nil];
@@ -117,6 +128,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.cancelButtonIndex != buttonIndex) {
+        
         self.messageTimeIntervalTag = -1;
         [self.conversation deleteAllMessages];
         [self.dataArray removeAllObjects];
@@ -164,8 +176,8 @@
     model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
     UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.nickname];
     if (profileEntity) {
-        model.avatarURLPath = profileEntity.imageUrl;
-        model.nickname = profileEntity.nickname;
+        model.avatarURLPath = self.avaterUrlString;
+        model.nickname = self.nickName;
     }
     model.failImageName = @"imageDownloadFail";
     return model;
@@ -256,6 +268,9 @@
             [[EMClient sharedClient].chatManager deleteConversation:self.conversation.conversationId deleteMessages:NO];
         }
     }
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_conversationReload object:nil userInfo:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -228,7 +228,7 @@
     if (model.avatarURLPath) {
         [self.avatarView sd_setImageWithURL:[NSURL URLWithString:model.avatarURLPath] placeholderImage:model.avatarImage];
     } else {
-        self.avatarView.image = model.avatarImage;
+         self.avatarView.image = model.avatarImage;
     }
     _nameLabel.text = model.nickname;
     

@@ -16,6 +16,7 @@
 
 #import "ApplyViewController.h"
 
+#import "Main_marco.h"
 
 #import "UserProfileManager.h"
 #import "RealtimeSearchUtil.h"
@@ -48,7 +49,11 @@
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     
+    
+    
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

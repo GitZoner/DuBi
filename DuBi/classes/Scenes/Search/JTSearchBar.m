@@ -15,18 +15,24 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.width - 50, self.height)];
+        _searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.width - 70, self.height)];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"circle_search"]];
-        imageView.frame = CGRectMake(0, 0, 30, 30);
+        imageView.frame = CGRectMake(3, 3, 23, 23);
         _searchTextField.leftView =imageView;
+        _searchTextField.leftViewMode = UITextFieldViewModeAlways;
         _searchTextField.placeholder = @"搜索";
         _searchTextField.borderStyle = UITextBorderStyleRoundedRect;
+        _searchTextField.layer.borderColor = [UIColor lightGrayColor].CGColor;
         [self addSubview:_searchTextField];
         
         _cancleButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        _cancleButton.frame = CGRectMake(CGRectGetMaxX(_searchTextField.frame), 0, 30, 30);
+        _cancleButton.frame = CGRectMake(CGRectGetMaxX(_searchTextField.frame) + 5, 0, 50, 30);
         [_cancleButton setTitle:@"取消" forState:(UIControlStateNormal)];
         [_cancleButton setTitleColor:tGreenColor forState:(UIControlStateNormal)];
+        _cancleButton.layer.borderColor = tGreenColor.CGColor;
+        _cancleButton.layer.borderWidth = 1;
+        _cancleButton.layer.cornerRadius = 5;
+        _cancleButton.layer.masksToBounds = YES;
         
         [self addSubview:_cancleButton];
         

@@ -17,7 +17,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "ZYGetObject.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
-
+#import "JTSignInChoiceViewController.h"
 
 #import "UIView+SDAutoLayout.h"
 
@@ -61,6 +61,13 @@ static CGFloat textFieldH = 40;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logInNotificationAction:) name:kNotification_loginIn object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOutNotificationAction:) name:kNotification_loginOut object:nil];
+    
+    
+    
+    
     // 背景设置为黑色
     
     self.tableView.backgroundColor = tGrayColor;
@@ -69,7 +76,10 @@ static CGFloat textFieldH = 40;
     
     self.tableView.autoresizesSubviews = NO;
     self.headerVew = [[JTCircleHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.7)];
-    self.tableView.tableHeaderView =self.headerVew;
+    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
+        self.tableView.tableHeaderView =self.headerVew;
+    }
+    
     
     self.navigationItem.title = @"我的朋友圈";
     self.view.backgroundColor = tGrayColor;
@@ -83,51 +93,109 @@ static CGFloat textFieldH = 40;
     [self.dataArray addObjectsFromArray:[self getDeliverDataWithPageNum:self.dataPageNum]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    __weak typeof(self) weakSelf = self;
-    
+    //__weak typeof(self) weakSelf = self;
+ /*
     
     // 上拉加载
-        self.dataPageNum = 0;
-    _refreshFooter = [ZYTimeLinerefreshFooter refreshFooterWithRefreshingText:@"正在加载数据..."];
-    __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
-    [_refreshFooter addToScrollView:self.tableView refreshOpration:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.dataArray addObjectsFromArray:[weakSelf getDeliverDataWithPageNum:++weakSelf.dataPageNum]];
-            [weakSelf.tableView reloadData];
-            [weakRefreshFooter endRefreshing];
-        });
-    }];
+//        self.dataPageNum = 0;
+//    _refreshFooter = [ZYTimeLinerefreshFooter refreshFooterWithRefreshingText:@"正在加载数据..."];
+//    __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
+//    [_refreshFooter addToScrollView:self.tableView refreshOpration:^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf.dataArray addObjectsFromArray:[weakSelf getDeliverDataWithPageNum:++weakSelf.dataPageNum]];
+//            [weakSelf.tableView reloadData];
+//            [weakRefreshFooter endRefreshing];
+//        });
+//    }];
     
 //       SDTimeLineTableHeaderView *headerView = [SDTimeLineTableHeaderView new];
 //        headerView.frame = CGRectMake(0, 0, 0, 260);
 //       self.tableView.tableHeaderView = headerView;
-    
+    */
     [self.tableView registerClass:[ZYTimeLineCell class] forCellReuseIdentifier:kTimeLineTableViewCellId];
     
     [self setupTextField];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        
     
+    }else {
+        [self addFootView];
     }
 }
 
+-(void)logInNotificationAction:(NSNotification *)notification {
+    [self.tableView.tableFooterView removeFromSuperview];
+    [self reloadSubViewsData];
+    
+    
+}
 
+-(void)logOutNotificationAction:(NSNotification *)notification {
+    [self.tableView.tableHeaderView removeFromSuperview];
+    [self addFootView];
+    [self reloadSubViewsData];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+    [self reloadSubViewsData];
+    
+    
+}
+
+
+// 添加底部视图
+-(void)addFootView {
+    UIImageView *footterImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth , kscreenHeight)];
+    footterImageView.userInteractionEnabled = YES;
+    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    button.frame = CGRectMake(0, 0, kScreenWidth - 100, 50);
+    button.center = footterImageView.center;
+    [button setTitle:@"登录/注册" forState:(UIControlStateNormal)];
+    [button setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateNormal)];
+    [button addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    button.layer.borderWidth = 1;
+    button.layer.cornerRadius = 7;
+    button.layer.masksToBounds = YES;
+    [footterImageView addSubview:button];
+    
+    footterImageView.image = [UIImage imageNamed:@"logInReminder"];
+    self.tableView.tableFooterView = footterImageView;
+}
+
+-(void)loginAction:(UIButton *)button {
+    [self.navigationController pushViewController:[JTSignInChoiceViewController new] animated:YES];
+}
+
+-(void)reloadSubViewsData {
+  
+    
+  
+        self.dataArray = [[self getDeliverDataWithPageNum:self.dataPageNum] mutableCopy];
+        
+    
+            [self.tableView reloadData];
+  
+   
+    
+}
 
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"])  {
+    
     if (!_refreshHeader.superview) {
         
-        _refreshHeader = [ZYTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, 45)];
+        _refreshHeader = [ZYTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, -20)];
         _refreshHeader.scrollView = self.tableView;
         __weak typeof(_refreshHeader) weakHeader = _refreshHeader;
         __weak typeof(self) weakSelf = self;
         [_refreshHeader setRefreshingBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-#warning 从数据库获取发布内容对象，并对获取的对象进行解析，解析数据封装到model
-               
                 weakSelf.dataArray = [[weakSelf getDeliverDataWithPageNum:weakSelf.dataPageNum] mutableCopy];
                 [weakHeader endRefreshing];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -139,7 +207,7 @@ static CGFloat textFieldH = 40;
     }
         
         
-    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -189,14 +257,8 @@ static CGFloat textFieldH = 40;
     query.limit = 5; // 最多返回 10 条结果
     query.skip = pageNum * 5;  // 跳过 20 条结果
     
-    
-    
-   
-    
-    
     NSMutableArray *tempArray = [NSMutableArray array];
-    
-    
+
     for (AVObject *object in self.avObjectArray) {
         
         ZYTimeLineCellModel *zymodel = [ZYTimeLineCellModel new];
@@ -225,21 +287,13 @@ static CGFloat textFieldH = 40;
             }
         }];
         
-        
-        
-        
-        
-        
         zymodel.createdAt = object[@"createdAt"];
         
         [tempArray addObject:zymodel];
     }
     
     return tempArray;
-    
-    
-    
-    
+
 }
 
 /*
@@ -403,12 +457,15 @@ static CGFloat textFieldH = 40;
 }
    */
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"++++++++++============%ld",self.dataArray.count);
+    
     if ([kUserDefaultGetValue(kUserInfoKey_hasSign) isEqualToString:@"YES"]) {
          return self.dataArray.count;
     }else {
+      
         return 0;
     }
    

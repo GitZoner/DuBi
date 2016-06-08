@@ -92,20 +92,7 @@
 
    
     
-//    self.navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen ].bounds.size.width, 64)];
-//    [self.view addSubview:self.navigationView];
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 150, 44)];
-//    label.center = CGPointMake(self.navigationView.center .x, self.navigationView.bounds.size.height / 2 );
-//    label.text = self.title;
-//    label.textColor = [UIColor blackColor];
-//    label.textAlignment = NSTextAlignmentCenter;
-//    [self.navigationView addSubview:label];
-//    
-//    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    button.frame = CGRectMake(20, 20, 30, 30);
-//    [button setImage:[UIImage imageNamed:@"back_icon"] forState:(UIControlStateNormal)];
-//    [button addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//    [self.navigationView addSubview:button];
+
     
     
     
@@ -161,9 +148,7 @@
     [self tableViewDidTriggerHeaderRefresh];
 }
 
--(void)goBackAction:(UIBarButtonItem *)buttonItem {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 
 
 

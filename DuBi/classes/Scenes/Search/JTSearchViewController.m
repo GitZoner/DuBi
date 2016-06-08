@@ -32,6 +32,7 @@ static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
     _searchBar = [[JTSearchBar alloc] initWithFrame:CGRectMake(0, 30, kScreenWidth, 30)];
     _searchBar.searchTextField.delegate = self;
     [_searchBar.cancleButton  addTarget:self action:@selector(goBackAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    _searchBar.cancleButton.titleLabel.font = [UIFont systemFontOfSize:13];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.titleView = _searchBar;
     self.searchResultList  = [NSMutableArray array];
