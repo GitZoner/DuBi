@@ -1,44 +1,61 @@
 //
-//  ZYTimeLineCell.m
-//  ZYProject1
+//  SDTimeLineCell.m
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by gsd on 16/2/25.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYTimeLineCell.h"
-#import "ZYTimeLineCellModel.h"
+/*
+ 
+ *********************************************************************************
+ *
+ * GSD_WeiXin
+ *
+ * QQ交流群: 362419100(2群) 459274049（1群已满）
+ * Email : gsdios@126.com
+ * GitHub: https://github.com/gsdios/GSD_WeiXin
+ * 新浪微博:GSD_iOS
+ *
+ * 此“高仿微信”用到了很高效方便的自动布局库SDAutoLayout（一行代码搞定自动布局）
+ * SDAutoLayout地址：https://github.com/gsdios/SDAutoLayout
+ * SDAutoLayout视频教程：http://www.letv.com/ptv/vplay/24038772.html
+ * SDAutoLayout用法示例：https://github.com/gsdios/SDAutoLayout/blob/master/README.md
+ *
+ *********************************************************************************
+ 
+ */
+
+#import "SDTimeLineCell.h"
+
+#import "SDTimeLineCellModel.h"
 #import "UIView+SDAutoLayout.h"
 
-#import "ZYTimeLineCellCommentView.h"
+#import "SDTimeLineCellCommentView.h"
 
-#import "ZYWeiXinPhotoContainerView.h"
+#import "SDWeiXinPhotoContainerView.h"
 
-#import "ZYTimeLineCellOperationMenu.h"
-#import "Color_marco.h"
-#import "ZYGetObject.h"
-#import "Main_marco.h"
-#import <UIImageView+WebCache.h>
-#import "NSDate+HFExtension.h"
+#import "SDTimeLineCellOperationMenu.h"
+#import "UIImageView+WebCache.h"
+
 const CGFloat contentLabelFontSize = 15;
 CGFloat maxContentLabelHeight = 0; // 根据具体font而定
 
 NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLineCellOperationButtonClickedNotification";
 
-
-@implementation ZYTimeLineCell
+@implementation SDTimeLineCell
 
 {
     UIImageView *_iconView;
     UILabel *_nameLable;
     UILabel *_contentLabel;
-    ZYWeiXinPhotoContainerView *_picContainerView;
+    SDWeiXinPhotoContainerView *_picContainerView;
     UILabel *_timeLabel;
     UIButton *_moreButton;
     UIButton *_operationButton;
-    ZYTimeLineCellCommentView *_commentView;
+    SDTimeLineCellCommentView *_commentView;
     BOOL _shouldOpenContentLabel;
-    ZYTimeLineCellOperationMenu *_operationMenu;
+    SDTimeLineCellOperationMenu *_operationMenu;
 }
 
 
@@ -47,8 +64,6 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setup];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = tGrayColor;
-        
     }
     return self;
 }
@@ -83,11 +98,11 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     [_operationButton setImage:[UIImage imageNamed:@"AlbumOperateMore"] forState:UIControlStateNormal];
     [_operationButton addTarget:self action:@selector(operationButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
-    _picContainerView = [ZYWeiXinPhotoContainerView new];
+    _picContainerView = [SDWeiXinPhotoContainerView new];
     
     __weak typeof(self) weakSelf = self;
     
-    _commentView = [ZYTimeLineCellCommentView new];
+    _commentView = [SDTimeLineCellCommentView new];
     [_commentView setDidClickCommentLabelBlock:^(NSString *commentId, CGRect rectInWindow) {
         if (weakSelf.didClickCommentLabelBlock) {
             weakSelf.didClickCommentLabelBlock(commentId, rectInWindow, weakSelf.indexPath);
@@ -95,11 +110,11 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     }];
     
     _timeLabel = [UILabel new];
-    _timeLabel.font = [UIFont systemFontOfSize:12];
-    _timeLabel.textColor = [UIColor blackColor];
+    _timeLabel.font = [UIFont systemFontOfSize:13];
+    _timeLabel.textColor = [UIColor lightGrayColor];
     
     
-    _operationMenu = [ZYTimeLineCellOperationMenu new];
+    _operationMenu = [SDTimeLineCellOperationMenu new];
     
     [_operationMenu setLikeButtonClickedOperation:^{
         if ([weakSelf.delegate respondsToSelector:@selector(didClickLikeButtonInCell:)]) {
@@ -111,7 +126,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
             [weakSelf.delegate didClickcCommentButtonInCell:weakSelf];
         }
     }];
-    
+
     
     NSArray *views = @[_iconView, _nameLable, _contentLabel, _moreButton, _picContainerView, _timeLabel, _operationButton, _operationMenu, _commentView];
     
@@ -152,8 +167,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     .leftEqualToView(_contentLabel)
     .topSpaceToView(_picContainerView, margin)
     .heightIs(15)
-    .widthIs(150);
-//    .autoHeightRatio(0);
+    .autoHeightRatio(0);
     
     _operationButton.sd_layout
     .rightSpaceToView(contentView, margin)
@@ -179,7 +193,7 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)setModel:(ZYTimeLineCellModel *)model
+- (void)setModel:(SDTimeLineCellModel *)model
 {
     _model = model;
     
@@ -188,9 +202,9 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     
     _shouldOpenContentLabel = NO;
     
-//    _iconView.image = [UIImage imageNamed:model.iconName];
-    [_iconView sd_setImageWithURL:[NSURL URLWithString:_model.iconName]];
-    _nameLable.text = _model.userAlias;
+    //_iconView.image = [UIImage imageNamed:model.iconName];
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:model.iconName]];
+    _nameLable.text = model.name;
     // 防止单行文本label在重用时宽度计算不准的问题
     [_nameLable sizeToFit];
     _contentLabel.text = model.msgContent;
@@ -232,69 +246,9 @@ NSString *const kSDTimeLineCellOperationButtonClickedNotification = @"SDTimeLine
     }
     
     [self setupAutoHeightWithBottomView:bottomView bottomMargin:15];
-#warning 获取系统时间
-   
     
-        
-//         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat: @"yyyy/MM/dd HH:mm:ss"];
-//    
-//        NSString *dateString = [dateFormatter stringFromDate:_model.createdAt];
-//        _timeLabel.text = dateString;
-//    
-    
-    
-    
-    
-    
-    
-    // 设置发帖时间
-    /**
-     *  日期的最终显示格式
-     *今年
-     *  今天
-     *      1分钟内：刚刚
-     *      1小时内：xx分钟前
-     *      其他：xx小时前
-     *  昨天：昨天 18：56：35
-     *非今年：2015-04-05 18：45：34
-     */
-    // 日期格式化类
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    // 设置日期格式
-    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    if (_model.createdAt.isThisYear) {
-        // 今年
-        if (_model.createdAt.isToday) {
-            // 今天
-            NSDateComponents *cmps = [[NSDate date] deltaFrom:_model.createdAt];
-            if (cmps.hour >= 1) {
-                // 时间差距 >= 1小时
-                _timeLabel.text = [NSString stringWithFormat:@"%ld小时前", cmps.hour];
-            }else if (cmps.minute >= 1) {
-                // 1小时 > 时间差距 >= 1分钟
-                _timeLabel.text = [NSString stringWithFormat:@"%ld分钟前", cmps.minute];
-            }else {
-                // 1分钟 > 时间差距
-                _timeLabel.text = @"刚刚";
-            }
-        } else if (_model.createdAt.isYesterday) {
-            // 昨天
-            fmt.dateFormat = @"昨天 HH:mm:ss";
-            _timeLabel.text = [fmt stringFromDate:_model.createdAt];
-        } else {
-            // 其他
-            fmt.dateFormat = @"MM-dd HH:mm:ss";
-            _timeLabel.text = [fmt stringFromDate:_model.createdAt];
-        }
-    }else {
-        // 非今年
-        _timeLabel.text = [NSString stringWithFormat:@"%@", _model.createdAt];
-    }
-  
-   
+    _timeLabel.text = @"1分钟前";
 }
-
 
 - (void)setFrame:(CGRect)frame
 {

@@ -74,6 +74,7 @@
                 <outlet property="addAttentionButton" destination="83z-lX-KFl" id="5e4-N3-e3b"/>
                 <outlet property="addBuddyButtton" destination="YMv-ex-aPV" id="OkL-ez-90K"/>
                 <outlet property="userAliasLabel" destination="b1d-6A-oGH" id="oO8-0i-aBe"/>
+                <outlet property="userImageView" destination="Z1f-t5-Wex" id="LMc-za-HHM"/>
             </connections>
             <point key="canvasLocation" x="337" y="389.5"/>
         </tableViewCell>

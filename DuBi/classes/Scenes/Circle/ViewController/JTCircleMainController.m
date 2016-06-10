@@ -10,7 +10,6 @@
 #import "JTSegmentControl.h"
 #import "Color_marco.h"
 #import "Main_marco.h"
-#import "ZYTimeLineTableViewController.h"
 #import "EaseUI.h"
 #import <Masonry.h>
 #import "UIView+XYWidthHeight.h"
@@ -23,12 +22,13 @@
 #import "EaseUsersListViewController.h"
 #import "JTBuddyManager.h"
 #import "JTTabBarViewController.h"
+#import "SDTimeLineTableViewController.h"
 @interface JTCircleMainController ()<UIScrollViewDelegate,JTSegmentControlDelegate>
 
 @property (strong,nonatomic)JTSegmentControl *segmentControl;
 @property (strong,nonatomic)UIScrollView *scrollView;
 // 各自控制器
-@property (strong,nonatomic)ZYTimeLineTableViewController *circleViewController; // 圈子动态控制器
+@property (strong,nonatomic)SDTimeLineTableViewController *circleViewController; // 圈子动态控制器
 @property (strong,nonatomic)ConversationListController *conversationController; // 会话界面控制器
 @property (strong,nonatomic)EaseUsersListViewController *userListController; // 好友界面
 @property (strong,nonatomic)JTNotificationViewController *noticeMessageController ;// 通知控制器
@@ -43,7 +43,9 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
-    tabbarVC.navigationItem.titleView = self.segmentControl;
+     self.navigationController.navigationBarHidden = YES;
+  //  tabbarVC.navigationItem.titleView = self.segmentControl;
+    
     
 }
 
@@ -62,17 +64,15 @@
     [self setUpSubViews];
     [self setUpChildControllers];
     [self addChildControllerView];
+   
     
 }
 // self控制器视图布局
 -(void)setUpSubViews{
     self.automaticallyAdjustsScrollViewInsets = NO;
-    // 添加segmentControl;
-    UIView *navgationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
-    navgationView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 //    [self.view addSubview:navgationView];
     
-    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth-20, 44) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(kScreenWidth / 5, 20) titleFont:[UIFont systemFontOfSize:13]];
+    self.segmentControl = [[JTSegmentControl alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 64) normalColor:[UIColor blackColor] selectColor:tGreenColor titles:[NSArray arrayWithObjects:@"动态",@"会话",@"朋友",@"通知",@"关注", nil] SegmentSize:CGSizeMake(kScreenWidth,44) ItemSize:CGSizeMake(kScreenWidth / 5, 20) titleFont:[UIFont systemFontOfSize:13]];
     
 //    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
 //    tabbarVC.viewControllers[2].navigationItem.titleView = self.segmentControl;
@@ -81,7 +81,7 @@
     
     self.segmentControl.delegate = self;
     [self.segmentControl.searchButton  addTarget:self action:@selector(pushSearchVCACtion:) forControlEvents:(UIControlEventTouchUpInside)];
-   //  [self.view addSubview:self.segmentControl];
+    [self.view addSubview:self.segmentControl];
     
     // 添加搜索按钮
     
@@ -97,7 +97,7 @@
    //  self.scrollView.contentSize = CGSizeMake(kScreenWidth * 5, kscreenHeight);
      self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView ];
-    // [self.view insertSubview:self.scrollView belowSubview:self.segmentControl];
+    [self.view insertSubview:self.scrollView belowSubview:self.segmentControl];
   
    
     
@@ -110,7 +110,7 @@
 // 添加子控制器
 -(void)setUpChildControllers {
     // 动态
-    self.circleViewController = [ZYTimeLineTableViewController new] ;
+    self.circleViewController = [SDTimeLineTableViewController new] ;
    
     [self addChildViewController:self.circleViewController];
     // 会话
@@ -147,6 +147,7 @@
     
     // 动态
     self.circleViewController.view.frame = self.view.bounds;
+    self.circleViewController.tableView.contentInset  = UIEdgeInsetsMake(64, 0, 49, 0);
     //self.circleViewController.automaticallyAdjustsScrollViewInsets = NO;
     [self.scrollView addSubview:self.circleViewController.view];
    

@@ -1,26 +1,46 @@
 //
-//  ZYWeiXinPhotoContainerView.m
-//  ZYProject1
+//  SDWeiXinPhotoContainerView.m
+//  SDAutoLayout 测试 Demo
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by gsd on 15/12/23.
+//  Copyright © 2015年 gsd. All rights reserved.
 //
 
-#import "ZYWeiXinPhotoContainerView.h"
+
+/*
+ 
+ *********************************************************************************
+ *
+ * GSD_WeiXin
+ *
+ * QQ交流群: 362419100(2群) 459274049（1群已满）
+ * Email : gsdios@126.com
+ * GitHub: https://github.com/gsdios/GSD_WeiXin
+ * 新浪微博:GSD_iOS
+ *
+ * 此“高仿微信”用到了很高效方便的自动布局库SDAutoLayout（一行代码搞定自动布局）
+ * SDAutoLayout地址：https://github.com/gsdios/SDAutoLayout
+ * SDAutoLayout视频教程：http://www.letv.com/ptv/vplay/24038772.html
+ * SDAutoLayout用法示例：https://github.com/gsdios/SDAutoLayout/blob/master/README.md
+ *
+ *********************************************************************************
+ 
+ */
+
+#import "SDWeiXinPhotoContainerView.h"
 
 #import "UIView+SDAutoLayout.h"
 
 #import "SDPhotoBrowser.h"
-#import <UIImageView+WebCache.h>
-@interface ZYWeiXinPhotoContainerView () <SDPhotoBrowserDelegate>
+#import "UIImageView+WebCache.h"
+
+@interface SDWeiXinPhotoContainerView () <SDPhotoBrowserDelegate>
 
 @property (nonatomic, strong) NSArray *imageViewsArray;
 
 @end
 
-
-
-@implementation ZYWeiXinPhotoContainerView
+@implementation SDWeiXinPhotoContainerView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -66,10 +86,11 @@
     CGFloat itemW = [self itemWidthForPicPathArray:_picPathStringsArray];
     CGFloat itemH = 0;
     if (_picPathStringsArray.count == 1) {
-        UIImage *image = [UIImage imageNamed:_picPathStringsArray.firstObject];
-        if (image.size.width) {
-            itemH = image.size.height / image.size.width * itemW;
-        }
+//        UIImage *image = [UIImage imageNamed:_picPathStringsArray.firstObject];
+//        if (image.size.width) {
+//            itemH = image.size.height / image.size.width * itemW;
+//        }
+        itemH = itemW;
     } else {
         itemH = itemW;
     }
@@ -81,7 +102,8 @@
         long rowIndex = idx / perRowItemCount;
         UIImageView *imageView = [_imageViewsArray objectAtIndex:idx];
         imageView.hidden = NO;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:obj]];
+        //imageView.image = [UIImage imageNamed:obj];
+        [imageView  sd_setImageWithURL:[NSURL URLWithString:obj]];
         imageView.frame = CGRectMake(columnIndex * (itemW + margin), rowIndex * (itemH + margin), itemW, itemH);
     }];
     
@@ -135,7 +157,7 @@
 - (NSURL *)photoBrowser:(SDPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
 {
     NSString *imageName = self.picPathStringsArray[index];
-    NSURL *url = [NSURL URLWithString:imageName];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:imageName withExtension:nil];
     return url;
 }
 

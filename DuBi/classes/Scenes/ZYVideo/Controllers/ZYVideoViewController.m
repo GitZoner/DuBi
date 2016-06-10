@@ -13,6 +13,7 @@
 #import "DataModels.h" // model
 #import <AFNetworking.h>
 #import "MJRefresh.h"
+#import "JTTabBarViewController.h"
 //#import "TLFZAVplayer.h"
 
 #define kUrl @"http://api.budejie.com/api/api_open.php"
@@ -48,6 +49,12 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden  = NO;
+    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+    tabbarVC.navigationItem.title  =@"视频";
+
+    
+    NSLog(@"视频主页显示");
+    
     
 }
 
@@ -84,7 +91,6 @@ static NSString * const registerId = @"ZDCustomVedioCell";
 #pragma mark --- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // 注册tableView和title一些其他设置
     [self setTableViewAndTitle];
     

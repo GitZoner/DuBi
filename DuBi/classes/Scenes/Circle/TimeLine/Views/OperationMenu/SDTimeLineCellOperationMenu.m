@@ -1,18 +1,16 @@
 //
-//  ZYTimeLineCellOperationMenu.m
-//  ZYProject1
+//  SDTimeLineCellOperationMenu.m
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by aier on 16/4/2.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYTimeLineCellOperationMenu.h"
+#import "SDTimeLineCellOperationMenu.h"
 #import "UIView+SDAutoLayout.h"
 #import "GlobalDefines.h"
 
-#import <AVOSCloud/AVOSCloud.h>
-
-@implementation ZYTimeLineCellOperationMenu
+@implementation SDTimeLineCellOperationMenu
 {
     UIButton *_likeButton;
     UIButton *_commentButton;
@@ -28,7 +26,6 @@
 
 - (void)setup
 {
-    // 如果子视图的范围超过父视图的边界，那么超出的部分就会被裁减掉。YES裁剪，NO不裁剪。默认是NO；
     self.clipsToBounds = YES;
     self.layer.cornerRadius = 5;
     self.backgroundColor = SDColor(69, 74, 76, 1);
@@ -80,8 +77,6 @@
 {
     if (self.likeButtonClickedOperation) {
         self.likeButtonClickedOperation();
-
-  
     }
 }
 
@@ -89,9 +84,8 @@
 {
     if (self.commentButtonClickedOperation) {
         self.commentButtonClickedOperation();
-        NSLog(@"++++++++++++++++++++++++++++++++");
     }
-     self.show = NO;
+    self.show = NO;
 }
 
 - (void)setShow:(BOOL)show
@@ -112,5 +106,3 @@
 }
 
 @end
-
-

@@ -35,7 +35,7 @@
     self.frame = frame;
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.scrollView =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.width - 44, self.height)];
+        self.scrollView =[[UIScrollView alloc] initWithFrame:CGRectMake(10, 20, self.width - 50, 44)];
         self.scrollView.contentSize = CGSizeMake(itemSize.width * titleArray.count, segmentSize.height);
         self.scrollView.showsHorizontalScrollIndicator = NO;
         [self addSubview:self.scrollView];
@@ -46,7 +46,7 @@
         self.itemSize = itemSize;
         self.titleFont  =font;
         
-        self.searchView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.scrollView.frame), 0 ,44, 44)];
+        self.searchView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.scrollView.frame), 20 ,44, 44)];
         self.searchView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.searchView];
        self.searchButton = [UIButton buttonWithType:(UIButtonTypeCustom)];

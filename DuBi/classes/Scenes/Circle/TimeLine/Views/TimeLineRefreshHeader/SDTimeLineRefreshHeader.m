@@ -1,25 +1,45 @@
 //
-//  ZYTimeLineRefreshHeader.m
-//  ZYProject1
+//  SDTimeLineRefreshHeader.m
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by gsd on 16/3/5.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYTimeLineRefreshHeader.h"
+/*
+ 
+ *********************************************************************************
+ *
+ * GSD_WeiXin
+ *
+ * QQ交流群: 362419100(2群) 459274049（1群已满）
+ * Email : gsdios@126.com
+ * GitHub: https://github.com/gsdios/GSD_WeiXin
+ * 新浪微博:GSD_iOS
+ *
+ * 此“高仿微信”用到了很高效方便的自动布局库SDAutoLayout（一行代码搞定自动布局）
+ * SDAutoLayout地址：https://github.com/gsdios/SDAutoLayout
+ * SDAutoLayout视频教程：http://www.letv.com/ptv/vplay/24038772.html
+ * SDAutoLayout用法示例：https://github.com/gsdios/SDAutoLayout/blob/master/README.md
+ *
+ *********************************************************************************
+ 
+ */
+
+#import "SDTimeLineRefreshHeader.h"
+
 static const CGFloat criticalY = -60.f;
 
 #define kSDTimeLineRefreshHeaderRotateAnimationKey @"RotateAnimationKey"
 
-
-@implementation ZYTimeLineRefreshHeader
+@implementation SDTimeLineRefreshHeader
 {
     CABasicAnimation *_rotateAnimation;
 }
 
 + (instancetype)refreshHeaderWithCenter:(CGPoint)center
 {
-    ZYTimeLineRefreshHeader *header = [ZYTimeLineRefreshHeader new];
+    SDTimeLineRefreshHeader *header = [SDTimeLineRefreshHeader new];
     header.center = center;
     return header;
 }
@@ -64,6 +84,8 @@ static const CGFloat criticalY = -60.f;
         }];
     }
 }
+
+
 - (void)updateRefreshHeaderWithOffsetY:(CGFloat)y
 {
     

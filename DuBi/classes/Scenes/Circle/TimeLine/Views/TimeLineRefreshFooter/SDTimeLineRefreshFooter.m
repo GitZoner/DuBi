@@ -1,21 +1,21 @@
 //
-//  ZYTimeLinerefreshFooter.m
-//  ZYProject1
+//  SDTimeLineRefreshFooter.m
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by aier on 16/3/6.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYTimeLinerefreshFooter.h"
+#import "SDTimeLineRefreshFooter.h"
 #import "UIView+SDAutoLayout.h"
 
 #define kSDTimeLineRefreshFooterHeight 50
-@implementation ZYTimeLinerefreshFooter
 
+@implementation SDTimeLineRefreshFooter
 
 + (instancetype)refreshFooterWithRefreshingText:(NSString *)text
 {
-    ZYTimeLinerefreshFooter *footer = [ZYTimeLinerefreshFooter new];
+    SDTimeLineRefreshFooter *footer = [SDTimeLineRefreshFooter new];
     footer.indicatorLabel.text = text;
     return footer;
 }

@@ -14,7 +14,7 @@
 #import "JTCircleMainController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "Main_marco.h"
-#import "ZYTimeLineCellModel.h"
+//#import "ZYTimeLineCellModel.h"
 @interface ZDSendPicture ()<WNImagePickerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *theTextView;
 

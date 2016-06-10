@@ -24,7 +24,14 @@ static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewReloadData) name:@"searchViewControllerReloadDataNotifiCation" object:nil];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -72,17 +79,18 @@ static NSString *const JTBuddySearchCellID = @"JTBuddySearchCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     JTBuddySearchCell *cell = [tableView dequeueReusableCellWithIdentifier:JTBuddySearchCellID forIndexPath:indexPath];
     AVObject *userObject = self.searchResultList[indexPath.row];
-    NSString *imageUrlString = [userObject objectForKey:@"protrait"];
+    NSString *imageUrlString = userObject[kUserInfoKey_protrait];
+    NSLog(@"%@",imageUrlString);
     NSURL *url = [NSURL URLWithString:imageUrlString];
     
-    [cell.userImageView sd_setImageWithURL:url];
+    [cell.userImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"touxiang_placeholder"]];
     
     NSString *userName = [userObject objectForKey:@"userAlias"];
     cell.userAliasLabel.text = userName;
     
     cell.telNum = [userObject objectForKey:@"telNum"];
     cell.userAlias = userObject[@"userAlias"];
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

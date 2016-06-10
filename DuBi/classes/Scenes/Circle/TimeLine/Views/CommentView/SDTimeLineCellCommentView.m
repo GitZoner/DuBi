@@ -1,18 +1,38 @@
 //
-//  ZYTimeLineCellCommentView.m
-//  ZYProject1
+//  SDTimeLineCellCommentView.m
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by gsd on 16/2/25.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYTimeLineCellCommentView.h"
+/*
+ 
+ *********************************************************************************
+ *
+ * GSD_WeiXin
+ *
+ * QQ交流群: 362419100(2群) 459274049（1群已满）
+ * Email : gsdios@126.com
+ * GitHub: https://github.com/gsdios/GSD_WeiXin
+ * 新浪微博:GSD_iOS
+ *
+ * 此“高仿微信”用到了很高效方便的自动布局库SDAutoLayout（一行代码搞定自动布局）
+ * SDAutoLayout地址：https://github.com/gsdios/SDAutoLayout
+ * SDAutoLayout视频教程：http://www.letv.com/ptv/vplay/24038772.html
+ * SDAutoLayout用法示例：https://github.com/gsdios/SDAutoLayout/blob/master/README.md
+ *
+ *********************************************************************************
+ 
+ */
+
+#import "SDTimeLineCellCommentView.h"
 #import "UIView+SDAutoLayout.h"
-#import "ZYTimeLineCellModel.h"
+#import "SDTimeLineCellModel.h"
 #import "MLLinkLabel.h"
 
+@interface SDTimeLineCellCommentView () <MLLinkLabelDelegate>
 
-@interface ZYTimeLineCellCommentView ()<MLLinkLabelDelegate>
 @property (nonatomic, strong) NSArray *likeItemsArray;
 @property (nonatomic, strong) NSArray *commentItemsArray;
 
@@ -26,8 +46,7 @@
 
 @end
 
-
-@implementation ZYTimeLineCellCommentView
+@implementation SDTimeLineCellCommentView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -77,7 +96,7 @@
     }
     
     for (int i = 0; i < commentItemsArray.count; i++) {
-        ZYTimeLineCellCommentItemModel *model = commentItemsArray[i];
+        SDTimeLineCellCommentItemModel *model = commentItemsArray[i];
         MLLinkLabel *label = self.commentLabelsArray[i];
         label.attributedText = [self generateAttributedStringWithCommentItemModel:model];
     }
@@ -95,7 +114,7 @@
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:likeIcon];
     
     for (int i = 0; i < likeItemsArray.count; i++) {
-        ZYTimeLineCellLikeItemModel *model = likeItemsArray[i];
+        SDTimeLineCellLikeItemModel *model = likeItemsArray[i];
         if (i > 0) {
             [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"，"]];
         }
@@ -188,31 +207,32 @@
     if (self.didClickCommentLabelBlock) {
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         CGRect rect = [tap.view.superview convertRect:tap.view.frame toView:window];
-        ZYTimeLineCellCommentItemModel *model = self.commentItemsArray[tap.view.tag];
+        SDTimeLineCellCommentItemModel *model = self.commentItemsArray[tap.view.tag];
         self.didClickCommentLabelBlock(model.firstUserName, rect);
     }
 }
 
-- (NSMutableAttributedString *)generateAttributedStringWithCommentItemModel:(ZYTimeLineCellCommentItemModel *)model
+- (NSMutableAttributedString *)generateAttributedStringWithCommentItemModel:(SDTimeLineCellCommentItemModel *)model
 {
     NSString *text = model.firstUserName;
     if (model.secondUserName.length) {
         text = [text stringByAppendingString:[NSString stringWithFormat:@"回复%@", model.secondUserName]];
-   }
-   text = [text stringByAppendingString:[NSString stringWithFormat:@"：%@", model.commentString]];
+    }
+    text = [text stringByAppendingString:[NSString stringWithFormat:@"：%@", model.commentString]];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:text];
-//    [attString setAttributes:@{NSLinkAttributeName : model.firstUserId} range:[text rangeOfString:model.firstUserName]];
-//       [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
-   
+    [attString setAttributes:@{NSLinkAttributeName : model.firstUserId} range:[text rangeOfString:model.firstUserName]];
+    if (model.secondUserName) {
+        [attString setAttributes:@{NSLinkAttributeName : model.secondUserId} range:[text rangeOfString:model.secondUserName]];
+    }
     return attString;
 }
 
-- (NSMutableAttributedString *)generateAttributedStringWithLikeItemModel:(ZYTimeLineCellLikeItemModel *)model
+- (NSMutableAttributedString *)generateAttributedStringWithLikeItemModel:(SDTimeLineCellLikeItemModel *)model
 {
     NSString *text = model.userName;
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:text];
     UIColor *highLightColor = [UIColor blueColor];
-   [attString setAttributes:@{NSForegroundColorAttributeName : highLightColor, NSLinkAttributeName : model.userName} range:[text rangeOfString:model.userName]];
+    [attString setAttributes:@{NSForegroundColorAttributeName : highLightColor, NSLinkAttributeName : model.userId} range:[text rangeOfString:model.userName]];
     
     return attString;
 }
@@ -222,10 +242,7 @@
 
 - (void)didClickLink:(MLLink *)link linkText:(NSString *)linkText linkLabel:(MLLinkLabel *)linkLabel
 {
-//    NSLog(@"%@", link.linkValue);
+    NSLog(@"%@", link.linkValue);
 }
-
-
-
 
 @end

@@ -89,12 +89,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
     if (self.conversation.type == EMConversationTypeGroupChat) {
         if ([[self.conversation.ext objectForKey:@"subject"] length])
         {
             self.title = [self.conversation.ext objectForKey:@"subject"];
         }
     }
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark - setup subviews

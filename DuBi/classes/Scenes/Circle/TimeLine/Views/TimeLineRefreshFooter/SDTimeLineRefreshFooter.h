@@ -1,14 +1,14 @@
 //
-//  ZYTimeLinerefreshFooter.h
-//  ZYProject1
+//  SDTimeLineRefreshFooter.h
+//  GSD_WeiXin(wechat)
 //
-//  Created by lanou3g on 16/5/28.
-//  Copyright © 2016年 橙子. All rights reserved.
+//  Created by aier on 16/3/6.
+//  Copyright © 2016年 GSD. All rights reserved.
 //
 
-#import "ZYBaseRefresView.h"
+#import "SDBaseRefreshView.h"
 
-@interface ZYTimeLinerefreshFooter : ZYBaseRefresView
+@interface SDTimeLineRefreshFooter : SDBaseRefreshView
 
 + (instancetype)refreshFooterWithRefreshingText:(NSString *)text;
 

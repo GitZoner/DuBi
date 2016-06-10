@@ -497,4 +497,10 @@ static UIWindow * window;
 }
 
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.navigationBarHidden = NO;
+}
+
 @end

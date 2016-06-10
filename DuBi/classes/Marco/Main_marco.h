@@ -29,6 +29,16 @@
 #define kUserDefaultSetValue(value,key) [[NSUserDefaults standardUserDefaults]  setValue:value forKey:key]
 #define kUserDefaultGetValue(key) [[NSUserDefaults standardUserDefaults] objectForKey: key]
 
+// 数据库表关键字
+#define kLikeModelListKey_likerID @"likerID"
+#define kLikeModelListKey_likerName @"likerName"
+
+#define kCommentModelListKey_firstID @"firstID"
+#define kCommentModelListKey_secondID @"secondID"
+#define kCommentModelListKey_firstName @"firstName"
+#define kCommentModelListKey_secondName @"secondName"
+#define kCommentModelListKey_comment @"comment"
+
 // 通知名
 
 // 登录通知

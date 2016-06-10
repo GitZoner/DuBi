@@ -7,19 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EF07BDA047E1DAA71C38B2F /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */; };
+		371C738FF1C431D541748868 /* libPods-DuBi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B7E1507E5F931C7D2AC52B /* libPods-DuBi.a */; };
 		9605E9CB1CF47E47000D1834 /* RegularUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9605E9CA1CF47E47000D1834 /* RegularUtils.m */; };
 		9605E9CF1CF485A6000D1834 /* XHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9605E9CE1CF485A6000D1834 /* XHToast.m */; };
-		960DE6BA1CFAEF3900C31DD8 /* ZYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6A61CFAEF3900C31DD8 /* ZYBaseTableViewController.m */; };
-		960DE6BB1CFAEF3900C31DD8 /* ZYBaseRefresView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6A81CFAEF3900C31DD8 /* ZYBaseRefresView.m */; };
-		960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6AA1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m */; };
-		960DE6BD1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6AC1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m */; };
-		960DE6BE1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6AE1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.m */; };
-		960DE6BF1CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6B01CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m */; };
-		960DE6C01CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6B21CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m */; };
-		960DE6C11CFAEF3900C31DD8 /* ZYTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6B41CFAEF3900C31DD8 /* ZYTimeLineCell.m */; };
-		960DE6C21CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6B61CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m */; };
-		960DE6C31CFAEF3900C31DD8 /* ZYTimeLineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DE6B81CFAEF3900C31DD8 /* ZYTimeLineTableViewController.m */; };
 		960DE7361CFAF29B00C31DD8 /* MLEmoji_Expression.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 960DE7021CFAF29B00C31DD8 /* MLEmoji_Expression.bundle */; };
 		960DE7371CFAF29B00C31DD8 /* MLEmoji_Expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 960DE7031CFAF29B00C31DD8 /* MLEmoji_Expression.plist */; };
 		960DE7381CFAF29B00C31DD8 /* MLEmoji_ExpressionImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 960DE7041CFAF29B00C31DD8 /* MLEmoji_ExpressionImage.plist */; };
@@ -65,6 +55,19 @@
 		96123C1A1CFEDD6600DF5631 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123C191CFEDD6600DF5631 /* UserProfileViewController.m */; };
 		96123C201CFEDEF100DF5631 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123C1F1CFEDEF100DF5631 /* ChatViewController.m */; };
 		96123C241CFEE4A400DF5631 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96123C231CFEE4A400DF5631 /* EMAlertView.m */; };
+		9612EA9A1D090C04002A695E /* ZDAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612EA991D090C04002A695E /* ZDAVPlayer.m */; };
+		9612ED1F1D099661002A695E /* SDTimeLineCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612EC9E1D099661002A695E /* SDTimeLineCellModel.m */; };
+		9612ED201D099661002A695E /* SDTimeLineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ECA11D099661002A695E /* SDTimeLineTableViewController.m */; };
+		9612ED4C1D099661002A695E /* SDBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED051D099661002A695E /* SDBaseNavigationController.m */; };
+		9612ED4D1D099661002A695E /* SDBaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED071D099661002A695E /* SDBaseRefreshView.m */; };
+		9612ED4E1D099661002A695E /* SDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED091D099661002A695E /* SDBaseTableViewController.m */; };
+		9612ED4F1D099661002A695E /* SDTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED0C1D099661002A695E /* SDTimeLineCell.m */; };
+		9612ED501D099661002A695E /* SDTimeLineCellCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED0F1D099661002A695E /* SDTimeLineCellCommentView.m */; };
+		9612ED511D099661002A695E /* SDTimeLineTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED121D099661002A695E /* SDTimeLineTableHeaderView.m */; };
+		9612ED521D099661002A695E /* SDTimeLineCellOperationMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED151D099661002A695E /* SDTimeLineCellOperationMenu.m */; };
+		9612ED531D099661002A695E /* SDWeiXinPhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED181D099661002A695E /* SDWeiXinPhotoContainerView.m */; };
+		9612ED541D099661002A695E /* SDTimeLineRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED1B1D099661002A695E /* SDTimeLineRefreshFooter.m */; };
+		9612ED551D099661002A695E /* SDTimeLineRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612ED1E1D099661002A695E /* SDTimeLineRefreshHeader.m */; };
 		961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */; };
 		9622F3881CFDE14C000A39C9 /* JTCircleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622F3871CFDE14C000A39C9 /* JTCircleHeaderView.m */; };
 		9622F38B1CFDE1B9000A39C9 /* JTCircleMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622F38A1CFDE1B9000A39C9 /* JTCircleMainController.m */; };
@@ -80,7 +83,6 @@
 		965C51F41CF3ED2200B0F22F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F31CF3ED2200B0F22F /* JavaScriptCore.framework */; };
 		965C51F61CF3ED3700B0F22F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C51F51CF3ED3700B0F22F /* libstdc++.tbd */; };
 		965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C52011CF4085B00B0F22F /* JTTabBarViewController.m */; };
-		965CCE561D07A28600DB8139 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */; };
 		968AC5B91CEF120600A14471 /* UIImage+ImageContentWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AC5B81CEF120600A14471 /* UIImage+ImageContentWithColor.m */; };
 		96D5B0201CF7E1AD009E689C /* JTSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D5B01E1CF7E1AD009E689C /* JTSignInViewController.m */; };
 		96D5B0211CF7E1AD009E689C /* JTSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D5B01F1CF7E1AD009E689C /* JTSignInViewController.xib */; };
@@ -236,7 +238,6 @@
 		96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78901CED93F2000FCB3C /* AppDelegate.m */; };
 		96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C11CEDD501000FCB3C /* JTTabBar.m */; };
 		96FD78CA1CEDD8D9000FCB3C /* UIView+XYWidthHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */; };
-		C21D86321D01A4F800E898B3 /* ZYGetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D86311D01A4F800E898B3 /* ZYGetObject.m */; };
 		C220B3531CF433A0009A6560 /* JTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */; };
 		C220B3541CF433A0009A6560 /* JTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */; };
 		C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C220B3511CF433A0009A6560 /* JTSignInChoiceViewController.m */; };
@@ -299,37 +300,16 @@
 		C2E6E9CE1CFC7A57001B198A /* ZDPublishHaflViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E9CD1CFC7A57001B198A /* ZDPublishHaflViewControl.m */; };
 		C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25261CFD2BB200071078 /* ZDSendJokes.m */; };
 		C2ED25291CFD2BB200071078 /* ZDSendJokes.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */; };
-		C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
-		3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		1F829F9D190B0F47BC7695D2 /* Pods-DuBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.debug.xcconfig"; sourceTree = "<group>"; };
+		42B7E1507E5F931C7D2AC52B /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3C2B763DDF3C2B40CDBB7C /* Pods-DuBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuBi/Pods-DuBi.release.xcconfig"; sourceTree = "<group>"; };
 		9605E9C91CF47E47000D1834 /* RegularUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularUtils.h; sourceTree = "<group>"; };
 		9605E9CA1CF47E47000D1834 /* RegularUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularUtils.m; sourceTree = "<group>"; };
 		9605E9CD1CF485A6000D1834 /* XHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHToast.h; sourceTree = "<group>"; };
 		9605E9CE1CF485A6000D1834 /* XHToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHToast.m; sourceTree = "<group>"; };
-		960DE6A51CFAEF3900C31DD8 /* ZYBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseTableViewController.h; sourceTree = "<group>"; };
-		960DE6A61CFAEF3900C31DD8 /* ZYBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseTableViewController.m; sourceTree = "<group>"; };
-		960DE6A71CFAEF3900C31DD8 /* ZYBaseRefresView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseRefresView.h; sourceTree = "<group>"; };
-		960DE6A81CFAEF3900C31DD8 /* ZYBaseRefresView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseRefresView.m; sourceTree = "<group>"; };
-		960DE6A91CFAEF3900C31DD8 /* ZYTimeLineCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineCellModel.h; sourceTree = "<group>"; };
-		960DE6AA1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineCellModel.m; sourceTree = "<group>"; };
-		960DE6AB1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineCellOperationMenu.h; sourceTree = "<group>"; };
-		960DE6AC1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineCellOperationMenu.m; sourceTree = "<group>"; };
-		960DE6AD1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLinerefreshFooter.h; sourceTree = "<group>"; };
-		960DE6AE1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLinerefreshFooter.m; sourceTree = "<group>"; };
-		960DE6AF1CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineRefreshHeader.h; sourceTree = "<group>"; };
-		960DE6B01CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineRefreshHeader.m; sourceTree = "<group>"; };
-		960DE6B11CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineCellCommentView.h; sourceTree = "<group>"; };
-		960DE6B21CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineCellCommentView.m; sourceTree = "<group>"; };
-		960DE6B31CFAEF3900C31DD8 /* ZYTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineCell.h; sourceTree = "<group>"; };
-		960DE6B41CFAEF3900C31DD8 /* ZYTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineCell.m; sourceTree = "<group>"; };
-		960DE6B51CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYWeiXinPhotoContainerView.h; sourceTree = "<group>"; };
-		960DE6B61CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYWeiXinPhotoContainerView.m; sourceTree = "<group>"; };
-		960DE6B71CFAEF3900C31DD8 /* ZYTimeLineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTimeLineTableViewController.h; sourceTree = "<group>"; };
-		960DE6B81CFAEF3900C31DD8 /* ZYTimeLineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTimeLineTableViewController.m; sourceTree = "<group>"; };
-		960DE6B91CFAEF3900C31DD8 /* GlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDefines.h; sourceTree = "<group>"; };
 		960DE7021CFAF29B00C31DD8 /* MLEmoji_Expression.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MLEmoji_Expression.bundle; sourceTree = "<group>"; };
 		960DE7031CFAF29B00C31DD8 /* MLEmoji_Expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MLEmoji_Expression.plist; sourceTree = "<group>"; };
 		960DE7041CFAF29B00C31DD8 /* MLEmoji_ExpressionImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MLEmoji_ExpressionImage.plist; sourceTree = "<group>"; };
@@ -417,6 +397,33 @@
 		96123C1F1CFEDEF100DF5631 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		96123C221CFEE4A400DF5631 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
 		96123C231CFEE4A400DF5631 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
+		9612EA981D090C04002A695E /* ZDAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAVPlayer.h; sourceTree = "<group>"; };
+		9612EA991D090C04002A695E /* ZDAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAVPlayer.m; sourceTree = "<group>"; };
+		9612EC9B1D099661002A695E /* GlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDefines.h; sourceTree = "<group>"; };
+		9612EC9D1D099661002A695E /* SDTimeLineCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineCellModel.h; sourceTree = "<group>"; };
+		9612EC9E1D099661002A695E /* SDTimeLineCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineCellModel.m; sourceTree = "<group>"; };
+		9612ECA01D099661002A695E /* SDTimeLineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineTableViewController.h; sourceTree = "<group>"; };
+		9612ECA11D099661002A695E /* SDTimeLineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineTableViewController.m; sourceTree = "<group>"; };
+		9612ED041D099661002A695E /* SDBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseNavigationController.h; sourceTree = "<group>"; };
+		9612ED051D099661002A695E /* SDBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseNavigationController.m; sourceTree = "<group>"; };
+		9612ED061D099661002A695E /* SDBaseRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseRefreshView.h; sourceTree = "<group>"; };
+		9612ED071D099661002A695E /* SDBaseRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseRefreshView.m; sourceTree = "<group>"; };
+		9612ED081D099661002A695E /* SDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseTableViewController.h; sourceTree = "<group>"; };
+		9612ED091D099661002A695E /* SDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseTableViewController.m; sourceTree = "<group>"; };
+		9612ED0B1D099661002A695E /* SDTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineCell.h; sourceTree = "<group>"; };
+		9612ED0C1D099661002A695E /* SDTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineCell.m; sourceTree = "<group>"; };
+		9612ED0E1D099661002A695E /* SDTimeLineCellCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineCellCommentView.h; sourceTree = "<group>"; };
+		9612ED0F1D099661002A695E /* SDTimeLineCellCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineCellCommentView.m; sourceTree = "<group>"; };
+		9612ED111D099661002A695E /* SDTimeLineTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineTableHeaderView.h; sourceTree = "<group>"; };
+		9612ED121D099661002A695E /* SDTimeLineTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineTableHeaderView.m; sourceTree = "<group>"; };
+		9612ED141D099661002A695E /* SDTimeLineCellOperationMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineCellOperationMenu.h; sourceTree = "<group>"; };
+		9612ED151D099661002A695E /* SDTimeLineCellOperationMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineCellOperationMenu.m; sourceTree = "<group>"; };
+		9612ED171D099661002A695E /* SDWeiXinPhotoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeiXinPhotoContainerView.h; sourceTree = "<group>"; };
+		9612ED181D099661002A695E /* SDWeiXinPhotoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeiXinPhotoContainerView.m; sourceTree = "<group>"; };
+		9612ED1A1D099661002A695E /* SDTimeLineRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineRefreshFooter.h; sourceTree = "<group>"; };
+		9612ED1B1D099661002A695E /* SDTimeLineRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineRefreshFooter.m; sourceTree = "<group>"; };
+		9612ED1D1D099661002A695E /* SDTimeLineRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimeLineRefreshHeader.h; sourceTree = "<group>"; };
+		9612ED1E1D099661002A695E /* SDTimeLineRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimeLineRefreshHeader.m; sourceTree = "<group>"; };
 		961F9EC91CEEAC990043F86C /* JTBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBuddyManager.h; sourceTree = "<group>"; };
 		961F9ECA1CEEAC990043F86C /* JTBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBuddyManager.m; sourceTree = "<group>"; };
 		9622F3861CFDE14C000A39C9 /* JTCircleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCircleHeaderView.h; sourceTree = "<group>"; };
@@ -439,8 +446,6 @@
 		965C51F51CF3ED3700B0F22F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		965C52001CF4085B00B0F22F /* JTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTabBarViewController.h; sourceTree = "<group>"; };
 		965C52011CF4085B00B0F22F /* JTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBarViewController.m; sourceTree = "<group>"; };
-		965CCE541D07A28600DB8139 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
-		965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HFExtension.m"; sourceTree = "<group>"; };
 		968AC5B51CEF113600A14471 /* Color_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color_marco.h; sourceTree = "<group>"; };
 		968AC5B61CEF117B00A14471 /* Main_marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_marco.h; sourceTree = "<group>"; };
 		968AC5B71CEF120600A14471 /* UIImage+ImageContentWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageContentWithColor.h"; sourceTree = "<group>"; };
@@ -757,9 +762,6 @@
 		96FD78C11CEDD501000FCB3C /* JTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTabBar.m; sourceTree = "<group>"; };
 		96FD78C81CEDD8D9000FCB3C /* UIView+XYWidthHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XYWidthHeight.h"; sourceTree = "<group>"; };
 		96FD78C91CEDD8D9000FCB3C /* UIView+XYWidthHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYWidthHeight.m"; sourceTree = "<group>"; };
-		AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuBi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C21D86301D01A4F800E898B3 /* ZYGetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGetObject.h; sourceTree = "<group>"; };
-		C21D86311D01A4F800E898B3 /* ZYGetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGetObject.m; sourceTree = "<group>"; };
 		C220B34D1CF433A0009A6560 /* JTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRegisterViewController.h; sourceTree = "<group>"; };
 		C220B34E1CF433A0009A6560 /* JTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRegisterViewController.m; sourceTree = "<group>"; };
 		C220B34F1CF433A0009A6560 /* JTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTRegisterViewController.xib; sourceTree = "<group>"; };
@@ -871,8 +873,6 @@
 		C2ED25251CFD2BB200071078 /* ZDSendJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSendJokes.h; sourceTree = "<group>"; };
 		C2ED25261CFD2BB200071078 /* ZDSendJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSendJokes.m; sourceTree = "<group>"; };
 		C2ED25271CFD2BB200071078 /* ZDSendJokes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSendJokes.xib; sourceTree = "<group>"; };
-		C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFZAVplayer.h; sourceTree = "<group>"; };
-		C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFZAVplayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -890,7 +890,7 @@
 				96FB5C8E1CF6FF1D009A8BCF /* libopencore-amrwb.a in Frameworks */,
 				965C51EC1CF3EBA000B0F22F /* SMS_SDK.framework in Frameworks */,
 				965C51EB1CF3EBA000B0F22F /* MOBFoundation.framework in Frameworks */,
-				1EF07BDA047E1DAA71C38B2F /* libPods-DuBi.a in Frameworks */,
+				371C738FF1C431D541748868 /* libPods-DuBi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,18 +906,9 @@
 				965C51F11CF3EC8400B0F22F /* MessageUI.framework */,
 				965C51EF1CF3EC5100B0F22F /* libicucore.tbd */,
 				965C51ED1CF3EC1F00B0F22F /* libz.tbd */,
-				AB02B3C5402D736C888EDED8 /* libPods-DuBi.a */,
+				42B7E1507E5F931C7D2AC52B /* libPods-DuBi.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8B17CF485B4CF68652A6CBA9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */,
-				04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		9605E9C81CF47E47000D1834 /* RegularUtils */ = {
@@ -1180,6 +1171,134 @@
 			path = EMAlertView;
 			sourceTree = "<group>";
 		};
+		9612EC991D0995EF002A695E /* ZYCircle */ = {
+			isa = PBXGroup;
+			children = (
+				9612EC9A1D099661002A695E /* TimeLine */,
+			);
+			name = ZYCircle;
+			sourceTree = "<group>";
+		};
+		9612EC9A1D099661002A695E /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				9612EC9B1D099661002A695E /* GlobalDefines.h */,
+				9612EC9C1D099661002A695E /* Model */,
+				9612EC9F1D099661002A695E /* TimeLineController */,
+				9612ED021D099661002A695E /* Views */,
+			);
+			path = TimeLine;
+			sourceTree = "<group>";
+		};
+		9612EC9C1D099661002A695E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9612EC9D1D099661002A695E /* SDTimeLineCellModel.h */,
+				9612EC9E1D099661002A695E /* SDTimeLineCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9612EC9F1D099661002A695E /* TimeLineController */ = {
+			isa = PBXGroup;
+			children = (
+				9612ECA01D099661002A695E /* SDTimeLineTableViewController.h */,
+				9612ECA11D099661002A695E /* SDTimeLineTableViewController.m */,
+			);
+			path = TimeLineController;
+			sourceTree = "<group>";
+		};
+		9612ED021D099661002A695E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED031D099661002A695E /* BaseRefreshView */,
+				9612ED0A1D099661002A695E /* Cell */,
+				9612ED0D1D099661002A695E /* CommentView */,
+				9612ED101D099661002A695E /* HeaderView */,
+				9612ED131D099661002A695E /* OperationMenu */,
+				9612ED161D099661002A695E /* PhotoContainer */,
+				9612ED191D099661002A695E /* TimeLineRefreshFooter */,
+				9612ED1C1D099661002A695E /* TimeLineRefreshHeader */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9612ED031D099661002A695E /* BaseRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED041D099661002A695E /* SDBaseNavigationController.h */,
+				9612ED051D099661002A695E /* SDBaseNavigationController.m */,
+				9612ED061D099661002A695E /* SDBaseRefreshView.h */,
+				9612ED071D099661002A695E /* SDBaseRefreshView.m */,
+				9612ED081D099661002A695E /* SDBaseTableViewController.h */,
+				9612ED091D099661002A695E /* SDBaseTableViewController.m */,
+			);
+			path = BaseRefreshView;
+			sourceTree = "<group>";
+		};
+		9612ED0A1D099661002A695E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED0B1D099661002A695E /* SDTimeLineCell.h */,
+				9612ED0C1D099661002A695E /* SDTimeLineCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9612ED0D1D099661002A695E /* CommentView */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED0E1D099661002A695E /* SDTimeLineCellCommentView.h */,
+				9612ED0F1D099661002A695E /* SDTimeLineCellCommentView.m */,
+			);
+			path = CommentView;
+			sourceTree = "<group>";
+		};
+		9612ED101D099661002A695E /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED111D099661002A695E /* SDTimeLineTableHeaderView.h */,
+				9612ED121D099661002A695E /* SDTimeLineTableHeaderView.m */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		9612ED131D099661002A695E /* OperationMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED141D099661002A695E /* SDTimeLineCellOperationMenu.h */,
+				9612ED151D099661002A695E /* SDTimeLineCellOperationMenu.m */,
+			);
+			path = OperationMenu;
+			sourceTree = "<group>";
+		};
+		9612ED161D099661002A695E /* PhotoContainer */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED171D099661002A695E /* SDWeiXinPhotoContainerView.h */,
+				9612ED181D099661002A695E /* SDWeiXinPhotoContainerView.m */,
+			);
+			path = PhotoContainer;
+			sourceTree = "<group>";
+		};
+		9612ED191D099661002A695E /* TimeLineRefreshFooter */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED1A1D099661002A695E /* SDTimeLineRefreshFooter.h */,
+				9612ED1B1D099661002A695E /* SDTimeLineRefreshFooter.m */,
+			);
+			path = TimeLineRefreshFooter;
+			sourceTree = "<group>";
+		};
+		9612ED1C1D099661002A695E /* TimeLineRefreshHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9612ED1D1D099661002A695E /* SDTimeLineRefreshHeader.h */,
+				9612ED1E1D099661002A695E /* SDTimeLineRefreshHeader.m */,
+			);
+			path = TimeLineRefreshHeader;
+			sourceTree = "<group>";
+		};
 		963BFD561D012F5400E5E74C /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,29 +1403,7 @@
 		96FB59B51CF6D0C3009A8BCF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
-				965CCE541D07A28600DB8139 /* NSDate+HFExtension.h */,
-				965CCE551D07A28600DB8139 /* NSDate+HFExtension.m */,
-				960DE6A51CFAEF3900C31DD8 /* ZYBaseTableViewController.h */,
-				960DE6A61CFAEF3900C31DD8 /* ZYBaseTableViewController.m */,
-				960DE6A71CFAEF3900C31DD8 /* ZYBaseRefresView.h */,
-				960DE6A81CFAEF3900C31DD8 /* ZYBaseRefresView.m */,
-				960DE6A91CFAEF3900C31DD8 /* ZYTimeLineCellModel.h */,
-				960DE6AA1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m */,
-				960DE6AB1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.h */,
-				960DE6AC1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m */,
-				960DE6AD1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.h */,
-				960DE6AE1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.m */,
-				960DE6AF1CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.h */,
-				960DE6B01CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m */,
-				960DE6B11CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.h */,
-				960DE6B21CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m */,
-				960DE6B31CFAEF3900C31DD8 /* ZYTimeLineCell.h */,
-				960DE6B41CFAEF3900C31DD8 /* ZYTimeLineCell.m */,
-				960DE6B51CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.h */,
-				960DE6B61CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m */,
-				960DE6B71CFAEF3900C31DD8 /* ZYTimeLineTableViewController.h */,
-				960DE6B81CFAEF3900C31DD8 /* ZYTimeLineTableViewController.m */,
-				960DE6B91CFAEF3900C31DD8 /* GlobalDefines.h */,
+				9612EC991D0995EF002A695E /* ZYCircle */,
 				96FB59B61CF6D0C3009A8BCF /* Model */,
 				96FB59B71CF6D0C3009A8BCF /* View */,
 				96FB59BA1CF6D0C3009A8BCF /* ViewController */,
@@ -1939,7 +2036,7 @@
 				96FD78751CED92FE000FCB3C /* DuBi */,
 				96FD78741CED92FE000FCB3C /* Products */,
 				79939B0E58BB4BC289F17EB9 /* Frameworks */,
-				8B17CF485B4CF68652A6CBA9 /* Pods */,
+				B6A63CC8E3057260EE076A6E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2102,6 +2199,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		B6A63CC8E3057260EE076A6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F829F9D190B0F47BC7695D2 /* Pods-DuBi.debug.xcconfig */,
+				8D3C2B763DDF3C2B40CDBB7C /* Pods-DuBi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C220B3571CF433B0009A6560 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2138,8 +2244,6 @@
 				C284222A1CF975E300E8F9A6 /* public.h */,
 				C2BBD9541D00541D008F0008 /* CustomNavigationController.h */,
 				C2BBD9551D00541D008F0008 /* CustomNavigationController.m */,
-				C21D86301D01A4F800E898B3 /* ZYGetObject.h */,
-				C21D86311D01A4F800E898B3 /* ZYGetObject.m */,
 				9605E9CC1CF485A6000D1834 /* XHToast */,
 				9605E9C81CF47E47000D1834 /* RegularUtils */,
 				C2533CB61CEDEBDC00C134C6 /* InfomationHandle.h */,
@@ -2278,8 +2382,8 @@
 		C2A7DC741CF311D900492355 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C2ED25371CFD7B0F00071078 /* TLFZAVplayer.h */,
-				C2ED25381CFD7B0F00071078 /* TLFZAVplayer.m */,
+				9612EA981D090C04002A695E /* ZDAVPlayer.h */,
+				9612EA991D090C04002A695E /* ZDAVPlayer.m */,
 				C284A8501CF53F9E0093E851 /* ZDCustomVedioCell.h */,
 				C284A8511CF53F9E0093E851 /* ZDCustomVedioCell.m */,
 				C284A8521CF53F9E0093E851 /* ZDCustomVedioCell.xib */,
@@ -2316,12 +2420,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96FD788A1CED92FE000FCB3C /* Build configuration list for PBXNativeTarget "DuBi" */;
 			buildPhases = (
-				7A6E2E457A22901E52546721 /* 📦 Check Pods Manifest.lock */,
+				EA4C53D677574292DDC4A3EC /* 📦 Check Pods Manifest.lock */,
 				96FD786F1CED92FE000FCB3C /* Sources */,
 				96FD78701CED92FE000FCB3C /* Frameworks */,
 				96FD78711CED92FE000FCB3C /* Resources */,
-				05EBDE64E7794AEDA42E2546 /* 📦 Embed Pods Frameworks */,
-				646FF75CAD01FCE058A853F3 /* 📦 Copy Pods Resources */,
+				AC00107B543F9093C9F44432 /* 📦 Embed Pods Frameworks */,
+				9F8D4AC42D9E6C2297B292F9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2416,22 +2520,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05EBDE64E7794AEDA42E2546 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		646FF75CAD01FCE058A853F3 /* 📦 Copy Pods Resources */ = {
+		9F8D4AC42D9E6C2297B292F9 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2446,7 +2535,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A6E2E457A22901E52546721 /* 📦 Check Pods Manifest.lock */ = {
+		AC00107B543F9093C9F44432 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuBi/Pods-DuBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4C53D677574292DDC4A3EC /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2478,8 +2582,6 @@
 				C2DEA0701CF2E991002E1120 /* LWNCustomButton.m in Sources */,
 				96FB5C941CF6FF1D009A8BCF /* MJRefreshFooter.m in Sources */,
 				960DE7571CFAF31000C31DD8 /* SDPhotoBrowser.m in Sources */,
-				960DE6BD1CFAEF3900C31DD8 /* ZYTimeLineCellOperationMenu.m in Sources */,
-				960DE6C11CFAEF3900C31DD8 /* ZYTimeLineCell.m in Sources */,
 				96FB5CAE1CF6FF1D009A8BCF /* EMSDWebImageCompat.m in Sources */,
 				96FB5C831CF6FF1D009A8BCF /* EMAudioPlayerUtil.m in Sources */,
 				960DE7451CFAF29B00C31DD8 /* README.md in Sources */,
@@ -2493,12 +2595,14 @@
 				C2BBD9561D00541D008F0008 /* CustomNavigationController.m in Sources */,
 				96FB5CB21CF6FF1D009A8BCF /* EMSDWebImageManager.m in Sources */,
 				96FB5CE51CF6FF1D009A8BCF /* EaseMessageCell.m in Sources */,
+				9612ED511D099661002A695E /* SDTimeLineTableHeaderView.m in Sources */,
+				9612ED4D1D099661002A695E /* SDBaseRefreshView.m in Sources */,
 				96FB5CDF1CF6FF1D009A8BCF /* EaseRefreshTableViewController.m in Sources */,
-				960DE6C01CFAEF3900C31DD8 /* ZYTimeLineCellCommentView.m in Sources */,
 				C25E83901D041A9D0079A08F /* ZDVisitingTableViewCell.m in Sources */,
 				96FB5C911CF6FF1D009A8BCF /* MJRefreshAutoFooter.m in Sources */,
 				96123BC61CFECE3C00DF5631 /* UserProfileEditViewController.m in Sources */,
 				96FB5CD41CF6FF1D009A8BCF /* EaseChineseToPinyin.m in Sources */,
+				9612ED4E1D099661002A695E /* SDBaseTableViewController.m in Sources */,
 				96FB5CA51CF6FF1D009A8BCF /* MWGridCell.m in Sources */,
 				96FB5CB91CF6FF1D009A8BCF /* UIImage+EMWebP.m in Sources */,
 				C23CA6771CEF23FD008C52C2 /* MBProgressHUD+gifHUD.m in Sources */,
@@ -2523,21 +2627,20 @@
 				96FB5C841CF6FF1D009A8BCF /* EMAudioRecorderUtil.m in Sources */,
 				96FC7D011D03FF2400EEABAA /* ZDPersonInfoCell.m in Sources */,
 				96FC7CEB1D03D2F000EEABAA /* JTNotificationViewController.m in Sources */,
-				960DE6BA1CFAEF3900C31DD8 /* ZYBaseTableViewController.m in Sources */,
-				960DE6BF1CFAEF3900C31DD8 /* ZYTimeLineRefreshHeader.m in Sources */,
 				96FB5C891CF6FF1D009A8BCF /* EMCDDeviceManagerBase.m in Sources */,
 				96FB5C821CF6FF1D009A8BCF /* EaseUI.m in Sources */,
+				9612ED4C1D099661002A695E /* SDBaseNavigationController.m in Sources */,
 				96FB5CA31CF6FF1D009A8BCF /* UIView+MJExtension.m in Sources */,
 				96D5B0251CF7FE0A009E689C /* JTAliasViewController.m in Sources */,
 				96FB5CCC1CF6FF1D009A8BCF /* EaseConversationModel.m in Sources */,
 				96FB5CC11CF6FF1D009A8BCF /* PSTCollectionViewData.m in Sources */,
 				C284A84C1CF5322F0093E851 /* ZDSetUpController.m in Sources */,
 				963BFD591D012F7F00E5E74C /* JTSearchViewController.m in Sources */,
+				9612ED531D099661002A695E /* SDWeiXinPhotoContainerView.m in Sources */,
 				96FB5C9B1CF6FF1D009A8BCF /* MJRefreshBackStateFooter.m in Sources */,
 				96FB5CF51CF6FF1D009A8BCF /* EaseChatBarMoreView.m in Sources */,
 				96FD78981CED93F2000FCB3C /* AppDelegate.m in Sources */,
 				C28422481CF9778A00E8F9A6 /* PictureDetailController.m in Sources */,
-				960DE6C31CFAEF3900C31DD8 /* ZYTimeLineTableViewController.m in Sources */,
 				96D5B0331CF84976009E689C /* NSString+MD5.m in Sources */,
 				96FB5CB81CF6FF1D009A8BCF /* UIImage+EMMultiFormat.m in Sources */,
 				960DE73F1CFAF29B00C31DD8 /* NSAttributedString+MLExpression.m in Sources */,
@@ -2561,6 +2664,7 @@
 				96FB5CB71CF6FF1D009A8BCF /* UIImage+EMGIF.m in Sources */,
 				96E3BE431CFAC4AB00099938 /* JTMainTestViewController.m in Sources */,
 				96FB5CF61CF6FF1D009A8BCF /* EaseRecordView.m in Sources */,
+				9612ED541D099661002A695E /* SDTimeLineRefreshFooter.m in Sources */,
 				960DE73E1CFAF29B00C31DD8 /* MLTextAttachment.m in Sources */,
 				96FB5CE41CF6FF1D009A8BCF /* EaseCustomMessageCell.m in Sources */,
 				960DE74A1CFAF29B00C31DD8 /* SDRefreshFooterView.m in Sources */,
@@ -2569,15 +2673,17 @@
 				96FB5CF01CF6FF1D009A8BCF /* EaseChatToolbarItem.m in Sources */,
 				96D5B0201CF7E1AD009E689C /* JTSignInViewController.m in Sources */,
 				96FB5CE21CF6FF1D009A8BCF /* EaseUserCell.m in Sources */,
+				9612ED1F1D099661002A695E /* SDTimeLineCellModel.m in Sources */,
+				9612EA9A1D090C04002A695E /* ZDAVPlayer.m in Sources */,
 				96FB5CAC1CF6FF1D009A8BCF /* DACircularProgressView.m in Sources */,
 				961F9ECB1CEEAC990043F86C /* JTBuddyManager.m in Sources */,
 				96FB5CA91CF6FF1D009A8BCF /* MWTapDetectingImageView.m in Sources */,
 				96FB5CB61CF6FF1D009A8BCF /* UIButton+EMWebCache.m in Sources */,
+				9612ED201D099661002A695E /* SDTimeLineTableViewController.m in Sources */,
 				C220B3551CF433A0009A6560 /* JTSignInChoiceViewController.m in Sources */,
 				96123C121CFEDA6A00DF5631 /* UIResponder+Router.m in Sources */,
 				960DE7431CFAF29B00C31DD8 /* MLLinkLabel.m in Sources */,
 				C284A8741CF583770093E851 /* ZDThemes.m in Sources */,
-				960DE6BE1CFAEF3900C31DD8 /* ZYTimeLinerefreshFooter.m in Sources */,
 				C284A8711CF583770093E851 /* ZDBaseClass.m in Sources */,
 				96123BC31CFEC8FD00DF5631 /* ContactListViewController.m in Sources */,
 				960DE73C1CFAF29B00C31DD8 /* NSString+MLLabel.m in Sources */,
@@ -2599,23 +2705,24 @@
 				96FD78781CED92FE000FCB3C /* main.m in Sources */,
 				965C52021CF4085B00B0F22F /* JTTabBarViewController.m in Sources */,
 				96FB5CA21CF6FF1D009A8BCF /* UIScrollView+MJRefresh.m in Sources */,
+				9612ED521D099661002A695E /* SDTimeLineCellOperationMenu.m in Sources */,
 				96FB5CA11CF6FF1D009A8BCF /* UIScrollView+MJExtension.m in Sources */,
 				96FB5CBC1CF6FF1D009A8BCF /* UIView+EMWebCacheOperation.m in Sources */,
 				96FB5CC21CF6FF1D009A8BCF /* PSTCollectionViewFlowLayout.m in Sources */,
 				C2AEE7FB1CFABDB600F2872D /* ZDUserChangeViewController.m in Sources */,
 				C28422341CF9772100E8F9A6 /* LWNImgView.m in Sources */,
 				96FB5C9C1CF6FF1D009A8BCF /* MJRefreshGifHeader.m in Sources */,
-				960DE6C21CFAEF3900C31DD8 /* ZYWeiXinPhotoContainerView.m in Sources */,
 				960DE74B1CFAF29B00C31DD8 /* SDRefreshHeaderView.m in Sources */,
 				96FB5CE71CF6FF1D009A8BCF /* EaseBubbleView+File.m in Sources */,
 				96FC7D221D04010300EEABAA /* UIImage+Additions.m in Sources */,
 				96FB5CB51CF6FF1D009A8BCF /* NSData+EMImageContentType.m in Sources */,
 				96FB5CC41CF6FF1D009A8BCF /* PSTCollectionViewLayout.m in Sources */,
-				C21D86321D01A4F800E898B3 /* ZYGetObject.m in Sources */,
 				96FB5CBD1CF6FF1D009A8BCF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				C28422461CF9778A00E8F9A6 /* PictureController.m in Sources */,
 				96FB5CC01CF6FF1D009A8BCF /* PSTCollectionViewController.m in Sources */,
+				9612ED551D099661002A695E /* SDTimeLineRefreshHeader.m in Sources */,
 				96FB5CE91CF6FF1D009A8BCF /* EaseBubbleView+Image.m in Sources */,
+				9612ED4F1D099661002A695E /* SDTimeLineCell.m in Sources */,
 				96FB5CA81CF6FF1D009A8BCF /* MWPhotoBrowser.m in Sources */,
 				96FB5CE61CF6FF1D009A8BCF /* EaseMessageTimeCell.m in Sources */,
 				96FC7CF71D03FE6200EEABAA /* ZDPersonInfo.m in Sources */,
@@ -2654,9 +2761,7 @@
 				96FB5CEB1CF6FF1D009A8BCF /* EaseBubbleView+Text.m in Sources */,
 				96FB5CEC1CF6FF1D009A8BCF /* EaseBubbleView+Video.m in Sources */,
 				C25E839E1D042AB20079A08F /* ZDVisitingIdViewCotnroller.m in Sources */,
-				C2ED25391CFD7B0F00071078 /* TLFZAVplayer.m in Sources */,
 				96FB5CDA1CF6FF1D009A8BCF /* EaseEmotionManager.m in Sources */,
-				965CCE561D07A28600DB8139 /* NSDate+HFExtension.m in Sources */,
 				96FB5CDD1CF6FF1D009A8BCF /* EaseLocationViewController.m in Sources */,
 				96FB5C991CF6FF1D009A8BCF /* MJRefreshBackGifFooter.m in Sources */,
 				96FB5C851CF6FF1D009A8BCF /* EMCDDeviceManager+Media.m in Sources */,
@@ -2678,7 +2783,6 @@
 				C220B3751CF451E6009A6560 /* ZDCustomHeaderView.m in Sources */,
 				C220B3671CF43AA1009A6560 /* ZDCustomUserTableViewCell.m in Sources */,
 				C2C5994C1CFDC68400D69114 /* ZDPlayVedioViewController.m in Sources */,
-				960DE6BC1CFAEF3900C31DD8 /* ZYTimeLineCellModel.m in Sources */,
 				C2A7DC791CF311D900492355 /* ZYVideoViewController.m in Sources */,
 				96FC7D241D04010300EEABAA /* WNImagePicker.m in Sources */,
 				96FB5CA71CF6FF1D009A8BCF /* MWPhoto.m in Sources */,
@@ -2690,13 +2794,13 @@
 				C2C33E151CF5E37B00D3564D /* ZDPublishController.m in Sources */,
 				96D5B02D1CF82462009E689C /* UserInfo.m in Sources */,
 				C2ED25281CFD2BB200071078 /* ZDSendJokes.m in Sources */,
-				960DE6BB1CFAEF3900C31DD8 /* ZYBaseRefresView.m in Sources */,
 				96FD78C51CEDD501000FCB3C /* JTTabBar.m in Sources */,
 				96FB5CC91CF6FF1D009A8BCF /* PSTGridLayoutSection.m in Sources */,
 				96FB5CB41CF6FF1D009A8BCF /* MKAnnotationView+EMWebCache.m in Sources */,
 				960DE7401CFAF29B00C31DD8 /* NSString+MLExpression.m in Sources */,
 				960DE7581CFAF31000C31DD8 /* SDWaitingView.m in Sources */,
 				96123C071CFED63B00DF5631 /* AddFriendViewController.m in Sources */,
+				9612ED501D099661002A695E /* SDTimeLineCellCommentView.m in Sources */,
 				9605E9CB1CF47E47000D1834 /* RegularUtils.m in Sources */,
 				96FB5C871CF6FF1D009A8BCF /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				96FB5CD51CF6FF1D009A8BCF /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
@@ -2821,7 +2925,7 @@
 		};
 		96FD788B1CED92FE000FCB3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3629124A86EA57BEAD3278D3 /* Pods-DuBi.debug.xcconfig */;
+			baseConfigurationReference = 1F829F9D190B0F47BC7695D2 /* Pods-DuBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -2853,7 +2957,7 @@
 		};
 		96FD788C1CED92FE000FCB3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04CB014959F0A204DA833CC3 /* Pods-DuBi.release.xcconfig */;
+			baseConfigurationReference = 8D3C2B763DDF3C2B40CDBB7C /* Pods-DuBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;

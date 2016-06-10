@@ -19,7 +19,6 @@
 #import "EaseUI.h"
 #import "JTCircleMainController.h"
 #import "JTMainTestViewController.h"
-#import "ZYTimeLineTableViewController.h"
 #import "ZDUserChangeViewController.h"
 #import "CustomNavigationController.h"
 #import "JTCircleMainController.h"
@@ -72,7 +71,7 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:THEME_COLOR imageSize:rect] forBarMetrics:(UIBarMetricsDefault)];
     
     // 精华
-    [self setUpChildVCWithChildVC: [JTMainTestViewController new] title:@"精选" image:@"tabbar_jingxuan_nor" selectedImage:@"tabbar_jingxuan_h"];
+    [self setUpChildVCWithChildVC: [MainViewController new] title:@"精选" image:@"tabbar_jingxuan_nor" selectedImage:@"tabbar_jingxuan_h"];
     // 视频
     [self setUpChildVCWithChildVC:[ZYVideoViewController new] title:@"视频" image:@"tabbar_video_nor" selectedImage:@"tabbar_video_h"];
     // 圈子
@@ -164,5 +163,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController  {
+    if (tabBarController.selectedIndex == 2) {
+      
+    }
+    
+    
+    
+    return YES;
+}
+
+
+
 
 @end

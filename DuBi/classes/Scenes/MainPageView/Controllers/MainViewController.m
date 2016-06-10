@@ -14,11 +14,13 @@
 #import "LWNMainPageUrl.h"
 #import "PictureController.h"
 #import "PictureHandle.h"
+#import "JTSelectTopView.h"
 #define kInfomationHandle [InfomationHandle sharedInfomationHandle]
 #define kPictureHandle [PictureHandle sharedPictureHandle]
 #import "PictureViewCell.h"
 #import "LWNViewController.h"
 #import "LWNTableView.h"
+#import "JTTabBarViewController.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 static NSString *const reuseIdentifier = @"cellID";
@@ -30,12 +32,34 @@ static NSString *const reuseIdentifier = @"cellID";
 
 @end
 @implementation MainViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpViews];
     
+                               
+ 
+    JTSelectTopView *topView = [[JTSelectTopView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 50 ,30)];
+    
+    //self.navigationItem.titleView = topView;
+    
+    
+    JTTabBarViewController * tabbarVC = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+ 
+    tabbarVC.navigationItem.titleView = topView;
+    
+    
+    
     // 注册cell
-    [self.topicTableView registerClass:[PictureViewCell class] forCellReuseIdentifier:reuseIdentifier];
+     [self.topicTableView registerNib:[UINib nibWithNibName:@"PictureViewCell" bundle:nil] forCellReuseIdentifier:@"cellID"];
 }
 -(void)setUpViews{
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth , kHeight)];
@@ -81,18 +105,6 @@ static NSString *const reuseIdentifier = @"cellID";
 }
 
 
-//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    NSInteger number = scrollView.contentOffset.x / kWidth;
-//    if (number == 0) {
-//        
-//    }else if (number == 1){
-//    
-//    }else if (number == 2){
-//    
-//    }
-//    
-//    
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -116,7 +128,7 @@ static NSString *const reuseIdentifier = @"cellID";
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PictureViewCell *cell = [self.topicTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PictureViewCell *cell = [self.topicTableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
     if (tableView.tag == 100) {
         Picture *picture = [self.mainTableView piturForRowInSection:indexPath];
       cell.picture =  picture;
